@@ -1,0 +1,98 @@
+export const TRANSLATIONS = {
+  en: {
+    common: {
+      welcome: "Welcome back",
+      greeting: "Hey",
+      ready: "Ready to test your generational IQ?",
+      goal_complete: "Goal Complete!",
+      daily_goal: "Daily Goal",
+      play_more: "Play more to complete",
+      continue_playing: "Continue Playing",
+      quick_play: "Quick Play",
+      battle_arena: "Battle Arena",
+      trending: "Trending Now",
+      all_categories: "All Categories",
+    },
+    nav: {
+      home: "Home",
+      social: "Social",
+      rank: "Rank",
+      badges: "Badges",
+      profile: "Profile",
+      shop: "Shop",
+      map: "Map",
+      squads: "Squads",
+      creator: "Creator",
+      admin: "Admin",
+    },
+    settings: {
+      title: "Settings",
+      language: "Language",
+      select_language: "Select your preferred language",
+    }
+  },
+  es: {
+    common: {
+      welcome: "Bienvenido de nuevo",
+      greeting: "Hola",
+      ready: "¿Listo para probar tu CI generacional?",
+      goal_complete: "¡Meta Completada!",
+      daily_goal: "Meta Diaria",
+      play_more: "Juega más para completar",
+      continue_playing: "Seguir Jugando",
+      quick_play: "Juego Rápido",
+      battle_arena: "Arena de Batalla",
+      trending: "Tendencias",
+      all_categories: "Todas las Categorías",
+    },
+    nav: {
+      home: "Inicio",
+      social: "Social",
+      rank: "Rango",
+      badges: "Insignias",
+      profile: "Perfil",
+      shop: "Tienda",
+      map: "Mapa",
+      squads: "Escuadrones",
+      creator: "Creador",
+      admin: "Admin",
+    },
+    settings: {
+      title: "Ajustes",
+      language: "Idioma",
+      select_language: "Selecciona tu idioma preferido",
+    }
+  },
+  fr: {
+    common: {
+      welcome: "Bon retour",
+      greeting: "Salut",
+      ready: "Prêt à tester votre QI générationnel?",
+      goal_complete: "Objectif atteint!",
+      daily_goal: "Objectif quotidien",
+      play_more: "Jouez plus pour compléter",
+      continue_playing: "Continuer à jouer",
+      quick_play: "Jeu rapide",
+      battle_arena: "Arène de combat",
+      trending: "Tendances",
+      all_categories: "Toutes les catégories",
+    },
+    nav: {
+      home: "Accueil",
+      social: "Social",
+      rank: "Classement",
+      badges: "Badges",
+      profile: "Profil",
+      shop: "Boutique",
+      map: "Carte",
+      squads: "Escouades",
+      creator: "Créateur",
+      admin: "Admin",
+    },
+    settings: {
+      title: "Paramètres",
+      language: "Langue",
+      select_language: "Sélectionnez votre langue préférée",
+    }
+  }
+};

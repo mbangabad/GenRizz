@@ -1,0 +1,416 @@
+{
+  "timestamp": "2025-12-05T16:17:21.266Z",
+  "summary": {
+    "critical": 0,
+    "high": 50,
+    "medium": 15,
+    "low": 1,
+    "suggestions": 0
+  },
+  "issues": {
+    "critical": [],
+    "high": [
+      {
+        "category": "Configuration",
+        "message": "Missing .env.example file",
+        "file": null,
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/challenge/ChallengeCard.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/challenge/CreateChallengeModal.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/challenge/ParentKidChallenge.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/daily/DailyChallenge.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/events/LimitedTimeEvent.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/game/ResultsCard.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/hearts/HeartsSystem.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/home/FamilyChallengeCard.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/leaderboard/LeaderboardEntry.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/notifications/FriendBeatNotification.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/notifications/NotificationBell.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/premium/UpgradePrompt.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/profile/AchievementShowcase.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/profile/GameHistory.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/share/ViralShareCard.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/social/FriendsList.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/ui/ErrorBoundary.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/components/ui/PlayLimitBanner.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Achievements.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Admin.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/BattleArena.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Blueprint.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Challenge.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Challenges.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/CreatorStudio.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/FamilyChallenge.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/components/constants/questions",
+        "file": "src/pages/FamilyChallenge.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Gameplay.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/components/constants/questions",
+        "file": "src/pages/Gameplay.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Help.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Home.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Landing.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Layout.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Leaderboards.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Notifications.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Onboarding.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/OpinionGameplay.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/components/constants/questions",
+        "file": "src/pages/OpinionGameplay.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/PersonalityGameplay.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/components/constants/questions",
+        "file": "src/pages/PersonalityGameplay.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Premium.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Profile.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Roadmap.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Settings.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Shop.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/Squads.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/StatsDeepDive.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/TestDashboard.jsx",
+        "line": null
+      },
+      {
+        "category": "Broken Import",
+        "message": "Import not found: @/utils",
+        "file": "src/pages/WorldMap.jsx",
+        "line": null
+      }
+    ],
+    "medium": [
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/challenge/ChallengeLink.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/constants/questions/image-questions.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/home/HeroCard.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/share/BeatMeLink.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/share/EmojiResultGrid.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/share/ShareCard.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/share/ShareComparePrompt.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/share/ShareableResultCard.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/share/SocialShareButtons.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/share/ViralShareCard.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/social/ChallengeButton.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/components/ui/GameCard3D.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/pages/BattleArena.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/pages/CreatorStudio.jsx",
+        "line": null
+      },
+      {
+        "category": "Hardcoded URL",
+        "message": "Hardcoded URL found",
+        "file": "src/pages/Help.jsx",
+        "line": null
+      }
+    ],
+    "low": [
+      {
+        "category": "Debug Code",
+        "message": "console.log found in production code",
+        "file": "src/components/ui/SoundEffects.jsx",
+        "line": null
+      }
+    ],
+    "suggestions": []
+  }
+}

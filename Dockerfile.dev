@@ -1,0 +1,26 @@
+# Development Dockerfile
+FROM node:20-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Install dependencies first (for better caching)
+COPY package.json package-lock.json* ./
+RUN npm install
+
+# Copy source code
+COPY . .
+
+# Dynamic port configuration - supports containerized environments
+# Priority: PORT > VITE_PORT > 5174
+ARG PORT=5174
+ENV PORT=${PORT}
+ENV VITE_PORT=${PORT}
+ENV HOST=0.0.0.0
+
+# Expose the port (will be overridden by docker-compose if needed)
+EXPOSE ${PORT}
+
+# Start development server with dynamic port
+CMD ["sh", "-c", "npm run dev -- --host 0.0.0.0 --port ${PORT}"]
+

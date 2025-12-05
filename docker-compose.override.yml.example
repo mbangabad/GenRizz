@@ -1,0 +1,13 @@
+# Example override file for local development
+# Copy this to docker-compose.override.yml and customize
+# This file is automatically loaded by docker-compose
+
+version: '3.8'
+
+services:
+  app-dev:
+    ports:
+      - "5173:5173"  # Change if port 5173 is in use
+    environment:
+      - APP_PORT=5173
+
