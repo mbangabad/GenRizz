@@ -38,19 +38,6 @@ export default function Layout({ children, currentPageName }) {
         const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
         const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
         
-        // TEMPORARY: Allow access if tables don't exist yet (for initial deployment)
-        // Remove this after schema is deployed and auth is working
-        try {
-          const testAccess = await BetaAccess.filter({ user_id: 'test' });
-        } catch (e) {
-          // Tables don't exist yet - allow access temporarily
-          console.warn('⚠️  Database tables not found - enabling temporary access for deployment');
-          setAuthorized(true);
-          setUser({ id: 'temp-user', email: 'temp@genrizz.local', role: 'user' });
-          setLoading(false);
-          return;
-        }
-        
         if (!supabaseUrl || !supabaseAnonKey || supabaseUrl.includes('placeholder')) {
           console.warn('⚠️  Supabase not configured - enabling development mode');
           if (import.meta.env.DEV) {
