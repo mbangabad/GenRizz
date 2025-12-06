@@ -136,50 +136,60 @@ function PagesContent() {
     const location = useLocation();
     const currentPage = _getCurrentPage(location.pathname);
     
+    // CRITICAL: Login must be completely separate - no Layout, no auth checks
+    if (location.pathname === '/login' || location.pathname.startsWith('/login')) {
+        return <Login />;
+    }
+    
+    // All other pages go through Layout
     return (
-        <Routes>
-            {/* Login page - no Layout wrapper */}
-            <Route path="/login" element={<Login />} />
-            
-            {/* All other pages use Layout */}
-            <Route path="/" element={<Layout currentPageName="Leaderboards"><Leaderboards /></Layout>} />
-            <Route path="/Leaderboards" element={<Layout currentPageName={currentPage}><Leaderboards /></Layout>} />
-            <Route path="/Profile" element={<Layout currentPageName={currentPage}><Profile /></Layout>} />
-            <Route path="/Challenges" element={<Layout currentPageName={currentPage}><Challenges /></Layout>} />
-            <Route path="/Social" element={<Layout currentPageName={currentPage}><Social /></Layout>} />
-            <Route path="/Landing" element={<Layout currentPageName={currentPage}><Landing /></Layout>} />
-            <Route path="/Premium" element={<Layout currentPageName={currentPage}><Premium /></Layout>} />
-            <Route path="/Onboarding" element={<Layout currentPageName={currentPage}><Onboarding /></Layout>} />
-            <Route path="/Achievements" element={<Layout currentPageName={currentPage}><Achievements /></Layout>} />
-            <Route path="/Challenge" element={<Layout currentPageName={currentPage}><Challenge /></Layout>} />
-            <Route path="/FamilyChallenge" element={<Layout currentPageName={currentPage}><FamilyChallenge /></Layout>} />
-            <Route path="/Gameplay" element={<Layout currentPageName={currentPage}><Gameplay /></Layout>} />
-            <Route path="/Roadmap" element={<Layout currentPageName={currentPage}><Roadmap /></Layout>} />
-            <Route path="/PersonalityGameplay" element={<Layout currentPageName={currentPage}><PersonalityGameplay /></Layout>} />
-            <Route path="/OpinionGameplay" element={<Layout currentPageName={currentPage}><OpinionGameplay /></Layout>} />
-            <Route path="/Help" element={<Layout currentPageName={currentPage}><Help /></Layout>} />
-            <Route path="/Shop" element={<Layout currentPageName={currentPage}><Shop /></Layout>} />
-            <Route path="/Squads" element={<Layout currentPageName={currentPage}><Squads /></Layout>} />
-            <Route path="/CreatorStudio" element={<Layout currentPageName={currentPage}><CreatorStudio /></Layout>} />
-            <Route path="/Admin" element={<Layout currentPageName={currentPage}><Admin /></Layout>} />
-            <Route path="/TestDashboard" element={<Layout currentPageName={currentPage}><TestDashboard /></Layout>} />
-            <Route path="/WorldMap" element={<Layout currentPageName={currentPage}><WorldMap /></Layout>} />
-            <Route path="/BattleArena" element={<Layout currentPageName={currentPage}><BattleArena /></Layout>} />
-            <Route path="/StatsDeepDive" element={<Layout currentPageName={currentPage}><StatsDeepDive /></Layout>} />
-            <Route path="/Notifications" element={<Layout currentPageName={currentPage}><Notifications /></Layout>} />
-            <Route path="/Blueprint" element={<Layout currentPageName={currentPage}><Blueprint /></Layout>} />
-            <Route path="/Home" element={<Layout currentPageName={currentPage}><Home /></Layout>} />
-            <Route path="/Settings" element={<Layout currentPageName={currentPage}><Settings /></Layout>} />
-            {/* 404 Route - Must be last */}
-            <Route path="*" element={<Layout currentPageName={currentPage}><NotFound /></Layout>} />
-        </Routes>
+        <Layout currentPageName={currentPage}>
+            <Routes>
+                <Route path="/" element={<Leaderboards />} />
+                <Route path="/Leaderboards" element={<Leaderboards />} />
+                <Route path="/Profile" element={<Profile />} />
+                <Route path="/Challenges" element={<Challenges />} />
+                <Route path="/Social" element={<Social />} />
+                <Route path="/Landing" element={<Landing />} />
+                <Route path="/Premium" element={<Premium />} />
+                <Route path="/Onboarding" element={<Onboarding />} />
+                <Route path="/Achievements" element={<Achievements />} />
+                <Route path="/Challenge" element={<Challenge />} />
+                <Route path="/FamilyChallenge" element={<FamilyChallenge />} />
+                <Route path="/Gameplay" element={<Gameplay />} />
+                <Route path="/Roadmap" element={<Roadmap />} />
+                <Route path="/PersonalityGameplay" element={<PersonalityGameplay />} />
+                <Route path="/OpinionGameplay" element={<OpinionGameplay />} />
+                <Route path="/Help" element={<Help />} />
+                <Route path="/Shop" element={<Shop />} />
+                <Route path="/Squads" element={<Squads />} />
+                <Route path="/CreatorStudio" element={<CreatorStudio />} />
+                <Route path="/Admin" element={<Admin />} />
+                <Route path="/TestDashboard" element={<TestDashboard />} />
+                <Route path="/WorldMap" element={<WorldMap />} />
+                <Route path="/BattleArena" element={<BattleArena />} />
+                <Route path="/StatsDeepDive" element={<StatsDeepDive />} />
+                <Route path="/Notifications" element={<Notifications />} />
+                <Route path="/Blueprint" element={<Blueprint />} />
+                <Route path="/Home" element={<Home />} />
+                <Route path="/Settings" element={<Settings />} />
+                {/* 404 Route - Must be last */}
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </Layout>
     );
 }
 
 export default function Pages() {
     return (
         <Router>
-            <PagesContent />
+            <Routes>
+                {/* Login route - completely outside Layout */}
+                <Route path="/login" element={<Login />} />
+                
+                {/* All other routes */}
+                <Route path="*" element={<PagesContent />} />
+            </Routes>
         </Router>
     );
 }
