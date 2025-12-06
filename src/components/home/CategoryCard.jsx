@@ -82,10 +82,9 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
             <Link
               key={game.id}
               to={gameUrl}
-              onClick={(e) => {
-                // Still call onGameClick for analytics/tracking if needed
+              onClick={() => {
+                // Call onGameClick for analytics/tracking if needed
                 if (onGameClick) {
-                  e.preventDefault();
                   onGameClick(game.id);
                 }
               }}
