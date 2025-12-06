@@ -49,10 +49,11 @@
             });
           });
         }
-        // Force reload if coming from cache
-        if (performance.navigation.type === 1) {
-          console.log('🔄 Page reloaded - cache cleared');
-        }
+        // Add cache-busting meta tag
+        const meta = document.createElement('meta');
+        meta.httpEquiv = 'Cache-Control';
+        meta.content = 'no-cache, no-store, must-revalidate';
+        document.getElementsByTagName('head')[0].appendChild(meta);
       })();
     </script>
   </body>
