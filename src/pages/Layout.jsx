@@ -141,15 +141,13 @@ export default function Layout({ children, currentPageName }) {
             </motion.div>
             <h1 className="text-3xl font-black text-slate-900 mb-3 tracking-tight">Private Access</h1>
             <p className="text-slate-600 font-semibold mb-8 leading-relaxed">This environment is restricted to authorized personnel only.</p>
-            <motion.button 
-              onClick={() => auth.redirectToLogin()}
-              className="w-full py-4 bg-gradient-to-br from-slate-900 to-slate-700 hover:from-slate-800 hover:to-slate-600 text-white rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg"
+            <Link 
+              to="/login"
+              className="w-full py-4 bg-gradient-to-br from-slate-900 to-slate-700 hover:from-slate-800 hover:to-slate-600 text-white rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg no-underline"
               style={{ boxShadow: '0 4px 0 #1e293b' }}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
             >
               <Lock className="w-5 h-5" /> Authenticate
-            </motion.button>
+            </Link>
           </motion.div>
         </div>
       </LanguageProvider>
