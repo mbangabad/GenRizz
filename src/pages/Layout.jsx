@@ -30,6 +30,11 @@ export default function Layout({ children, currentPageName }) {
   const [loading, setLoading] = useState(true);
   const [authorized, setAuthorized] = useState(false);
   const location = useLocation();
+  
+  // Don't check auth for login page
+  if (location.pathname === '/login' || location.pathname.startsWith('/login')) {
+    return <>{children}</>;
+  }
 
   useEffect(() => {
     const checkAuth = async () => {

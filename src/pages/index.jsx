@@ -135,15 +135,14 @@ function _getCurrentPage(url) {
 function PagesContent() {
     const location = useLocation();
     const currentPage = _getCurrentPage(location.pathname);
-    const isLoginPage = location.pathname === '/login' || location.pathname.startsWith('/login');
     
     return (
         <Routes>
-            {/* Login page bypasses Layout */}
+            {/* Login page - no Layout wrapper */}
             <Route path="/login" element={<Login />} />
             
             {/* All other pages use Layout */}
-            <Route path="/" element={<Layout currentPageName={currentPage}><Leaderboards /></Layout>} />
+            <Route path="/" element={<Layout currentPageName="Leaderboards"><Leaderboards /></Layout>} />
             <Route path="/Leaderboards" element={<Layout currentPageName={currentPage}><Leaderboards /></Layout>} />
             <Route path="/Profile" element={<Layout currentPageName={currentPage}><Profile /></Layout>} />
             <Route path="/Challenges" element={<Layout currentPageName={currentPage}><Challenges /></Layout>} />
