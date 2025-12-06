@@ -39,7 +39,8 @@ export default function ChallengeButton({
     setShowModal(true);
   };
 
-  const challengeUrl = `${window.location.origin}/#/Challenge?code=${challengeCode}`;
+  const BASE_URL = import.meta.env.VITE_APP_URL || window.location.origin;
+  const challengeUrl = challengeCode ? `${BASE_URL}/#/Challenge?code=${challengeCode}` : '';
   
   const shareText = `🔥 Can you beat my ${percentage}% on GenRizz?\n\nI challenge you! 👊\n\n${challengeUrl}`;
 

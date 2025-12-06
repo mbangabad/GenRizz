@@ -2,7 +2,9 @@ import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Copy, Share2, Twitter, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
+// Temporarily disabled to fix React hooks error
+// import { toast } from 'sonner';
+const toast = { error: () => {}, success: () => {}, info: () => {} };
 
 // Generate emoji grid based on answer results
 const generateEmojiGrid = (answers, gameEmoji = '🔥') => {

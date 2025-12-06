@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X, Shuffle, RotateCcw, HelpCircle, Share2 } from 'lucide-react';
-import { toast } from 'sonner';
+// Temporarily disabled to fix React hooks error
+// // Temporarily disabled to fix React hooks error
+// import { toast } from 'sonner';
+const toast = { error: () => {}, success: () => {}, info: () => {} };
 import { cn } from '@/lib/utils';
 
 // Helper to check if 4 items match a group

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { InviteCode } from '@/api/entities';
 import { Ticket, Copy, Trash2, Plus, Check, RefreshCw } from 'lucide-react';
-import { toast } from 'sonner';
+// Temporarily disabled to fix React hooks error
+// import { toast } from 'sonner';
+const toast = { error: () => {}, success: () => {}, info: () => {} };
 import { motion } from 'framer-motion';
 
 export default function InviteManager() {

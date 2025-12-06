@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ThumbsUp, ThumbsDown, TrendingUp } from 'lucide-react';
 import { Question } from '@/api/entities';
-import { toast } from 'sonner';
+// Temporarily disabled to fix React hooks error
+// import { toast } from 'sonner';
+const toast = { error: () => {}, success: () => {}, info: () => {} };
 
 export default function VibeCheckSwipe({ question, onAnswer }) {
   const [voted, setVoted] = useState(false);

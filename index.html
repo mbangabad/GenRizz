@@ -3,11 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Base44 APP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#58CC02" />
+    <meta name="description" content="Master generational knowledge, social skills, and cultural fluency through fun games" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="GenRizz" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <title>GenRizz - Social Intelligence Gaming</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Service Worker completely disabled to fix caching issues -->
+    <script>
+      // Aggressively unregister all service workers and clear caches on load
+      (function() {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(registrations => {
+            registrations.forEach(registration => {
+              registration.unregister().then(() => {
+                console.log('✅ Service worker unregistered');
+                // Clear all caches
+                if ('caches' in window) {
+                  caches.keys().then(cacheNames => {
+                    cacheNames.forEach(cacheName => {
+                      caches.delete(cacheName);
+                      console.log('✅ Cache deleted:', cacheName);
+                    });
+                  });
+                }
+              });
+            });
+          });
+        }
+        // Force reload if coming from cache
+        if (performance.navigation.type === 1) {
+          console.log('🔄 Page reloaded - cache cleared');
+        }
+      })();
+    </script>
   </body>
 </html>

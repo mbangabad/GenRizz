@@ -13,7 +13,8 @@ export default function ChallengeLink({
   const [copied, setCopied] = useState(false);
   const game = GAMES[gameId];
   
-  const challengeUrl = `${window.location.origin}/#/Challenge?code=${challengeCode}`;
+  const BASE_URL = import.meta.env.VITE_APP_URL || window.location.origin;
+  const challengeUrl = `${BASE_URL}/#/Challenge?code=${challengeCode}`;
   
   const shareText = `🔥 I challenge you to beat my ${percentage}% on ${game?.title}!\n\n${tierName} achieved. Think you can do better?\n\n`;
 

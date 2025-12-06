@@ -49,13 +49,21 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+    dedupe: ['react', 'react-dom', 'sonner'],
     extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json']
   },
   optimizeDeps: {
+    include: ['react', 'react-dom'],
+    exclude: ['sonner'], // Exclude sonner to prevent bundling
     esbuildOptions: {
       loader: {
         '.js': 'jsx',
       },
+    },
+  },
+  build: {
+    rollupOptions: {
+      external: ['sonner'], // Externalize sonner to prevent bundling
     },
   },
 }) 

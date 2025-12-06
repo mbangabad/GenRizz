@@ -33,7 +33,8 @@ ${score}/${totalQuestions} • ${tier.emoji} ${tier.name}
 Can you beat me? 👇
 genrizz.app`;
 
-  const shareUrl = `${window.location.origin}${createPageUrl('Gameplay')}?gameId=${gameId}`;
+  const BASE_URL = import.meta.env.VITE_APP_URL || window.location.origin;
+  const shareUrl = `${BASE_URL}${createPageUrl('Gameplay')}?gameId=${gameId}`;
   
   const handleCopy = async () => {
     await navigator.clipboard.writeText(shareText + '\n' + shareUrl);

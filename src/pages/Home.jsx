@@ -137,13 +137,26 @@ export default function Home() {
           <div className="flex items-center gap-2 md:gap-3">
             {streak > 0 && (
               <motion.div 
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="hidden sm:flex badge-3d badge-streak"
+                className="flex badge-3d badge-streak shadow-lg"
+                style={{
+                  background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)',
+                  borderColor: '#FF6B35',
+                  boxShadow: '0 4px 14px rgba(255, 107, 53, 0.4)',
+                }}
               >
-                <span>🔥</span>
-                <span className="hidden md:inline">{streak} day streak</span>
-                <span className="md:hidden">{streak}</span>
+                <motion.span
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  🔥
+                </motion.span>
+                <span className="font-black text-white">
+                  <span className="hidden sm:inline">{streak} day</span>
+                  <span className="sm:hidden">{streak}</span>
+                  <span className="hidden md:inline ml-1">streak</span>
+                </span>
               </motion.div>
             )}
 

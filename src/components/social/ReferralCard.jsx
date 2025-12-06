@@ -7,7 +7,8 @@ import { useQuery } from '@tanstack/react-query';
 export default function ReferralCard({ userId }) {
   const [copied, setCopied] = useState(false);
   const referralCode = userId ? `RIZZ${userId.slice(-6).toUpperCase()}` : '';
-  const referralUrl = `${window.location.origin}/#/Landing?ref=${referralCode}`;
+  const BASE_URL = import.meta.env.VITE_APP_URL || window.location.origin;
+  const referralUrl = `${BASE_URL}/#/Landing?ref=${referralCode}`;
 
   const { data: referrals = [] } = useQuery({
     queryKey: ['referrals', userId],

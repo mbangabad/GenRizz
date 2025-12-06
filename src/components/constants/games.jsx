@@ -309,24 +309,6 @@ export const GAMES = {
       { min: 50, max: 69, name: 'Memory Lane Walker', emoji: '🚶', message: "Decent grasp of the past.", roast: "A bit fuzzy on the details" },
       { min: 0, max: 49, name: 'Time Traveler', emoji: '😵', message: "Are you from the future or past? Who knows.", roast: "History is not your strong suit" }
     ]
-  },
-
-  'vibe-check': {
-    id: 'vibe-check',
-    title: 'Vibe Check',
-    subtitle: 'Based or Cringe?',
-    description: 'Swipe to vote on controversial takes. See how your opinions match the world.',
-    category: 'social',
-    icon: '💅',
-    color: '#FF4B4B',
-    bgColor: 'bg-red-500',
-    gameMode: 'vibe-check',
-    questionTypes: ['poll'],
-    tiers: [
-      { min: 90, max: 100, name: 'Trend Setter', emoji: '✨', message: "You ARE the culture.", roast: "Stop being so perfect" },
-      { min: 50, max: 89, name: 'Vibe Curator', emoji: '🧐', message: "You have taste.", roast: "A bit basic but we accept it" },
-      { min: 0, max: 49, name: 'Chaos Agent', emoji: '😈', message: "Your takes are... interesting.", roast: "You definitely put milk before cereal" }
-    ]
   }
   };
 

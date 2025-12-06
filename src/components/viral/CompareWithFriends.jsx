@@ -3,7 +3,9 @@ import { motion } from 'framer-motion';
 import { Users, Share2, Copy, Link as LinkIcon, Check, Trophy, TrendingUp, ArrowRight } from 'lucide-react';
 
 import { Input } from '@/components/ui/input';
-import { toast } from 'sonner';
+// Temporarily disabled to fix React hooks error
+// import { toast } from 'sonner';
+const toast = { error: () => {}, success: () => {}, info: () => {} };
 import { GAMES } from '@/components/constants/games';
 
 export default function CompareWithFriends({ 
@@ -16,7 +18,8 @@ export default function CompareWithFriends({
   const game = GAMES[gameId];
   
   // Generate unique challenge link
-  const challengeLink = `${window.location.origin}/#/Challenge?game=${gameId}&score=${userScore}&name=${encodeURIComponent(userName || 'Someone')}`;
+  const BASE_URL = import.meta.env.VITE_APP_URL || window.location.origin;
+  const challengeLink = `${BASE_URL}/#/Challenge?game=${gameId}&score=${userScore}&name=${encodeURIComponent(userName || 'Someone')}`;
 
   const copyLink = async () => {
     await navigator.clipboard.writeText(challengeLink);

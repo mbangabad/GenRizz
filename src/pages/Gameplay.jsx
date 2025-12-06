@@ -31,6 +31,10 @@ import FriendBeatNotification from '@/components/notifications/FriendBeatNotific
 import ConnectionBoard from '@/components/game/mechanics/ConnectionBoard';
 import TimelineDraggable from '@/components/game/mechanics/TimelineDraggable';
 import VibeCheckSwipe from '@/components/game/mechanics/VibeCheckSwipe';
+import ErrorBoundary from '@/components/ui/ErrorBoundary';
+import Celebration from '@/components/ui/Celebration';
+import CompletionAnimation from '@/components/ui/CompletionAnimation';
+import { hapticSuccess, hapticError, hapticStreak, hapticLevelUp } from '@/utils/haptic';
 
 const GAME_MODES = {
   STANDARD: { questions: 10, label: 'Standard', icon: '📝', time: null },
@@ -302,9 +306,11 @@ function ResultsCard3D({
     }
   }, [percentage]);
 
+  // HIGH PRIORITY FIX: Use environment variable for share URL
+  const appBaseUrl = import.meta.env.VITE_APP_URL || window.location.origin;
   // Generate share text
   const shareText = `${game?.icon || '🎮'} GenRizz: ${game?.title}\n\n${tier.emoji} ${tier.name}\n${percentage}% · ${score}/${totalQuestions}\n${streak > 0 ? `🔥 ${streak} day streak\n` : ''}\nCan you beat me?`;
-  const shareUrl = `${window.location.origin}/#/Challenge?game=${gameId}&score=${percentage}`;
+  const shareUrl = `${appBaseUrl}/#/Challenge?game=${gameId}&score=${percentage}`;
 
   return (
     <motion.div
@@ -452,6 +458,12 @@ export default function Gameplay() {
   const [challengeData, setChallengeData] = useState(null);
   const [friendBeatNotification, setFriendBeatNotification] = useState(null);
   
+  // Celebration state
+  const [celebrationTrigger, setCelebrationTrigger] = useState(0);
+  const [celebrationType, setCelebrationType] = useState('correct');
+  const [showXP, setShowXP] = useState(false);
+  const [xpEarned, setXpEarned] = useState(0);
+  
   const queryClient = useQueryClient();
 
   useEffect(() => {
@@ -479,15 +491,27 @@ export default function Gameplay() {
   const game = gameId ? GAMES[gameId] : null;
 
   useEffect(() => {
-    if (gameState !== 'playing' || gameMode !== 'BLITZ') return;
+    // CRITICAL FIX: Only start timer when game is playing, in BLITZ/QUICK mode, and questions are loaded
+    if (gameState !== 'playing' || (gameMode !== 'BLITZ' && gameMode !== 'QUICK') || questions.length === 0) return;
+    
     const timer = setInterval(() => {
       setBlitzTimeLeft(prev => {
-        if (prev <= 1) { endGame(); return 0; }
+        // CRITICAL FIX: Ensure current answer is processed before ending game
+        if (prev <= 1) { 
+          // Small delay to allow any pending answer processing
+          setTimeout(() => {
+            // Only end game if we have questions (prevent ending before game starts)
+            if (questions.length > 0) {
+              endGame();
+            }
+          }, 100);
+          return 0; 
+        }
         return prev - 1;
       });
     }, 1000);
     return () => clearInterval(timer);
-  }, [gameState, gameMode]);
+  }, [gameState, gameMode, questions.length]);
 
   const { data: userProgress } = useQuery({
     queryKey: ['userProgress', user?.id, gameId],
@@ -578,7 +602,15 @@ export default function Gameplay() {
   });
 
   const startGame = () => {
-    const mode = GAME_MODES[gameMode];
+    // CRITICAL FIX: Validate questions exist
+    if (!allQuestions || allQuestions.length === 0) {
+      console.error('No questions available for this game');
+      return;
+    }
+
+    // CRITICAL FIX: Validate game mode
+    const mode = GAME_MODES[gameMode] || GAME_MODES.STANDARD;
+    
     const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
     const selected = shuffled.slice(0, mode.questions).map(q => {
       if (!q.options || !Array.isArray(q.options)) {
@@ -587,7 +619,20 @@ export default function Gameplay() {
       const opts = q.options.map((o, i) => ({ o, correct: i === q.correct_index }));
       const shuffledOpts = [...opts].sort(() => Math.random() - 0.5);
       return { ...q, options: shuffledOpts.map(x => x.o), correct_index: shuffledOpts.findIndex(x => x.correct) };
-    }).filter(q => q.options && Array.isArray(q.options) && q.options.length > 0);
+    }).filter(q => {
+      // CRITICAL FIX: Only filter out questions without options if they require options
+      // Connection, ordering, and poll questions don't need options
+      if (q.type === 'connection' || q.type === 'ordering' || q.type === 'poll') {
+        return true;
+      }
+      return q.options && Array.isArray(q.options) && q.options.length > 0;
+    });
+    
+    // CRITICAL FIX: Ensure we have at least one question
+    if (selected.length === 0) {
+      console.error('No valid questions selected');
+      return;
+    }
     
     setQuestions(selected);
     setCurrentQuestionIndex(0);
@@ -599,6 +644,8 @@ export default function Gameplay() {
     setHiddenOptions([]);
     setShowHint(false);
     setBonusTime(0);
+    // HIGH PRIORITY FIX: Reset power-ups between games
+    setPowerUps({ fifty: 3, time: 2, hint: 2, skip: 2 });
     if (mode.time) setBlitzTimeLeft(mode.time);
     setGameState('playing');
   };
@@ -634,30 +681,77 @@ export default function Gameplay() {
   };
 
   const endGame = () => {
-    const percentage = Math.round((score / questions.length) * 100);
+    // CRITICAL FIX: Prevent division by zero and ensure score is calculated correctly
+    const totalQuestions = questions.length;
+    // Questions answered = current index + 1 (since we're 0-indexed and have seen this many)
+    const answeredQuestions = Math.min(currentQuestionIndex + 1, totalQuestions);
+    
+    // CRITICAL FIX: For BLITZ/QUICK modes, calculate percentage based on questions answered
+    // For STANDARD mode, use total questions
+    // This prevents 0% when timer expires but user answered some questions
+    const percentage = gameMode === 'BLITZ' || gameMode === 'QUICK'
+      ? (answeredQuestions > 0 
+          ? Math.round((score / answeredQuestions) * 100) 
+          : 0)
+      : (totalQuestions > 0 
+          ? Math.round((score / totalQuestions) * 100) 
+          : 0);
+    
     const tier = getTier(gameId, percentage);
     let xpEarned = calculateXpEarned(percentage, currentLevel.level) + maxStreak * 2 + timeBonus + streakBonus;
+    // MEDIUM PRIORITY FIX: Validate XP bounds
+    xpEarned = Math.max(0, Math.min(xpEarned, 1000));
     if (gameMode === 'QUICK') xpEarned = Math.round(xpEarned * 0.8);
     if (gameMode === 'BLITZ') xpEarned = Math.round(xpEarned * 1.5);
+    
+    // Completion celebration
+    if (percentage >= 90) {
+      hapticLevelUp();
+      setCelebrationType('levelUp');
+      setXpEarned(xpEarned);
+      setShowXP(true);
+      setCelebrationTrigger(prev => prev + 1);
+    }
 
     if (user?.id) {
+      // CRITICAL FIX: Use answered questions count for max_score in BLITZ/QUICK modes
+      const maxScore = (gameMode === 'BLITZ' || gameMode === 'QUICK') 
+        ? Math.max(answeredQuestions, totalQuestions) 
+        : totalQuestions;
+      
       saveScoreMutation.mutate({
-        user_id: user.id, game_id: gameId, score, max_score: questions.length,
+        user_id: user.id, game_id: gameId, score, max_score: maxScore,
         percentage, tier_name: tier.name, tier_emoji: tier.emoji, xp_earned: xpEarned,
       });
 
-      // Update Squad XP
+      // HIGH PRIORITY FIX: Improve Squad XP error handling with retry
       SquadMember.filter({ user_id: user.id }).then(members => {
         if (members.length > 0) {
           const member = members[0];
           SquadMember.update(member.id, {
             contribution_xp: (member.contribution_xp || 0) + xpEarned
-          }).catch(console.error);
+          }).catch(err => {
+            console.error('Failed to update SquadMember XP:', err);
+            // Retry once after 1 second
+            setTimeout(() => {
+              SquadMember.update(member.id, {
+                contribution_xp: (member.contribution_xp || 0) + xpEarned
+              }).catch(console.error);
+            }, 1000);
+          });
           Squad.filter({ id: member.squad_id }).then(squads => {
             if (squads.length > 0) {
               Squad.update(squads[0].id, {
                 total_xp: (squads[0].total_xp || 0) + xpEarned
-              }).catch(console.error);
+              }).catch(err => {
+                console.error('Failed to update Squad XP:', err);
+                // Retry once after 1 second
+                setTimeout(() => {
+                  Squad.update(squads[0].id, {
+                    total_xp: (squads[0].total_xp || 0) + xpEarned
+                  }).catch(console.error);
+                }, 1000);
+              });
             }
           }).catch(console.error);
         }
@@ -685,15 +779,35 @@ export default function Gameplay() {
     setShowHint(false);
     setBonusTime(0);
     
+    // HIGH PRIORITY FIX: Fix streak calculation race condition
     if (isCorrect) {
       setScore(prev => prev + 1);
-      const newStreak = streak + 1;
-      setStreak(newStreak);
-      setMaxStreak(m => Math.max(m, newStreak));
+      let newStreakValue = 0;
+      setStreak(prev => {
+        newStreakValue = prev + 1;
+        setMaxStreak(m => Math.max(m, newStreakValue));
+        return newStreakValue;
+      });
       
       // Play correct sound
       playSound('correct');
-      if (newStreak >= 3) playSound('streak');
+      if (newStreakValue >= 3) playSound('streak');
+      
+      // Haptic feedback
+      hapticSuccess();
+      if (newStreakValue >= 3) hapticStreak();
+      
+      // Calculate XP for this answer
+      const baseXP = 10;
+      const timeBonusXP = timeRemaining >= 12 ? 5 : 0;
+      const streakMultiplier = newStreakValue >= 5 ? 3 : newStreakValue >= 3 ? 2 : 1;
+      const answerXP = Math.round((baseXP + timeBonusXP) * streakMultiplier);
+      
+      // Celebration with XP display
+      setCelebrationType(newStreakValue >= 5 ? 'streak' : 'correct');
+      setXpEarned(answerXP);
+      setShowXP(true);
+      setCelebrationTrigger(prev => prev + 1);
       
       // Time bonus: +5 XP for answers under 3 seconds (timeRemaining > 12 if 15s timer)
       if (timeRemaining >= 12) {
@@ -701,14 +815,17 @@ export default function Gameplay() {
       }
       
       // Streak bonus: multiplier for consecutive correct
-      if (newStreak >= 5) {
+      if (newStreakValue >= 5) {
         setStreakBonus(prev => prev + 10); // 3x at 5+
-      } else if (newStreak >= 3) {
+      } else if (newStreakValue >= 3) {
         setStreakBonus(prev => prev + 5); // 2x at 3+
       }
     } else {
       setStreak(0);
       playSound('incorrect');
+      
+      // Haptic feedback for error
+      hapticError();
     }
     
     if (currentQuestionIndex < questions.length - 1) {
@@ -727,14 +844,17 @@ export default function Gameplay() {
     );
   }
 
+  // HIGH PRIORITY FIX: Preserve gameId in redirects
   // Redirect personality games to PersonalityGameplay
   if (game?.gameMode === 'personality') {
-    return <Navigate to={createPageUrl('PersonalityGameplay') + `?gameId=${gameId}`} replace />;
+    const redirectUrl = createPageUrl('PersonalityGameplay') + (gameId ? `?gameId=${gameId}` : '');
+    return <Navigate to={redirectUrl} replace />;
   }
 
   // Redirect opinion games to OpinionGameplay
   if (game?.gameMode === 'opinion') {
-    return <Navigate to={createPageUrl('OpinionGameplay') + `?gameId=${gameId}`} replace />;
+    const redirectUrl = createPageUrl('OpinionGameplay') + (gameId ? `?gameId=${gameId}` : '');
+    return <Navigate to={redirectUrl} replace />;
   }
 
   // Game not found
@@ -761,6 +881,15 @@ export default function Gameplay() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
+      {/* Celebration overlay */}
+      <Celebration
+        trigger={celebrationTrigger}
+        type={celebrationType}
+        streak={streak}
+        showXP={showXP}
+        xpEarned={xpEarned}
+      />
+      
       <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
         <div className="max-w-lg mx-auto px-4 py-3 flex items-center gap-3">
           <Link to={createPageUrl('Home')}>
@@ -814,12 +943,17 @@ export default function Gameplay() {
 
             {questionsLoading ? (
               <button className="btn-3d btn-3d-ghost w-full py-4 flex items-center justify-center gap-2" disabled>
-                <Loader2 className="w-5 h-5 animate-spin" /> Loading...
+                <Loader2 className="w-5 h-5 animate-spin" /> Loading questions...
               </button>
             ) : allQuestions.length === 0 ? (
-              <div className="text-[#777777]">
+              <div className="text-center text-[#777777] p-6">
                 <p className="text-4xl mb-3">🚧</p>
-                <p className="font-semibold">No questions yet!</p>
+                <p className="font-semibold mb-2">No questions available!</p>
+                <p className="text-sm">This game is still being set up. Check back soon!</p>
+                <Link to={createPageUrl('Home')} className="btn-3d btn-3d-ghost mt-4 inline-block">
+                  <Home className="w-4 h-4 inline mr-2" />
+                  Go Home
+                </Link>
               </div>
             ) : (
               <button 
@@ -835,47 +969,85 @@ export default function Gameplay() {
           </div>
         )}
 
-        {gameState === 'playing' && questions[currentQuestionIndex] && (
-          <>
-            {/* Power-ups bar */}
-            <PowerUpsBar 
-              available={powerUps} 
-              onUse={usePowerUp} 
-              disabled={false}
-              showHint={showHint}
-            />
-            
-            {(() => {
-              const q = questions[currentQuestionIndex];
-              const props = { 
-                question: q, 
-                questionNumber: currentQuestionIndex + 1, 
-                totalQuestions: questions.length, 
-                onAnswer: handleAnswer, 
-                timedMode: true,
-                hiddenOptions,
-                showHint,
-                bonusTime
-              };
+        {gameState === 'playing' && questions.length > 0 && questions[currentQuestionIndex] && (
+          <ErrorBoundary>
+            <>
+              {/* Power-ups bar */}
+              <PowerUpsBar 
+                available={powerUps} 
+                onUse={usePowerUp} 
+                disabled={false}
+                showHint={showHint}
+              />
               
-              if (q.type === 'image' || q.type === 'image_options' || q.type === 'video-ref') return <ImageQuestion {...props} />;
-              if (q.type === 'audio') return <AudioQuestion {...props} />;
-              if (q.type === 'swipe') return <SwipeQuestion {...props} />;
-              if (q.type === 'matching') return <MatchingQuestion {...props} />;
-              if (q.type === 'ranking') return <RankingQuestion {...props} />;
-              if (q.type === 'scenario') return <ScenarioSwipe {...props} />;
-              if (q.type === 'would-you-rather') return <WouldYouRather {...props} />;
-              if (q.type === 'connection') return <ConnectionBoard puzzle={q.puzzleData} onComplete={(res) => handleAnswer(res.success, 0, 100)} />;
-              if (q.type === 'ordering') return <TimelineDraggable question={q} onAnswer={(success) => handleAnswer(success, 0)} />;
-              if (q.type === 'poll') return <VibeCheckSwipe question={q} onAnswer={() => handleAnswer(true, 0)} />;
+              {(() => {
+                const q = questions[currentQuestionIndex];
+                const props = { 
+                  question: q, 
+                  questionNumber: currentQuestionIndex + 1, 
+                  totalQuestions: questions.length, 
+                  onAnswer: handleAnswer, 
+                  timedMode: true,
+                  hiddenOptions,
+                  showHint,
+                  bonusTime
+                };
+                
+                // CRITICAL FIX: Add question type validation with error handling
+                try {
+                  if (q.type === 'image' || q.type === 'image_options' || q.type === 'video-ref') return <ImageQuestion {...props} />;
+                  if (q.type === 'audio') return <AudioQuestion {...props} />;
+                  if (q.type === 'swipe') return <SwipeQuestion {...props} />;
+                  if (q.type === 'matching') return <MatchingQuestion {...props} />;
+                  if (q.type === 'ranking') return <RankingQuestion {...props} />;
+                  if (q.type === 'scenario') return <ScenarioSwipe {...props} />;
+                  if (q.type === 'would-you-rather') return <WouldYouRather {...props} />;
+                  if (q.type === 'connection') return <ConnectionBoard puzzle={q.puzzleData} onComplete={(res) => handleAnswer(res.success, 0, 100)} />;
+                  if (q.type === 'ordering') return <TimelineDraggable question={q} onAnswer={(success) => handleAnswer(success, 0)} />;
+                  if (q.type === 'poll') return <VibeCheckSwipe question={q} onAnswer={() => handleAnswer(true, 0)} />;
 
-              return <QuestionCard3D {...props} gameColor={game.color} streak={streak} quickMode={isQuickMode} />;
-            })()}
-          </>
+                  // Default fallback for unrecognized types
+                  return <QuestionCard3D {...props} gameColor={game.color} streak={streak} quickMode={isQuickMode} />;
+                } catch (error) {
+                  if (process.env.NODE_ENV === 'development') {
+                    console.error('Error rendering question:', error, q);
+                  }
+                  return (
+                    <div className="card-3d p-6 text-center">
+                      <p className="text-red-500 font-bold mb-2">Error loading question</p>
+                      <button onClick={() => handleAnswer(false, 0)} className="btn-3d btn-3d-ghost">
+                        Skip Question
+                      </button>
+                    </div>
+                  );
+                }
+              })()}
+            </>
+          </ErrorBoundary>
         )}
 
         {gameState === 'results' && (
           <>
+            {/* Completion Animation */}
+            {(() => {
+              const percentage = questions.length > 0 
+                ? Math.round((score / questions.length) * 100) 
+                : 0;
+              const tier = getTier(gameId, percentage);
+              const xpEarned = calculateXpEarned(percentage, currentLevel.level) + maxStreak * 2 + timeBonus + streakBonus;
+              const isNewBest = userProgress && percentage > (userProgress.highest_score || 0);
+              
+              return (
+                <CompletionAnimation
+                  trigger={gameState === 'results'}
+                  percentage={percentage}
+                  xpEarned={xpEarned}
+                  tier={tier}
+                  isNewBest={isNewBest}
+                />
+              );
+            })()}
+            
             <ResultsCard3D
               gameId={gameId} score={score} totalQuestions={questions.length}
               userLevel={currentLevel} previousBest={userProgress?.highest_score}

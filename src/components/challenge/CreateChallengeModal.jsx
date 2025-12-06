@@ -69,7 +69,8 @@ export default function CreateChallengeModal({ isOpen, onClose, user, preSelecte
     setIsCreating(false);
   };
 
-  const getChallengeUrl = () => `${window.location.origin}?challenge=${createdChallenge?.challenge_code}`;
+  const BASE_URL = import.meta.env.VITE_APP_URL || window.location.origin;
+  const getChallengeUrl = () => `${BASE_URL}?challenge=${createdChallenge?.challenge_code}`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(getChallengeUrl());
