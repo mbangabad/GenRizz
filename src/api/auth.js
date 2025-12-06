@@ -117,7 +117,14 @@ export const auth = {
   
   // Redirect to login (for compatibility with Base44)
   redirectToLogin(returnUrl = null) {
-    window.location.href = `/login${returnUrl ? `?returnUrl=${encodeURIComponent(returnUrl)}` : ''}`
+    const url = `/login${returnUrl ? `?returnUrl=${encodeURIComponent(returnUrl)}` : ''}`;
+    window.location.href = url;
+    // Force navigation if href doesn't work
+    setTimeout(() => {
+      if (window.location.pathname !== '/login') {
+        window.location.replace(url);
+      }
+    }, 100);
   },
   
   // Get session

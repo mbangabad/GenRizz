@@ -136,6 +136,16 @@ function PagesContent() {
     const location = useLocation();
     const currentPage = _getCurrentPage(location.pathname);
     
+    // Don't wrap Login page in Layout (it handles its own auth)
+    if (location.pathname === '/login' || location.pathname.startsWith('/login')) {
+        return (
+            <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        );
+    }
+    
     return (
         <Layout currentPageName={currentPage}>
             <Routes>            
