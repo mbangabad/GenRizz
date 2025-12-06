@@ -88,7 +88,8 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
                   onGameClick(game.id);
                 }
               }}
-              className="block"
+              className="block no-underline"
+              style={{ textDecoration: 'none', color: 'inherit' }}
             >
               <motion.div
                 whileHover={{ scale: 1.02, x: 4 }}
