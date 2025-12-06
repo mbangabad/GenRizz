@@ -409,22 +409,29 @@ ALTER TABLE invite_codes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE beta_access ENABLE ROW LEVEL SECURITY;
 
 -- User profiles: Users can read/update their own profile
+DROP POLICY IF EXISTS "Users can view own profile" ON user_profiles;
 CREATE POLICY "Users can view own profile" ON user_profiles
   FOR SELECT USING (auth.uid() = id);
+DROP POLICY IF EXISTS "Users can update own profile" ON user_profiles;
 CREATE POLICY "Users can update own profile" ON user_profiles
   FOR UPDATE USING (auth.uid() = id);
+DROP POLICY IF EXISTS "Users can insert own profile" ON user_profiles;
 CREATE POLICY "Users can insert own profile" ON user_profiles
   FOR INSERT WITH CHECK (auth.uid() = id);
 
 -- User progress: Users can manage their own progress
+DROP POLICY IF EXISTS "Users can view own progress" ON user_progress;
 CREATE POLICY "Users can view own progress" ON user_progress
   FOR SELECT USING (auth.uid() = user_id);
+DROP POLICY IF EXISTS "Users can manage own progress" ON user_progress;
 CREATE POLICY "Users can manage own progress" ON user_progress
   FOR ALL USING (auth.uid() = user_id);
 
 -- Questions: Public read, admin write
+DROP POLICY IF EXISTS "Questions are publicly readable" ON questions;
 CREATE POLICY "Questions are publicly readable" ON questions
   FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Admins can manage questions" ON questions;
 CREATE POLICY "Admins can manage questions" ON questions
   FOR ALL USING (
     EXISTS (
@@ -434,16 +441,21 @@ CREATE POLICY "Admins can manage questions" ON questions
   );
 
 -- Scores: Users can view their own and public leaderboards
+DROP POLICY IF EXISTS "Users can view own scores" ON scores;
 CREATE POLICY "Users can view own scores" ON scores
   FOR SELECT USING (auth.uid() = user_id OR true); -- Public for leaderboards
+DROP POLICY IF EXISTS "Users can create own scores" ON scores;
 CREATE POLICY "Users can create own scores" ON scores
   FOR INSERT WITH CHECK (auth.uid() = user_id);
 
 -- Challenges: Users can view and manage their own challenges
+DROP POLICY IF EXISTS "Challenges are publicly readable" ON challenges;
 CREATE POLICY "Challenges are publicly readable" ON challenges
   FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Users can create challenges" ON challenges;
 CREATE POLICY "Users can create challenges" ON challenges
   FOR INSERT WITH CHECK (auth.uid() = challenger_id);
+DROP POLICY IF EXISTS "Users can update own challenges" ON challenges;
 CREATE POLICY "Users can update own challenges" ON challenges
   FOR UPDATE USING (auth.uid() = challenger_id OR auth.uid() = challenged_id);
 
