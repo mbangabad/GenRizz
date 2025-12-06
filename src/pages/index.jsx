@@ -54,6 +54,7 @@ import Home from "./Home";
 
 import Settings from "./Settings";
 import NotFound from "./NotFound";
+import Login from "./Login";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
@@ -112,6 +113,8 @@ const PAGES = {
     Home: Home,
     
     Settings: Settings,
+    
+    Login: Login,
     
 }
 
@@ -193,6 +196,8 @@ function PagesContent() {
                 <Route path="/Home" element={<Home />} />
                 
                 <Route path="/Settings" element={<Settings />} />
+                
+                <Route path="/login" element={<Login />} />
                 
                 {/* 404 Route - Must be last */}
                 <Route path="*" element={<NotFound />} />
