@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { getGameLevel } from '../constants/games';
 import GameIcon from './GameIcon';
+import { createPageUrl } from '@/utils';
 
 export default function CategoryCard({ category, games, progressMap, onGameClick, index }) {
   const gamesPlayed = games.filter(g => progressMap[g.id]?.total_plays > 0).length;
@@ -74,38 +76,50 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
           const progress = progressMap[game.id];
           const level = getGameLevel(progress?.total_xp || 0);
           const hasPlayed = progress?.total_plays > 0;
+          const gameUrl = createPageUrl('Gameplay') + '?gameId=' + game.id;
           
           return (
-            <motion.button
+            <Link
               key={game.id}
-              whileHover={{ scale: 1.02, x: 4 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => onGameClick(game.id)}
-              className="w-full flex items-center gap-3 p-3 rounded-xl bg-[#F7F4F0] hover:bg-[#F0EDE8] border border-[#E5E0DA] hover:border-[#D4CFC7] transition-all text-left cursor-pointer"
+              to={gameUrl}
+              onClick={(e) => {
+                // Still call onGameClick for analytics/tracking if needed
+                if (onGameClick) {
+                  e.preventDefault();
+                  onGameClick(game.id);
+                }
+              }}
+              className="block"
             >
-              <GameIcon gameId={game.id} size="sm" />
-              
-              <div className="flex-1 min-w-0">
-                <p className="font-bold text-[#3C3C3C] truncate">{game.title}</p>
-                <p className="text-xs text-[#777777] truncate font-semibold">
-                  {hasPlayed 
-                    ? `Lvl ${level.level} · ${progress.highest_score}% best` 
-                    : game.subtitle
-                  }
-                </p>
-              </div>
-              
-              {hasPlayed ? (
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">{level.emoji}</span>
-                  <ChevronRight className="w-4 h-4 text-[#AFAFAF]" />
+              <motion.div
+                whileHover={{ scale: 1.02, x: 4 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full flex items-center gap-3 p-3 rounded-xl bg-[#F7F4F0] hover:bg-[#F0EDE8] border border-[#E5E0DA] hover:border-[#D4CFC7] transition-all text-left cursor-pointer group"
+              >
+                <GameIcon gameId={game.id} size="sm" />
+                
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-[#3C3C3C] truncate group-hover:text-[#58CC02] transition-colors">{game.title}</p>
+                  <p className="text-xs text-[#777777] truncate font-semibold">
+                    {hasPlayed 
+                      ? `Lvl ${level.level} · ${progress.highest_score}% best` 
+                      : game.subtitle
+                    }
+                  </p>
                 </div>
-              ) : (
-                <span className="badge-3d badge-green text-xs py-1 px-2">
-                  NEW
-                </span>
-              )}
-            </motion.button>
+                
+                {hasPlayed ? (
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">{level.emoji}</span>
+                    <ChevronRight className="w-4 h-4 text-[#AFAFAF] group-hover:text-[#58CC02] transition-colors" />
+                  </div>
+                ) : (
+                  <span className="badge-3d badge-green text-xs py-1 px-2">
+                    NEW
+                  </span>
+                )}
+              </motion.div>
+            </Link>
           );
         })}
       </div>
