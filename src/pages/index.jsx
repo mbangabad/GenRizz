@@ -136,84 +136,51 @@ function PagesContent() {
     const location = useLocation();
     const currentPage = _getCurrentPage(location.pathname);
     
-    // Don't wrap Login page in Layout (it handles its own auth)
-    if (location.pathname === '/login' || location.pathname.startsWith('/login')) {
-        return (
+    return (
+        <>
+            {/* Login page bypasses Layout */}
             <Routes>
                 <Route path="/login" element={<Login />} />
-                <Route path="*" element={<NotFound />} />
             </Routes>
-        );
-    }
-    
-    return (
-        <Layout currentPageName={currentPage}>
-            <Routes>            
-                
-                    <Route path="/" element={<Leaderboards />} />
-                
-                
-                <Route path="/Leaderboards" element={<Leaderboards />} />
-                
-                <Route path="/Profile" element={<Profile />} />
-                
-                <Route path="/Challenges" element={<Challenges />} />
-                
-                <Route path="/Social" element={<Social />} />
-                
-                <Route path="/Landing" element={<Landing />} />
-                
-                <Route path="/Premium" element={<Premium />} />
-                
-                <Route path="/Onboarding" element={<Onboarding />} />
-                
-                <Route path="/Achievements" element={<Achievements />} />
-                
-                <Route path="/Challenge" element={<Challenge />} />
-                
-                <Route path="/FamilyChallenge" element={<FamilyChallenge />} />
-                
-                <Route path="/Gameplay" element={<Gameplay />} />
-                
-                <Route path="/Roadmap" element={<Roadmap />} />
-                
-                <Route path="/PersonalityGameplay" element={<PersonalityGameplay />} />
-                
-                <Route path="/OpinionGameplay" element={<OpinionGameplay />} />
-                
-                <Route path="/Help" element={<Help />} />
-                
-                <Route path="/Shop" element={<Shop />} />
-                
-                <Route path="/Squads" element={<Squads />} />
-                
-                <Route path="/CreatorStudio" element={<CreatorStudio />} />
-                
-                <Route path="/Admin" element={<Admin />} />
-                
-                <Route path="/TestDashboard" element={<TestDashboard />} />
-                
-                <Route path="/WorldMap" element={<WorldMap />} />
-                
-                <Route path="/BattleArena" element={<BattleArena />} />
-                
-                <Route path="/StatsDeepDive" element={<StatsDeepDive />} />
-                
-                <Route path="/Notifications" element={<Notifications />} />
-                
-                <Route path="/Blueprint" element={<Blueprint />} />
-                
-                <Route path="/Home" element={<Home />} />
-                
-                <Route path="/Settings" element={<Settings />} />
-                
-                <Route path="/login" element={<Login />} />
-                
-                {/* 404 Route - Must be last */}
-                <Route path="*" element={<NotFound />} />
-                
-            </Routes>
-        </Layout>
+            
+            {/* All other pages use Layout */}
+            {location.pathname !== '/login' && (
+                <Layout currentPageName={currentPage}>
+                    <Routes>            
+                        <Route path="/" element={<Leaderboards />} />
+                        <Route path="/Leaderboards" element={<Leaderboards />} />
+                        <Route path="/Profile" element={<Profile />} />
+                        <Route path="/Challenges" element={<Challenges />} />
+                        <Route path="/Social" element={<Social />} />
+                        <Route path="/Landing" element={<Landing />} />
+                        <Route path="/Premium" element={<Premium />} />
+                        <Route path="/Onboarding" element={<Onboarding />} />
+                        <Route path="/Achievements" element={<Achievements />} />
+                        <Route path="/Challenge" element={<Challenge />} />
+                        <Route path="/FamilyChallenge" element={<FamilyChallenge />} />
+                        <Route path="/Gameplay" element={<Gameplay />} />
+                        <Route path="/Roadmap" element={<Roadmap />} />
+                        <Route path="/PersonalityGameplay" element={<PersonalityGameplay />} />
+                        <Route path="/OpinionGameplay" element={<OpinionGameplay />} />
+                        <Route path="/Help" element={<Help />} />
+                        <Route path="/Shop" element={<Shop />} />
+                        <Route path="/Squads" element={<Squads />} />
+                        <Route path="/CreatorStudio" element={<CreatorStudio />} />
+                        <Route path="/Admin" element={<Admin />} />
+                        <Route path="/TestDashboard" element={<TestDashboard />} />
+                        <Route path="/WorldMap" element={<WorldMap />} />
+                        <Route path="/BattleArena" element={<BattleArena />} />
+                        <Route path="/StatsDeepDive" element={<StatsDeepDive />} />
+                        <Route path="/Notifications" element={<Notifications />} />
+                        <Route path="/Blueprint" element={<Blueprint />} />
+                        <Route path="/Home" element={<Home />} />
+                        <Route path="/Settings" element={<Settings />} />
+                        {/* 404 Route - Must be last */}
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </Layout>
+            )}
+        </>
     );
 }
 
