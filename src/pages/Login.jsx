@@ -155,22 +155,26 @@ export default function Login() {
           </form>
 
           <div className="mt-6 text-center">
-            <button
+            <motion.button
               type="button"
               onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                console.log('Toggle clicked, current state:', isSignUp);
-                setIsSignUp(!isSignUp);
+                console.log('🔵 Toggle button clicked! Current state:', isSignUp);
+                const newState = !isSignUp;
+                console.log('🔵 Setting isSignUp to:', newState);
+                setIsSignUp(newState);
                 setError(null);
                 setEmail('');
                 setPassword('');
+                console.log('🔵 State updated, form should now show:', newState ? 'Sign Up' : 'Sign In');
               }}
-              className="text-sm text-[#58CC02] font-bold hover:underline transition-colors cursor-pointer"
-              style={{ background: 'none', border: 'none', padding: 0 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-sm text-[#58CC02] font-bold hover:underline transition-colors cursor-pointer bg-transparent border-none p-0"
             >
               {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
-            </button>
+            </motion.button>
           </div>
         </motion.div>
       </motion.div>
