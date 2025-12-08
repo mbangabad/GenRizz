@@ -154,10 +154,10 @@ export default function Login() {
             </motion.button>
           </form>
 
-          <div className="mt-6 text-center space-y-1">
+          <div className="mt-6 text-center">
             <p className="text-sm text-[#777777] font-semibold">
               {isSignUp ? 'Already have an account? ' : "Don't have an account? "}
-              <motion.button
+              <button
                 type="button"
                 onClick={(e) => {
                   e.preventDefault();
@@ -171,13 +171,22 @@ export default function Login() {
                   setPassword('');
                   console.log('🔵 State updated, form should now show:', newState ? 'Sign Up' : 'Sign In');
                 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                onMouseDown={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
                 className="text-base text-[#58CC02] font-bold hover:text-[#46A302] transition-colors cursor-pointer bg-transparent border-none p-0 underline decoration-2 underline-offset-2 hover:decoration-[#46A302] inline-block"
-                style={{ textDecoration: 'underline', textDecorationThickness: '2px', textUnderlineOffset: '3px' }}
+                style={{ 
+                  textDecoration: 'underline', 
+                  textDecorationThickness: '2px', 
+                  textUnderlineOffset: '3px',
+                  pointerEvents: 'auto',
+                  zIndex: 10,
+                  position: 'relative'
+                }}
               >
                 {isSignUp ? 'Sign in' : 'Sign up'}
-              </motion.button>
+              </button>
             </p>
           </div>
         </motion.div>
