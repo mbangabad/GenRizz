@@ -155,6 +155,9 @@ export default function Login() {
           </form>
 
           <div className="mt-6 text-center">
+            <p className="text-sm text-[#777777] font-semibold mb-2">
+              {isSignUp ? 'Already have an account?' : "Don't have an account?"}
+            </p>
             <motion.button
               type="button"
               onClick={(e) => {
@@ -171,9 +174,9 @@ export default function Login() {
               }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="text-sm text-[#58CC02] font-bold hover:underline transition-colors cursor-pointer bg-transparent border-none p-0"
+              className="text-base text-[#58CC02] font-bold hover:text-[#46A302] transition-colors cursor-pointer bg-transparent border-none p-0 underline decoration-2 underline-offset-2 hover:decoration-[#46A302]"
             >
-              {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
+              {isSignUp ? 'Sign in' : 'Sign up'}
             </motion.button>
           </div>
         </motion.div>
