@@ -12,6 +12,12 @@ dist
 dist-ssr
 *.local
 
+# Test artifacts (should not be deployed)
+playwright-report/
+test-results/
+coverage/
+.nyc_output/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
