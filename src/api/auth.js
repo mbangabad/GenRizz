@@ -59,23 +59,37 @@ export const auth = {
       email,
       password,
       options: {
-        data: metadata
+        data: metadata,
+        emailRedirectTo: `${window.location.origin}/login?confirmed=true`
       }
     })
-    if (error) throw error
     
-    // Create user profile
-    if (data.user) {
-      await supabase
-        .from('user_profiles')
-        .insert({
-          id: data.user.id,
-          full_name: metadata.full_name || email.split('@')[0] || 'User',
-          hearts: 5,
-          is_premium: false,
-          role: 'user'
-        })
-        .catch(err => console.error('Error creating profile:', err))
+    if (error) {
+      console.error('Sign up error:', error);
+      throw error;
+    }
+    
+    // Create user profile (if user was created)
+    if (data && data.user) {
+      try {
+        const { error: profileError } = await supabase
+          .from('user_profiles')
+          .insert({
+            id: data.user.id,
+            full_name: metadata.full_name || email.split('@')[0] || 'User',
+            hearts: 5,
+            is_premium: false,
+            role: 'user'
+          });
+        
+        if (profileError) {
+          console.error('Error creating profile:', profileError);
+          // Don't throw - user is created, profile can be created later
+        }
+      } catch (err) {
+        console.error('Profile creation error:', err);
+        // Don't throw - user is created, profile can be created later
+      }
     }
     
     return data

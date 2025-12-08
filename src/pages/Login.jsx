@@ -23,17 +23,28 @@ export default function Login() {
 
     try {
       if (isSignUp) {
-        await auth.signUp(email, password);
-        setError('Check your email to confirm your account!');
-        setTimeout(() => {
-          setIsSignUp(false);
-        }, 3000);
+        const result = await auth.signUp(email, password);
+        if (result && result.user) {
+          setError('✅ Account created! Check your email to confirm your account.');
+          setTimeout(() => {
+            setIsSignUp(false);
+            setEmail('');
+            setPassword('');
+          }, 3000);
+        } else {
+          setError('Sign up completed. Please check your email to confirm your account.');
+        }
       } else {
-        await auth.signIn(email, password);
-        window.location.href = returnUrl;
+        const result = await auth.signIn(email, password);
+        if (result && result.user) {
+          window.location.href = returnUrl;
+        } else {
+          setError('Sign in failed. Please check your credentials.');
+        }
       }
     } catch (err) {
-      setError(err.message || 'Authentication failed. Please try again.');
+      console.error('Auth error:', err);
+      setError(err.message || err.error?.message || 'Authentication failed. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -139,11 +150,14 @@ export default function Login() {
 
           <div className="mt-6 text-center">
             <button
+              type="button"
               onClick={() => {
                 setIsSignUp(!isSignUp);
                 setError(null);
+                setEmail('');
+                setPassword('');
               }}
-              className="text-sm text-[#58CC02] font-bold hover:underline"
+              className="text-sm text-[#58CC02] font-bold hover:underline transition-colors"
             >
               {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
             </button>
