@@ -18,12 +18,16 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.stopPropagation();
+    console.log('Form submitted, isSignUp:', isSignUp, 'email:', email);
     setError(null);
     setLoading(true);
 
     try {
       if (isSignUp) {
+        console.log('Attempting sign up...');
         const result = await auth.signUp(email, password);
+        console.log('Sign up result:', result);
         if (result && result.user) {
           setError('✅ Account created! Check your email to confirm your account.');
           setTimeout(() => {
@@ -35,7 +39,9 @@ export default function Login() {
           setError('Sign up completed. Please check your email to confirm your account.');
         }
       } else {
+        console.log('Attempting sign in...');
         const result = await auth.signIn(email, password);
+        console.log('Sign in result:', result);
         if (result && result.user) {
           window.location.href = returnUrl;
         } else {
@@ -151,13 +157,17 @@ export default function Login() {
           <div className="mt-6 text-center">
             <button
               type="button"
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Toggle clicked, current state:', isSignUp);
                 setIsSignUp(!isSignUp);
                 setError(null);
                 setEmail('');
                 setPassword('');
               }}
-              className="text-sm text-[#58CC02] font-bold hover:underline transition-colors"
+              className="text-sm text-[#58CC02] font-bold hover:underline transition-colors cursor-pointer"
+              style={{ background: 'none', border: 'none', padding: 0 }}
             >
               {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
             </button>
