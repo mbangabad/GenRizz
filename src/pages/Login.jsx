@@ -154,30 +154,31 @@ export default function Login() {
             </motion.button>
           </form>
 
-          <div className="mt-6 text-center">
-            <p className="text-sm text-[#777777] font-semibold mb-2">
-              {isSignUp ? 'Already have an account?' : "Don't have an account?"}
+          <div className="mt-6 text-center space-y-1">
+            <p className="text-sm text-[#777777] font-semibold">
+              {isSignUp ? 'Already have an account? ' : "Don't have an account? "}
+              <motion.button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  console.log('🔵 Toggle button clicked! Current state:', isSignUp);
+                  const newState = !isSignUp;
+                  console.log('🔵 Setting isSignUp to:', newState);
+                  setIsSignUp(newState);
+                  setError(null);
+                  setEmail('');
+                  setPassword('');
+                  console.log('🔵 State updated, form should now show:', newState ? 'Sign Up' : 'Sign In');
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-base text-[#58CC02] font-bold hover:text-[#46A302] transition-colors cursor-pointer bg-transparent border-none p-0 underline decoration-2 underline-offset-2 hover:decoration-[#46A302] inline-block"
+                style={{ textDecoration: 'underline', textDecorationThickness: '2px', textUnderlineOffset: '3px' }}
+              >
+                {isSignUp ? 'Sign in' : 'Sign up'}
+              </motion.button>
             </p>
-            <motion.button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('🔵 Toggle button clicked! Current state:', isSignUp);
-                const newState = !isSignUp;
-                console.log('🔵 Setting isSignUp to:', newState);
-                setIsSignUp(newState);
-                setError(null);
-                setEmail('');
-                setPassword('');
-                console.log('🔵 State updated, form should now show:', newState ? 'Sign Up' : 'Sign In');
-              }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-base text-[#58CC02] font-bold hover:text-[#46A302] transition-colors cursor-pointer bg-transparent border-none p-0 underline decoration-2 underline-offset-2 hover:decoration-[#46A302]"
-            >
-              {isSignUp ? 'Sign in' : 'Sign up'}
-            </motion.button>
           </div>
         </motion.div>
       </motion.div>
