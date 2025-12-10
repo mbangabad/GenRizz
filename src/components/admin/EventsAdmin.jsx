@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import { RefreshCw, Save, Plus } from 'lucide-react';
+import { RefreshCw, Save, Plus, Sparkles } from 'lucide-react';
+import mockSpotlight from '@/components/constants/events/mockSpotlight.json';
+import mockDailyDrop from '@/components/constants/events/mockDailyDrop.json';
 
 const EVENTS_TABLE = import.meta.env.VITE_EVENTS_TABLE || 'events_playlist';
 const DAILY_TABLE = 'daily_drop';
 
 const canUseSupabase = () => Boolean(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
+const SEED_EVENTS = mockSpotlight;
+const SEED_DAILY = { id: 'daily-drop', ...mockDailyDrop, active: true };
 
 export default function EventsAdmin() {
   const [events, setEvents] = useState([]);
@@ -89,6 +93,26 @@ export default function EventsAdmin() {
     }
   };
 
+  const seedDemo = async () => {
+    if (!canUseSupabase()) {
+      setStatus('Supabase env missing');
+      return;
+    }
+    setLoading(true);
+    try {
+      const { error: evtErr } = await supabase.from(EVENTS_TABLE).upsert(SEED_EVENTS, { onConflict: 'id' });
+      if (evtErr) throw evtErr;
+      const { error: dailyErr } = await supabase.from(DAILY_TABLE).upsert(SEED_DAILY, { onConflict: 'id' });
+      if (dailyErr) throw dailyErr;
+      setStatus('Seeded demo playlists and daily drop');
+      await load();
+    } catch (e) {
+      setStatus(`Seed failed: ${e.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="card-3d p-5 bg-white border border-[#E5E0DA] shadow-sm space-y-4">
       <div className="flex items-center justify-between">
@@ -97,9 +121,14 @@ export default function EventsAdmin() {
           <p className="text-xs text-[#777777]">CRUD against Supabase tables ({EVENTS_TABLE}, {DAILY_TABLE}).</p>
           <p className="text-[11px] text-[#777777]">Status: {loading ? 'Working…' : status}</p>
         </div>
-        <button onClick={load} disabled={loading} className="btn-3d btn-3d-ghost px-3 py-2 text-xs flex items-center gap-2">
-          <RefreshCw className="w-4 h-4" /> Refresh
-        </button>
+        <div className="flex gap-2">
+          <button onClick={seedDemo} disabled={loading} className="btn-3d btn-3d-ghost px-3 py-2 text-xs flex items-center gap-2">
+            <Sparkles className="w-4 h-4" /> Seed demo
+          </button>
+          <button onClick={load} disabled={loading} className="btn-3d btn-3d-ghost px-3 py-2 text-xs flex items-center gap-2">
+            <RefreshCw className="w-4 h-4" /> Refresh
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">

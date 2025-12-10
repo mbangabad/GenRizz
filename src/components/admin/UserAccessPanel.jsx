@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AllowedUser, BetaAccess } from '@/api/entities';
-import { RefreshCw, Plus, ShieldCheck } from 'lucide-react';
+import { RefreshCw, Plus, ShieldCheck, Sparkles } from 'lucide-react';
 
 export default function UserAccessPanel() {
   const [allowed, setAllowed] = useState([]);
@@ -9,6 +9,9 @@ export default function UserAccessPanel() {
   const [betaEmail, setBetaEmail] = useState('');
   const [status, setStatus] = useState('Idle');
   const [loading, setLoading] = useState(false);
+  const defaultAdmin = import.meta.env.VITE_DEV_ADMIN_EMAIL || 'admin@genrizz.local';
+  const SEED_ALLOW = [defaultAdmin];
+  const SEED_BETA = [defaultAdmin];
 
   const load = async () => {
     setLoading(true);
@@ -61,6 +64,20 @@ export default function UserAccessPanel() {
     }
   };
 
+  const seedAccess = async () => {
+    setLoading(true);
+    try {
+      await Promise.all(SEED_ALLOW.map((addr) => AllowedUser.upsert({ email: addr })));
+      await Promise.all(SEED_BETA.map((addr) => BetaAccess.upsert({ email: addr, granted_at: new Date().toISOString() })));
+      await load();
+      setStatus('Seeded default allowlist/beta');
+    } catch (e) {
+      setStatus(`Seed failed: ${e.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="card-3d p-5 bg-white border border-[#E5E0DA] shadow-sm space-y-4">
       <div className="flex items-center justify-between">
@@ -69,9 +86,14 @@ export default function UserAccessPanel() {
           <p className="text-xs text-[#777777]">Manage allowlist and beta access.</p>
           <p className="text-[11px] text-[#777777]">Status: {loading ? 'Working…' : status}</p>
         </div>
-        <button onClick={load} disabled={loading} className="btn-3d btn-3d-ghost px-3 py-2 text-xs flex items-center gap-2">
-          <RefreshCw className="w-4 h-4" /> Refresh
-        </button>
+        <div className="flex gap-2">
+          <button onClick={seedAccess} disabled={loading} className="btn-3d btn-3d-ghost px-3 py-2 text-xs flex items-center gap-2">
+            <Sparkles className="w-4 h-4" /> Seed demo
+          </button>
+          <button onClick={load} disabled={loading} className="btn-3d btn-3d-ghost px-3 py-2 text-xs flex items-center gap-2">
+            <RefreshCw className="w-4 h-4" /> Refresh
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
