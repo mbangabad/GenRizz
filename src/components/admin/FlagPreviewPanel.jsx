@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Switch } from '@/components/ui/switch';
 import { FEATURE_FLAGS } from '@/config/featureFlags';
-import { getFlags, setFlagOverride, clearFlagOverride, clearAllFlagOverrides, getFlagOverrides } from '@/services/flags';
+import { getFlags, setFlagOverride, clearFlagOverride, clearAllFlagOverrides, getFlagOverrides, fetchRemoteFlags, pushRemoteFlags } from '@/services/flags';
 
 const FLAG_DESCRIPTIONS = {
   BLITZ: 'Enable Blitz timed mode selection.',
@@ -16,6 +16,8 @@ const FLAG_DESCRIPTIONS = {
 export default function FlagPreviewPanel() {
   const [flags, setFlags] = useState(getFlags());
   const [overrides, setOverrides] = useState(getFlagOverrides());
+  const [status, setStatus] = useState({ source: 'local', message: 'Local overrides only' });
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setFlags(getFlags());
@@ -38,15 +40,52 @@ export default function FlagPreviewPanel() {
     setOverrides(getFlagOverrides());
   };
 
+  const handleSyncFromRemote = async () => {
+    setLoading(true);
+    const res = await fetchRemoteFlags();
+    setFlags(res.flags);
+    setOverrides(getFlagOverrides());
+    setStatus({ source: res.source, message: res.message || 'Synced from Supabase' });
+    setLoading(false);
+  };
+
+  const handleSyncToRemote = async () => {
+    setLoading(true);
+    const res = await pushRemoteFlags();
+    setStatus({ source: res.source, message: res.message || 'Pushed to Supabase' });
+    setLoading(false);
+  };
+
   return (
     <div className="card-3d p-5 bg-white border border-[#E5E0DA] shadow-sm">
       <div className="flex items-center justify-between mb-3">
         <div>
           <h3 className="font-black text-[#3C3C3C]">Feature Flags (Preview)</h3>
-          <p className="text-xs text-[#777777]">Local overrides only. Env defaults remain unchanged.</p>
+          <p className="text-xs text-[#777777]">
+            Local overrides + optional Supabase sync. Env defaults remain unchanged.
+          </p>
         </div>
-        <button onClick={handleClearAll} className="btn-3d btn-3d-ghost px-3 py-2 text-xs">Clear all</button>
+        <div className="flex gap-2">
+          <button
+            onClick={handleSyncFromRemote}
+            disabled={loading}
+            className="btn-3d btn-3d-ghost px-3 py-2 text-xs"
+          >
+            Sync ↓
+          </button>
+          <button
+            onClick={handleSyncToRemote}
+            disabled={loading}
+            className="btn-3d btn-3d-green px-3 py-2 text-xs"
+          >
+            Push ↑
+          </button>
+          <button onClick={handleClearAll} className="btn-3d btn-3d-ghost px-3 py-2 text-xs">Clear all</button>
+        </div>
       </div>
+      <p className="text-[11px] text-[#777777] mb-2">
+        Status: {loading ? 'Syncing…' : `${status.source}${status.message ? ` • ${status.message}` : ''}`}
+      </p>
       <div className="space-y-3">
         {Object.keys(FEATURE_FLAGS).map((key) => (
           <div key={key} className="flex items-center justify-between border rounded-xl px-3 py-2">

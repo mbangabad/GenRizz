@@ -20,6 +20,8 @@ import BetaAccess from '@/components/admin/BetaAccess';
 import InviteManager from '@/components/admin/InviteManager';
 import FlagPreviewPanel from '@/components/admin/FlagPreviewPanel';
 import ValidatorSummary from '@/components/admin/ValidatorSummary';
+import EventsAdmin from '@/components/admin/EventsAdmin';
+import UserAccessPanel from '@/components/admin/UserAccessPanel';
 import { getFlagOverrides, getFlags } from '@/services/flags';
 import ContentSafetyPanel from '@/components/admin/ContentSafetyPanel';
 
@@ -101,10 +103,12 @@ const MENU_ITEMS = [
   { id: 'risks', label: 'Risk & Health', icon: Activity, color: 'text-[#FF4B4B]' },
   { id: 'games', label: 'Game Manager', icon: Gamepad2, color: 'text-[#FFC800]' },
   { id: 'content', label: 'Content Engine', icon: Sparkles, color: 'text-[#58CC02]' },
+  { id: 'events', label: 'Events & Daily', icon: Bell, color: 'text-[#1CB0F6]' },
   { id: 'safety', label: 'Content Safety', icon: ShieldAlert, color: 'text-[#FF9600]' },
   { id: 'invites', label: 'Invites', icon: Ticket, color: 'text-[#FFC800]' },
   { id: 'moderation', label: 'Moderation', icon: ShieldAlert, color: 'text-[#FF9600]' },
   { id: 'beta', label: 'Beta Access', icon: Users, color: 'text-[#3C3C3C]' },
+  { id: 'access', label: 'User Access', icon: Bell, color: 'text-[#1CB0F6]' },
 ];
 
 export default function Admin() {
@@ -241,8 +245,10 @@ function AdminShell() {
                 {activeTab === 'analytics' && "Deep dive into retention, cohorts, and user behavior."}
                 {activeTab === 'risks' && "System health monitoring and active alerts."}
                 {activeTab === 'content' && "AI-powered content generation studio."}
+                {activeTab === 'events' && "Control Spotlight playlists and Daily Drop via Supabase."}
                 {activeTab === 'safety' && "Manage banned terms and admin whitelist (family-friendly defaults)."}
                 {activeTab === 'games' && "Manage configurations and A/B tests."}
+                {activeTab === 'access' && "Manage allowlist and beta access for users."}
                 {activeTab === 'invites' && "Manage invite codes and early access cohorts."}
                 {activeTab === 'moderation' && "Resolve reports and community content."}
                 {activeTab === 'beta' && "Manage beta users and roles."}
@@ -264,10 +270,12 @@ function AdminShell() {
                 <ContentEngine />
               </div>
             )}
+            {activeTab === 'events' && <EventsAdmin />}
             {activeTab === 'safety' && <ContentSafetyPanel />}
             {activeTab === 'invites' && <InviteManager />}
             {activeTab === 'moderation' && <ModerationPanel />}
             {activeTab === 'beta' && <BetaAccess />}
+            {activeTab === 'access' && <UserAccessPanel />}
           </motion.div>
         </div>
       </main>

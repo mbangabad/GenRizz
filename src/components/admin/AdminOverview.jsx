@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Users, Activity, DollarSign, TrendingUp, 
   Clock, Globe, Smartphone, AlertCircle, CheckCircle, Shield 
 } from 'lucide-react';
 import ValidatorSummary from './ValidatorSummary';
+import { supabase } from '@/lib/supabase';
 import { 
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   BarChart, Bar, PieChart, Pie, Cell, LineChart, Line
@@ -36,6 +37,43 @@ export default function AdminOverview({ stats }) {
   const adsCaption = adsEnabled
     ? `Recovery-only · ${adsStatus.dailyRemaining}/${adsStatus.limit} remaining · ${adsStatus.cooldownMinutesRemaining}m cooldown`
     : 'Ads disabled (FLAG_ADS_RECOVERY_ONLY off)';
+  const canUseSupabase = Boolean(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
+  const [liveStats, setLiveStats] = useState({
+    activeUsers: stats?.active_players_now || 3847,
+    totalPlays: stats?.total_games_played || 1800000,
+    retention: stats?.d1_retention || 42.8,
+    revenue: stats?.estimated_revenue || 12450,
+  });
+
+  useEffect(() => {
+    setLiveStats((prev) => ({
+      ...prev,
+      activeUsers: stats?.active_players_now || prev.activeUsers,
+      totalPlays: stats?.total_games_played || prev.totalPlays,
+      retention: stats?.d1_retention || prev.retention,
+      revenue: stats?.estimated_revenue || prev.revenue,
+    }));
+  }, [stats]);
+
+  useEffect(() => {
+    const fetchLive = async () => {
+      if (!canUseSupabase) return;
+      try {
+        const [{ count: playsCount }, { count: usersCount }] = await Promise.all([
+          supabase.from('scores').select('*', { count: 'exact', head: true }),
+          supabase.from('user_progress').select('*', { count: 'exact', head: true }),
+        ]);
+        setLiveStats((prev) => ({
+          ...prev,
+          activeUsers: typeof usersCount === 'number' ? usersCount : prev.activeUsers,
+          totalPlays: typeof playsCount === 'number' ? playsCount : prev.totalPlays,
+        }));
+      } catch (e) {
+        console.warn('Live stats fetch failed', e.message);
+      }
+    };
+    fetchLive();
+  }, [canUseSupabase]);
 
   return (
     <div className="space-y-6">
@@ -44,7 +82,7 @@ export default function AdminOverview({ stats }) {
         <div className="card-3d p-4 flex items-center justify-between bg-white">
           <div>
             <p className="text-xs font-bold text-[#AFAFAF] uppercase">Active Users</p>
-            <h3 className="text-2xl font-black text-[#3C3C3C]">{stats?.active_players_now?.toLocaleString() || '3,847'}</h3>
+            <h3 className="text-2xl font-black text-[#3C3C3C]">{(liveStats?.activeUsers || 0).toLocaleString()}</h3>
             <span className="text-xs font-bold text-[#58CC02] flex items-center gap-1">
               <TrendingUp className="w-3 h-3" /> +12% vs last hour
             </span>
@@ -57,7 +95,7 @@ export default function AdminOverview({ stats }) {
         <div className="card-3d p-4 flex items-center justify-between bg-white">
           <div>
             <p className="text-xs font-bold text-[#AFAFAF] uppercase">Total Plays</p>
-            <h3 className="text-2xl font-black text-[#3C3C3C]">{stats?.total_games_played?.toLocaleString() || '1.8M'}</h3>
+            <h3 className="text-2xl font-black text-[#3C3C3C]">{(liveStats?.totalPlays || 0).toLocaleString()}</h3>
             <span className="text-xs font-bold text-[#58CC02] flex items-center gap-1">
               <TrendingUp className="w-3 h-3" /> +5% vs yesterday
             </span>
@@ -70,7 +108,7 @@ export default function AdminOverview({ stats }) {
         <div className="card-3d p-4 flex items-center justify-between bg-white">
           <div>
             <p className="text-xs font-bold text-[#AFAFAF] uppercase">Retention D1</p>
-            <h3 className="text-2xl font-black text-[#3C3C3C]">42.8%</h3>
+            <h3 className="text-2xl font-black text-[#3C3C3C]">{`${liveStats?.retention ?? 42.8}%`}</h3>
             <span className="text-xs font-bold text-[#FF4B4B] flex items-center gap-1">
               <AlertCircle className="w-3 h-3" /> -1.2% vs avg
             </span>
@@ -83,7 +121,7 @@ export default function AdminOverview({ stats }) {
         <div className="card-3d p-4 flex items-center justify-between bg-white">
           <div>
             <p className="text-xs font-bold text-[#AFAFAF] uppercase">Est. Revenue</p>
-            <h3 className="text-2xl font-black text-[#3C3C3C]">$12,450</h3>
+            <h3 className="text-2xl font-black text-[#3C3C3C]">${(liveStats?.revenue || 0).toLocaleString()}</h3>
             <span className="text-xs font-bold text-[#58CC02] flex items-center gap-1">
               <TrendingUp className="w-3 h-3" /> +8% vs target
             </span>
