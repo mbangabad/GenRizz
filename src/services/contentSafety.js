@@ -3,8 +3,9 @@ import { supabase } from '@/lib/supabase'
 
 const LOCAL_KEY = 'contentSafetyWhitelist'
 const TABLE = import.meta.env.VITE_CONTENT_SAFETY_TABLE || 'content_safety_whitelist'
-
 const canUseSupabase = () => Boolean(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY)
+
+const SEED_WHITELIST = [...DEFAULT_WHITELIST]
 
 const readLocalWhitelist = () => {
   try {
@@ -81,4 +82,20 @@ export const removeWhitelistTerm = (term) => {
   const local = readLocalWhitelist().filter(t => t !== term)
   persistLocalWhitelist(local)
   return getEffectiveSafetyLists()
+}
+
+export const seedWhitelistDefaults = async () => {
+  if (!canUseSupabase()) {
+    persistLocalWhitelist(SEED_WHITELIST)
+    return { ok: true, source: 'local', whitelist: getEffectiveSafetyLists().whitelist }
+  }
+  try {
+    const rows = SEED_WHITELIST.map((term) => ({ term, active: true }))
+    const { error } = await supabase.from(TABLE).upsert(rows, { onConflict: 'term' })
+    if (error) throw error
+    persistLocalWhitelist(SEED_WHITELIST)
+    return { ok: true, source: 'supabase', whitelist: getEffectiveSafetyLists().whitelist }
+  } catch (e) {
+    return { ok: false, source: 'supabase', whitelist: getEffectiveSafetyLists().whitelist, message: e.message }
+  }
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ShieldCheck, ShieldAlert, Plus, Trash2, Copy, DownloadCloud, UploadCloud } from 'lucide-react';
-import { getEffectiveSafetyLists, addWhitelistTerm, removeWhitelistTerm, syncWhitelistFromRemote, syncWhitelistToRemote } from '@/services/contentSafety';
+import { getEffectiveSafetyLists, addWhitelistTerm, removeWhitelistTerm, syncWhitelistFromRemote, syncWhitelistToRemote, seedWhitelistDefaults } from '@/services/contentSafety';
+import { Sparkles } from 'lucide-react';
 
 export default function ContentSafetyPanel() {
   const [lists, setLists] = useState(getEffectiveSafetyLists());
@@ -48,6 +49,15 @@ export default function ContentSafetyPanel() {
     } catch {
       setCopied(false);
     }
+  };
+
+  const handleSeedDefaults = async () => {
+    setLoading(true);
+    const res = await seedWhitelistDefaults();
+    setLists(getEffectiveSafetyLists());
+    setStatus({ source: res.source, message: res.message || 'Seeded defaults' });
+    setToast(res.ok ? 'Seeded defaults' : `Seed failed: ${res.message || 'error'}`);
+    setLoading(false);
   };
 
   return (
@@ -153,6 +163,13 @@ export default function ContentSafetyPanel() {
             className="btn-3d btn-3d-green px-3 py-2 text-sm flex items-center gap-2"
           >
             <UploadCloud className="w-4 h-4" /> Push to Supabase
+          </button>
+          <button
+            onClick={handleSeedDefaults}
+            disabled={loading}
+            className="btn-3d btn-3d-ghost px-3 py-2 text-sm flex items-center gap-2"
+          >
+            <Sparkles className="w-4 h-4" /> Seed defaults
           </button>
           <span className="text-[11px] text-[#777777]">
             Status: {loading ? 'Syncing...' : `${status.source} ${status.message ? `• ${status.message}` : ''}`}
