@@ -36,6 +36,12 @@
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
+.card-3d-interactive:focus-visible {
+  outline: 3px solid #1CB0F6;
+  outline-offset: 4px;
+  transform: translateY(-2px);
+}
+
 .card-3d-interactive:active {
   transform: translateY(-2px);
 }
@@ -70,6 +76,12 @@
   @apply font-bold rounded-xl transition-all duration-200 relative;
   transform-style: preserve-3d;
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn-3d:focus-visible {
+  outline: 3px solid #1CB0F6;
+  outline-offset: 2px;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.15);
 }
 
 .btn-3d:active {

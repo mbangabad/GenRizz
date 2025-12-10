@@ -285,11 +285,18 @@ export default function Leaderboards() {
               <div className="card-3d p-8 text-center">
                 <Trophy className="w-12 h-12 mx-auto mb-4 text-[#AFAFAF]" />
                 <p className="text-[#777777] font-semibold mb-4">
-                  {activeTab === 'friends' ? 'No friend scores yet! Add some friends.' : 'No scores yet!'}
+                  {activeTab === 'friends' 
+                    ? 'No friend scores yet! Add some friends and send a challenge.'
+                    : 'No scores yet. Play a quick game to claim the top spot.'}
                 </p>
-                <Link to={createPageUrl('Home')} className="btn-3d btn-3d-green px-6 py-3 inline-block">
-                  Play Now
-                </Link>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <Link to={createPageUrl('Gameplay') + '?gameId=gen-z-fluency'} className="btn-3d btn-3d-green px-6 py-3 inline-block">
+                    Quick Play (Gen Z)
+                  </Link>
+                  <Link to={createPageUrl('Home')} className="btn-3d btn-3d-ghost px-6 py-3 inline-block">
+                    Browse Games
+                  </Link>
+                </div>
               </div>
             ) : (
               scores.slice(activeTab === 'global' ? 3 : 0).map((score, i) => (
