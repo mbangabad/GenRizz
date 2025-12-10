@@ -25,9 +25,10 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
-      className="card-3d overflow-hidden"
+      className="card-3d overflow-hidden card-3d-interactive"
       role="region"
       aria-label={`${category.name} games`}
+      tabIndex={0}
     >
       {/* Category Header */}
       <div 

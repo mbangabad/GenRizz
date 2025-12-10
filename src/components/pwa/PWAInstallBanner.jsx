@@ -11,7 +11,6 @@ export default function PWAInstallBanner() {
     // Check if already installed or dismissed
     const isDismissed = localStorage.getItem('pwa-banner-dismissed');
     const isInstalled = window.matchMedia('(display-mode: standalone)').matches;
-    
     if (isDismissed || isInstalled) return;
 
     const handleBeforeInstall = (e) => {
@@ -56,7 +55,7 @@ export default function PWAInstallBanner() {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
-          className="fixed bottom-20 md:bottom-6 left-4 right-4 md:left-auto md:right-6 md:w-96 z-50"
+          className="fixed bottom-4 md:bottom-6 left-2 right-2 md:left-auto md:right-6 md:w-96 z-50"
         >
           <div className="card-3d card-3d-blue p-5 relative">
             <button 

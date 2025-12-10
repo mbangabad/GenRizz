@@ -195,7 +195,7 @@ export default function Layout({ children, currentPageName }) {
       <header className="hidden md:block sticky top-0 z-50 glass-light border-b border-slate-200/50 bg-white/90 backdrop-blur-lg shadow-sm">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Enhanced Logo */}
-          <Link to={createPageUrl('Home')} className="flex items-center gap-3 group">
+        <Link to={createPageUrl('Home')} className="flex items-center gap-3 group" aria-label="Go to Home">
             <motion.div 
               className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform"
               style={{ boxShadow: '0 3px 0 #3D8C02' }}
@@ -217,6 +217,7 @@ export default function Layout({ children, currentPageName }) {
                 <Link
                   key={item.name}
                   to={createPageUrl(item.path)}
+                  aria-label={`Go to ${item.name}`}
                 >
                   <motion.div
                     className={`px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 transition-all relative ${

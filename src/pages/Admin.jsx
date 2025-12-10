@@ -172,7 +172,7 @@ function AdminShell() {
               <p className="text-[10px] font-bold text-[#AFAFAF] uppercase tracking-widest">Command Center</p>
             </div>
           </div>
-          <button onClick={() => setIsMobileMenuOpen(false)} className="md:hidden">
+          <button onClick={() => setIsMobileMenuOpen(false)} className="md:hidden" aria-label="Close admin sidebar">
             <ArrowLeft className="w-6 h-6 text-[#3C3C3C]" />
           </button>
         </div>
