@@ -561,3 +561,31 @@ CREATE TRIGGER update_rematch_challenges_updated_at
   BEFORE UPDATE ON rematch_challenges
   FOR EACH ROW
   EXECUTE FUNCTION update_updated_at_column();
+
+-- ============================================
+-- Feature Flags (for Admin sync)
+-- ============================================
+CREATE TABLE IF NOT EXISTS feature_flags (
+  key TEXT PRIMARY KEY,
+  value BOOLEAN DEFAULT FALSE,
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Minimal RLS: allow authenticated admins; fallback to anon read-only if needed
+ALTER TABLE feature_flags ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS feature_flags_read ON feature_flags;
+CREATE POLICY feature_flags_read ON feature_flags
+  FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS feature_flags_write ON feature_flags;
+CREATE POLICY feature_flags_write ON feature_flags
+  FOR INSERT WITH CHECK (auth.role() = 'authenticated')
+  TO authenticated;
+
+DROP POLICY IF EXISTS feature_flags_update ON feature_flags;
+CREATE POLICY feature_flags_update ON feature_flags
+  FOR UPDATE USING (auth.role() = 'authenticated')
+  TO authenticated;
+
+COMMENT ON TABLE feature_flags IS 'Admin-managed feature flags synced from the Command Center.';
