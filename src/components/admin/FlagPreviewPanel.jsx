@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Switch } from '@/components/ui/switch';
 import { FEATURE_FLAGS } from '@/config/featureFlags';
 import { getFlags, setFlagOverride, clearFlagOverride, clearAllFlagOverrides, getFlagOverrides, fetchRemoteFlags, pushRemoteFlags } from '@/services/flags';
+import { supabase } from '@/lib/supabase';
 
 const FLAG_DESCRIPTIONS = {
   BLITZ: 'Enable Blitz timed mode selection.',
@@ -12,6 +13,9 @@ const FLAG_DESCRIPTIONS = {
   EVENTS: 'Enable Spotlight/Events surfaces.',
   ROAST_YOURSELF: 'Enable Roast Yourself mode.',
 };
+const SEED_ROWS = Object.keys(FEATURE_FLAGS).map((key) => ({ key, value: true }));
+const REMOTE_TABLE = import.meta.env.VITE_FEATURE_FLAGS_TABLE || 'feature_flags';
+const canUseSupabase = () => Boolean(import.meta.env.VITE_SUPABASE_URL && import.meta.env.VITE_SUPABASE_ANON_KEY);
 
 export default function FlagPreviewPanel() {
   const [flags, setFlags] = useState(getFlags());
@@ -56,6 +60,26 @@ export default function FlagPreviewPanel() {
     setLoading(false);
   };
 
+  const handleSeedDefaults = async () => {
+    if (!canUseSupabase()) {
+      setStatus({ source: 'local', message: 'Supabase env missing' });
+      return;
+    }
+    setLoading(true);
+    try {
+      const { error } = await supabase.from(REMOTE_TABLE).upsert(SEED_ROWS, { onConflict: 'key' });
+      if (error) throw error;
+      const res = await fetchRemoteFlags();
+      setFlags(res.flags);
+      setOverrides(getFlagOverrides());
+      setStatus({ source: 'supabase', message: 'Seeded defaults' });
+    } catch (e) {
+      setStatus({ source: 'supabase', message: `Seed failed: ${e.message}` });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="card-3d p-5 bg-white border border-[#E5E0DA] shadow-sm">
       <div className="flex items-center justify-between mb-3">
@@ -79,6 +103,13 @@ export default function FlagPreviewPanel() {
             className="btn-3d btn-3d-green px-3 py-2 text-xs"
           >
             Push ↑
+          </button>
+          <button
+            onClick={handleSeedDefaults}
+            disabled={loading}
+            className="btn-3d btn-3d-ghost px-3 py-2 text-xs"
+          >
+            Seed defaults
           </button>
           <button onClick={handleClearAll} className="btn-3d btn-3d-ghost px-3 py-2 text-xs">Clear all</button>
         </div>
