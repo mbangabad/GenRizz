@@ -1,28 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { GAME_CATEGORIES_META, GAME_CATEGORIES } from '../constants/games';
+import { getFlags } from '@/services/flags';
 
-const CATEGORIES = [
+const baseCategories = [
   { id: 'all', label: 'All Games', emoji: '🎮' },
   { id: 'gen-z-fluency', label: 'Gen Z', emoji: '💀' },
   { id: 'revenge-of-boomers', label: 'Boomers', emoji: '📻' },
   { id: 'millennial-nostalgia', label: 'Millennials', emoji: '📼' },
   { id: 'gen-x-wisdom', label: 'Gen X', emoji: '🎸' },
+  { id: 'gen-alpha', label: 'Gen Alpha', emoji: '🧒' },
   { id: 'mental-age', label: 'Mental Age', emoji: '🎂' },
   { id: 'dating-iq', label: 'Social IQ', emoji: '💬' },
   { id: 'family-bridge', label: 'Family', emoji: '👨‍👩‍👧‍👦' },
   { id: 'red-flag', label: 'Red Flags', emoji: '🚩' },
   { id: 'boomer-humor', label: 'Dad Jokes', emoji: '😂' },
-  { id: 'gen-alpha', label: 'Gen Alpha', emoji: '🧒' },
+  { id: 'daily', label: 'Daily', emoji: '📅' },
+  { id: 'events', label: 'Spotlight', emoji: '✨', flag: 'EVENTS' },
 ];
+
+const getCategories = () => {
+  const flags = getFlags();
+  return baseCategories.filter(cat => {
+    if (cat.flag && !flags[cat.flag]) return false;
+    return true;
+  });
+}
 
 // Re-export for backwards compatibility
 export { GAME_CATEGORIES };
 
 export default function CategoryTabs({ activeCategory, onCategoryChange }) {
+  const categories = getCategories();
   return (
     <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
-      {CATEGORIES.map((cat) => (
+      {categories.map((cat) => (
         <motion.button
           key={cat.id}
           onClick={() => onCategoryChange(cat.id)}

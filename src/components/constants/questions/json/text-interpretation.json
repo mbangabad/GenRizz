@@ -1,0 +1,1090 @@
+[
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 1,
+    "type": "context",
+    "question": "What does \"k\" usually mean as a text response?",
+    "options": [
+      "They're happy",
+      "They're annoyed or disinterested",
+      "They're excited",
+      "They're confused"
+    ],
+    "correct_index": 1,
+    "explanation": "\"k\" is the cold, dismissive cousin of \"okay\" - usually signals annoyance or minimal effort.",
+    "id": "text-interpretation-1",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 1,
+    "type": "translation",
+    "question": "What does \"I'm fine\" often actually mean?",
+    "options": [
+      "Everything is great!",
+      "I'm not fine but don't want to explain",
+      "I'm doing okay",
+      "I'm excited"
+    ],
+    "correct_index": 1,
+    "explanation": "\"I'm fine\" is often code for \"I'm not fine but I don't want to talk about it.\"",
+    "id": "text-interpretation-2",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 1,
+    "type": "context",
+    "question": "What does a period at the end of a short text (\"Sure.\") often convey?",
+    "options": [
+      "Proper grammar",
+      "Passive aggression or seriousness",
+      "Enthusiasm",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "Periods in casual texts can feel cold or aggressive to younger generations.",
+    "id": "text-interpretation-3",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 1,
+    "type": "translation",
+    "question": "What does \"we should hang out sometime\" usually mean?",
+    "options": [
+      "Let's make plans right now",
+      "A polite way to end conversation, unlikely to happen",
+      "I'm free tomorrow",
+      "I'm excited to see you"
+    ],
+    "correct_index": 1,
+    "explanation": "\"We should hang out sometime\" is often filler with no real intent to plan.",
+    "id": "text-interpretation-4",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 2,
+    "type": "context",
+    "question": "When someone takes hours to reply with just \"lol,\" what does it mean?",
+    "options": [
+      "They're busy but amused",
+      "They're not that interested",
+      "They're laughing hard",
+      "Technical issues"
+    ],
+    "correct_index": 1,
+    "explanation": "Long wait + minimal response = low interest or priority.",
+    "id": "text-interpretation-5",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 2,
+    "type": "translation",
+    "question": "What does \"haha\" vs \"hahaha\" typically indicate?",
+    "options": [
+      "Same thing",
+      "More ha's = actually found it funnier",
+      "Sarcasm",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "The number of ha's often correlates to genuine amusement - \"haha\" is often just polite.",
+    "id": "text-interpretation-6",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 2,
+    "type": "context",
+    "question": "What does \"I guess\" usually mean in a text?",
+    "options": [
+      "Strong agreement",
+      "Reluctant agreement or passive resistance",
+      "Confusion",
+      "Excitement"
+    ],
+    "correct_index": 1,
+    "explanation": "\"I guess\" signals uncertainty or that they're agreeing without really wanting to.",
+    "id": "text-interpretation-7",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 2,
+    "type": "translation",
+    "question": "What does \"no worries\" typically mean?",
+    "options": [
+      "They're genuinely fine",
+      "Could be fine or could be hurt but hiding it",
+      "They're excited",
+      "They didn't understand"
+    ],
+    "correct_index": 1,
+    "explanation": "\"No worries\" can be genuine or a polite way to mask disappointment - context matters.",
+    "id": "text-interpretation-8",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What does responding with just an emoji (like 👍) often mean?",
+    "options": [
+      "Enthusiastic agreement",
+      "Acknowledged but don't want to continue conversation",
+      "They love emojis",
+      "Technical issues"
+    ],
+    "correct_index": 1,
+    "explanation": "Single emoji responses often mean \"noted\" but not interested in continuing.",
+    "id": "text-interpretation-9",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 3,
+    "type": "translation",
+    "question": "What does \"that's interesting\" usually mean?",
+    "options": [
+      "Genuinely fascinated",
+      "Polite but not actually interested",
+      "Confusion",
+      "Agreement"
+    ],
+    "correct_index": 1,
+    "explanation": "\"That's interesting\" is often the polite way to say \"I don't care but am being nice.\"",
+    "id": "text-interpretation-10",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What does \"sorry, just saw this\" really mean most of the time?",
+    "options": [
+      "They genuinely just saw it",
+      "They saw it earlier but chose not to respond until now",
+      "Technical issues",
+      "They were asleep"
+    ],
+    "correct_index": 1,
+    "explanation": "With notifications everywhere, \"just saw this\" is often an excuse for delayed priority.",
+    "id": "text-interpretation-11",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 3,
+    "type": "translation",
+    "question": "What does \"can't tonight, maybe another time?\" usually indicate?",
+    "options": [
+      "They're busy but want to reschedule",
+      "They're not interested but being polite",
+      "They're sick",
+      "They're definitely free another time"
+    ],
+    "correct_index": 1,
+    "explanation": "If they wanted to reschedule, they'd usually suggest an alternative date.",
+    "id": "text-interpretation-12",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What does \"lmao\" vs \"LMAO\" typically convey?",
+    "options": [
+      "Same meaning",
+      "Caps = actually laughing, lowercase = mild amusement",
+      "Typo",
+      "Anger"
+    ],
+    "correct_index": 1,
+    "explanation": "Capitalization often indicates intensity - LMAO suggests genuine laughter.",
+    "id": "text-interpretation-13",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 4,
+    "type": "translation",
+    "question": "What does \"I'll let you know\" usually mean?",
+    "options": [
+      "They'll definitely follow up",
+      "Probably won't follow up",
+      "They need to check something",
+      "They're excited"
+    ],
+    "correct_index": 1,
+    "explanation": "\"I'll let you know\" without a specific timeframe usually means it won't happen.",
+    "id": "text-interpretation-14",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What does multiple texts in a row (before response) typically indicate?",
+    "options": [
+      "They're organized",
+      "High enthusiasm or anxiety",
+      "Technical issues",
+      "They're bored"
+    ],
+    "correct_index": 1,
+    "explanation": "Multiple texts without waiting for response suggests excitement, nervousness, or overthinking.",
+    "id": "text-interpretation-15",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 4,
+    "type": "translation",
+    "question": "What does \"we'll see\" typically mean?",
+    "options": [
+      "Definitely yes",
+      "Probably no, but keeping options open",
+      "Genuine uncertainty",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "\"We'll see\" is often a soft no that avoids direct rejection.",
+    "id": "text-interpretation-16",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What does \"...\" (ellipsis) at the end of a message usually mean?",
+    "options": [
+      "They ran out of words",
+      "There's more they're not saying, or disappointment",
+      "Typing error",
+      "Excitement"
+    ],
+    "correct_index": 1,
+    "explanation": "Ellipsis often signals hesitation, disappointment, or an unspoken thought.",
+    "id": "text-interpretation-17",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 5,
+    "type": "translation",
+    "question": "What does \"I don't care, you decide\" often really mean?",
+    "options": [
+      "They genuinely don't care",
+      "They have a preference but don't want to say",
+      "They're tired",
+      "They trust you completely"
+    ],
+    "correct_index": 1,
+    "explanation": "Often means \"I have a preference but I'm testing if you'll pick the right thing.\"",
+    "id": "text-interpretation-18",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What does a very long response time followed by a detailed message mean?",
+    "options": [
+      "They forgot",
+      "They were crafting the perfect response",
+      "Technical issues",
+      "They're slow typers"
+    ],
+    "correct_index": 1,
+    "explanation": "Long wait + thoughtful response often means they care enough to think carefully.",
+    "id": "text-interpretation-19",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 5,
+    "type": "translation",
+    "question": "What does \"per my last email/text\" usually mean?",
+    "options": [
+      "A reminder",
+      "Passive-aggressive \"I already told you this\"",
+      "Just a reference",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Per my last...\" is corporate passive-aggression for \"read what I already said.\"",
+    "id": "text-interpretation-20",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What does sending a meme instead of responding to a question mean?",
+    "options": [
+      "They're funny",
+      "Avoiding the question or deflecting",
+      "They have no words",
+      "Technical issues"
+    ],
+    "correct_index": 1,
+    "explanation": "Memes can be a way to deflect from answering something directly.",
+    "id": "text-interpretation-21",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 6,
+    "type": "translation",
+    "question": "What does \"that's crazy\" as a response usually indicate?",
+    "options": [
+      "Genuine shock",
+      "Not really engaged but acknowledging",
+      "Excitement",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "\"That's crazy\" is often filler when someone isn't sure how to respond.",
+    "id": "text-interpretation-22",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What does \"brb\" and then never coming back mean?",
+    "options": [
+      "Technical issues",
+      "They got distracted and the conversation ended",
+      "Emergency",
+      "They're upset"
+    ],
+    "correct_index": 1,
+    "explanation": "\"brb\" that never returns usually means something else grabbed their attention.",
+    "id": "text-interpretation-23",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 6,
+    "type": "translation",
+    "question": "What does \"it's whatever\" typically express?",
+    "options": [
+      "Genuine indifference",
+      "Hurt feelings disguised as indifference",
+      "Confusion",
+      "Happiness"
+    ],
+    "correct_index": 1,
+    "explanation": "\"It's whatever\" often masks disappointment or frustration with false casualness.",
+    "id": "text-interpretation-24",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What does an immediate response after weeks of slow replies indicate?",
+    "options": [
+      "Better service",
+      "They want something or the conversation is now interesting to them",
+      "Coincidence",
+      "New phone"
+    ],
+    "correct_index": 1,
+    "explanation": "Sudden engagement after distance often means something triggered their interest.",
+    "id": "text-interpretation-25",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 7,
+    "type": "translation",
+    "question": "What does \"thanks for letting me know\" without more context mean?",
+    "options": [
+      "Genuine gratitude",
+      "Dismissive acknowledgment, conversation over",
+      "Confusion",
+      "They'll respond later"
+    ],
+    "correct_index": 1,
+    "explanation": "This phrase often signals \"noted, we're done here\" without engagement.",
+    "id": "text-interpretation-26",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What does using your full name in a text (\"Hey Michael\") often indicate?",
+    "options": [
+      "Formality",
+      "Seriousness or potential trouble",
+      "They forgot your nickname",
+      "Excitement"
+    ],
+    "correct_index": 1,
+    "explanation": "Full name usage in casual contexts often signals serious conversation ahead.",
+    "id": "text-interpretation-27",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 7,
+    "type": "translation",
+    "question": "What does \"we need to talk\" typically mean?",
+    "options": [
+      "Casual chat",
+      "Something serious or potentially bad",
+      "Gossip",
+      "Good news"
+    ],
+    "correct_index": 1,
+    "explanation": "\"We need to talk\" is universally understood as a serious/concerning conversation ahead.",
+    "id": "text-interpretation-28",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What does responding \"cool\" to exciting news indicate?",
+    "options": [
+      "Genuine enthusiasm",
+      "Underwhelmed or not impressed",
+      "They're cold",
+      "Happiness"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Cool\" for big news suggests they're not as excited as you might hope.",
+    "id": "text-interpretation-29",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 8,
+    "type": "translation",
+    "question": "What does \"I'm not mad\" often actually mean?",
+    "options": [
+      "They're genuinely not mad",
+      "They're definitely mad",
+      "They're confused",
+      "They're happy"
+    ],
+    "correct_index": 1,
+    "explanation": "Unprompted denial of anger often confirms the opposite - they're upset.",
+    "id": "text-interpretation-30",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What does liking a message without responding typically mean?",
+    "options": [
+      "Strong agreement",
+      "Acknowledged but not worthy of a typed response",
+      "Technical issues",
+      "Excitement"
+    ],
+    "correct_index": 1,
+    "explanation": "Reactions without responses often signal \"seen, noted, moving on.\"",
+    "id": "text-interpretation-31",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 8,
+    "type": "translation",
+    "question": "What does \"do what you want\" usually mean?",
+    "options": [
+      "Genuine freedom",
+      "They have an opinion but want you to figure it out",
+      "Confusion",
+      "Support"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Do what you want\" often means \"I have a preference but won't say it directly.\"",
+    "id": "text-interpretation-32",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What does \"lol\" at the end of a statement usually do?",
+    "options": [
+      "Shows humor",
+      "Softens the message or masks insecurity",
+      "Is meaningless",
+      "Shows happiness"
+    ],
+    "correct_index": 1,
+    "explanation": "Ending with \"lol\" often softens statements or masks how serious the person is.",
+    "id": "text-interpretation-33",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 9,
+    "type": "translation",
+    "question": "What does \"I'm not upset, just disappointed\" indicate?",
+    "options": [
+      "They're fine",
+      "They're more hurt than if they were just upset",
+      "They're confused",
+      "They've moved on"
+    ],
+    "correct_index": 1,
+    "explanation": "Disappointment often cuts deeper than anger - this phrase signals serious hurt.",
+    "id": "text-interpretation-34",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What does typing then stopping (seeing \"...\" then nothing) usually mean?",
+    "options": [
+      "Technical issue",
+      "They changed their mind about what to say",
+      "Bad connection",
+      "They're busy"
+    ],
+    "correct_index": 1,
+    "explanation": "The disappearing typing indicator suggests they reconsidered their response.",
+    "id": "text-interpretation-35",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 9,
+    "type": "translation",
+    "question": "What does \"I'm happy for you\" without exclamation or emoji convey?",
+    "options": [
+      "Genuine happiness",
+      "Possibly jealous or hurt but trying to be supportive",
+      "Excitement",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "Flat \"I'm happy for you\" can signal mixed or negative feelings about the news.",
+    "id": "text-interpretation-36",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What does an immediate read receipt but delayed response mean?",
+    "options": [
+      "They're busy",
+      "They saw it, are processing, or strategically delaying",
+      "Technical issues",
+      "They forgot"
+    ],
+    "correct_index": 1,
+    "explanation": "Quick read + delayed response often means they need time to think or are purposefully pacing.",
+    "id": "text-interpretation-37",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 10,
+    "type": "translation",
+    "question": "What does \"I'm over it\" usually mean?",
+    "options": [
+      "They're genuinely over it",
+      "They're not over it at all",
+      "They've forgotten",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "People who are truly over something rarely feel the need to announce it.",
+    "id": "text-interpretation-38",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What does a sudden shift from emojis to no emojis indicate?",
+    "options": [
+      "Phone issue",
+      "Mood shift - possibly upset or serious",
+      "Mature evolution",
+      "Nothing"
+    ],
+    "correct_index": 1,
+    "explanation": "Dropping emojis can signal a shift to serious mode or cooled feelings.",
+    "id": "text-interpretation-39",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 10,
+    "type": "translation",
+    "question": "What does \"I find it funny how...\" usually precede?",
+    "options": [
+      "A joke",
+      "Passive-aggressive criticism",
+      "A compliment",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "\"I find it funny how...\" is rarely about humor - it's sarcastic critique incoming.",
+    "id": "text-interpretation-40",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What does responding only to part of a multi-part message indicate?",
+    "options": [
+      "They're efficient",
+      "They're avoiding certain topics/questions",
+      "They didn't read it all",
+      "Technical issues"
+    ],
+    "correct_index": 1,
+    "explanation": "Selective responding often means deliberate avoidance of certain subjects.",
+    "id": "text-interpretation-41",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 11,
+    "type": "translation",
+    "question": "What does \"noted\" as a standalone response mean?",
+    "options": [
+      "Agreement",
+      "Cold acknowledgment without agreement or enthusiasm",
+      "Excitement",
+      "They're taking notes"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Noted\" is the text equivalent of a blank stare - acknowledged but not endorsed.",
+    "id": "text-interpretation-42",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What does switching from \"!!\" to \".\" over time indicate?",
+    "options": [
+      "Grammar improvement",
+      "Declining enthusiasm or comfort",
+      "Autocorrect",
+      "Nothing"
+    ],
+    "correct_index": 1,
+    "explanation": "Punctuation enthusiasm fading often mirrors emotional investment fading.",
+    "id": "text-interpretation-43",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 11,
+    "type": "translation",
+    "question": "What does \"with all due respect\" typically precede?",
+    "options": [
+      "A compliment",
+      "Something disrespectful or critical",
+      "An apology",
+      "Agreement"
+    ],
+    "correct_index": 1,
+    "explanation": "\"With all due respect\" is a warning that something not-so-respectful is coming.",
+    "id": "text-interpretation-44",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What does \"anyway...\" in a text conversation signal?",
+    "options": [
+      "Topic continuation",
+      "Topic change, often from uncomfortable subject",
+      "Confusion",
+      "Agreement"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Anyway\" is a pivot word - steering away from the current topic.",
+    "id": "text-interpretation-45",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 12,
+    "type": "translation",
+    "question": "What does \"I thought you knew\" really mean?",
+    "options": [
+      "Clarification",
+      "Shifting blame for miscommunication to you",
+      "Surprise",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "\"I thought you knew\" often deflects responsibility onto the other person.",
+    "id": "text-interpretation-46",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What does an overly formal text from a close friend indicate?",
+    "options": [
+      "Professionalism",
+      "Emotional distance or upset",
+      "Autocorrect",
+      "Nothing"
+    ],
+    "correct_index": 1,
+    "explanation": "Unexpected formality from close contacts often signals something is wrong.",
+    "id": "text-interpretation-47",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 12,
+    "type": "translation",
+    "question": "What does \"as I mentioned\" typically convey?",
+    "options": [
+      "A helpful reminder",
+      "Frustration that you forgot or weren't listening",
+      "Excitement",
+      "Clarification"
+    ],
+    "correct_index": 1,
+    "explanation": "\"As I mentioned\" carries an undertone of \"I already said this, pay attention.\"",
+    "id": "text-interpretation-48",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What does a response that's helpful but doesn't ask follow-up questions indicate?",
+    "options": [
+      "Efficiency",
+      "Not interested in continuing the conversation",
+      "They're busy",
+      "Agreement"
+    ],
+    "correct_index": 1,
+    "explanation": "No follow-up questions = no desire to extend the conversation.",
+    "id": "text-interpretation-49",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 13,
+    "type": "translation",
+    "question": "What does \"I'm not going to argue about this\" often mean?",
+    "options": [
+      "Peace-seeking",
+      "I'm right and the discussion is over",
+      "Confusion",
+      "Agreement"
+    ],
+    "correct_index": 1,
+    "explanation": "This phrase often shuts down discussion while implying they're correct.",
+    "id": "text-interpretation-50",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What does a laughing emoji reaction on a serious message indicate?",
+    "options": [
+      "They found it funny",
+      "Dismissiveness or deflection",
+      "Misunderstanding",
+      "Agreement"
+    ],
+    "correct_index": 1,
+    "explanation": "Laugh-reacting to serious content often signals dismissal or discomfort.",
+    "id": "text-interpretation-51",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 13,
+    "type": "translation",
+    "question": "What does \"if you say so\" typically mean?",
+    "options": [
+      "Agreement",
+      "Disagreement masked as compliance",
+      "Confusion",
+      "Trust"
+    ],
+    "correct_index": 1,
+    "explanation": "\"If you say so\" suggests they don't agree but are done arguing.",
+    "id": "text-interpretation-52",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What does \"hope you're well\" in a message usually precede?",
+    "options": [
+      "A catch-up",
+      "A request or ask for something",
+      "Good news",
+      "Casual chat"
+    ],
+    "correct_index": 1,
+    "explanation": "Generic well-wishes often soften the ground for an upcoming request.",
+    "id": "text-interpretation-53",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 14,
+    "type": "translation",
+    "question": "What does \"I hear you\" typically convey?",
+    "options": [
+      "Agreement",
+      "Acknowledgment without agreement",
+      "Confusion",
+      "Excitement"
+    ],
+    "correct_index": 1,
+    "explanation": "\"I hear you\" means \"I understand your point but don't necessarily agree.\"",
+    "id": "text-interpretation-54",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What does screenshotting and sending your own text back to you mean?",
+    "options": [
+      "Memory aid",
+      "They're making a point about something you said",
+      "Technical issue",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "Sending screenshots of your own words often means \"look at what you said.\"",
+    "id": "text-interpretation-55",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 14,
+    "type": "translation",
+    "question": "What does \"I'm sure you're right\" often actually mean?",
+    "options": [
+      "Agreement",
+      "Sarcastic disagreement or surrender to end conflict",
+      "Trust",
+      "Excitement"
+    ],
+    "correct_index": 1,
+    "explanation": "This phrase often signals exhaustion with arguing, not genuine agreement.",
+    "id": "text-interpretation-56",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What does a sudden increase in formality (first names, proper punctuation) signal?",
+    "options": [
+      "Respect",
+      "Cooling of the relationship or upset",
+      "Professionalism",
+      "Nothing"
+    ],
+    "correct_index": 1,
+    "explanation": "Formality creep often indicates emotional distancing or trouble.",
+    "id": "text-interpretation-57",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 15,
+    "type": "translation",
+    "question": "What does \"that's one way to look at it\" typically mean?",
+    "options": [
+      "Agreement",
+      "Polite disagreement",
+      "Confusion",
+      "Curiosity"
+    ],
+    "correct_index": 1,
+    "explanation": "This phrase politely suggests there are better ways to see it.",
+    "id": "text-interpretation-58",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What does responding to a heartfelt message with \"thank you\" only mean?",
+    "options": [
+      "Gratitude",
+      "Not reciprocating the emotional depth",
+      "Confusion",
+      "Overwhelmed"
+    ],
+    "correct_index": 1,
+    "explanation": "A short \"thank you\" to vulnerability often signals discomfort or non-reciprocation.",
+    "id": "text-interpretation-59",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 15,
+    "type": "translation",
+    "question": "What does \"that's on you\" typically convey?",
+    "options": [
+      "Support",
+      "Blame and refusal of responsibility",
+      "Encouragement",
+      "Confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "\"That's on you\" places responsibility squarely on the other person.",
+    "id": "text-interpretation-60",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What does perfect grammar and spelling in an angry text indicate?",
+    "options": [
+      "Education",
+      "Extreme controlled anger - they're being very deliberate",
+      "Autocorrect",
+      "Calmness"
+    ],
+    "correct_index": 1,
+    "explanation": "Taking time for perfect grammar while angry suggests careful, calculated fury.",
+    "id": "text-interpretation-61",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 16,
+    "type": "translation",
+    "question": "What does \"I don't want to make this a bigger deal than it is\" usually mean?",
+    "options": [
+      "Downplaying",
+      "It's already a big deal to them",
+      "Confusion",
+      "Agreement"
+    ],
+    "correct_index": 1,
+    "explanation": "Prefacing with this often means it IS a big deal to them.",
+    "id": "text-interpretation-62",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What does immediately changing the subject after you shared something indicate?",
+    "options": [
+      "Short attention span",
+      "Discomfort with what you shared",
+      "Excitement about new topic",
+      "Nothing"
+    ],
+    "correct_index": 1,
+    "explanation": "Quick topic changes after vulnerable shares often signal discomfort.",
+    "id": "text-interpretation-63",
+    "category": "social",
+    "family_safe": true
+  },
+  {
+    "game_id": "text-interpretation",
+    "difficulty": 16,
+    "type": "translation",
+    "question": "What does \"I never said that\" typically mean in conflict?",
+    "options": [
+      "Clarification",
+      "Gaslighting or reframing the argument",
+      "Confusion",
+      "Truth"
+    ],
+    "correct_index": 1,
+    "explanation": "\"I never said that\" can be genuine or a tactic to reframe the narrative.",
+    "id": "text-interpretation-64",
+    "category": "social",
+    "family_safe": true
+  }
+]

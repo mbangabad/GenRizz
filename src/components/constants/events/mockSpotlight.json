@@ -1,0 +1,18 @@
+[
+  {
+    "id": "spotlight-1",
+    "title": "Family Night",
+    "description": "Blend of Generational + Social cues for a quick duel.",
+    "emoji": "👨‍👩‍👧",
+    "games": ["gen-z-fluency", "boomer-era", "social-iq", "family-bridge"],
+    "active": true
+  },
+  {
+    "id": "spotlight-2",
+    "title": "Comedy Sprint",
+    "description": "Lighthearted humor + vibes for a 2-min run.",
+    "emoji": "😂",
+    "games": ["boomer-humor", "vibe-check"],
+    "active": true
+  }
+]

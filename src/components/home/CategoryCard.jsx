@@ -1,14 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { getGameLevel } from '../constants/games';
 import GameIcon from './GameIcon';
 import { createPageUrl } from '@/utils';
 
 export default function CategoryCard({ category, games, progressMap, onGameClick, index }) {
+  const navigate = useNavigate();
   const gamesPlayed = games.filter(g => progressMap[g.id]?.total_plays > 0).length;
   const avgScore = games.reduce((sum, g) => sum + (progressMap[g.id]?.highest_score || 0), 0) / (gamesPlayed || 1);
+  const goToGame = (gameId) => {
+    const url = createPageUrl('Gameplay') + '?gameId=' + gameId;
+    try {
+      navigate(url);
+    } catch {
+      window.location.href = url; // hard fallback
+    }
+    if (onGameClick) onGameClick(gameId);
+  };
 
   return (
     <motion.div
@@ -16,6 +26,8 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.05 }}
       className="card-3d overflow-hidden"
+      role="region"
+      aria-label={`${category.name} games`}
     >
       {/* Category Header */}
       <div 
@@ -79,47 +91,43 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
           const gameUrl = createPageUrl('Gameplay') + '?gameId=' + game.id;
           
           return (
-            <Link
+            <motion.a
               key={game.id}
-              to={gameUrl}
-              onClick={() => {
-                // Call onGameClick for analytics/tracking if needed
-                if (onGameClick) {
-                  onGameClick(game.id);
-                }
+              href={gameUrl}
+              onClick={(e) => {
+                e.preventDefault();
+                goToGame(game.id);
               }}
-              className="block no-underline"
+              whileHover={{ scale: 1.02, x: 4 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full flex items-center gap-3 p-3 rounded-xl bg-[#F7F4F0] hover:bg-[#F0EDE8] border border-[#E5E0DA] hover:border-[#D4CFC7] transition-all text-left cursor-pointer group no-underline outline-none focus-visible:ring-2 focus-visible:ring-[#58CC02]"
+              aria-label={`Play ${game.title}`}
               style={{ textDecoration: 'none', color: 'inherit' }}
+              role="button"
             >
-              <motion.div
-                whileHover={{ scale: 1.02, x: 4 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full flex items-center gap-3 p-3 rounded-xl bg-[#F7F4F0] hover:bg-[#F0EDE8] border border-[#E5E0DA] hover:border-[#D4CFC7] transition-all text-left cursor-pointer group"
-              >
-                <GameIcon gameId={game.id} size="sm" />
-                
-                <div className="flex-1 min-w-0">
-                  <p className="font-bold text-[#3C3C3C] truncate group-hover:text-[#58CC02] transition-colors">{game.title}</p>
-                  <p className="text-xs text-[#777777] truncate font-semibold">
-                    {hasPlayed 
-                      ? `Lvl ${level.level} · ${progress.highest_score}% best` 
-                      : game.subtitle
-                    }
-                  </p>
+              <GameIcon gameId={game.id} size="sm" />
+              
+              <div className="flex-1 min-w-0">
+                <p className="font-bold text-[#3C3C3C] truncate group-hover:text-[#58CC02] transition-colors">{game.title}</p>
+                <p className="text-xs text-[#777777] truncate font-semibold">
+                  {hasPlayed 
+                    ? `Lvl ${level.level} · ${progress.highest_score}% best` 
+                    : game.subtitle
+                  }
+                </p>
+              </div>
+              
+              {hasPlayed ? (
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">{level.emoji}</span>
+                  <ChevronRight className="w-4 h-4 text-[#AFAFAF] group-hover:text-[#58CC02] transition-colors" />
                 </div>
-                
-                {hasPlayed ? (
-                  <div className="flex items-center gap-2">
-                    <span className="text-lg">{level.emoji}</span>
-                    <ChevronRight className="w-4 h-4 text-[#AFAFAF] group-hover:text-[#58CC02] transition-colors" />
-                  </div>
-                ) : (
-                  <span className="badge-3d badge-green text-xs py-1 px-2">
-                    NEW
-                  </span>
-                )}
-              </motion.div>
-            </Link>
+              ) : (
+                <span className="badge-3d badge-green text-xs py-1 px-2">
+                  NEW
+                </span>
+              )}
+            </motion.a>
           );
         })}
       </div>

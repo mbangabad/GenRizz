@@ -8,6 +8,7 @@ import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 import { GAMES_LIST, GAMES, getGameLevel, GAME_CATEGORIES_META, TRENDING_GAMES } from '@/components/constants/games';
 import { Zap, ChevronRight, Bell, Play, Rocket, TrendingUp, Sparkles, Crown, MapIcon, Settings, HelpCircle } from 'lucide-react';
+import { getFlags } from '@/services/flags';
 
 import CategoryCard from '@/components/home/CategoryCard';
 import GameIcon from '@/components/home/GameIcon';
@@ -19,12 +20,19 @@ import HeartsSystem from '@/components/hearts/HeartsSystem';
 import XPLeagues from '@/components/leagues/XPLeagues';
 import PartyMode from '@/components/multiplayer/PartyMode';
 import WeeklyRecap from '@/components/viral/WeeklyRecap';
+import DailyDropCard from '@/components/home/DailyDropCard';
+import { fetchDailyDropConfig } from '@/services/events';
+import SpotlightCarousel from '@/components/home/SpotlightCarousel';
+import { fetchSpotlightPlaylists } from '@/services/events';
 
 export default function Home() {
   const { t } = useLanguage();
   const [user, setUser] = useState(null);
   const [showPartyMode, setShowPartyMode] = useState(false);
   const [showWeeklyRecap, setShowWeeklyRecap] = useState(false);
+  const [dailyDrop, setDailyDrop] = useState(null);
+  const [spotlight, setSpotlight] = useState([]);
+  const flags = getFlags();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -100,6 +108,15 @@ export default function Home() {
   const dayIndex = Math.floor(Date.now() / 86400000) % GAMES_LIST.length;
   const dailyGame = GAMES_LIST[dayIndex];
 
+  useEffect(() => {
+    if (flags.DAILY_DROP) {
+      fetchDailyDropConfig().then(setDailyDrop).catch(() => {});
+    }
+    if (flags.EVENTS) {
+      fetchSpotlightPlaylists().then(setSpotlight).catch(() => {});
+    }
+  }, [flags.DAILY_DROP]);
+
   const goToGame = (gameId) => {
     navigate(createPageUrl('Gameplay') + '?gameId=' + gameId);
   };
@@ -115,6 +132,14 @@ export default function Home() {
   const dailyGoal = 3;
   const goalProgress = Math.min(gamesPlayedToday / dailyGoal, 1);
   const isGoalComplete = gamesPlayedToday >= dailyGoal;
+
+  // Sort categories to keep consistent order; filter out empty.
+  const orderedCategories = Object.entries(GAME_CATEGORIES_META)
+    .map(([id, meta]) => ({ id, meta, games: gamesByCategory[id] || [] }))
+    .filter(entry => {
+      if (entry.id === 'events' && !flags.EVENTS) return false;
+      return entry.games.length > 0;
+    });
 
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
@@ -366,6 +391,29 @@ export default function Home() {
             <XPLeagues userId={user?.id} />
           </div>
 
+          {/* Daily Drop (flagged) */}
+          {flags.DAILY_DROP && dailyDrop && (
+            <DailyDropCard drop={dailyDrop} />
+          )}
+
+          {/* CTA to Daily Drop */}
+          {flags.DAILY_DROP && dailyDrop && (
+            <motion.button
+              whileHover={{ scale: 1.01 }}
+              whileTap={{ scale: 0.99 }}
+              onClick={() => navigate(createPageUrl('Gameplay') + `?gameId=${dailyDrop.items?.[0]?.game_id || 'gen-z-fluency'}`)}
+              className="card-3d card-3d-blue p-4 flex items-center gap-3"
+            >
+              <div className="w-10 h-10 rounded-xl bg-[#1CB0F6]/20 flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-[#1CB0F6]" />
+              </div>
+              <div className="flex-1 text-left">
+                <p className="text-xs font-bold text-[#1CB0F6] uppercase">Today&apos;s Drop</p>
+                <p className="font-black text-[#3C3C3C] text-sm">Jump into the daily blend</p>
+              </div>
+            </motion.button>
+          )}
+
           {/* Quick Play */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -499,25 +547,27 @@ export default function Home() {
           </div>
         </motion.div>
 
+        {/* Spotlight / Events */}
+        {flags.EVENTS && spotlight && spotlight.length > 0 && (
+          <div className="mb-10">
+            <SpotlightCarousel events={spotlight} />
+          </div>
+        )}
+
         {/* Category Cards Grid */}
         <div className="mb-8">
           <h2 className="text-2xl font-black text-[#3C3C3C] mb-6">{t('common.all_categories')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-            {Object.entries(GAME_CATEGORIES_META).map(([id, category], index) => {
-              const games = gamesByCategory[id] || [];
-              if (games.length === 0) return null;
-              
-              return (
-                <CategoryCard
-                  key={id}
-                  category={category}
-                  games={games}
-                  progressMap={progressMap}
-                  onGameClick={goToGame}
-                  index={index}
-                />
-              );
-            })}
+            {orderedCategories.map(({ id, meta, games }, index) => (
+              <CategoryCard
+                key={id}
+                category={meta}
+                games={games}
+                progressMap={progressMap}
+                onGameClick={goToGame}
+                index={index}
+              />
+            ))}
           </div>
         </div>
       </main>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { auth } from '@/api/auth';
 import { UserProgress, UserStreak, Question, Score, ConnectionPuzzle, SquadMember, Squad } from '@/api/entities';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { GAMES, getTier, getGameLevel, getXpProgress, calculateXpEarned } from '@/components/constants/games';
 import { getQuestionsForGame } from '@/components/constants/questions';
@@ -28,9 +28,13 @@ import BeatMeLink from '@/components/share/BeatMeLink';
 import AIRoast from '@/components/viral/AIRoast';
 import RematchButton from '@/components/results/RematchButton';
 import FriendBeatNotification from '@/components/notifications/FriendBeatNotification';
+import RematchLinkBar from '@/components/share/RematchLinkBar';
+import { buildRematchLink, createRematchChallenge, parseRematchParams, recordRematchResult } from '@/services/rematch';
 import ConnectionBoard from '@/components/game/mechanics/ConnectionBoard';
 import TimelineDraggable from '@/components/game/mechanics/TimelineDraggable';
 import VibeCheckSwipe from '@/components/game/mechanics/VibeCheckSwipe';
+import { GAME_MODES as CORE_GAME_MODES, getRenderer, renderByMode } from '@/game-core';
+import { isFlagEnabled, getFlags } from '@/services/flags';
 import ErrorBoundary from '@/components/ui/ErrorBoundary';
 import Celebration from '@/components/ui/Celebration';
 import CompletionAnimation from '@/components/ui/CompletionAnimation';
@@ -39,7 +43,7 @@ import { hapticSuccess, hapticError, hapticStreak, hapticLevelUp } from '@/utils
 const GAME_MODES = {
   STANDARD: { questions: 10, label: 'Standard', icon: '📝', time: null },
   QUICK: { questions: 5, label: 'Quick', icon: '⚡', time: 60 },
-  BLITZ: { questions: 10, label: 'Blitz', icon: '🔥', time: 90 },
+  BLITZ: { questions: 10, label: 'Blitz', icon: '🔥', time: 90, flag: 'BLITZ' },
 };
 
 function ProgressBar3D({ current, total }) {
@@ -55,25 +59,31 @@ function ProgressBar3D({ current, total }) {
 }
 
 function ModeSelector({ selectedMode, onSelectMode }) {
+  const flags = getFlags();
   return (
     <div className="grid grid-cols-3 gap-3">
-      {Object.entries(GAME_MODES).map(([key, mode]) => (
-        <button
-          key={key}
-          onClick={() => onSelectMode(key)}
-          className={`p-4 rounded-xl text-center transition-all border ${
-            selectedMode === key 
-              ? 'bg-slate-900 text-white border-slate-900 shadow-lg' 
-              : 'bg-white text-slate-900 border-slate-200 hover:border-slate-300'
-          }`}
-        >
-          <span className="text-2xl">{mode.icon}</span>
-          <p className="font-bold text-sm mt-2">{mode.label}</p>
-          <p className={`text-xs font-medium mt-1 ${selectedMode === key ? 'text-slate-300' : 'text-slate-500'}`}>
-            {mode.questions}Q {mode.time ? `· ${mode.time}s` : ''}
-          </p>
-        </button>
-      ))}
+      {Object.entries(GAME_MODES)
+        .filter(([key, mode]) => {
+          if (mode.flag && !flags[mode.flag]) return false;
+          return true;
+        })
+        .map(([key, mode]) => (
+          <button
+            key={key}
+            onClick={() => onSelectMode(key)}
+            className={`p-4 rounded-xl text-center transition-all border ${
+              selectedMode === key 
+                ? 'bg-slate-900 text-white border-slate-900 shadow-lg' 
+                : 'bg-white text-slate-900 border-slate-200 hover:border-slate-300'
+            }`}
+          >
+            <span className="text-2xl">{mode.icon}</span>
+            <p className="font-bold text-sm mt-2">{mode.label}</p>
+            <p className={`text-xs font-medium mt-1 ${selectedMode === key ? 'text-slate-300' : 'text-slate-500'}`}>
+              {mode.questions}Q {mode.time ? `· ${mode.time}s` : ''}
+            </p>
+          </button>
+        ))}
     </div>
   );
 }
@@ -282,21 +292,28 @@ function ResultsCard3D({
   gameId, 
   score, 
   totalQuestions, 
+  effectiveQuestions = null,
   userLevel, 
   previousBest, 
   onPlayAgain, 
   user, 
   maxStreak,
   streak,
-  challengeData = null 
+  challengeData = null,
+  rematchEnabled = false,
+  onRematch,
+  finalPercentage = null,
+  endReason = 'complete',
 }) {
   const [showConfetti, setShowConfetti] = React.useState(false);
   const game = GAMES[gameId];
-  const percentage = Math.round((score / totalQuestions) * 100);
+  const denominator = Math.max(effectiveQuestions || totalQuestions, 1);
+  const percentage = finalPercentage !== null ? finalPercentage : Math.round((score / denominator) * 100);
   const tier = getTier(gameId, percentage);
   const xpEarned = calculateXpEarned(percentage, userLevel.level) + (maxStreak * 2);
   const isNewBest = !previousBest || percentage > previousBest;
   const percentile = Math.min(95, Math.max(5, percentage + Math.floor(Math.random() * 10)));
+  const endNote = endReason === 'timer' ? '⏱️ Time\'s up — score based on answered questions.' : null;
 
   // Trigger confetti and celebration sound on good scores
   React.useEffect(() => {
@@ -309,7 +326,7 @@ function ResultsCard3D({
   // HIGH PRIORITY FIX: Use environment variable for share URL
   const appBaseUrl = import.meta.env.VITE_APP_URL || window.location.origin;
   // Generate share text
-  const shareText = `${game?.icon || '🎮'} GenRizz: ${game?.title}\n\n${tier.emoji} ${tier.name}\n${percentage}% · ${score}/${totalQuestions}\n${streak > 0 ? `🔥 ${streak} day streak\n` : ''}\nCan you beat me?`;
+  const shareText = `${game?.icon || '🎮'} GenRizz: ${game?.title}\n\n${tier.emoji} ${tier.name}\n${percentage}% · ${score}/${denominator}\n${streak > 0 ? `🔥 ${streak} day streak\n` : ''}\nCan you beat me?`;
   const shareUrl = `${appBaseUrl}/#/Challenge?game=${gameId}&score=${percentage}`;
 
   return (
@@ -325,6 +342,11 @@ function ResultsCard3D({
           🏆
         </div>
       </div>
+      {endNote && (
+        <div className="badge-3d badge-xp w-full justify-center text-sm">
+          {endNote}
+        </div>
+      )}
 
       <ShareableResultCard 
         gameId={gameId}
@@ -380,14 +402,24 @@ function ResultsCard3D({
 
       <div className="space-y-3">
         {/* Rematch Button (if came from challenge) */}
-        {challengeData && (
+        {challengeData && rematchEnabled && (
           <RematchButton
             challengerId={challengeData.challengerId}
             challengerName={challengeData.challengerName}
             challengerScore={challengeData.challengerScore}
             gameId={gameId}
-            onRematch={onPlayAgain}
+            onRematch={onRematch || onPlayAgain}
           />
+        )}
+        {rematchEnabled && !challengeData && onRematch && (
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={onRematch}
+            className="btn-3d btn-3d-blue w-full py-3"
+          >
+            Send a rematch link
+          </motion.button>
         )}
 
         <motion.button
@@ -418,7 +450,12 @@ function ResultsCard3D({
         score={score}
         percentage={percentage}
         userName={user?.full_name}
+        challengerId={user?.id}
       />
+
+      {rematchEnabled && (
+        <RematchLinkBar gameId={gameId} score={percentage} user={user} />
+      )}
 
       {/* Floating Share Prompt */}
       <ShareComparePrompt
@@ -443,6 +480,12 @@ export default function Gameplay() {
   const [maxStreak, setMaxStreak] = useState(0);
   const [gameMode, setGameMode] = useState('STANDARD');
   const [blitzTimeLeft, setBlitzTimeLeft] = useState(0);
+  const [answeredCount, setAnsweredCount] = useState(0);
+  const [hasEnded, setHasEnded] = useState(false);
+  const [isTimeUp, setIsTimeUp] = useState(false);
+  const [endReason, setEndReason] = useState('complete');
+  const [finalPercentage, setFinalPercentage] = useState(null);
+  const [finalQuestionCount, setFinalQuestionCount] = useState(null);
   
   // Power-ups state
   const [powerUps, setPowerUps] = useState({ fifty: 3, time: 2, hint: 2, skip: 2 });
@@ -463,25 +506,23 @@ export default function Gameplay() {
   const [celebrationType, setCelebrationType] = useState('correct');
   const [showXP, setShowXP] = useState(false);
   const [xpEarned, setXpEarned] = useState(0);
+  const navigate = useNavigate();
   
   const queryClient = useQueryClient();
+  const flags = getFlags();
+  const swipeEnabled = Boolean(flags.SWIPE);
+  const rematchEnabled = Boolean(flags.REMATCH);
+  const blitzEnabled = Boolean(flags.BLITZ);
+  const enabledModes = Object.entries(flags)
+    .filter(([key, val]) => Boolean(val) && ['BLITZ', 'REMATCH', 'SWIPE'].includes(key))
+    .map(([key]) => key);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get('gameId');
     setGameId(id);
-    
-    // Check for challenge params
-    const challengerId = urlParams.get('challengerId');
-    const challengerName = urlParams.get('challengerName');
-    const challengerScore = urlParams.get('challengerScore');
-    if (challengerId && challengerScore) {
-      setChallengeData({
-        challengerId,
-        challengerName: challengerName || 'Friend',
-        challengerScore: parseInt(challengerScore, 10),
-      });
-    }
+    const parsed = parseRematchParams();
+    if (parsed) setChallengeData(parsed);
   }, []);
 
   useEffect(() => {
@@ -489,29 +530,26 @@ export default function Gameplay() {
   }, []);
 
   const game = gameId ? GAMES[gameId] : null;
+  const registryRenderer = game?.gameMode ? getRenderer(game.gameMode) : null;
 
   useEffect(() => {
     // CRITICAL FIX: Only start timer when game is playing, in BLITZ/QUICK mode, and questions are loaded
     if (gameState !== 'playing' || (gameMode !== 'BLITZ' && gameMode !== 'QUICK') || questions.length === 0) return;
+    if (hasEnded) return;
     
     const timer = setInterval(() => {
       setBlitzTimeLeft(prev => {
-        // CRITICAL FIX: Ensure current answer is processed before ending game
+        if (hasEnded) return prev;
         if (prev <= 1) { 
-          // Small delay to allow any pending answer processing
-          setTimeout(() => {
-            // Only end game if we have questions (prevent ending before game starts)
-            if (questions.length > 0) {
-              endGame();
-            }
-          }, 100);
+          setIsTimeUp(true);
+          endGame({ reason: 'timer' });
           return 0; 
         }
         return prev - 1;
       });
     }, 1000);
     return () => clearInterval(timer);
-  }, [gameState, gameMode, questions.length]);
+  }, [gameState, gameMode, questions.length, hasEnded]);
 
   const { data: userProgress } = useQuery({
     queryKey: ['userProgress', user?.id, gameId],
@@ -532,6 +570,15 @@ export default function Gameplay() {
   });
 
   const currentLevel = getGameLevel(userProgress?.total_xp || 0);
+
+  const handleRematch = () => {
+    if (!rematchEnabled || !user) return;
+    const answered = finalQuestionCount || questions.length || mode.questions || 10;
+    const percentage = finalPercentage ?? Math.round((score / Math.max(answered, 1)) * 100);
+    const challenge = createRematchChallenge({ gameId, percentage, user });
+    const url = challenge?.link || buildRematchLink({ gameId, percentage, user });
+    if (url) navigate(url);
+  };
 
   const { data: allQuestions = [], isLoading: questionsLoading } = useQuery({
     queryKey: ['questions', gameId],
@@ -644,6 +691,12 @@ export default function Gameplay() {
     setHiddenOptions([]);
     setShowHint(false);
     setBonusTime(0);
+    setAnsweredCount(0);
+    setHasEnded(false);
+    setIsTimeUp(false);
+    setEndReason('complete');
+    setFinalPercentage(null);
+    setFinalQuestionCount(null);
     // HIGH PRIORITY FIX: Reset power-ups between games
     setPowerUps({ fifty: 3, time: 2, hint: 2, skip: 2 });
     if (mode.time) setBlitzTimeLeft(mode.time);
@@ -680,22 +733,21 @@ export default function Gameplay() {
     }
   };
 
-  const endGame = () => {
+  const endGame = ({ reason = 'complete', answeredOverride } = {}) => {
+    if (hasEnded) return;
+    setHasEnded(true);
+    setEndReason(reason);
+    if (reason === 'timer') setIsTimeUp(true);
+
     // CRITICAL FIX: Prevent division by zero and ensure score is calculated correctly
     const totalQuestions = questions.length;
-    // Questions answered = current index + 1 (since we're 0-indexed and have seen this many)
-    const answeredQuestions = Math.min(currentQuestionIndex + 1, totalQuestions);
-    
-    // CRITICAL FIX: For BLITZ/QUICK modes, calculate percentage based on questions answered
-    // For STANDARD mode, use total questions
-    // This prevents 0% when timer expires but user answered some questions
-    const percentage = gameMode === 'BLITZ' || gameMode === 'QUICK'
-      ? (answeredQuestions > 0 
-          ? Math.round((score / answeredQuestions) * 100) 
-          : 0)
-      : (totalQuestions > 0 
-          ? Math.round((score / totalQuestions) * 100) 
-          : 0);
+    const answeredForScore = (gameMode === 'BLITZ' || gameMode === 'QUICK')
+      ? (answeredOverride ?? answeredCount)
+      : totalQuestions;
+    const denominator = answeredForScore > 0 ? answeredForScore : (totalQuestions || 1);
+    const percentage = Math.round((score / Math.max(denominator, 1)) * 100);
+    setFinalPercentage(percentage);
+    setFinalQuestionCount(denominator);
     
     const tier = getTier(gameId, percentage);
     let xpEarned = calculateXpEarned(percentage, currentLevel.level) + maxStreak * 2 + timeBonus + streakBonus;
@@ -715,9 +767,7 @@ export default function Gameplay() {
 
     if (user?.id) {
       // CRITICAL FIX: Use answered questions count for max_score in BLITZ/QUICK modes
-      const maxScore = (gameMode === 'BLITZ' || gameMode === 'QUICK') 
-        ? Math.max(answeredQuestions, totalQuestions) 
-        : totalQuestions;
+      const maxScore = denominator;
       
       saveScoreMutation.mutate({
         user_id: user.id, game_id: gameId, score, max_score: maxScore,
@@ -768,16 +818,29 @@ export default function Gameplay() {
         userScore: percentage,
         didBeat,
       });
+
+      if (challengeData.challengeId) {
+        recordRematchResult({
+          challengeId: challengeData.challengeId,
+          responderId: user?.id,
+          responderName: user?.full_name,
+          responderScore: percentage,
+          gameId,
+        });
+      }
     }
     
     setGameState('results');
   };
 
   const handleAnswer = (isCorrect, timeRemaining = 0) => {
+    if (hasEnded || isTimeUp) return;
     // Reset power-up effects for next question
     setHiddenOptions([]);
     setShowHint(false);
     setBonusTime(0);
+    const nextAnswered = answeredCount + 1;
+    setAnsweredCount(nextAnswered);
     
     // HIGH PRIORITY FIX: Fix streak calculation race condition
     if (isCorrect) {
@@ -799,8 +862,9 @@ export default function Gameplay() {
       
       // Calculate XP for this answer
       const baseXP = 10;
-      const timeBonusXP = timeRemaining >= 12 ? 5 : 0;
-      const streakMultiplier = newStreakValue >= 5 ? 3 : newStreakValue >= 3 ? 2 : 1;
+      const blitzBonus = blitzActive ? 1.2 : 1;
+      const timeBonusXP = timeRemaining >= 12 ? (blitzActive ? 7 : 5) : 0;
+      const streakMultiplier = newStreakValue >= 5 ? (blitzActive ? 3.5 : 3) : newStreakValue >= 3 ? (blitzActive ? 2.2 : 2) : 1;
       const answerXP = Math.round((baseXP + timeBonusXP) * streakMultiplier);
       
       // Celebration with XP display
@@ -811,14 +875,14 @@ export default function Gameplay() {
       
       // Time bonus: +5 XP for answers under 3 seconds (timeRemaining > 12 if 15s timer)
       if (timeRemaining >= 12) {
-        setTimeBonus(prev => prev + 5);
+        setTimeBonus(prev => prev + (blitzActive ? 7 : 5));
       }
       
       // Streak bonus: multiplier for consecutive correct
       if (newStreakValue >= 5) {
-        setStreakBonus(prev => prev + 10); // 3x at 5+
+        setStreakBonus(prev => prev + (blitzActive ? 15 : 10)); // boosted in Blitz
       } else if (newStreakValue >= 3) {
-        setStreakBonus(prev => prev + 5); // 2x at 3+
+        setStreakBonus(prev => prev + (blitzActive ? 8 : 5)); // boosted in Blitz
       }
     } else {
       setStreak(0);
@@ -831,7 +895,9 @@ export default function Gameplay() {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(prev => prev + 1);
     } else {
-      endGame();
+      // Auto-complete in Blitz after last question or when timer runs out
+      const reason = blitzActive && blitzTimeLeft <= 0 ? 'timer' : 'complete';
+      endGame({ reason, answeredOverride: nextAnswered });
     }
   };
 
@@ -842,6 +908,11 @@ export default function Gameplay() {
         <Loader2 className="w-10 h-10 animate-spin text-[#58CC02]" />
       </div>
     );
+  }
+
+  // If a renderer is registered for this gameMode, delegate to it (experimental/flagged).
+  if (registryRenderer) {
+    return renderByMode(game.gameMode, { gameId, user, game, initialState: { gameState, gameMode } });
   }
 
   // HIGH PRIORITY FIX: Preserve gameId in redirects
@@ -876,11 +947,19 @@ export default function Gameplay() {
   }
 
   const xpProgress = getXpProgress(userProgress?.total_xp || 0);
-  const mode = GAME_MODES[gameMode];
+  const mode = GAME_MODES[gameMode] || GAME_MODES.STANDARD;
   const isQuickMode = gameMode === 'QUICK' || gameMode === 'BLITZ';
+  const blitzActive = gameMode === 'BLITZ' && blitzEnabled;
+  const totalQuestionsDisplay = finalQuestionCount || questions.length || mode.questions;
+  const blitzBar = blitzActive && gameState === 'playing' ? Math.max(blitzTimeLeft, 0) : null;
 
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
+      {enabledModes.length > 0 && (
+        <div className="sticky top-0 z-40 px-4 py-2 bg-yellow-50 text-xs font-bold text-yellow-700 flex items-center gap-2">
+          Experimental modes active: {enabledModes.join(', ')}
+        </div>
+      )}
       {/* Celebration overlay */}
       <Celebration
         trigger={celebrationTrigger}
@@ -889,6 +968,17 @@ export default function Gameplay() {
         showXP={showXP}
         xpEarned={xpEarned}
       />
+      {blitzBar !== null && (
+        <div className="max-w-lg mx-auto px-4 pt-2">
+          <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-red-500 to-orange-400"
+              style={{ width: `${Math.max((blitzBar / (mode.time || 1)) * 100, 0)}%`, transition: 'width 0.2s linear' }}
+            />
+          </div>
+          <p className="text-[11px] text-[#AFAFAF] font-bold mt-1">Blitz ends in {blitzBar}s</p>
+        </div>
+      )}
       
       <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
         <div className="max-w-lg mx-auto px-4 py-3 flex items-center gap-3">
@@ -997,14 +1087,14 @@ export default function Gameplay() {
                 try {
                   if (q.type === 'image' || q.type === 'image_options' || q.type === 'video-ref') return <ImageQuestion {...props} />;
                   if (q.type === 'audio') return <AudioQuestion {...props} />;
-                  if (q.type === 'swipe') return <SwipeQuestion {...props} />;
+                  if (q.type === 'swipe') return swipeEnabled ? <SwipeQuestion {...props} /> : <QuestionCard3D {...props} gameColor={game.color} streak={streak} quickMode={isQuickMode} />;
                   if (q.type === 'matching') return <MatchingQuestion {...props} />;
                   if (q.type === 'ranking') return <RankingQuestion {...props} />;
                   if (q.type === 'scenario') return <ScenarioSwipe {...props} />;
                   if (q.type === 'would-you-rather') return <WouldYouRather {...props} />;
                   if (q.type === 'connection') return <ConnectionBoard puzzle={q.puzzleData} onComplete={(res) => handleAnswer(res.success, 0, 100)} />;
                   if (q.type === 'ordering') return <TimelineDraggable question={q} onAnswer={(success) => handleAnswer(success, 0)} />;
-                  if (q.type === 'poll') return <VibeCheckSwipe question={q} onAnswer={() => handleAnswer(true, 0)} />;
+                  if (q.type === 'poll') return swipeEnabled ? <VibeCheckSwipe question={q} onAnswer={() => handleAnswer(true, 0)} /> : <QuestionCard3D {...props} gameColor={game.color} streak={streak} quickMode={isQuickMode} />;
 
                   // Default fallback for unrecognized types
                   return <QuestionCard3D {...props} gameColor={game.color} streak={streak} quickMode={isQuickMode} />;
@@ -1030,9 +1120,10 @@ export default function Gameplay() {
           <>
             {/* Completion Animation */}
             {(() => {
-              const percentage = questions.length > 0 
-                ? Math.round((score / questions.length) * 100) 
-                : 0;
+              const effectiveTotal = finalQuestionCount || questions.length || 1;
+              const percentage = finalPercentage !== null
+                ? finalPercentage
+                : Math.round((score / effectiveTotal) * 100);
               const tier = getTier(gameId, percentage);
               const xpEarned = calculateXpEarned(percentage, currentLevel.level) + maxStreak * 2 + timeBonus + streakBonus;
               const isNewBest = userProgress && percentage > (userProgress.highest_score || 0);
@@ -1049,10 +1140,15 @@ export default function Gameplay() {
             })()}
             
             <ResultsCard3D
-              gameId={gameId} score={score} totalQuestions={questions.length}
+              gameId={gameId} score={score} totalQuestions={totalQuestionsDisplay}
+              effectiveQuestions={finalQuestionCount}
               userLevel={currentLevel} previousBest={userProgress?.highest_score}
               onPlayAgain={startGame} user={user} maxStreak={maxStreak} streak={userStreak || 0}
               challengeData={challengeData}
+              rematchEnabled={rematchEnabled}
+              onRematch={handleRematch}
+              finalPercentage={finalPercentage}
+              endReason={endReason}
             />
             
             {/* Friend Beat Notification */}

@@ -1,8 +1,11 @@
 {
-  "name": "base44-app",
+  "name": "genrizz",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "vite --port 5174",
     "build": "vite build",
@@ -23,7 +26,15 @@
     "qa:full": "npm run test && npm run test:e2e && npm run lighthouse",
     "qa:phase1": "npm run test:e2e tests/e2e/atomic-interactions.spec.ts",
     "qa:phase2": "npm run test:e2e tests/e2e/login.spec.ts",
-    "qa:phase7": "npm run lighthouse"
+    "qa:phase7": "npm run lighthouse",
+    "postinstall": "if [ \"$VERCEL\" != \"1\" ]; then npx playwright install; fi",
+    "content:export": "node scripts/export-questions-json.js",
+    "content:normalize": "node scripts/normalize-questions-json.js",
+    "content:validate": "node scripts/validate-questions.js",
+    "content:refresh": "npm run content:export && npm run content:normalize && npm run content:validate",
+    "content:check": "npm run content:refresh",
+    "test:flags": "vitest tests/flags.test.js",
+    "test:daily-drop": "vitest tests/DailyDropCard.test.jsx"
   },
   "dependencies": {
     "@base44/sdk": "^0.1.2",

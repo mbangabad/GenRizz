@@ -30,6 +30,8 @@ export default function Layout({ children, currentPageName }) {
   const [loading, setLoading] = useState(true);
   const [authorized, setAuthorized] = useState(false);
   const location = useLocation();
+  const devAdminBypass = String(import.meta.env.VITE_DEV_ADMIN_BYPASS || '').toLowerCase() === 'true';
+  const devAdminEmail = import.meta.env.VITE_DEV_ADMIN_EMAIL || 'dev@genrizz.local';
   
   // Don't check auth for login page
   if (location.pathname === '/login' || location.pathname.startsWith('/login')) {
@@ -39,6 +41,14 @@ export default function Layout({ children, currentPageName }) {
   useEffect(() => {
     const checkAuth = async () => {
       try {
+        // Local dev/admin bypass
+        if (devAdminBypass) {
+          setUser({ id: 'dev-admin', email: devAdminEmail, role: 'admin' });
+          setAuthorized(true);
+          setLoading(false);
+          return;
+        }
+
         // Development bypass: If Supabase is not configured, allow access for testing
         const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
         const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;

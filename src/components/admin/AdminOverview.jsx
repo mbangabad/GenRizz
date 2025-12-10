@@ -2,12 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   Users, Activity, DollarSign, TrendingUp, 
-  Clock, Globe, Smartphone, AlertCircle, CheckCircle 
+  Clock, Globe, Smartphone, AlertCircle, CheckCircle, Shield 
 } from 'lucide-react';
+import ValidatorSummary from './ValidatorSummary';
 import { 
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
   BarChart, Bar, PieChart, Pie, Cell, LineChart, Line
 } from 'recharts';
+import { getRecoveryAdStatus } from '@/services/ads';
 
 const data = [
   { name: 'Mon', users: 4000, plays: 2400, rev: 2400 },
@@ -29,6 +31,12 @@ const demographics = [
 const COLORS = ['#58CC02', '#1CB0F6', '#FFC800', '#FF4B4B'];
 
 export default function AdminOverview({ stats }) {
+  const adsStatus = getRecoveryAdStatus();
+  const adsEnabled = adsStatus.enabled;
+  const adsCaption = adsEnabled
+    ? `Recovery-only · ${adsStatus.dailyRemaining}/${adsStatus.limit} remaining · ${adsStatus.cooldownMinutesRemaining}m cooldown`
+    : 'Ads disabled (FLAG_ADS_RECOVERY_ONLY off)';
+
   return (
     <div className="space-y-6">
       {/* Top Stats Row */}
@@ -84,6 +92,23 @@ export default function AdminOverview({ stats }) {
             <DollarSign className="w-6 h-6" />
           </div>
         </div>
+      </div>
+
+      {/* Ads Guardrail Status */}
+      <div className="card-3d p-4 bg-white border border-[#E5E0DA] flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${adsEnabled ? 'bg-[#58CC02]/10 text-[#58CC02]' : 'bg-[#FF4B4B]/10 text-[#FF4B4B]'}`}>
+            <Shield className="w-6 h-6" />
+          </div>
+          <div>
+            <p className="text-xs font-bold text-[#AFAFAF] uppercase">Ads Guard</p>
+            <h4 className="font-black text-[#3C3C3C]">{adsEnabled ? 'Recovery-only enabled' : 'Ads disabled'}</h4>
+            <p className="text-xs text-[#777777] font-semibold">{adsCaption}</p>
+          </div>
+        </div>
+        {!adsEnabled && (
+          <span className="badge-3d badge-xp text-xs">Flip FLAG_ADS_RECOVERY_ONLY to test placements</span>
+        )}
       </div>
 
       {/* Benchmark Row */}
@@ -191,6 +216,9 @@ export default function AdminOverview({ stats }) {
             ))}
           </div>
         </div>
+      </div>
+      <div className="col-span-1 lg:col-span-2">
+        <ValidatorSummary />
       </div>
     </div>
   );

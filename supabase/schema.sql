@@ -201,6 +201,56 @@ CREATE TABLE IF NOT EXISTS daily_rewards (
   UNIQUE(user_id, date)
 );
 
+-- Content Safety Whitelist (admin-managed)
+CREATE TABLE IF NOT EXISTS content_safety_whitelist (
+  term TEXT PRIMARY KEY,
+  active BOOLEAN DEFAULT TRUE,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Spotlight / Events playlists (server-configured)
+CREATE TABLE IF NOT EXISTS events_playlist (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  title TEXT NOT NULL,
+  description TEXT,
+  emoji TEXT,
+  start_date DATE,
+  end_date DATE,
+  active BOOLEAN DEFAULT TRUE,
+  games JSONB, -- array of game_ids or playlist items
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Daily Drop configuration
+CREATE TABLE IF NOT EXISTS daily_drop (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  title TEXT DEFAULT 'Daily Drop',
+  description TEXT,
+  active BOOLEAN DEFAULT TRUE,
+  weight_generational INTEGER DEFAULT 1,
+  weight_social INTEGER DEFAULT 1,
+  weight_personality INTEGER DEFAULT 1,
+  weight_humor INTEGER DEFAULT 1,
+  last_rotation TIMESTAMPTZ,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Rematch challenges (share/rematch links)
+CREATE TABLE IF NOT EXISTS rematch_challenges (
+  id TEXT PRIMARY KEY,
+  game_id TEXT,
+  challenger_id TEXT,
+  challenger_name TEXT,
+  challenger_score INTEGER,
+  responder_id TEXT,
+  responder_name TEXT,
+  responder_score INTEGER,
+  status TEXT DEFAULT 'pending',
+  responses JSONB DEFAULT '[]',
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Subscriptions
 CREATE TABLE IF NOT EXISTS subscriptions (
   id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -407,6 +457,7 @@ ALTER TABLE platform_stats ENABLE ROW LEVEL SECURITY;
 ALTER TABLE allowed_users ENABLE ROW LEVEL SECURITY;
 ALTER TABLE invite_codes ENABLE ROW LEVEL SECURITY;
 ALTER TABLE beta_access ENABLE ROW LEVEL SECURITY;
+ALTER TABLE rematch_challenges ENABLE ROW LEVEL SECURITY;
 
 -- User profiles: Users can read/update their own profile
 DROP POLICY IF EXISTS "Users can view own profile" ON user_profiles;
@@ -459,6 +510,17 @@ DROP POLICY IF EXISTS "Users can update own challenges" ON challenges;
 CREATE POLICY "Users can update own challenges" ON challenges
   FOR UPDATE USING (auth.uid() = challenger_id OR auth.uid() = challenged_id);
 
+-- Rematch challenges: readable by all, insert/update by challenger or responder
+DROP POLICY IF EXISTS "Rematches are publicly readable" ON rematch_challenges;
+CREATE POLICY "Rematches are publicly readable" ON rematch_challenges
+  FOR SELECT USING (true);
+DROP POLICY IF EXISTS "Users can create rematch challenge" ON rematch_challenges;
+CREATE POLICY "Users can create rematch challenge" ON rematch_challenges
+  FOR INSERT WITH CHECK (auth.uid() = challenger_id OR challenger_id IS NULL);
+DROP POLICY IF EXISTS "Users can update rematch challenge" ON rematch_challenges;
+CREATE POLICY "Users can update rematch challenge" ON rematch_challenges
+  FOR UPDATE USING (auth.uid() = challenger_id OR auth.uid() = responder_id OR auth.uid() IS NULL);
+
 -- Add more policies as needed for other tables...
 -- (This is a simplified version - you may want more granular policies)
 
@@ -494,3 +556,8 @@ CREATE TRIGGER update_power_ups_updated_at
   FOR EACH ROW
   EXECUTE FUNCTION update_updated_at_column();
 
+DROP TRIGGER IF EXISTS update_rematch_challenges_updated_at ON rematch_challenges;
+CREATE TRIGGER update_rematch_challenges_updated_at
+  BEFORE UPDATE ON rematch_challenges
+  FOR EACH ROW
+  EXECUTE FUNCTION update_updated_at_column();

@@ -12,7 +12,9 @@ import ReferralCard from '@/components/social/ReferralCard';
 import FriendLeaderboard from '@/components/social/FriendLeaderboard';
 import DailyRewardCalendar from '@/components/rewards/DailyRewardCalendar';
 import SeasonalBanner from '@/components/events/SeasonalBanner';
+import { isFlagEnabled } from '@/services/flags';
 import SubmitQuestion from '@/components/ugc/SubmitQuestion';
+import { listRematchChallenges } from '@/services/rematch';
 
 export default function Social() {
   const [user, setUser] = useState(null);
@@ -41,6 +43,13 @@ export default function Social() {
       n.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)).slice(0, 10)
     ),
     enabled: !!user?.id,
+  });
+
+  const { data: rematches = [] } = useQuery({
+    queryKey: ['rematches', user?.id],
+    queryFn: () => listRematchChallenges(user?.id),
+    enabled: !!user?.id,
+    staleTime: 30_000,
   });
 
   const handleAddFriend = async () => {
@@ -82,10 +91,12 @@ export default function Social() {
 
   const acceptedFriends = friendships.filter(f => f.status === 'accepted');
 
+  const showEvents = isFlagEnabled('EVENTS');
+
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-32">
       {/* Seasonal Event Banner */}
-      <SeasonalBanner />
+      {showEvents && <SeasonalBanner />}
 
       <div className="max-w-2xl mx-auto px-4 py-6 space-y-6">
         {/* Header */}
@@ -183,6 +194,32 @@ export default function Social() {
 
             {/* Activity Feed */}
             <ActivityFeed userId={user.id} />
+
+            {/* Rematch History */}
+            <div className="card-3d p-4">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="font-bold text-[#3C3C3C]">Rematches</h3>
+                <span className="text-[11px] font-bold text-[#AFAFAF] uppercase">Last 20</span>
+              </div>
+              <div className="space-y-2">
+                {rematches && rematches.length > 0 ? rematches.map((r) => (
+                  <div key={r.id} className="flex items-center justify-between bg-white border border-[#E5E0DA] rounded-xl px-3 py-2">
+                    <div className="flex flex-col">
+                      <span className="text-xs font-bold text-[#AFAFAF] uppercase">{r.gameId || 'game'}</span>
+                      <span className="text-sm font-semibold text-[#3C3C3C]">
+                        {r.challengerName || 'You'} → {r.responderName || 'Friend'}
+                      </span>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-xs font-bold text-[#58CC02]">{r.challengerScore ?? '—'}%</p>
+                      <p className="text-xs font-bold text-[#FF4B4B]">{r.responderScore ?? '—'}%</p>
+                    </div>
+                  </div>
+                )) : (
+                  <p className="text-sm text-[#777777] font-semibold">No rematches yet — send a link from results to challenge friends.</p>
+                )}
+              </div>
+            </div>
 
             {/* Friend Leaderboard */}
             <FriendLeaderboard userId={user.id} />

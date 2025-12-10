@@ -1,0 +1,10 @@
+{
+  "title": "Daily Drop",
+  "description": "90-second blended pack: 1 Gen Z, 1 Boomer, 1 Social, 1 Comedy.",
+  "items": [
+    { "game_id": "gen-z-fluency", "count": 1 },
+    { "game_id": "boomer-era", "count": 1 },
+    { "game_id": "social-iq", "count": 1 },
+    { "game_id": "boomer-humor", "count": 1 }
+  ]
+}

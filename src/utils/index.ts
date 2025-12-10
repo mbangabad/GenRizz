@@ -2,5 +2,6 @@
 
 
 export function createPageUrl(pageName: string) {
-    return '/' + pageName.toLowerCase().replace(/ /g, '-');
+    // Keep route casing aligned to the defined routes (e.g., /Gameplay, /Home)
+    return '/' + pageName.replace(/ /g, '');
 }

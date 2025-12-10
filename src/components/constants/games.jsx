@@ -6,6 +6,8 @@ export const GAME_CATEGORIES_META = {
   'personality': { id: 'personality', name: 'Personality Tests', emoji: '🧠', color: '#CE82FF', description: 'Discover your true self' },
   'social': { id: 'social', name: 'Social Skills', emoji: '💬', color: '#FF86D0', description: 'Master social intelligence' },
   'humor': { id: 'humor', name: 'Comedy Zone', emoji: '😂', color: '#FFC800', description: 'Test your funny bone' },
+  'daily': { id: 'daily', name: 'Daily', emoji: '📅', color: '#1CB0F6', description: 'Daily puzzles and challenges' },
+  'events': { id: 'events', name: 'Spotlight', emoji: '✨', color: '#9b87f5', description: 'Limited-time playlists' },
 };
 
 export const GAMES = {
@@ -278,7 +280,7 @@ export const GAMES = {
     title: 'The Link-Up',
     subtitle: 'Daily Associative Puzzle',
     description: 'Group 16 items into 4 themed categories. New puzzle every day!',
-    category: 'generational',
+    category: 'daily',
     icon: '🔗',
     color: '#CE82FF',
     bgColor: 'bg-purple-500',
@@ -297,7 +299,7 @@ export const GAMES = {
     title: 'Timeline',
     subtitle: 'Chronological Order Challenge',
     description: 'Drag and drop cultural events into the correct order. Test your history knowledge!',
-    category: 'generational',
+    category: 'daily',
     icon: '⏳',
     color: '#FF9600',
     bgColor: 'bg-orange-500',

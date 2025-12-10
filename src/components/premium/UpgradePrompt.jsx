@@ -3,11 +3,15 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 import { Crown, Heart, Zap, X } from 'lucide-react';
+import { requestRecoveryAd } from '@/services/ads';
+import { useToast } from '@/components/ui/use-toast';
 
 export default function UpgradePrompt({ 
   reason = 'hearts', // 'hearts', 'streak', 'powerups'
-  onClose 
+  onClose,
+  onWatchAd,
 }) {
+  const { toast } = useToast();
   const reasons = {
     hearts: {
       icon: Heart,
@@ -31,6 +35,20 @@ export default function UpgradePrompt({
 
   const content = reasons[reason] || reasons.hearts;
   const Icon = content.icon;
+
+  const handleWatchAd = async () => {
+    const result = await requestRecoveryAd();
+    if (result.shown) {
+      toast({ title: 'Recovery-only ad watched', description: 'Bonus applied where eligible.' });
+      onClose?.();
+    } else {
+      toast({
+        variant: 'destructive',
+        title: 'Ad unavailable',
+        description: 'Ads are disabled or cooling down (15m, max 3/day).',
+      });
+    }
+  };
 
   return (
     <motion.div
@@ -80,7 +98,7 @@ export default function UpgradePrompt({
 
           {reason === 'hearts' && (
             <button 
-              onClick={onClose}
+              onClick={handleWatchAd}
               className="btn-3d btn-3d-ghost w-full py-3 text-sm"
             >
               Watch Ad for 1 Heart

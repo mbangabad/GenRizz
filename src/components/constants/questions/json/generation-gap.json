@@ -1,0 +1,1090 @@
+[
+  {
+    "game_id": "generation-gap",
+    "difficulty": 1,
+    "type": "context",
+    "question": "What do Boomers call what Gen Z calls \"receipts\"?",
+    "options": [
+      "Proof",
+      "Evidence",
+      "Documentation",
+      "All of these"
+    ],
+    "correct_index": 3,
+    "explanation": "Gen Z uses \"receipts\" for evidence/proof - Boomers just call it what it is!",
+    "id": "generation-gap-1",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "When a Boomer says \"videotape,\" Gen Z would say...",
+    "options": [
+      "Record",
+      "Screenshot",
+      "Film",
+      "Save"
+    ],
+    "correct_index": 0,
+    "explanation": "Different generations, different verbs for capturing media.",
+    "id": "generation-gap-2",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 1,
+    "type": "context",
+    "question": "What does \"sick\" mean to Gen Z vs older generations?",
+    "options": [
+      "Always means ill",
+      "Gen Z: awesome / Older: unwell",
+      "Always means awesome",
+      "A type of music"
+    ],
+    "correct_index": 1,
+    "explanation": "\"That's sick!\" is a compliment to Gen Z, but concerning to grandma.",
+    "id": "generation-gap-3",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What do older generations call what Gen Z calls a \"group chat\"?",
+    "options": [
+      "Phone tree",
+      "Email chain",
+      "Party line",
+      "All of these historically"
+    ],
+    "correct_index": 3,
+    "explanation": "Group communication has evolved from party lines to group chats!",
+    "id": "generation-gap-4",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 2,
+    "type": "context",
+    "question": "Why might a Gen Z eye-roll at \"I'll tape it\"?",
+    "options": [
+      "They don't like tape",
+      "VHS/DVR recording is foreign to them",
+      "Grammar issue",
+      "Inside joke"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Taping\" shows comes from VHS era - streaming natives don't tape anything.",
+    "id": "generation-gap-5",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What's the generational difference in \"dialing\" a phone?",
+    "options": [
+      "No difference",
+      "Boomers: rotary dial / Young: just pressing buttons",
+      "Dialing is new slang",
+      "It's a dance"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Dialing\" comes from rotary phones - younger generations just tap numbers.",
+    "id": "generation-gap-6",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 2,
+    "type": "context",
+    "question": "When Boomers say \"icebox,\" younger generations say...",
+    "options": [
+      "Freezer",
+      "Refrigerator",
+      "Cooler",
+      "Cold storage"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Icebox\" is from when ice blocks actually cooled food!",
+    "id": "generation-gap-7",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What do different generations call the TV remote?",
+    "options": [
+      "All the same",
+      "Clicker / Remote / That thing",
+      "Only \"remote\"",
+      "Controller"
+    ],
+    "correct_index": 1,
+    "explanation": "Boomers often say \"clicker\" from when remotes made clicking sounds.",
+    "id": "generation-gap-8",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What generational gap exists with \"literally\"?",
+    "options": [
+      "No gap",
+      "Gen Z uses it for emphasis, older generations for actual literal meanings",
+      "Only Gen Z uses it",
+      "It's offensive now"
+    ],
+    "correct_index": 1,
+    "explanation": "\"I'm literally dying\" means very different things to different generations.",
+    "id": "generation-gap-9",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What do Boomers call what Gen Z calls \"vibes\"?",
+    "options": [
+      "Atmosphere",
+      "Feelings",
+      "Energy",
+      "All of these"
+    ],
+    "correct_index": 3,
+    "explanation": "\"The vibes are off\" = \"something feels wrong\" - same feeling, different words.",
+    "id": "generation-gap-10",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 3,
+    "type": "context",
+    "question": "Why might \"hang up the phone\" confuse young children?",
+    "options": [
+      "Phones are confusing",
+      "Modern phones don't hang on anything",
+      "It's slang",
+      "Grammar issue"
+    ],
+    "correct_index": 1,
+    "explanation": "Landline phones hung on wall cradles - smartphones just... end calls.",
+    "id": "generation-gap-11",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What's the generation gap with \"roll down the window\"?",
+    "options": [
+      "Windows don't roll",
+      "New cars have electric buttons, not manual cranks",
+      "It's rude now",
+      "No gap"
+    ],
+    "correct_index": 1,
+    "explanation": "Power windows replaced hand-crank windows, but the phrase stuck!",
+    "id": "generation-gap-12",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What does \"touch grass\" mean and who says it?",
+    "options": [
+      "Gardening advice",
+      "Gen Z: go outside and get off the internet",
+      "A sports term",
+      "Environmental activism"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Touch grass\" is Gen Z's way of saying someone is too online.",
+    "id": "generation-gap-13",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What's the generational difference with \"album\"?",
+    "options": [
+      "Same meaning",
+      "Boomers: vinyl/CD collection / Gen Z: photo collection or music project",
+      "Only music",
+      "Only photos"
+    ],
+    "correct_index": 1,
+    "explanation": "Album meant physical music format, now often means phone photo folders.",
+    "id": "generation-gap-14",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 4,
+    "type": "context",
+    "question": "Why might \"rewind\" confuse Gen Alpha?",
+    "options": [
+      "It's a complicated word",
+      "Streaming doesn't rewind, it scrubs back",
+      "It's offensive",
+      "No confusion"
+    ],
+    "correct_index": 1,
+    "explanation": "VHS rewinding was literal - streaming just uses a progress bar.",
+    "id": "generation-gap-15",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What do different generations mean by \"wireless\"?",
+    "options": [
+      "Same thing",
+      "Boomers: radio / Millennials: WiFi / Gen Z: Bluetooth/AirPods",
+      "Only WiFi",
+      "Only radio"
+    ],
+    "correct_index": 1,
+    "explanation": "Wireless has meant different technologies across decades.",
+    "id": "generation-gap-16",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What's the gap with \"cap\" and \"no cap\"?",
+    "options": [
+      "Hat fashion",
+      "Gen Z: lie/truth / Boomers: literally a hat",
+      "Same meaning",
+      "A game"
+    ],
+    "correct_index": 1,
+    "explanation": "\"No cap\" means \"no lie\" - while older generations think of actual caps.",
+    "id": "generation-gap-17",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What's the generational difference with \"rent\"?",
+    "options": [
+      "Same thing",
+      "All ages: pay for housing / Gen Z also: criticize harshly (living rent-free)",
+      "Only housing",
+      "A game"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Living rent-free in your head\" is a Gen Z/Millennial concept.",
+    "id": "generation-gap-18",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What's the gap with calling something \"mid\"?",
+    "options": [
+      "A compliment",
+      "Gen Z insult meaning mediocre / Boomers: middle position",
+      "Same meaning",
+      "A location"
+    ],
+    "correct_index": 1,
+    "explanation": "\"That movie was mid\" = mediocre to Gen Z, confusing to grandparents.",
+    "id": "generation-gap-19",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "How do generations differ on \"slay\"?",
+    "options": [
+      "Same violent meaning",
+      "Gen Z: doing great / Boomers: to kill something",
+      "Only Gen Z uses it",
+      "A dance"
+    ],
+    "correct_index": 1,
+    "explanation": "\"You slayed that presentation!\" means excellence, not violence.",
+    "id": "generation-gap-20",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What's the generational view on phone calls vs texts?",
+    "options": [
+      "Same preference",
+      "Boomers prefer calls / Gen Z dreads unexpected calls",
+      "All prefer texts",
+      "All prefer calls"
+    ],
+    "correct_index": 1,
+    "explanation": "Gen Z often experiences phone call anxiety - they prefer texting.",
+    "id": "generation-gap-21",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What's the gap with \"ghosting\"?",
+    "options": [
+      "Same paranormal meaning",
+      "Gen Z: cutting contact / Boomers: paranormal activity",
+      "Only Gen Z knows it",
+      "A prank"
+    ],
+    "correct_index": 1,
+    "explanation": "Ghosting means disappearing from communication, not Casper.",
+    "id": "generation-gap-22",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 6,
+    "type": "context",
+    "question": "How do generations view voicemails differently?",
+    "options": [
+      "Same way",
+      "Boomers: professional norm / Gen Z: practically obsolete",
+      "Only Boomers use them",
+      "Voicemails are new"
+    ],
+    "correct_index": 1,
+    "explanation": "Gen Z often ignores voicemails entirely - just text them!",
+    "id": "generation-gap-23",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What's the gap with \"streaming\"?",
+    "options": [
+      "Same thing",
+      "Now: watching online / Before: continuous flow of water",
+      "Only water",
+      "Only video"
+    ],
+    "correct_index": 1,
+    "explanation": "Streaming evolved from describing water to describing digital media.",
+    "id": "generation-gap-24",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What's the generational difference with \"clout\"?",
+    "options": [
+      "Same meaning",
+      "Gen Z: social influence / Boomers: political power/a hit",
+      "Only social media",
+      "A type of nail"
+    ],
+    "correct_index": 1,
+    "explanation": "Clout evolved from political influence to social media status.",
+    "id": "generation-gap-25",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "How do generations view work-life boundaries differently?",
+    "options": [
+      "Same views",
+      "Boomers: work loyalty / Gen Z: boundaries are non-negotiable",
+      "All workaholics",
+      "All prioritize life"
+    ],
+    "correct_index": 1,
+    "explanation": "Gen Z is reshaping workplace expectations around mental health.",
+    "id": "generation-gap-26",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What's the gap with \"friend\" as a verb?",
+    "options": [
+      "Same usage",
+      "Social media: add as friend / Older: befriend someone in person",
+      "Not a verb",
+      "Only online"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Friend me on Facebook\" created a new verb form.",
+    "id": "generation-gap-27",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What's the generational view on privacy online?",
+    "options": [
+      "Same views",
+      "Boomers: overshare carelessly / Gen Z: curated but still public",
+      "All private",
+      "All open"
+    ],
+    "correct_index": 1,
+    "explanation": "Different generations navigate online privacy very differently.",
+    "id": "generation-gap-28",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What's the gap with \"lowkey\" and \"highkey\"?",
+    "options": [
+      "Music terms",
+      "Gen Z intensity modifiers / Boomers: music or personality descriptors",
+      "Same meaning",
+      "Lock types"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Lowkey want pizza\" = kind of want it. \"Highkey\" = really want it.",
+    "id": "generation-gap-29",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "How do generations view \"adulting\"?",
+    "options": [
+      "Same concept",
+      "Millennials/Gen Z: struggle of basic adult tasks / Boomers: just... life?",
+      "Not a word",
+      "Only for seniors"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Adulting is hard\" highlights generational differences in independence.",
+    "id": "generation-gap-30",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What's the gap with \"Karen\"?",
+    "options": [
+      "A nice name",
+      "Gen Z/Millennials: entitled complainer / Boomers: just a name",
+      "A compliment",
+      "A celebrity"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Karen\" became an archetype for entitled behavior.",
+    "id": "generation-gap-31",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What's the generational difference with \"main character\"?",
+    "options": [
+      "Same movie meaning",
+      "Gen Z: someone acting like life revolves around them / Boomers: protagonist",
+      "Only movies",
+      "A job title"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Main character energy\" describes narcissistic or confident behavior.",
+    "id": "generation-gap-32",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What's the gap with \"it's giving...\"?",
+    "options": [
+      "Gift-giving",
+      "Gen Z: describing vibes/energy / Boomers: literally giving something",
+      "Same meaning",
+      "Charity"
+    ],
+    "correct_index": 1,
+    "explanation": "\"It's giving very much success\" describes an energy or aura.",
+    "id": "generation-gap-33",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "How do generations view side hustles?",
+    "options": [
+      "Same view",
+      "Millennials/Gen Z: necessary/normal / Boomers: overworking or suspicious",
+      "All have them",
+      "All reject them"
+    ],
+    "correct_index": 1,
+    "explanation": "Side hustle culture is normalized for younger generations, concerning to older.",
+    "id": "generation-gap-34",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What's the gap with \"based\"?",
+    "options": [
+      "Location",
+      "Gen Z: admirable/authentic / Boomers: where something is located",
+      "Same meaning",
+      "A base in sports"
+    ],
+    "correct_index": 1,
+    "explanation": "\"That's so based\" means coolly authentic or admirably contrarian.",
+    "id": "generation-gap-35",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What's the generational view on job loyalty?",
+    "options": [
+      "Same values",
+      "Boomers: stay at one job / Millennials-Gen Z: job hop for growth",
+      "All loyal",
+      "All hop"
+    ],
+    "correct_index": 1,
+    "explanation": "Younger generations see job-hopping as normal career strategy.",
+    "id": "generation-gap-36",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What's the gap with \"ate\" (past tense of eat)?",
+    "options": [
+      "Food consumption",
+      "Gen Z: performed excellently / Boomers: consumed food",
+      "Same meaning",
+      "A mistake"
+    ],
+    "correct_index": 1,
+    "explanation": "\"She ate that performance and left no crumbs\" = she nailed it.",
+    "id": "generation-gap-37",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "How do generations view mental health discussions?",
+    "options": [
+      "Same approach",
+      "Gen Z: open discussion / Boomers: private or stigmatized",
+      "All open",
+      "All private"
+    ],
+    "correct_index": 1,
+    "explanation": "Mental health openness varies dramatically across generations.",
+    "id": "generation-gap-38",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What's the gap with \"unalive\"?",
+    "options": [
+      "Not alive",
+      "Gen Z: euphemism to avoid content filters / Boomers: grammatically odd",
+      "Same meaning",
+      "A game"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Unalive\" emerged to discuss death without triggering platform algorithms.",
+    "id": "generation-gap-39",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What's the generational view on homeownership?",
+    "options": [
+      "Same priority",
+      "Boomers: essential goal / Millennials-Gen Z: often unrealistic dream",
+      "All own homes",
+      "No one wants homes"
+    ],
+    "correct_index": 1,
+    "explanation": "Economic realities make homeownership differently achievable across generations.",
+    "id": "generation-gap-40",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What's the gap with \"understood the assignment\"?",
+    "options": [
+      "School homework",
+      "Gen Z: nailed expectations / Boomers: literally completed a task",
+      "Same meaning",
+      "A job task"
+    ],
+    "correct_index": 1,
+    "explanation": "\"They understood the assignment\" means they perfectly matched expectations.",
+    "id": "generation-gap-41",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "How do generations view \"networking\"?",
+    "options": [
+      "Same approach",
+      "Boomers: in-person schmoozing / Gen Z: LinkedIn and online presence",
+      "All in-person",
+      "All online"
+    ],
+    "correct_index": 1,
+    "explanation": "Networking has shifted from handshakes to hashtags.",
+    "id": "generation-gap-42",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What's the gap with \"living rent-free\"?",
+    "options": [
+      "Housing arrangement",
+      "Gen Z: constantly thinking about something / Boomers: not paying rent",
+      "Same meaning",
+      "A scam"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Living rent-free in my head\" means constantly on your mind.",
+    "id": "generation-gap-43",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What's the generational view on parenting styles?",
+    "options": [
+      "Same approach",
+      "Evolved from hands-off to helicopter to gentle parenting",
+      "All strict",
+      "All permissive"
+    ],
+    "correct_index": 1,
+    "explanation": "Parenting philosophies have shifted dramatically across generations.",
+    "id": "generation-gap-44",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What's the gap with \"no thoughts, just vibes\"?",
+    "options": [
+      "Meditation",
+      "Gen Z: living in the moment / Boomers: confusing/concerning",
+      "Same meaning",
+      "A song"
+    ],
+    "correct_index": 1,
+    "explanation": "\"No thoughts just vibes\" celebrates not overthinking - baffling to planners.",
+    "id": "generation-gap-45",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "How do generations view success differently?",
+    "options": [
+      "Same definition",
+      "Boomers: career/family / Gen Z: happiness and authenticity",
+      "All career-focused",
+      "All happiness-focused"
+    ],
+    "correct_index": 1,
+    "explanation": "Success metrics have shifted from external achievements to internal fulfillment.",
+    "id": "generation-gap-46",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What's the gap with \"core\" suffix (cottagecore, goblincore)?",
+    "options": [
+      "Apple products",
+      "Gen Z aesthetic movements / Boomers: workout term or apple part",
+      "Same meaning",
+      "A music genre"
+    ],
+    "correct_index": 1,
+    "explanation": "-core describes aesthetic/lifestyle movements (cottagecore, darkcore, etc.)",
+    "id": "generation-gap-47",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What's the generational view on work from home?",
+    "options": [
+      "Same view",
+      "Younger: preferred normal / Boomers: often skeptical or resistant",
+      "All prefer office",
+      "All prefer home"
+    ],
+    "correct_index": 1,
+    "explanation": "Remote work acceptance varies significantly by generation.",
+    "id": "generation-gap-48",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What's the gap with \"the vibes are immaculate\"?",
+    "options": [
+      "Cleanliness",
+      "Gen Z: excellent atmosphere / Boomers: possibly religious or confusing",
+      "Same meaning",
+      "A joke"
+    ],
+    "correct_index": 1,
+    "explanation": "Immaculate vibes = perfect energy. Religious connotations lost on Gen Z.",
+    "id": "generation-gap-49",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "How do generations view \"grinding\"?",
+    "options": [
+      "Same meaning",
+      "Gen Z: working hard / Boomers: coffee or dancing or literal grinding",
+      "Only work",
+      "Only coffee"
+    ],
+    "correct_index": 1,
+    "explanation": "\"On the grind\" = working hard. Various other meanings for different ages.",
+    "id": "generation-gap-50",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What's the gap with \"dead\" as a reaction?",
+    "options": [
+      "Morbid",
+      "Gen Z: dying laughing / Boomers: concerning statement",
+      "Same meaning",
+      "A game over"
+    ],
+    "correct_index": 1,
+    "explanation": "\"I'm dead 💀\" means hilarious to Gen Z, worrying to grandma.",
+    "id": "generation-gap-51",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What's the generational view on dating apps?",
+    "options": [
+      "Same view",
+      "Younger: normal way to meet / Older: stigma or suspicion",
+      "All use them",
+      "All avoid them"
+    ],
+    "correct_index": 1,
+    "explanation": "Dating apps went from taboo to primary way younger generations meet.",
+    "id": "generation-gap-52",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What's the gap with \"this hits different\"?",
+    "options": [
+      "Violence",
+      "Gen Z: affects emotionally in a unique way / Boomers: confusing phrase",
+      "Same meaning",
+      "A sports term"
+    ],
+    "correct_index": 1,
+    "explanation": "\"This song hits different at 2am\" = resonates more deeply in that context.",
+    "id": "generation-gap-53",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "How do generations view \"healing\" culture?",
+    "options": [
+      "Same view",
+      "Gen Z: inner work and therapy / Boomers: medical recovery",
+      "Only medical",
+      "Only spiritual"
+    ],
+    "correct_index": 1,
+    "explanation": "\"My healing journey\" means emotional work to Gen Z, confusing to others.",
+    "id": "generation-gap-54",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What's the gap with \"sending me\"?",
+    "options": [
+      "Mailing",
+      "Gen Z: making me lose it (laugh/react) / Boomers: sending where?",
+      "Same meaning",
+      "A request"
+    ],
+    "correct_index": 1,
+    "explanation": "\"This meme is sending me\" = this is too funny.",
+    "id": "generation-gap-55",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What's the generational gap on gender/identity language?",
+    "options": [
+      "Same vocabulary",
+      "Younger: expanded vocabulary / Older: often unfamiliar with new terms",
+      "All traditional",
+      "All progressive"
+    ],
+    "correct_index": 1,
+    "explanation": "Identity language has expanded significantly for younger generations.",
+    "id": "generation-gap-56",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What's the gap with \"the ick\"?",
+    "options": [
+      "Being sick",
+      "Gen Z: sudden turnoff feeling / Boomers: physical disgust",
+      "Same meaning",
+      "A bug"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Getting the ick\" = suddenly finding someone unattractive.",
+    "id": "generation-gap-57",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "How do generations view \"unpack that\"?",
+    "options": [
+      "Luggage",
+      "Gen Z: analyze emotionally / Boomers: literally unpack bags",
+      "Same meaning",
+      "Moving help"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Let's unpack that\" = let's analyze this deeper in therapy-speak.",
+    "id": "generation-gap-58",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What's the gap with \"chaotic good\"?",
+    "options": [
+      "A mess",
+      "D&D alignment now describing personality types / Boomers: unfamiliar",
+      "Same meaning",
+      "A band"
+    ],
+    "correct_index": 1,
+    "explanation": "D&D alignments became personality descriptors for younger generations.",
+    "id": "generation-gap-59",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What's the generational view on \"boundaries\"?",
+    "options": [
+      "Same concept",
+      "Gen Z: openly discussed personal limits / Boomers: maybe oversharing",
+      "Property lines",
+      "All the same"
+    ],
+    "correct_index": 1,
+    "explanation": "Boundary-setting is normalized for younger generations, newer for older.",
+    "id": "generation-gap-60",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What's the gap with \"chronically online\"?",
+    "options": [
+      "Medical term",
+      "Gen Z: too influenced by internet / Boomers: unfamiliar phrase",
+      "Same meaning",
+      "Gaming addiction"
+    ],
+    "correct_index": 1,
+    "explanation": "Being chronically online means internet culture has deeply shaped your worldview.",
+    "id": "generation-gap-61",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "How do generations view work ethic differently?",
+    "options": [
+      "Same values",
+      "Complex: Boomers value hours, Gen Z values efficiency",
+      "All work same",
+      "All lazy"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Working smarter not harder\" clashes with \"pay your dues\" mentalities.",
+    "id": "generation-gap-62",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What's the gap with \"Roman Empire\" trend?",
+    "options": [
+      "History class",
+      "TikTok: what you think about often / Boomers: ancient history",
+      "Same meaning",
+      "A movie"
+    ],
+    "correct_index": 1,
+    "explanation": "\"What's your Roman Empire?\" = what do you think about constantly?",
+    "id": "generation-gap-63",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "generation-gap",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What's the generational view on institutional trust?",
+    "options": [
+      "Same level",
+      "Progressive decline: Boomers trusted more, Gen Z trusts least",
+      "All trust",
+      "All distrust"
+    ],
+    "correct_index": 1,
+    "explanation": "Trust in institutions has declined with each generation.",
+    "id": "generation-gap-64",
+    "category": "generational",
+    "family_safe": true
+  }
+]

@@ -1,0 +1,1498 @@
+[
+  {
+    "game_id": "analog-life",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What was a \"busy signal\"?",
+    "options": [
+      "A traffic light",
+      "The sound when a phone line was in use",
+      "A sign at a store",
+      "A type of alarm"
+    ],
+    "correct_index": 1,
+    "explanation": "Before call waiting, calling someone already on the phone meant hearing a repetitive beeping \"busy signal.\"",
+    "id": "analog-life-1",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What did you have to do to change TV channels before remote controls?",
+    "options": [
+      "Clap your hands",
+      "Walk to the TV and turn a dial",
+      "Use voice commands",
+      "Press a button on the wall"
+    ],
+    "correct_index": 1,
+    "explanation": "TVs had physical dials or buttons. Kids were often the \"remote control\" for their parents!",
+    "id": "analog-life-2",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What was a phone book used for?",
+    "options": [
+      "Reading stories",
+      "Looking up phone numbers",
+      "Pressing flowers",
+      "Taking notes"
+    ],
+    "correct_index": 1,
+    "explanation": "Phone books (White and Yellow Pages) listed everyone's phone number and address - delivered free to every home!",
+    "id": "analog-life-3",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What did \"Be kind, rewind\" refer to?",
+    "options": [
+      "Being nice to people",
+      "Rewinding VHS tapes before returning",
+      "A meditation practice",
+      "Recycling"
+    ],
+    "correct_index": 1,
+    "explanation": "Video rental stores asked you to rewind VHS tapes so the next person could watch from the beginning.",
+    "id": "analog-life-4",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 1,
+    "type": "context",
+    "question": "If you missed a TV show in the 1980s, what happened?",
+    "options": [
+      "You watched it on demand",
+      "You streamed it later",
+      "You missed it until a rerun",
+      "You downloaded it"
+    ],
+    "correct_index": 2,
+    "explanation": "Before DVR and streaming, missing a show meant waiting months or years for a rerun!",
+    "id": "analog-life-5",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What was a \"rotary phone\"?",
+    "options": [
+      "A phone that spun around",
+      "A phone with a circular dial for numbers",
+      "A mobile phone",
+      "A phone in a car"
+    ],
+    "correct_index": 1,
+    "explanation": "Rotary phones had a circular dial you'd spin to enter each digit - calling took much longer!",
+    "id": "analog-life-6",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What was an \"encyclopedia\"?",
+    "options": [
+      "A type of dinosaur",
+      "A set of books with information on everything",
+      "A video game",
+      "A search engine"
+    ],
+    "correct_index": 1,
+    "explanation": "Before Wikipedia, families bought expensive encyclopedia sets - books covering A-Z of knowledge.",
+    "id": "analog-life-7",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 2,
+    "type": "context",
+    "question": "How did people get directions before GPS?",
+    "options": [
+      "They never traveled",
+      "Paper maps and asking for directions",
+      "Satellites",
+      "Telepathy"
+    ],
+    "correct_index": 1,
+    "explanation": "Road trips meant folding maps, MapQuest printouts, and stopping at gas stations to ask locals.",
+    "id": "analog-life-8",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What was a \"typewriter\"?",
+    "options": [
+      "Someone who types",
+      "A mechanical device for typing documents",
+      "A computer program",
+      "A type of font"
+    ],
+    "correct_index": 1,
+    "explanation": "Typewriters mechanically pressed ink onto paper - mistakes meant white-out or starting over!",
+    "id": "analog-life-9",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 2,
+    "type": "context",
+    "question": "What did \"long distance\" mean for phone calls?",
+    "options": [
+      "Talking loudly",
+      "Expensive calls to other areas",
+      "Wireless calls",
+      "International only"
+    ],
+    "correct_index": 1,
+    "explanation": "Calling outside your local area cost extra money per minute - families had strict time limits!",
+    "id": "analog-life-10",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"card catalog\"?",
+    "options": [
+      "A shopping catalog",
+      "A library's index system on physical cards",
+      "A credit card list",
+      "A game collection"
+    ],
+    "correct_index": 1,
+    "explanation": "Libraries organized books on index cards in drawers - you'd flip through to find what you needed.",
+    "id": "analog-life-11",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 3,
+    "type": "context",
+    "question": "How did you find out movie times before the internet?",
+    "options": [
+      "Called the theater or checked the newspaper",
+      "Used an app",
+      "Guessed",
+      "Movies played all day continuously"
+    ],
+    "correct_index": 0,
+    "explanation": "Movie times were listed in newspapers, or you called the theater's automated line.",
+    "id": "analog-life-12",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"Walkman\"?",
+    "options": [
+      "A fitness instructor",
+      "A portable cassette player",
+      "A type of robot",
+      "A walking aid"
+    ],
+    "correct_index": 1,
+    "explanation": "Sony's Walkman revolutionized music - you could listen to cassettes while walking around!",
+    "id": "analog-life-13",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What did you do when your favorite song came on the radio?",
+    "options": [
+      "Skip it",
+      "Hit record on your tape deck",
+      "Shazam it",
+      "Stream it"
+    ],
+    "correct_index": 1,
+    "explanation": "Making \"mixtapes\" meant recording songs off the radio - and hoping the DJ didn't talk over it!",
+    "id": "analog-life-14",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was \"white-out\" or \"correction fluid\"?",
+    "options": [
+      "A snowstorm",
+      "Liquid to cover typing mistakes",
+      "A cleaning product",
+      "A type of paint"
+    ],
+    "correct_index": 1,
+    "explanation": "Before backspace, typos were covered with white liquid. You'd wait for it to dry and type over it.",
+    "id": "analog-life-15",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 4,
+    "type": "context",
+    "question": "How did you know if someone was home before cell phones?",
+    "options": [
+      "Track their location",
+      "Call their landline and hope they answer",
+      "Text them",
+      "Check social media"
+    ],
+    "correct_index": 1,
+    "explanation": "You'd call their home phone - if no answer, you had no idea where they were!",
+    "id": "analog-life-16",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What were \"S&H Green Stamps\"?",
+    "options": [
+      "Postage stamps",
+      "Loyalty reward stamps from stores",
+      "Government stamps",
+      "Craft supplies"
+    ],
+    "correct_index": 1,
+    "explanation": "Stores gave stamps based on purchases - save enough and redeem them for household items!",
+    "id": "analog-life-17",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What was \"waiting for photos to develop\"?",
+    "options": [
+      "Watching digital photos load",
+      "Dropping film at a store and waiting days",
+      "Using filters",
+      "Printing photos at home"
+    ],
+    "correct_index": 1,
+    "explanation": "Film cameras required developing - you'd drop off film and wait 3-7 days to see your photos!",
+    "id": "analog-life-18",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What was a \"party line\" telephone?",
+    "options": [
+      "A phone for parties",
+      "A shared phone line with neighbors",
+      "A hotline for events",
+      "A conference call"
+    ],
+    "correct_index": 1,
+    "explanation": "Some households shared phone lines with neighbors - you could hear their conversations!",
+    "id": "analog-life-19",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 4,
+    "type": "context",
+    "question": "How did you research a school paper before the internet?",
+    "options": [
+      "Wikipedia",
+      "Library books and microfiche",
+      "YouTube tutorials",
+      "Asked Alexa"
+    ],
+    "correct_index": 1,
+    "explanation": "Research meant hours in the library with books, periodicals, and microfiche machines.",
+    "id": "analog-life-20",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"floppy disk\"?",
+    "options": [
+      "A flexible frisbee",
+      "A data storage device",
+      "A type of record",
+      "A yoga pose"
+    ],
+    "correct_index": 1,
+    "explanation": "Floppy disks stored computer data - the 3.5\" ones held a massive 1.44 MB!",
+    "id": "analog-life-21",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What did \"the phone is for you\" mean?",
+    "options": [
+      "You got a text",
+      "Someone called the house phone asking for you",
+      "Your phone was ringing",
+      "A voicemail"
+    ],
+    "correct_index": 1,
+    "explanation": "Families shared one landline - someone would answer and yell for whoever the call was for!",
+    "id": "analog-life-22",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"pager\" or \"beeper\"?",
+    "options": [
+      "A device that received short messages/numbers",
+      "A book organizer",
+      "A type of bird",
+      "A musical instrument"
+    ],
+    "correct_index": 0,
+    "explanation": "Pagers received phone numbers or short codes - you'd find a payphone to call back.",
+    "id": "analog-life-23",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What was \"adjusting the rabbit ears\"?",
+    "options": [
+      "Grooming a pet",
+      "Moving TV antennas for better reception",
+      "A hairstyle",
+      "A yoga stretch"
+    ],
+    "correct_index": 1,
+    "explanation": "Rabbit ear antennas sat on TVs - you'd adjust them (sometimes with aluminum foil) for clearer picture.",
+    "id": "analog-life-24",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was \"carbon paper\"?",
+    "options": [
+      "Paper made from carbon",
+      "Paper that made copies while writing",
+      "Charcoal drawing paper",
+      "Recycled paper"
+    ],
+    "correct_index": 1,
+    "explanation": "Carbon paper between sheets transferred writing - making copies before photocopiers!",
+    "id": "analog-life-25",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What was \"getting up to change the channel\"?",
+    "options": [
+      "A fitness routine",
+      "Walking to the TV to switch channels manually",
+      "Changing your mindset",
+      "A meditation practice"
+    ],
+    "correct_index": 1,
+    "explanation": "Before remotes, you physically walked to the TV. Kids were often told \"while you're up...\"!",
+    "id": "analog-life-26",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was a \"slide projector\"?",
+    "options": [
+      "A playground equipment",
+      "A device that projected photo slides on a wall",
+      "A presentation app",
+      "A type of camera"
+    ],
+    "correct_index": 1,
+    "explanation": "Family photos were shown on slide projectors - sitting through vacation slides was a rite of passage!",
+    "id": "analog-life-27",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 6,
+    "type": "context",
+    "question": "How did you look up a word's meaning before smartphones?",
+    "options": [
+      "Voice search",
+      "Physical dictionary",
+      "Text a friend",
+      "Urban Dictionary"
+    ],
+    "correct_index": 1,
+    "explanation": "Every home and classroom had a physical dictionary - a heavy book with words A-Z.",
+    "id": "analog-life-28",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was a \"Rolodex\"?",
+    "options": [
+      "A watch brand",
+      "A rotating card file for contact info",
+      "A type of exercise",
+      "A DJ turntable"
+    ],
+    "correct_index": 1,
+    "explanation": "Business contacts were kept on cards in a rotating file - flip through to find numbers.",
+    "id": "analog-life-29",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What did it mean to \"dial\" a phone number?",
+    "options": [
+      "Use a touchscreen",
+      "Rotate a dial for each digit",
+      "Press buttons",
+      "Voice dial"
+    ],
+    "correct_index": 1,
+    "explanation": "Rotary phones required rotating a dial for each number - \"dialing\" still means calling today!",
+    "id": "analog-life-30",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was \"microfiche\"?",
+    "options": [
+      "A small fish",
+      "Miniaturized documents on film",
+      "A microwave dish",
+      "A French dessert"
+    ],
+    "correct_index": 1,
+    "explanation": "Libraries stored newspapers and documents on film viewed through special machines.",
+    "id": "analog-life-31",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What was \"calling collect\"?",
+    "options": [
+      "Gathering people",
+      "The receiver pays for the call",
+      "A conference call",
+      "Free calling"
+    ],
+    "correct_index": 1,
+    "explanation": "Collect calls charged the person receiving - useful when away from home with no money!",
+    "id": "analog-life-32",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"mimeograph\"?",
+    "options": [
+      "A dance",
+      "A duplicating machine using stencils",
+      "A telegram",
+      "A type of graph"
+    ],
+    "correct_index": 1,
+    "explanation": "Schools used mimeographs to make copies - kids loved the smell of fresh purple copies!",
+    "id": "analog-life-33",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 7,
+    "type": "context",
+    "question": "How did you tape a TV show before DVR?",
+    "options": [
+      "Screen recording",
+      "VCR with timer programming",
+      "Cloud DVR",
+      "You couldn't"
+    ],
+    "correct_index": 1,
+    "explanation": "VCRs could record shows if you programmed the timer correctly - which was notoriously difficult!",
+    "id": "analog-life-34",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"telegraph\"?",
+    "options": [
+      "A type of graph",
+      "Electrical long-distance messaging with codes",
+      "A photograph",
+      "A telescope"
+    ],
+    "correct_index": 1,
+    "explanation": "Telegraphs transmitted messages in Morse code - \"STOP\" was used for periods since punctuation cost extra.",
+    "id": "analog-life-35",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What was \"the TV going off at midnight\"?",
+    "options": [
+      "A bedtime rule",
+      "Broadcast stations ending transmission",
+      "TV breaking",
+      "Parental controls"
+    ],
+    "correct_index": 1,
+    "explanation": "TV stations signed off at night - showing a test pattern or static until morning!",
+    "id": "analog-life-36",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was a \"punch card\"?",
+    "options": [
+      "A loyalty card",
+      "A card with holes for computer data",
+      "A boxing record",
+      "An invitation"
+    ],
+    "correct_index": 1,
+    "explanation": "Early computers used stiff cards with patterns of holes - dropping a deck meant disaster!",
+    "id": "analog-life-37",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What was a \"TV dinner\"?",
+    "options": [
+      "Eating while watching TV",
+      "A pre-made frozen meal in a tray",
+      "A dinner party with TV",
+      "A cooking show"
+    ],
+    "correct_index": 1,
+    "explanation": "TV dinners were frozen meals in aluminum trays - revolutionary for busy families!",
+    "id": "analog-life-38",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was an \"adding machine\"?",
+    "options": [
+      "A calculator prototype",
+      "A mechanical calculator with paper tape",
+      "A math game",
+      "A hiring tool"
+    ],
+    "correct_index": 1,
+    "explanation": "Adding machines printed calculations on paper tape - used in offices before electronic calculators.",
+    "id": "analog-life-39",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 8,
+    "type": "context",
+    "question": "How did stores verify checks before computers?",
+    "options": [
+      "Call the bank",
+      "Check a book of bad check numbers",
+      "Trust the customer",
+      "Scan a chip"
+    ],
+    "correct_index": 1,
+    "explanation": "Stores received books listing known bad check numbers - cashiers would manually verify.",
+    "id": "analog-life-40",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was a \"party line\" phone system?",
+    "options": [
+      "A hotline",
+      "Multiple homes sharing one phone line",
+      "A disco playlist",
+      "A political term"
+    ],
+    "correct_index": 1,
+    "explanation": "Rural areas shared lines - you'd pick up and maybe hear neighbors talking!",
+    "id": "analog-life-41",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What did \"dialing 0 for the operator\" get you?",
+    "options": [
+      "Zero balance",
+      "A human to connect calls or provide info",
+      "A wrong number",
+      "A recording"
+    ],
+    "correct_index": 1,
+    "explanation": "Operators manually connected calls, provided numbers, and assisted with emergencies.",
+    "id": "analog-life-42",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was a \"Telex\" machine?",
+    "options": [
+      "A text message",
+      "A machine for sending typed messages over phone lines",
+      "A fax machine",
+      "A typewriter brand"
+    ],
+    "correct_index": 1,
+    "explanation": "Telex machines sent typed messages internationally - business essential before fax and email.",
+    "id": "analog-life-43",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What was \"vertical hold\" on a TV?",
+    "options": [
+      "Wall mounting",
+      "A dial to stop the picture from rolling",
+      "A pause button",
+      "A screen lock"
+    ],
+    "correct_index": 1,
+    "explanation": "If the picture kept scrolling, you'd adjust the vertical hold knob until it stabilized.",
+    "id": "analog-life-44",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was a \"hectograph\"?",
+    "options": [
+      "A hundred graphs",
+      "A gelatin-based copying method",
+      "A health chart",
+      "A measurement tool"
+    ],
+    "correct_index": 1,
+    "explanation": "Teachers used gelatin plates to make purple copies of worksheets before photocopiers.",
+    "id": "analog-life-45",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What was \"pulse dialing\" vs \"tone dialing\"?",
+    "options": [
+      "Heart rate monitors",
+      "Rotary clicks vs touch-tone beeps",
+      "Volume settings",
+      "Music terms"
+    ],
+    "correct_index": 1,
+    "explanation": "Rotary phones used pulses; touch-tone phones used audio tones - you might need to switch modes!",
+    "id": "analog-life-46",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was a \"ditto machine\"?",
+    "options": [
+      "A copy machine using alcohol-based fluid",
+      "A clone device",
+      "A recording machine",
+      "A stamp"
+    ],
+    "correct_index": 0,
+    "explanation": "Ditto machines made purple copies - kids loved sniffing the fresh, slightly intoxicating prints!",
+    "id": "analog-life-47",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What did \"don't touch the dial\" mean?",
+    "options": [
+      "A warning label",
+      "Don't change the TV/radio station",
+      "Don't touch the thermostat",
+      "A dance instruction"
+    ],
+    "correct_index": 1,
+    "explanation": "Announcers told viewers not to change channels during commercial breaks.",
+    "id": "analog-life-48",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was a \"stereopticon\"?",
+    "options": [
+      "A dinosaur",
+      "A 3D image viewer from the 1800s",
+      "A musical instrument",
+      "A telescope"
+    ],
+    "correct_index": 1,
+    "explanation": "Stereopticons showed two slightly different images creating a 3D effect - Victorian VR!",
+    "id": "analog-life-49",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What were \"Blue Laws\"?",
+    "options": [
+      "Ocean regulations",
+      "Laws restricting Sunday business hours",
+      "Police rules",
+      "Copyright laws"
+    ],
+    "correct_index": 1,
+    "explanation": "Blue Laws kept stores closed on Sundays - you had to plan shopping for the week!",
+    "id": "analog-life-50",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What was a \"cathode ray tube\" (CRT)?",
+    "options": [
+      "A flashlight",
+      "The technology inside old TVs and monitors",
+      "A medical device",
+      "A musical amplifier"
+    ],
+    "correct_index": 1,
+    "explanation": "CRTs used electron beams to create images - that's why old TVs were so deep and heavy!",
+    "id": "analog-life-51",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What was \"signing off\" for TV stations?",
+    "options": [
+      "Logging out",
+      "Playing the national anthem and ending broadcast",
+      "Staff leaving",
+      "Changing channels"
+    ],
+    "correct_index": 1,
+    "explanation": "Stations played the national anthem, then showed a test pattern or static until morning.",
+    "id": "analog-life-52",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What was a \"Linotype\" machine?",
+    "options": [
+      "A printer",
+      "A hot metal typesetting machine for newspapers",
+      "A telephone type",
+      "A drawing tool"
+    ],
+    "correct_index": 1,
+    "explanation": "Newspapers were set using Linotype - molten lead cast into lines of type!",
+    "id": "analog-life-53",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What were \"bank hours\" and why did they matter?",
+    "options": [
+      "ATM schedules",
+      "Banks closed at 3pm weekdays only",
+      "Interest calculation times",
+      "Investment periods"
+    ],
+    "correct_index": 1,
+    "explanation": "Banks closed early (often 3pm) and weren't open weekends - you had to plan!",
+    "id": "analog-life-54",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What was a \"pneumatic tube\"?",
+    "options": [
+      "A tire type",
+      "A system that moved capsules via air pressure",
+      "An instrument",
+      "A breathing device"
+    ],
+    "correct_index": 1,
+    "explanation": "Banks and stores sent documents through air-powered tube systems - like drive-through banking!",
+    "id": "analog-life-55",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What was the purpose of the \"Emergency Broadcast System\" test?",
+    "options": [
+      "Internet testing",
+      "Weekly TV/radio interruption testing alert systems",
+      "Fire drills",
+      "Phone checks"
+    ],
+    "correct_index": 1,
+    "explanation": "That alarming tone followed by \"This is a test\" ensured emergency alerts would work.",
+    "id": "analog-life-56",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What was a \"comptometer\"?",
+    "options": [
+      "A computer",
+      "A mechanical calculating machine with keys",
+      "A music device",
+      "A measuring tool"
+    ],
+    "correct_index": 1,
+    "explanation": "Comptometers were key-driven mechanical calculators used by trained operators.",
+    "id": "analog-life-57",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What was \"trading stamps\" culture?",
+    "options": [
+      "Philately",
+      "Collecting store reward stamps for prizes",
+      "Stamp exchange",
+      "Mail trading"
+    ],
+    "correct_index": 1,
+    "explanation": "Shoppers collected stamps from purchases, filled books, and redeemed them for household goods.",
+    "id": "analog-life-58",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What was a \"Dictaphone\"?",
+    "options": [
+      "A phone dictionary",
+      "A voice recording device for dictation",
+      "A speaking translator",
+      "A music player"
+    ],
+    "correct_index": 1,
+    "explanation": "Executives dictated letters onto Dictaphones for secretaries to type later.",
+    "id": "analog-life-59",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What were \"milk deliveries\"?",
+    "options": [
+      "Grocery shopping",
+      "Fresh milk delivered to homes in glass bottles",
+      "Farm tours",
+      "A drink order"
+    ],
+    "correct_index": 1,
+    "explanation": "Milkmen delivered fresh milk to doorsteps before dawn - you left empties out for exchange!",
+    "id": "analog-life-60",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What was a \"Comptograph\"?",
+    "options": [
+      "A computer graph",
+      "An adding/calculating machine with printing",
+      "A photograph",
+      "A telegraph"
+    ],
+    "correct_index": 1,
+    "explanation": "Comptographs combined calculating with automatic printing of results.",
+    "id": "analog-life-61",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What was the \"Dewey Decimal System\"?",
+    "options": [
+      "A grading system",
+      "Library book organization by number",
+      "A math concept",
+      "A weather scale"
+    ],
+    "correct_index": 1,
+    "explanation": "Libraries organized books by number categories - memorizing them helped you find anything!",
+    "id": "analog-life-62",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What was a \"mangle\" in household terms?",
+    "options": [
+      "To destroy",
+      "A machine for pressing/drying clothes",
+      "A type of fruit",
+      "A game"
+    ],
+    "correct_index": 1,
+    "explanation": "Mangles were hand-cranked or electric rollers that pressed water from and ironed clothes.",
+    "id": "analog-life-63",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What was \"layaway\" at stores?",
+    "options": [
+      "Furniture storage",
+      "Pay gradually, get item when paid off",
+      "Product testing",
+      "Returns system"
+    ],
+    "correct_index": 1,
+    "explanation": "Before credit cards, you'd pay incrementally and only take the item home when fully paid.",
+    "id": "analog-life-64",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What was a \"wringer washer\"?",
+    "options": [
+      "A dishwasher",
+      "Washing machine with hand-crank rollers to squeeze water out",
+      "A car wash",
+      "A type of mop"
+    ],
+    "correct_index": 1,
+    "explanation": "Wringer washers had rollers you fed clothes through to squeeze out water before line-drying.",
+    "id": "analog-life-65",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What was \"operator-assisted calling\"?",
+    "options": [
+      "Tech support",
+      "A human connecting your phone call",
+      "Automated systems",
+      "Group calls"
+    ],
+    "correct_index": 1,
+    "explanation": "Before direct dialing, operators physically connected calls by plugging cables into switchboards.",
+    "id": "analog-life-66",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What was a \"wire recorder\"?",
+    "options": [
+      "A surveillance device",
+      "Audio recording on magnetic wire before tape",
+      "A fence installer",
+      "An electric meter"
+    ],
+    "correct_index": 1,
+    "explanation": "Wire recorders captured audio on thin steel wire - precursor to tape recorders.",
+    "id": "analog-life-67",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What was an \"ice box\"?",
+    "options": [
+      "A cooler",
+      "A refrigerator cooled by actual ice blocks",
+      "A freezer",
+      "An ice cream container"
+    ],
+    "correct_index": 1,
+    "explanation": "Before electric refrigerators, ice boxes kept food cold with ice delivered by the iceman.",
+    "id": "analog-life-68",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What was a \"ticker tape\"?",
+    "options": [
+      "A parade decoration",
+      "Paper tape printing stock prices",
+      "A clock part",
+      "A measuring tape"
+    ],
+    "correct_index": 1,
+    "explanation": "Stock prices printed on continuous paper tape - later thrown from windows in celebrations!",
+    "id": "analog-life-69",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What was the purpose of \"test patterns\" on TV?",
+    "options": [
+      "Art displays",
+      "Calibrating TV picture when no programs aired",
+      "Channel guides",
+      "Advertisements"
+    ],
+    "correct_index": 1,
+    "explanation": "Test patterns helped technicians adjust picture quality - you'd see them late night/early morning.",
+    "id": "analog-life-70",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What was a \"stereoscope\"?",
+    "options": [
+      "A stethoscope",
+      "A device for viewing 3D photographs",
+      "A microscope",
+      "A music player"
+    ],
+    "correct_index": 1,
+    "explanation": "Stereoscopes were Victorian entertainment - viewing paired photos that appeared 3D.",
+    "id": "analog-life-71",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What was \"railroad time\"?",
+    "options": [
+      "Train schedules",
+      "Standardized time zones created for trains",
+      "Overtime work",
+      "A dance"
+    ],
+    "correct_index": 1,
+    "explanation": "Before railroad time, every town had its own local time - trains created time zones!",
+    "id": "analog-life-72",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What was a \"magic lantern\"?",
+    "options": [
+      "A genie lamp",
+      "An early image projector using light and glass slides",
+      "A flashlight",
+      "A decoration"
+    ],
+    "correct_index": 1,
+    "explanation": "Magic lanterns projected painted glass slides - entertainment before movies!",
+    "id": "analog-life-73",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What was a \"party wire\" in rural areas?",
+    "options": [
+      "An extension cord",
+      "Shared barbed wire with phone line attached",
+      "Holiday decorations",
+      "A political term"
+    ],
+    "correct_index": 1,
+    "explanation": "Rural phone lines were sometimes run along fence barbed wire - very basic connectivity!",
+    "id": "analog-life-74",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What was a \"velocipede\"?",
+    "options": [
+      "A dinosaur",
+      "An early bicycle with pedals on front wheel",
+      "A vehicle",
+      "A speed measurement"
+    ],
+    "correct_index": 1,
+    "explanation": "Velocipedes were early \"boneshaker\" bicycles with pedals directly on the front wheel.",
+    "id": "analog-life-75",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What was \"paying in scrip\"?",
+    "options": [
+      "Cash payment",
+      "Company-issued currency valid only at company stores",
+      "Check payment",
+      "Credit"
+    ],
+    "correct_index": 1,
+    "explanation": "Some companies paid workers in scrip only redeemable at company stores - controversial practice!",
+    "id": "analog-life-76",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What was a \"daguerreotype\"?",
+    "options": [
+      "A dinosaur type",
+      "An early photograph on silver-coated copper",
+      "A printing press",
+      "A telegram"
+    ],
+    "correct_index": 1,
+    "explanation": "Daguerreotypes were the first commercially practical photographs - one-of-a-kind mirror images.",
+    "id": "analog-life-77",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What was the \"Pony Express\"?",
+    "options": [
+      "A package delivery",
+      "Mail delivery by horseback relay across America",
+      "A train route",
+      "A newspaper"
+    ],
+    "correct_index": 1,
+    "explanation": "Before telegraph lines, riders on horses relayed mail across the country in about 10 days.",
+    "id": "analog-life-78",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What was a \"kinetoscope\"?",
+    "options": [
+      "A kaleidoscope",
+      "An early motion picture viewing device",
+      "A microscope",
+      "A type of scope"
+    ],
+    "correct_index": 1,
+    "explanation": "Edison's Kinetoscope let one person view moving pictures through a peephole - pre-cinema!",
+    "id": "analog-life-79",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What was \"sending a telegram\"?",
+    "options": [
+      "A text message",
+      "Paying per word for an electrical message",
+      "An email",
+      "A fax"
+    ],
+    "correct_index": 1,
+    "explanation": "Telegrams charged by word - that's why messages were brief and \"STOP\" replaced periods!",
+    "id": "analog-life-80",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What was a \"record player\"?",
+    "options": [
+      "A score keeper",
+      "A device that played vinyl records",
+      "A recording device",
+      "A sports tracker"
+    ],
+    "correct_index": 1,
+    "explanation": "Record players spun vinyl records - the needle in the groove produced sound!",
+    "id": "analog-life-81",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What was \"developing film\"?",
+    "options": [
+      "Growing plants",
+      "Chemically processing camera film to reveal photos",
+      "Expanding a movie",
+      "Learning photography"
+    ],
+    "correct_index": 1,
+    "explanation": "Film required chemical baths in darkrooms to reveal the captured images.",
+    "id": "analog-life-82",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What was a \"TV Guide\"?",
+    "options": [
+      "A remote control",
+      "A weekly magazine listing TV schedules",
+      "A channel list on screen",
+      "An antenna"
+    ],
+    "correct_index": 1,
+    "explanation": "TV Guide magazine told you what was on each channel and when - essential for planning!",
+    "id": "analog-life-83",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was a \"8-track tape\"?",
+    "options": [
+      "A race track",
+      "An audio format in a plastic cartridge",
+      "An exercise routine",
+      "A railroad system"
+    ],
+    "correct_index": 1,
+    "explanation": "8-tracks were car-friendly music cartridges - they'd sometimes change tracks mid-song!",
+    "id": "analog-life-84",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What was \"calling time and temperature\"?",
+    "options": [
+      "Weather service",
+      "A phone number that announced the time and weather",
+      "A game",
+      "A cooking instruction"
+    ],
+    "correct_index": 1,
+    "explanation": "You could dial a number to hear a recording of the current time and temperature!",
+    "id": "analog-life-85",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was a \"transistor radio\"?",
+    "options": [
+      "A walkie talkie",
+      "A portable battery-powered AM/FM radio",
+      "A CB radio",
+      "A telephone"
+    ],
+    "correct_index": 1,
+    "explanation": "Transistor radios were the first truly portable radios - revolutionary in the 1950s-60s!",
+    "id": "analog-life-86",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What was \"waiting for the dial-up\"?",
+    "options": [
+      "Waiting for a taxi",
+      "Waiting for internet connection via phone line",
+      "Ordering food",
+      "Making a call"
+    ],
+    "correct_index": 1,
+    "explanation": "Dial-up internet made screeching noises and took forever - and blocked the phone line!",
+    "id": "analog-life-87",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "analog-life",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was a \"reel-to-reel\" player?",
+    "options": [
+      "A fishing device",
+      "Audio tape on open reels",
+      "A movie projector",
+      "A fishing game"
+    ],
+    "correct_index": 1,
+    "explanation": "Reel-to-reel recorders used tape on two spools - high quality audio before cassettes.",
+    "id": "analog-life-88",
+    "category": "generational",
+    "family_safe": true
+  }
+]

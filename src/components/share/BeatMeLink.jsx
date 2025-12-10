@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Copy, Check, Share2, MessageCircle, Send, Twitter } from 'lucide-react';
 import { GAMES, getTier } from '@/components/constants/games';
 
-export default function BeatMeLink({ gameId, score, percentage, userName }) {
+export default function BeatMeLink({ gameId, score, percentage, userName, challengerId }) {
   const [copied, setCopied] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   
@@ -11,9 +11,8 @@ export default function BeatMeLink({ gameId, score, percentage, userName }) {
   const tier = getTier(gameId, percentage);
   
   // Generate unique challenge link
-  const challengeCode = `${gameId}-${percentage}-${Date.now().toString(36)}`;
   const BASE_URL = import.meta.env.VITE_APP_URL || window.location.origin;
-  const shareUrl = `${BASE_URL}/#/Challenge?code=${challengeCode}&game=${gameId}&score=${percentage}`;
+  const shareUrl = `${BASE_URL}/#/Gameplay?gameId=${gameId}&challengerId=${challengerId || 'friend'}&challengerName=${encodeURIComponent(userName || 'Friend')}&challengerScore=${percentage}`;
   
   // Create emoji grid for visual appeal
   const emojiGrid = Array(10).fill(null).map((_, i) => 

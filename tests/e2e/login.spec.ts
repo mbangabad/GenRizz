@@ -27,4 +27,3 @@ test.describe('Login Route', () => {
     await expect(page.locator('button[type="submit"]')).toBeVisible();
   });
 });
-

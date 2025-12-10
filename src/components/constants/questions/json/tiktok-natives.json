@@ -1,0 +1,1090 @@
+[
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What is \"FYP\"?",
+    "options": [
+      "For Your Parents",
+      "For You Page - personalized TikTok feed",
+      "Find Your People",
+      "Free Your Phone"
+    ],
+    "correct_index": 1,
+    "explanation": "The FYP is TikTok's algorithm-curated main feed of recommended videos.",
+    "id": "tiktok-natives-1",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 1,
+    "type": "context",
+    "question": "What does \"going viral\" mean?",
+    "options": [
+      "Getting sick",
+      "Content spreading rapidly to millions",
+      "A computer virus",
+      "Going to the doctor"
+    ],
+    "correct_index": 1,
+    "explanation": "Viral content spreads exponentially through shares and the algorithm.",
+    "id": "tiktok-natives-2",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What is a \"TikTok sound\"?",
+    "options": [
+      "Notification noise",
+      "Audio clips used across multiple videos",
+      "Music genre",
+      "Phone speaker"
+    ],
+    "correct_index": 1,
+    "explanation": "Sounds are reusable audio that become trends when many creators use them.",
+    "id": "tiktok-natives-3",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 1,
+    "type": "context",
+    "question": "What is a \"duet\" on TikTok?",
+    "options": [
+      "Singing together",
+      "Side-by-side video reaction/collaboration",
+      "A music genre",
+      "Dancing with someone"
+    ],
+    "correct_index": 1,
+    "explanation": "Duets let you create alongside another video, appearing side by side.",
+    "id": "tiktok-natives-4",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What is a \"stitch\"?",
+    "options": [
+      "Sewing",
+      "Using a clip from another video in yours",
+      "A mistake",
+      "An injury"
+    ],
+    "correct_index": 1,
+    "explanation": "Stitches let you incorporate clips from others to respond or react.",
+    "id": "tiktok-natives-5",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 2,
+    "type": "context",
+    "question": "What does \"POV\" mean in TikTok videos?",
+    "options": [
+      "Point of View - first-person perspective content",
+      "Power of Video",
+      "Please Only View",
+      "Plenty of Views"
+    ],
+    "correct_index": 0,
+    "explanation": "POV videos put viewers in a scenario as if they're experiencing it.",
+    "id": "tiktok-natives-6",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What is \"trending\" on TikTok?",
+    "options": [
+      "Walking trends",
+      "Popular sounds, dances, or formats currently",
+      "Fashion trends",
+      "News stories"
+    ],
+    "correct_index": 1,
+    "explanation": "Trends are formats, sounds, or challenges that many creators participate in.",
+    "id": "tiktok-natives-7",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 2,
+    "type": "context",
+    "question": "What is a \"TikTok dance\"?",
+    "options": [
+      "A genre",
+      "Choreography set to a sound that goes viral",
+      "A competition",
+      "Professional dancing"
+    ],
+    "correct_index": 1,
+    "explanation": "TikTok dances are choreographed moves that spread as trends.",
+    "id": "tiktok-natives-8",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What does \"shadowban\" mean?",
+    "options": [
+      "A ghost attack",
+      "Account secretly limited without notification",
+      "Dark mode",
+      "Blocking someone"
+    ],
+    "correct_index": 1,
+    "explanation": "Shadowbans limit your reach without telling you - views mysteriously drop.",
+    "id": "tiktok-natives-9",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What is \"BookTok\"?",
+    "options": [
+      "A reading app",
+      "Book recommendation community on TikTok",
+      "Audiobooks",
+      "Library TikTok"
+    ],
+    "correct_index": 1,
+    "explanation": "BookTok has massive influence on book sales and reading trends.",
+    "id": "tiktok-natives-10",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What is a \"transition\" in TikTok?",
+    "options": [
+      "Life change",
+      "Seamless video edit between clips",
+      "Music fade",
+      "Scene change"
+    ],
+    "correct_index": 1,
+    "explanation": "Transitions are creative edits that smoothly connect different shots.",
+    "id": "tiktok-natives-11",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What is \"CleanTok\"?",
+    "options": [
+      "Clean phones",
+      "Cleaning and organization content community",
+      "Censored content",
+      "Kid-friendly TikTok"
+    ],
+    "correct_index": 1,
+    "explanation": "CleanTok features satisfying cleaning videos and organization tips.",
+    "id": "tiktok-natives-12",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What does \"ratio\" mean on TikTok?",
+    "options": [
+      "Math term",
+      "When replies/likes on a comment exceed the original",
+      "Video dimensions",
+      "Follower count"
+    ],
+    "correct_index": 1,
+    "explanation": "Getting ratioed means someone's reply is more popular than your post.",
+    "id": "tiktok-natives-13",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What is \"StoreTok\"?",
+    "options": [
+      "Online shopping",
+      "Target/store-related content and finds",
+      "Storage tips",
+      "Storytelling"
+    ],
+    "correct_index": 1,
+    "explanation": "People share finds from Target, Costco, and other stores.",
+    "id": "tiktok-natives-14",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What is a \"creator fund\"?",
+    "options": [
+      "Charity",
+      "TikTok paying creators for views",
+      "Savings account",
+      "Investment"
+    ],
+    "correct_index": 1,
+    "explanation": "Creator funds pay popular creators based on video performance.",
+    "id": "tiktok-natives-15",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What is \"WitchTok\"?",
+    "options": [
+      "Halloween content",
+      "Spirituality and witchcraft community",
+      "Scary videos",
+      "Magic tricks"
+    ],
+    "correct_index": 1,
+    "explanation": "WitchTok features tarot, crystals, spells, and spiritual content.",
+    "id": "tiktok-natives-16",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What is \"algorithm\" in TikTok context?",
+    "options": [
+      "Math formula",
+      "AI deciding what videos you see",
+      "Dance move",
+      "Music beat"
+    ],
+    "correct_index": 1,
+    "explanation": "The algorithm learns your preferences and curates your FYP.",
+    "id": "tiktok-natives-17",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What is \"FoodTok\"?",
+    "options": [
+      "Food delivery",
+      "Cooking and food content community",
+      "Restaurant reviews",
+      "Grocery shopping"
+    ],
+    "correct_index": 1,
+    "explanation": "FoodTok features recipes, restaurant reviews, and food trends.",
+    "id": "tiktok-natives-18",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What does \"blowing up\" mean?",
+    "options": [
+      "Explosion",
+      "Suddenly getting massive views",
+      "Getting angry",
+      "Breaking phone"
+    ],
+    "correct_index": 1,
+    "explanation": "Blowing up means a video suddenly gains viral traction.",
+    "id": "tiktok-natives-19",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What is \"GymTok\"?",
+    "options": [
+      "Gymnastics",
+      "Fitness and workout content community",
+      "Gym membership",
+      "Sports channel"
+    ],
+    "correct_index": 1,
+    "explanation": "GymTok features workouts, fitness tips, and gym culture content.",
+    "id": "tiktok-natives-20",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What is a \"niche\" on TikTok?",
+    "options": [
+      "A shelf",
+      "Specific content category or community",
+      "A dance",
+      "A sound"
+    ],
+    "correct_index": 1,
+    "explanation": "Niches are specific content communities like PlantTok, CottageCore, etc.",
+    "id": "tiktok-natives-21",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What is \"AltTok\"?",
+    "options": [
+      "Alternative medicine",
+      "Alternative/indie aesthetic content community",
+      "Old TikTok",
+      "Adult content"
+    ],
+    "correct_index": 1,
+    "explanation": "AltTok features alternative fashion, music, and aesthetic content.",
+    "id": "tiktok-natives-22",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What does \"engagement\" mean?",
+    "options": [
+      "Marriage proposal",
+      "Likes, comments, shares, and watch time",
+      "Business meeting",
+      "Audience size"
+    ],
+    "correct_index": 1,
+    "explanation": "Engagement metrics determine how the algorithm promotes content.",
+    "id": "tiktok-natives-23",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What is \"CottageCore\"?",
+    "options": [
+      "Apple cores",
+      "Romanticized rural/nature aesthetic",
+      "Cottage cheese",
+      "Core workout"
+    ],
+    "correct_index": 1,
+    "explanation": "Cottagecore celebrates pastoral, simple living aesthetics.",
+    "id": "tiktok-natives-24",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What is \"watch time\"?",
+    "options": [
+      "Clock checking",
+      "How long viewers watch your video",
+      "Notification time",
+      "Upload time"
+    ],
+    "correct_index": 1,
+    "explanation": "Watch time is crucial - the algorithm favors videos people watch fully.",
+    "id": "tiktok-natives-25",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What is \"DarkAcademia\"?",
+    "options": [
+      "Night school",
+      "Gothic scholarly aesthetic community",
+      "Dark mode",
+      "Horror content"
+    ],
+    "correct_index": 1,
+    "explanation": "Dark Academia romanticizes classic literature, libraries, and scholar aesthetics.",
+    "id": "tiktok-natives-26",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What is a \"hook\" in TikTok videos?",
+    "options": [
+      "Fishing term",
+      "Opening seconds that grab attention",
+      "A dance move",
+      "Music intro"
+    ],
+    "correct_index": 1,
+    "explanation": "The first 1-3 seconds must hook viewers or they scroll away.",
+    "id": "tiktok-natives-27",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What is \"FinTok\"?",
+    "options": [
+      "Finnish TikTok",
+      "Financial advice content community",
+      "Fin swimming",
+      "Finding things"
+    ],
+    "correct_index": 1,
+    "explanation": "FinTok features money tips, investing, and financial literacy content.",
+    "id": "tiktok-natives-28",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What is \"batch creating\"?",
+    "options": [
+      "Cooking term",
+      "Filming multiple videos at once",
+      "Group creating",
+      "Mass production"
+    ],
+    "correct_index": 1,
+    "explanation": "Creators film many videos in one session for consistent posting.",
+    "id": "tiktok-natives-29",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What is \"DeepTok\"?",
+    "options": [
+      "Deep sea content",
+      "Philosophical/deep conversation content",
+      "Deep cleaning",
+      "Deepfakes"
+    ],
+    "correct_index": 1,
+    "explanation": "DeepTok features introspective, philosophical, or meaningful content.",
+    "id": "tiktok-natives-30",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What is \"retention rate\"?",
+    "options": [
+      "Memory test",
+      "Percentage of viewers who watch entire video",
+      "Follower loyalty",
+      "Comment rate"
+    ],
+    "correct_index": 1,
+    "explanation": "High retention signals quality content to the algorithm.",
+    "id": "tiktok-natives-31",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What is \"StraightTok\" vs \"GayTok\"?",
+    "options": [
+      "Political terms",
+      "Different sides of TikTok based on content/algorithm",
+      "Dating categories",
+      "Music genres"
+    ],
+    "correct_index": 1,
+    "explanation": "The algorithm creates different experiences - users jokingly divide TikTok into \"sides.\"",
+    "id": "tiktok-natives-32",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What is \"affiliate marketing\" on TikTok?",
+    "options": [
+      "Team sports",
+      "Earning commission by promoting products",
+      "Partnering with friends",
+      "Joining groups"
+    ],
+    "correct_index": 1,
+    "explanation": "Creators earn money when followers buy products through their links.",
+    "id": "tiktok-natives-33",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What is a \"TikTok house\"?",
+    "options": [
+      "Real estate",
+      "Shared living space for content creators",
+      "Video backdrop",
+      "Dollhouse"
+    ],
+    "correct_index": 1,
+    "explanation": "Creator houses like Hype House gather influencers for collaboration.",
+    "id": "tiktok-natives-34",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What is \"boosting\" a video?",
+    "options": [
+      "Cheering",
+      "Paying to increase video reach",
+      "Making it louder",
+      "Speeding up"
+    ],
+    "correct_index": 1,
+    "explanation": "Paid promotion puts your video in front of more users.",
+    "id": "tiktok-natives-35",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What is \"trauma dumping\" on TikTok?",
+    "options": [
+      "Garbage content",
+      "Oversharing personal trauma for engagement",
+      "Deleting videos",
+      "Reporting content"
+    ],
+    "correct_index": 1,
+    "explanation": "Some creators share heavy personal content, raising ethical questions.",
+    "id": "tiktok-natives-36",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What is \"A/B testing\" for creators?",
+    "options": [
+      "Blood types",
+      "Testing different thumbnails/hooks to see what works",
+      "Grading system",
+      "Two accounts"
+    ],
+    "correct_index": 1,
+    "explanation": "Creators test variations to optimize content performance.",
+    "id": "tiktok-natives-37",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What is \"rage bait\"?",
+    "options": [
+      "Fishing angry",
+      "Content designed to provoke angry engagement",
+      "Angry videos",
+      "Rant content"
+    ],
+    "correct_index": 1,
+    "explanation": "Rage bait intentionally triggers anger because angry comments boost engagement.",
+    "id": "tiktok-natives-38",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What is \"soft launching\"?",
+    "options": [
+      "Gentle start",
+      "Subtly hinting at a relationship online",
+      "Slow video",
+      "Quiet posting"
+    ],
+    "correct_index": 1,
+    "explanation": "Soft launching shows hints of a partner without revealing them fully.",
+    "id": "tiktok-natives-39",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What is \"delulu\"?",
+    "options": [
+      "A song",
+      "Delusional - having unrealistic expectations",
+      "A dance",
+      "A filter"
+    ],
+    "correct_index": 1,
+    "explanation": "\"Delulu is the solulu\" - being delusional as a coping mechanism.",
+    "id": "tiktok-natives-40",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What is \"content fatigue\"?",
+    "options": [
+      "Tired videos",
+      "Creators/viewers burning out from constant content",
+      "Sleepy content",
+      "Boring videos"
+    ],
+    "correct_index": 1,
+    "explanation": "The pressure to constantly create leads to burnout and repetitive content.",
+    "id": "tiktok-natives-41",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What is \"parasocial\" in creator context?",
+    "options": [
+      "Para-social media",
+      "Fans feeling one-sided relationship with creators",
+      "Parallel social",
+      "Party social"
+    ],
+    "correct_index": 1,
+    "explanation": "Viewers develop emotional bonds with creators who don't know them.",
+    "id": "tiktok-natives-42",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What is \"bait and switch\"?",
+    "options": [
+      "Fishing",
+      "Misleading thumbnail/start that doesn't match content",
+      "Dating term",
+      "Shopping scam"
+    ],
+    "correct_index": 1,
+    "explanation": "Clickbait that promises one thing but delivers another.",
+    "id": "tiktok-natives-43",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What is \"beige flag\"?",
+    "options": [
+      "A color",
+      "Neutral trait that's neither red nor green flag",
+      "A signal",
+      "Surrender"
+    ],
+    "correct_index": 1,
+    "explanation": "Beige flags are quirky traits that aren't dealbreakers or positives.",
+    "id": "tiktok-natives-44",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What is \"astroturfing\"?",
+    "options": [
+      "Fake grass",
+      "Fake grassroots movements/trends for marketing",
+      "Sports field",
+      "Gardening"
+    ],
+    "correct_index": 1,
+    "explanation": "Companies create fake viral moments that appear organic.",
+    "id": "tiktok-natives-45",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What is \"chronically online\"?",
+    "options": [
+      "Sick from internet",
+      "So online that internet culture dominates worldview",
+      "Always posting",
+      "Internet addiction"
+    ],
+    "correct_index": 1,
+    "explanation": "Being chronically online means internet references dominate your thinking.",
+    "id": "tiktok-natives-46",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What is \"virtue signaling\"?",
+    "options": [
+      "Good behavior",
+      "Publicly expressing values for social approval, not action",
+      "Traffic signals",
+      "Charity work"
+    ],
+    "correct_index": 1,
+    "explanation": "Performative activism without actual action or commitment.",
+    "id": "tiktok-natives-47",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What is \"platform decay\"?",
+    "options": [
+      "Bad content",
+      "Platforms slowly getting worse to maximize profit",
+      "A minor feature bug",
+      "A new creator tool"
+    ],
+    "correct_index": 1,
+    "explanation": "Platforms can degrade when profit overrides user experience.",
+    "id": "tiktok-natives-48",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What is \"algorithmic amplification\"?",
+    "options": [
+      "Loud videos",
+      "Platform boosting certain content types",
+      "Sound editing",
+      "Music feature"
+    ],
+    "correct_index": 1,
+    "explanation": "Algorithms decide which content gets shown to millions vs. nobody.",
+    "id": "tiktok-natives-49",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What is \"context collapse\"?",
+    "options": [
+      "Building collapse",
+      "Content reaching unintended audiences",
+      "Lost information",
+      "App crash"
+    ],
+    "correct_index": 1,
+    "explanation": "Videos meant for one audience go viral to completely different people.",
+    "id": "tiktok-natives-50",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What is \"creator economy\"?",
+    "options": [
+      "Art class",
+      "Economic system where creators monetize content",
+      "Startup funding",
+      "Job market"
+    ],
+    "correct_index": 1,
+    "explanation": "The creator economy is worth billions, with creators as entrepreneurs.",
+    "id": "tiktok-natives-51",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What is \"doomscrolling\"?",
+    "options": [
+      "Gaming",
+      "Compulsively consuming negative content",
+      "Fortune telling",
+      "Bad news app"
+    ],
+    "correct_index": 1,
+    "explanation": "Doomscrolling is being unable to stop consuming distressing content.",
+    "id": "tiktok-natives-52",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What is \"performative authenticity\"?",
+    "options": [
+      "Acting real",
+      "Curating content to appear genuine and relatable",
+      "Method acting",
+      "Documentary"
+    ],
+    "correct_index": 1,
+    "explanation": "The paradox of trying hard to seem like you're not trying.",
+    "id": "tiktok-natives-53",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What is \"main character syndrome\"?",
+    "options": [
+      "Lead role",
+      "Behaving like life is your own movie",
+      "Protagonist",
+      "Hero complex"
+    ],
+    "correct_index": 1,
+    "explanation": "Acting like you're the protagonist and others are supporting characters.",
+    "id": "tiktok-natives-54",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What is \"attention economy\"?",
+    "options": [
+      "Focus training",
+      "Human attention as valuable commodity",
+      "Concentration",
+      "Mindfulness"
+    ],
+    "correct_index": 1,
+    "explanation": "Your attention is the product being sold to advertisers.",
+    "id": "tiktok-natives-55",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What is \"cancel culture\" nuance?",
+    "options": [
+      "Subscription ending",
+      "Public shaming with complex accountability questions",
+      "TV cancellation",
+      "Boycotts"
+    ],
+    "correct_index": 1,
+    "explanation": "Cancel culture raises questions about accountability, proportionality, and forgiveness.",
+    "id": "tiktok-natives-56",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What is \"platform dependency\"?",
+    "options": [
+      "App addiction",
+      "Creators' livelihood depending on platform decisions",
+      "Phone reliance",
+      "Software needs"
+    ],
+    "correct_index": 1,
+    "explanation": "Creators can lose everything if a platform changes rules or dies.",
+    "id": "tiktok-natives-57",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What is \"manufactured virality\"?",
+    "options": [
+      "Factory videos",
+      "Engineering content to trigger algorithm promotion",
+      "Fake views",
+      "Bot farms"
+    ],
+    "correct_index": 1,
+    "explanation": "Understanding exactly what makes content go viral and engineering it.",
+    "id": "tiktok-natives-58",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What is \"digital labor\"?",
+    "options": [
+      "Online jobs",
+      "Unpaid work creating value for platforms",
+      "Remote work",
+      "Computer tasks"
+    ],
+    "correct_index": 1,
+    "explanation": "User-generated content creates platform value without compensation.",
+    "id": "tiktok-natives-59",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What is \"radicalization pipeline\"?",
+    "options": [
+      "Plumbing",
+      "Algorithm pushing users toward extreme content",
+      "Political ads",
+      "News bias"
+    ],
+    "correct_index": 1,
+    "explanation": "Algorithms can lead users from mainstream to increasingly extreme content.",
+    "id": "tiktok-natives-60",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What is \"authenticity paradox\"?",
+    "options": [
+      "Real fake",
+      "Being genuine requires performance in influencer culture",
+      "Truth lie",
+      "Honest lying"
+    ],
+    "correct_index": 1,
+    "explanation": "The more you try to be authentic online, the more performed it becomes.",
+    "id": "tiktok-natives-61",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What is \"digital colonialism\" in platform context?",
+    "options": [
+      "Online history",
+      "Platforms extracting value from global users to benefit few",
+      "Internet explorer",
+      "Website invasion"
+    ],
+    "correct_index": 1,
+    "explanation": "Silicon Valley platforms extract value from worldwide users.",
+    "id": "tiktok-natives-62",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What is \"surveillance capitalism\"?",
+    "options": [
+      "Security cameras",
+      "Business model profiting from behavioral prediction",
+      "Market watching",
+      "Stock trading"
+    ],
+    "correct_index": 1,
+    "explanation": "Platforms profit by predicting and modifying user behavior.",
+    "id": "tiktok-natives-63",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "tiktok-natives",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What is \"memetic warfare\"?",
+    "options": [
+      "Internet jokes",
+      "Using viral content for ideological influence",
+      "Meme battles",
+      "Comedy wars"
+    ],
+    "correct_index": 1,
+    "explanation": "Memes are used strategically to spread ideas and influence culture.",
+    "id": "tiktok-natives-64",
+    "category": "generational",
+    "family_safe": true
+  }
+]

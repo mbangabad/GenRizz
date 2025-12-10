@@ -1,0 +1,4473 @@
+[
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What is a \"rotary phone\"?",
+    "options": [
+      "A phone with a spinning dial",
+      "A phone that rotates 360°",
+      "A cordless phone",
+      "A car phone"
+    ],
+    "correct_index": 0,
+    "explanation": "Rotary phones had a circular dial you spun to make calls - no buttons!",
+    "id": "revenge-of-boomers-1",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What does \"Be kind, rewind\" refer to?",
+    "options": [
+      "VHS tapes",
+      "Cassette players",
+      "Record players",
+      "Typewriters"
+    ],
+    "correct_index": 0,
+    "explanation": "Video rental stores asked customers to rewind VHS tapes before returning them.",
+    "id": "revenge-of-boomers-2",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 1,
+    "type": "truefalse",
+    "question": "True or False: The internet existed in the 1970s.",
+    "options": [
+      "True - ARPANET started in 1969",
+      "False - It started in the 1990s",
+      "False - It started in the 1980s",
+      "True - But only in Japan"
+    ],
+    "correct_index": 0,
+    "explanation": "ARPANET, the precursor to the internet, was created in 1969!",
+    "id": "revenge-of-boomers-3",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What is a \"TV dinner\"?",
+    "options": [
+      "A pre-packaged frozen meal",
+      "Eating while watching TV",
+      "A dinner party watching TV",
+      "A TV-shaped plate"
+    ],
+    "correct_index": 0,
+    "explanation": "TV dinners were frozen meals in compartmented trays, designed to eat while watching TV.",
+    "id": "revenge-of-boomers-4",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 1,
+    "type": "context",
+    "question": "Why did people \"rabbit ears\" on their TVs?",
+    "options": [
+      "To improve antenna reception",
+      "For decoration",
+      "To hang things on",
+      "It was a brand name"
+    ],
+    "correct_index": 0,
+    "explanation": "Rabbit ears were adjustable TV antennas that helped get clearer reception.",
+    "id": "revenge-of-boomers-5",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What is a \"station wagon\"?",
+    "options": [
+      "A car with extended rear cargo area",
+      "A train station vehicle",
+      "A radio station van",
+      "A police car"
+    ],
+    "correct_index": 0,
+    "explanation": "Station wagons were family cars with extended backs for cargo and extra seating.",
+    "id": "revenge-of-boomers-6",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "context",
+    "question": "What did \"hanging up\" the phone originally mean?",
+    "options": [
+      "Placing the receiver on a hook",
+      "Throwing the phone away",
+      "Putting it in your pocket",
+      "Pressing the end button"
+    ],
+    "correct_index": 0,
+    "explanation": "Old phones had receivers that hung on a hook or cradle to end calls.",
+    "id": "revenge-of-boomers-7",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What is a \"carbon copy\"?",
+    "options": [
+      "A duplicate made with carbon paper",
+      "A digital copy",
+      "A photocopy",
+      "An exact twin"
+    ],
+    "correct_index": 0,
+    "explanation": "Carbon paper created copies when writing - that's why emails have \"CC\" (carbon copy)!",
+    "id": "revenge-of-boomers-8",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "context",
+    "question": "Why would someone \"dial\" a phone number?",
+    "options": [
+      "Rotary phones required spinning a dial",
+      "It was slang for calling",
+      "Dial was a phone brand",
+      "To adjust the volume"
+    ],
+    "correct_index": 0,
+    "explanation": "Before touch-tone, you literally dialed numbers by rotating a dial.",
+    "id": "revenge-of-boomers-9",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What was a \"milk man\"?",
+    "options": [
+      "Someone who delivered milk to homes",
+      "A dairy farmer",
+      "A grocery store worker",
+      "A cereal mascot"
+    ],
+    "correct_index": 0,
+    "explanation": "Milkmen delivered fresh milk bottles to doorsteps every morning.",
+    "id": "revenge-of-boomers-10",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What is a \"floppy disk\"?",
+    "options": [
+      "A flexible magnetic storage disk",
+      "A broken CD",
+      "A vinyl record",
+      "A type of frisbee"
+    ],
+    "correct_index": 0,
+    "explanation": "Floppy disks were flexible magnetic disks used to store computer data.",
+    "id": "revenge-of-boomers-11",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What was \"party line\" phone service?",
+    "options": [
+      "Multiple households shared one phone line",
+      "A phone line for parties",
+      "A 24/7 hotline",
+      "A phone with multiple buttons"
+    ],
+    "correct_index": 0,
+    "explanation": "Party lines meant neighbors shared a single phone line and could hear each other's calls!",
+    "id": "revenge-of-boomers-12",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What is a \"Polaroid\"?",
+    "options": [
+      "An instant camera/photo",
+      "A type of sunglasses",
+      "A record player",
+      "A flashlight"
+    ],
+    "correct_index": 0,
+    "explanation": "Polaroid cameras printed photos instantly - no developing needed!",
+    "id": "revenge-of-boomers-13",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "context",
+    "question": "Why did people \"roll down\" car windows?",
+    "options": [
+      "Windows had manual hand cranks",
+      "To show off",
+      "It was faster",
+      "Electric windows didn't exist yet"
+    ],
+    "correct_index": 0,
+    "explanation": "Before power windows, you turned a hand crank to lower the window.",
+    "id": "revenge-of-boomers-14",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"record player\"?",
+    "options": [
+      "A device that plays vinyl records",
+      "A sports statistics tracker",
+      "A court stenographer",
+      "A video recorder"
+    ],
+    "correct_index": 0,
+    "explanation": "Record players (turntables) played music from vinyl discs using a needle.",
+    "id": "revenge-of-boomers-15",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What is a \"typewriter\"?",
+    "options": [
+      "A mechanical writing machine",
+      "A person who types fast",
+      "A font style",
+      "A computer program"
+    ],
+    "correct_index": 0,
+    "explanation": "Typewriters were mechanical machines that printed letters on paper as you typed.",
+    "id": "revenge-of-boomers-16",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What was \"white-out\" or \"liquid paper\" used for?",
+    "options": [
+      "Correcting typing mistakes",
+      "Cleaning keyboards",
+      "Gluing paper",
+      "Highlighting text"
+    ],
+    "correct_index": 0,
+    "explanation": "White-out covered typing errors so you could type over them.",
+    "id": "revenge-of-boomers-17",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What is a \"slide projector\"?",
+    "options": [
+      "A device showing photographic slides",
+      "A playground equipment",
+      "A PowerPoint app",
+      "A camera type"
+    ],
+    "correct_index": 0,
+    "explanation": "Slide projectors displayed photographs on slides, projected onto a screen.",
+    "id": "revenge-of-boomers-18",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "Why would you need to \"develop\" photos?",
+    "options": [
+      "Film required chemical processing",
+      "To make them larger",
+      "To frame them",
+      "To share online"
+    ],
+    "correct_index": 0,
+    "explanation": "Camera film needed chemical processing in a darkroom to become visible photos.",
+    "id": "revenge-of-boomers-19",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What was an \"8-track\"?",
+    "options": [
+      "A music cartridge format",
+      "A racing track",
+      "A computer chip",
+      "A type of cassette"
+    ],
+    "correct_index": 0,
+    "explanation": "8-track tapes were music cartridges popular in the 1970s, especially in cars.",
+    "id": "revenge-of-boomers-20",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What did \"adjusting the tracking\" mean on a VCR?",
+    "options": [
+      "Fixing the picture quality",
+      "Changing channels",
+      "Recording a show",
+      "Fast forwarding"
+    ],
+    "correct_index": 0,
+    "explanation": "VCR tracking adjusted the tape playback to eliminate picture distortion.",
+    "id": "revenge-of-boomers-21",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"pager\" or \"beeper\"?",
+    "options": [
+      "A device that received numeric messages",
+      "A book organizer",
+      "A printer",
+      "A fax machine"
+    ],
+    "correct_index": 0,
+    "explanation": "Pagers received phone numbers or short messages, telling you to call back.",
+    "id": "revenge-of-boomers-22",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "Why did dial-up internet make that famous screeching noise?",
+    "options": [
+      "Modems communicating via phone lines",
+      "The computer was broken",
+      "It was loading graphics",
+      "Speakers were malfunctioning"
+    ],
+    "correct_index": 0,
+    "explanation": "The noise was modems handshaking - establishing a connection over phone lines.",
+    "id": "revenge-of-boomers-23",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was \"Betamax\"?",
+    "options": [
+      "A video tape format that lost to VHS",
+      "A fitness program",
+      "A computer brand",
+      "A video game console"
+    ],
+    "correct_index": 0,
+    "explanation": "Betamax was Sony's video format that lost the format war to VHS despite being higher quality.",
+    "id": "revenge-of-boomers-24",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What did \"waiting for the dial tone\" mean?",
+    "options": [
+      "Confirming phone line was active before dialing",
+      "Choosing a ringtone",
+      "Testing speakers",
+      "Answering a call"
+    ],
+    "correct_index": 0,
+    "explanation": "You had to hear a dial tone before making a call to know the line was working.",
+    "id": "revenge-of-boomers-25",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was a \"telegram\"?",
+    "options": [
+      "A message sent via telegraph wire",
+      "An Instagram before photos",
+      "A type of letter",
+      "A phone message"
+    ],
+    "correct_index": 0,
+    "explanation": "Telegrams were messages transmitted electrically over wires before phones.",
+    "id": "revenge-of-boomers-26",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "Why would someone say \"don't touch that dial\"?",
+    "options": [
+      "To keep the TV/radio on the current channel",
+      "To avoid electrocution",
+      "To prevent breaking it",
+      "It was a threat"
+    ],
+    "correct_index": 0,
+    "explanation": "Broadcasters said this before commercials to keep viewers from changing the channel.",
+    "id": "revenge-of-boomers-27",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was a \"transistor radio\"?",
+    "options": [
+      "A portable battery-powered radio",
+      "A radio that changes stations",
+      "A car radio",
+      "A radio station type"
+    ],
+    "correct_index": 0,
+    "explanation": "Transistor radios were small, portable radios that ran on batteries.",
+    "id": "revenge-of-boomers-28",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What did it mean to \"tape\" a TV show?",
+    "options": [
+      "Record it on a VCR",
+      "Fix the TV with tape",
+      "Pause it",
+      "Mark the time"
+    ],
+    "correct_index": 0,
+    "explanation": "Before DVRs, you used a VCR to \"tape\" shows on videocassettes.",
+    "id": "revenge-of-boomers-29",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was \"S&H Green Stamps\"?",
+    "options": [
+      "A rewards program from stores",
+      "A mailing service",
+      "A food brand",
+      "A gas station chain"
+    ],
+    "correct_index": 0,
+    "explanation": "Green Stamps were loyalty rewards you collected and redeemed for merchandise.",
+    "id": "revenge-of-boomers-30",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What did \"long distance\" mean for phone calls?",
+    "options": [
+      "Calling outside your local area (expensive)",
+      "Using a long phone cord",
+      "Calling internationally only",
+      "Leaving a voicemail"
+    ],
+    "correct_index": 0,
+    "explanation": "Long distance calls (outside your area code) cost significantly more per minute.",
+    "id": "revenge-of-boomers-31",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"mimeograph\"?",
+    "options": [
+      "A printing/copying machine",
+      "A type of telegram",
+      "A musical instrument",
+      "A map reader"
+    ],
+    "correct_index": 0,
+    "explanation": "Mimeograph machines made copies using stencils - schools used them for handouts.",
+    "id": "revenge-of-boomers-32",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "Why did TV only have 3-4 channels originally?",
+    "options": [
+      "Only a few networks had broadcasting licenses",
+      "TVs couldn't handle more",
+      "Nobody wanted more",
+      "Government restrictions"
+    ],
+    "correct_index": 0,
+    "explanation": "Before cable, only ABC, CBS, NBC, and PBS had broadcast licenses in most areas.",
+    "id": "revenge-of-boomers-33",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"switchboard operator\"?",
+    "options": [
+      "A person who manually connected phone calls",
+      "A DJ at a radio station",
+      "An electrician",
+      "A train conductor"
+    ],
+    "correct_index": 0,
+    "explanation": "Operators physically plugged cables to connect your call to the right number.",
+    "id": "revenge-of-boomers-34",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What was \"rabbit ears\" aluminum foil trick?",
+    "options": [
+      "Improving TV antenna reception",
+      "Cooking method",
+      "Art project",
+      "Prank technique"
+    ],
+    "correct_index": 0,
+    "explanation": "Wrapping foil around rabbit ear antennas supposedly improved TV reception.",
+    "id": "revenge-of-boomers-35",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was \"Encyclopaedia Britannica\"?",
+    "options": [
+      "A multi-volume printed reference set",
+      "A British TV channel",
+      "A school subject",
+      "A board game"
+    ],
+    "correct_index": 0,
+    "explanation": "Before Wikipedia, families bought expensive encyclopedia sets for information.",
+    "id": "revenge-of-boomers-36",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What was the \"phone book\" yellow pages?",
+    "options": [
+      "Business directory organized by category",
+      "A book about phones",
+      "Phone user manual",
+      "A storybook"
+    ],
+    "correct_index": 0,
+    "explanation": "Yellow pages listed businesses by category - how you found services before Google.",
+    "id": "revenge-of-boomers-37",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was a \"hi-fi\" system?",
+    "options": [
+      "High-fidelity audio equipment",
+      "A greeting style",
+      "A computer network",
+      "A type of antenna"
+    ],
+    "correct_index": 0,
+    "explanation": "Hi-fi (high fidelity) referred to quality home stereo systems.",
+    "id": "revenge-of-boomers-38",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "context",
+    "question": "Why did movie theaters have \"intermissions\"?",
+    "options": [
+      "To change film reels and let people take breaks",
+      "For advertisements",
+      "Legal requirement",
+      "Union breaks"
+    ],
+    "correct_index": 0,
+    "explanation": "Long films needed reel changes, plus it let people buy more concessions!",
+    "id": "revenge-of-boomers-39",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was a \"card catalog\"?",
+    "options": [
+      "A library's index system in physical drawers",
+      "A baseball card collection",
+      "A credit card list",
+      "A greeting card store"
+    ],
+    "correct_index": 0,
+    "explanation": "Libraries organized books using cards in drawers, filed alphabetically.",
+    "id": "revenge-of-boomers-40",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What was the \"Ed Sullivan Show\" famous for?",
+    "options": [
+      "Launching The Beatles in America",
+      "Cooking demonstrations",
+      "Political debates",
+      "Sports highlights"
+    ],
+    "correct_index": 0,
+    "explanation": "Ed Sullivan introduced The Beatles to American audiences in 1964, watched by 73 million.",
+    "id": "revenge-of-boomers-41",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was \"Woodstock\"?",
+    "options": [
+      "A 1969 music festival",
+      "A cartoon bird",
+      "A type of furniture",
+      "A town in New York"
+    ],
+    "correct_index": 0,
+    "explanation": "Woodstock was the legendary 1969 music festival that defined a generation.",
+    "id": "revenge-of-boomers-42",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What did \"The British Invasion\" refer to?",
+    "options": [
+      "British rock bands becoming popular in the US",
+      "A war",
+      "Immigration wave",
+      "A TV show"
+    ],
+    "correct_index": 0,
+    "explanation": "The British Invasion was when UK bands like The Beatles dominated American music in the 1960s.",
+    "id": "revenge-of-boomers-43",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was a \"drive-in movie\"?",
+    "options": [
+      "Outdoor theater where you watch from your car",
+      "A movie about driving",
+      "A fast food restaurant",
+      "A car dealership"
+    ],
+    "correct_index": 0,
+    "explanation": "Drive-in theaters let you watch movies from your car using speakers.",
+    "id": "revenge-of-boomers-44",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What was \"duck and cover\"?",
+    "options": [
+      "A Cold War nuclear drill for children",
+      "A dance move",
+      "A children's game",
+      "A swimming technique"
+    ],
+    "correct_index": 0,
+    "explanation": "Schools taught kids to hide under desks in case of nuclear attack during the Cold War.",
+    "id": "revenge-of-boomers-45",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was a \"sock hop\"?",
+    "options": [
+      "A school dance where you removed shoes",
+      "A laundry game",
+      "A type of music",
+      "A basketball term"
+    ],
+    "correct_index": 0,
+    "explanation": "Sock hops were 1950s dances where kids removed shoes to protect gym floors.",
+    "id": "revenge-of-boomers-46",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "context",
+    "question": "Why was the phrase \"Turn on, tune in, drop out\" significant?",
+    "options": [
+      "Timothy Leary's 1960s counterculture slogan",
+      "A TV repair instruction",
+      "A radio jingle",
+      "A driving lesson"
+    ],
+    "correct_index": 0,
+    "explanation": "This was Timothy Leary's famous phrase promoting psychedelic experiences in the 1960s.",
+    "id": "revenge-of-boomers-47",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was \"Beatlemania\"?",
+    "options": [
+      "Intense fan frenzy for The Beatles",
+      "A board game",
+      "A disease",
+      "A type of music"
+    ],
+    "correct_index": 0,
+    "explanation": "Beatlemania described the hysteric fan culture around The Beatles in the 1960s.",
+    "id": "revenge-of-boomers-48",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What was the \"Summer of Love\"?",
+    "options": [
+      "1967 hippie gathering in San Francisco",
+      "A romantic movie",
+      "A heat wave",
+      "A music album"
+    ],
+    "correct_index": 0,
+    "explanation": "The Summer of Love (1967) was when 100,000 hippies gathered in San Francisco.",
+    "id": "revenge-of-boomers-49",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was a \"draft card\"?",
+    "options": [
+      "Military service registration",
+      "A beer menu",
+      "A weather report",
+      "A sports pick"
+    ],
+    "correct_index": 0,
+    "explanation": "Draft cards registered young men for potential military service, burned in Vietnam War protests.",
+    "id": "revenge-of-boomers-50",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What was the \"Space Race\"?",
+    "options": [
+      "US-Soviet competition to reach the moon",
+      "A video game",
+      "A TV show",
+      "A car race"
+    ],
+    "correct_index": 0,
+    "explanation": "The Space Race was the Cold War competition between the US and USSR for space exploration.",
+    "id": "revenge-of-boomers-51",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What was \"Haight-Ashbury\"?",
+    "options": [
+      "San Francisco's hippie district",
+      "A fashion brand",
+      "A law firm",
+      "A TV network"
+    ],
+    "correct_index": 0,
+    "explanation": "Haight-Ashbury was the San Francisco neighborhood that became hippie headquarters.",
+    "id": "revenge-of-boomers-52",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What did \"groovy\" mean?",
+    "options": [
+      "Cool, fashionable, excellent",
+      "Related to music grooves",
+      "Wavy patterns",
+      "Dancing style"
+    ],
+    "correct_index": 0,
+    "explanation": "Groovy was 1960s slang for something cool or excellent.",
+    "id": "revenge-of-boomers-53",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What was a \"Jukebox\"?",
+    "options": [
+      "A coin-operated music player",
+      "A radio station",
+      "A type of speaker",
+      "A dance club"
+    ],
+    "correct_index": 0,
+    "explanation": "Jukeboxes were coin-operated machines in diners that played songs you selected.",
+    "id": "revenge-of-boomers-54",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What was \"Roe v. Wade\" (1973)?",
+    "options": [
+      "Supreme Court case legalizing abortion",
+      "A boxing match",
+      "A business lawsuit",
+      "A fishing dispute"
+    ],
+    "correct_index": 0,
+    "explanation": "Roe v. Wade was the landmark Supreme Court case that established abortion rights.",
+    "id": "revenge-of-boomers-55",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What was the \"Watergate scandal\"?",
+    "options": [
+      "Nixon's political scandal leading to resignation",
+      "A water crisis",
+      "A hotel opening",
+      "A boat race"
+    ],
+    "correct_index": 0,
+    "explanation": "Watergate was the scandal that led to President Nixon's resignation in 1974.",
+    "id": "revenge-of-boomers-56",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What did \"Make love, not war\" protest?",
+    "options": [
+      "The Vietnam War",
+      "World War II",
+      "The Korean War",
+      "The Cold War"
+    ],
+    "correct_index": 0,
+    "explanation": "This famous slogan was the anthem of the anti-Vietnam War movement.",
+    "id": "revenge-of-boomers-57",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What was the \"ERA\"?",
+    "options": [
+      "Equal Rights Amendment for gender equality",
+      "A baseball stat",
+      "A time period",
+      "An energy rating"
+    ],
+    "correct_index": 0,
+    "explanation": "The ERA was a proposed constitutional amendment for equal rights regardless of sex.",
+    "id": "revenge-of-boomers-58",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What was \"Kent State\"?",
+    "options": [
+      "1970 shooting of student protesters by National Guard",
+      "A university team",
+      "A fashion brand",
+      "A TV show"
+    ],
+    "correct_index": 0,
+    "explanation": "Four students were killed by National Guard during a Vietnam War protest at Kent State.",
+    "id": "revenge-of-boomers-59",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What was a \"freedom rider\"?",
+    "options": [
+      "Civil rights activist protesting bus segregation",
+      "A motorcycle gang",
+      "A type of car",
+      "A horse breed"
+    ],
+    "correct_index": 0,
+    "explanation": "Freedom Riders were civil rights activists who rode buses to challenge segregation.",
+    "id": "revenge-of-boomers-60",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What was the \"Pentagon Papers\"?",
+    "options": [
+      "Leaked documents about Vietnam War deception",
+      "Military blueprints",
+      "Budget reports",
+      "War strategies"
+    ],
+    "correct_index": 0,
+    "explanation": "The Pentagon Papers revealed the government had lied about the Vietnam War.",
+    "id": "revenge-of-boomers-61",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What was the \"Feminine Mystique\"?",
+    "options": [
+      "Betty Friedan's feminist book",
+      "A perfume",
+      "A fashion magazine",
+      "A TV show"
+    ],
+    "correct_index": 0,
+    "explanation": "Betty Friedan's 1963 book sparked the second-wave feminist movement.",
+    "id": "revenge-of-boomers-62",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What was \"Stonewall\"?",
+    "options": [
+      "1969 LGBTQ+ uprising in NYC",
+      "A military strategy",
+      "A rock band",
+      "A type of wall construction"
+    ],
+    "correct_index": 0,
+    "explanation": "The Stonewall riots in 1969 launched the modern LGBTQ+ rights movement.",
+    "id": "revenge-of-boomers-63",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What was \"The Great Society\"?",
+    "options": [
+      "LBJ's domestic reform programs",
+      "A social club",
+      "A TV show",
+      "A utopian novel"
+    ],
+    "correct_index": 0,
+    "explanation": "President Johnson's Great Society programs included Medicare and civil rights legislation.",
+    "id": "revenge-of-boomers-64",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What did \"Flower Power\" represent?",
+    "options": [
+      "Passive resistance and non-violence",
+      "Gardening trends",
+      "A perfume brand",
+      "Floral fashion"
+    ],
+    "correct_index": 0,
+    "explanation": "Flower Power symbolized the hippie ideology of peace and passive resistance.",
+    "id": "revenge-of-boomers-65",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What was a \"Chicano\"?",
+    "options": [
+      "Mexican-American civil rights activist",
+      "A type of coffee",
+      "A dance style",
+      "A car model"
+    ],
+    "correct_index": 0,
+    "explanation": "Chicano became an identity term for Mexican-American civil rights activists.",
+    "id": "revenge-of-boomers-66",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What was the \"My Lai Massacre\"?",
+    "options": [
+      "US war crime against Vietnamese civilians",
+      "A battle victory",
+      "A peace negotiation",
+      "A military base"
+    ],
+    "correct_index": 0,
+    "explanation": "My Lai was a horrific massacre of Vietnamese civilians by US soldiers in 1968.",
+    "id": "revenge-of-boomers-67",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What was \"busing\"?",
+    "options": [
+      "Transporting students for school integration",
+      "Public transportation",
+      "School bus safety",
+      "Bus manufacturing"
+    ],
+    "correct_index": 0,
+    "explanation": "Busing was the controversial policy of transporting students to integrate schools.",
+    "id": "revenge-of-boomers-68",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What was \"stagflation\"?",
+    "options": [
+      "Economic stagnation plus inflation in the 1970s",
+      "A theater term",
+      "A medical condition",
+      "A fashion trend"
+    ],
+    "correct_index": 0,
+    "explanation": "Stagflation was the 1970s crisis of high inflation combined with economic stagnation.",
+    "id": "revenge-of-boomers-69",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What was the \"Silent Majority\"?",
+    "options": [
+      "Nixon's term for conservative Americans",
+      "A meditation group",
+      "A protest movement",
+      "A voting bloc"
+    ],
+    "correct_index": 0,
+    "explanation": "Nixon used \"Silent Majority\" to describe Americans who didn't protest but supported him.",
+    "id": "revenge-of-boomers-70",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What was the \"Saturday Night Massacre\"?",
+    "options": [
+      "Nixon firing Watergate investigators",
+      "A TV show",
+      "A sports event",
+      "A concert incident"
+    ],
+    "correct_index": 0,
+    "explanation": "Nixon's firing of the Watergate special prosecutor and others was called the Saturday Night Massacre.",
+    "id": "revenge-of-boomers-71",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What was \"Détente\"?",
+    "options": [
+      "Easing of Cold War tensions",
+      "A type of dance",
+      "A military strategy",
+      "A peace treaty"
+    ],
+    "correct_index": 0,
+    "explanation": "Détente was the policy of relaxing tensions between the US and Soviet Union.",
+    "id": "revenge-of-boomers-72",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What was \"COINTELPRO\"?",
+    "options": [
+      "FBI program to surveil civil rights leaders",
+      "A computer program",
+      "A news channel",
+      "An intelligence agency"
+    ],
+    "correct_index": 0,
+    "explanation": "COINTELPRO was the FBI's secret program to infiltrate and disrupt civil rights groups.",
+    "id": "revenge-of-boomers-73",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What was the \"Tet Offensive\"?",
+    "options": [
+      "Massive North Vietnamese attack in 1968",
+      "A sports play",
+      "A dance move",
+      "A political strategy"
+    ],
+    "correct_index": 0,
+    "explanation": "The Tet Offensive was a surprise attack that turned American public opinion against the Vietnam War.",
+    "id": "revenge-of-boomers-74",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What was the \"domino theory\"?",
+    "options": [
+      "Fear that countries would fall to communism one by one",
+      "A game strategy",
+      "An economic model",
+      "A pizza chain concept"
+    ],
+    "correct_index": 0,
+    "explanation": "The domino theory justified US intervention - if one country fell to communism, others would follow.",
+    "id": "revenge-of-boomers-75",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What was \"Ms.\" magazine?",
+    "options": [
+      "Feminist magazine co-founded by Gloria Steinem",
+      "A beauty magazine",
+      "A travel magazine",
+      "A cooking magazine"
+    ],
+    "correct_index": 0,
+    "explanation": "Ms. was a groundbreaking feminist magazine that began publishing in 1972.",
+    "id": "revenge-of-boomers-76",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What was the \"Chicago Seven\"?",
+    "options": [
+      "Activists tried for 1968 convention protests",
+      "A jazz band",
+      "A TV show",
+      "A sports team"
+    ],
+    "correct_index": 0,
+    "explanation": "The Chicago Seven were activists tried for protests at the 1968 Democratic Convention.",
+    "id": "revenge-of-boomers-77",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What was the \"Warren Commission\"?",
+    "options": [
+      "Investigation into JFK's assassination",
+      "A banking committee",
+      "A military tribunal",
+      "A civil rights group"
+    ],
+    "correct_index": 0,
+    "explanation": "The Warren Commission investigated President Kennedy's assassination.",
+    "id": "revenge-of-boomers-78",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What was \"Credibility gap\"?",
+    "options": [
+      "Distrust of government statements about Vietnam",
+      "A fashion term",
+      "An economic measure",
+      "A marketing concept"
+    ],
+    "correct_index": 0,
+    "explanation": "The credibility gap referred to public distrust of government claims about the Vietnam War.",
+    "id": "revenge-of-boomers-79",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What was the \"Port Huron Statement\"?",
+    "options": [
+      "SDS manifesto for student activism",
+      "A peace treaty",
+      "A business plan",
+      "A legal document"
+    ],
+    "correct_index": 0,
+    "explanation": "The Port Huron Statement was the Students for a Democratic Society's founding manifesto.",
+    "id": "revenge-of-boomers-80",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 17,
+    "type": "context",
+    "question": "What was the \"Gulf of Tonkin Resolution\"?",
+    "options": [
+      "Congressional authorization for Vietnam War",
+      "A peace treaty",
+      "A trade agreement",
+      "An environmental law"
+    ],
+    "correct_index": 0,
+    "explanation": "The Gulf of Tonkin Resolution gave LBJ broad powers to escalate the Vietnam War based on disputed events.",
+    "id": "revenge-of-boomers-81",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 17,
+    "type": "definition",
+    "question": "What was \"Operation Rolling Thunder\"?",
+    "options": [
+      "Sustained US bombing campaign in Vietnam",
+      "A weather system",
+      "A rock concert tour",
+      "A military exercise"
+    ],
+    "correct_index": 0,
+    "explanation": "Rolling Thunder was the massive US bombing campaign against North Vietnam from 1965-1968.",
+    "id": "revenge-of-boomers-82",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 17,
+    "type": "context",
+    "question": "Who said \"I have a dream\" and when?",
+    "options": [
+      "MLK Jr., 1963 March on Washington",
+      "JFK, 1960",
+      "Malcolm X, 1965",
+      "RFK, 1968"
+    ],
+    "correct_index": 0,
+    "explanation": "Martin Luther King Jr. delivered his iconic \"I Have a Dream\" speech in 1963.",
+    "id": "revenge-of-boomers-83",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 17,
+    "type": "definition",
+    "question": "What was \"SNCC\"?",
+    "options": [
+      "Student Nonviolent Coordinating Committee",
+      "A news network",
+      "A music label",
+      "A political party"
+    ],
+    "correct_index": 0,
+    "explanation": "SNCC was a key civil rights organization that led voter registration and sit-ins.",
+    "id": "revenge-of-boomers-84",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 17,
+    "type": "context",
+    "question": "What was the \"March on Selma\"?",
+    "options": [
+      "Voting rights march met with police violence",
+      "A labor union march",
+      "An anti-war protest",
+      "A women's rights march"
+    ],
+    "correct_index": 0,
+    "explanation": "The 1965 Selma marches for voting rights included \"Bloody Sunday\" when marchers were attacked.",
+    "id": "revenge-of-boomers-85",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 18,
+    "type": "definition",
+    "question": "What was \"The Feminine Mystique\" about?",
+    "options": [
+      "Women's dissatisfaction with domestic roles",
+      "Fashion trends",
+      "Cosmetics industry",
+      "Dating advice"
+    ],
+    "correct_index": 0,
+    "explanation": "Friedan's book articulated the frustration of educated women confined to housewife roles.",
+    "id": "revenge-of-boomers-86",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 18,
+    "type": "context",
+    "question": "What was the \"Daisy Ad\"?",
+    "options": [
+      "LBJ's nuclear fear campaign ad against Goldwater",
+      "A flower commercial",
+      "A perfume ad",
+      "A children's show"
+    ],
+    "correct_index": 0,
+    "explanation": "The \"Daisy\" ad implied Goldwater would cause nuclear war and changed political advertising forever.",
+    "id": "revenge-of-boomers-87",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 18,
+    "type": "definition",
+    "question": "What was \"Black Power\"?",
+    "options": [
+      "Call for Black self-determination and pride",
+      "An electrical term",
+      "A music genre",
+      "A sports team"
+    ],
+    "correct_index": 0,
+    "explanation": "Black Power was a movement for Black self-determination, pride, and economic empowerment.",
+    "id": "revenge-of-boomers-88",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 18,
+    "type": "context",
+    "question": "What was the \"Watts Rebellion\"?",
+    "options": [
+      "1965 Los Angeles uprising against police brutality",
+      "A music festival",
+      "A political campaign",
+      "A labor strike"
+    ],
+    "correct_index": 0,
+    "explanation": "The Watts Rebellion was a six-day uprising in LA sparked by police brutality.",
+    "id": "revenge-of-boomers-89",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 18,
+    "type": "definition",
+    "question": "What was the \"New Left\"?",
+    "options": [
+      "1960s progressive political movement",
+      "A dance style",
+      "A fashion trend",
+      "A music genre"
+    ],
+    "correct_index": 0,
+    "explanation": "The New Left focused on civil rights, feminism, and anti-war activism rather than labor issues.",
+    "id": "revenge-of-boomers-90",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 19,
+    "type": "context",
+    "question": "What was \"The Whole Earth Catalog\"?",
+    "options": [
+      "Countercultural resource guide",
+      "A nature documentary",
+      "An encyclopedia",
+      "A shopping catalog"
+    ],
+    "correct_index": 0,
+    "explanation": "The Whole Earth Catalog was a countercultural publication that Steve Jobs called \"Google in paperback form.\"",
+    "id": "revenge-of-boomers-91",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 19,
+    "type": "definition",
+    "question": "What was a \"teach-in\"?",
+    "options": [
+      "University protest through extended discussions",
+      "Online learning",
+      "A tutoring service",
+      "A religious gathering"
+    ],
+    "correct_index": 0,
+    "explanation": "Teach-ins were extended campus sessions educating about and protesting the Vietnam War.",
+    "id": "revenge-of-boomers-92",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 19,
+    "type": "context",
+    "question": "What was \"The Greensboro sit-in\"?",
+    "options": [
+      "1960 lunch counter protest against segregation",
+      "A labor strike",
+      "A yoga session",
+      "A political meeting"
+    ],
+    "correct_index": 0,
+    "explanation": "Four Black students sat at a whites-only Woolworth counter, sparking the sit-in movement.",
+    "id": "revenge-of-boomers-93",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 19,
+    "type": "definition",
+    "question": "What was \"consciousness raising\"?",
+    "options": [
+      "Feminist small group discussions",
+      "Meditation practice",
+      "Drug experiences",
+      "Political campaigns"
+    ],
+    "correct_index": 0,
+    "explanation": "Consciousness raising groups were women's discussions that revealed shared experiences of oppression.",
+    "id": "revenge-of-boomers-94",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 19,
+    "type": "context",
+    "question": "What was the \"Free Speech Movement\"?",
+    "options": [
+      "1964 Berkeley student protests",
+      "A radio campaign",
+      "A journalism award",
+      "A legal case"
+    ],
+    "correct_index": 0,
+    "explanation": "The Free Speech Movement at UC Berkeley fought for students' rights to political advocacy on campus.",
+    "id": "revenge-of-boomers-95",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 20,
+    "type": "definition",
+    "question": "What was \"participatory democracy\"?",
+    "options": [
+      "New Left ideal of direct citizen involvement",
+      "A voting method",
+      "A political party",
+      "A TV show"
+    ],
+    "correct_index": 0,
+    "explanation": "Participatory democracy was the New Left's ideal of grassroots decision-making.",
+    "id": "revenge-of-boomers-96",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 20,
+    "type": "context",
+    "question": "What was the \"Lavender Menace\"?",
+    "options": [
+      "Lesbian feminist activist group challenging NOW",
+      "A rock band",
+      "A perfume",
+      "A flower variety"
+    ],
+    "correct_index": 0,
+    "explanation": "The Lavender Menace confronted the exclusion of lesbians from the feminist movement.",
+    "id": "revenge-of-boomers-97",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 20,
+    "type": "definition",
+    "question": "What was \"The Weather Underground\"?",
+    "options": [
+      "Radical leftist organization",
+      "A weather service",
+      "A music group",
+      "A magazine"
+    ],
+    "correct_index": 0,
+    "explanation": "The Weather Underground was a radical group that conducted bombings to protest Vietnam War and racism.",
+    "id": "revenge-of-boomers-98",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 20,
+    "type": "context",
+    "question": "What was \"COINTELPRO's\" most notorious target?",
+    "options": [
+      "Black Panther Party",
+      "Republican Party",
+      "Democratic Party",
+      "Labor unions"
+    ],
+    "correct_index": 0,
+    "explanation": "COINTELPRO specifically targeted the Black Panther Party, which they considered a major threat.",
+    "id": "revenge-of-boomers-99",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 20,
+    "type": "definition",
+    "question": "What was the \"Berrigan Brothers\" known for?",
+    "options": [
+      "Catholic priests who protested Vietnam War",
+      "Country music",
+      "Television hosting",
+      "Business empire"
+    ],
+    "correct_index": 0,
+    "explanation": "The Berrigan Brothers were priests who burned draft files to protest the Vietnam War.",
+    "id": "revenge-of-boomers-100",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What was a \"soda fountain\"?",
+    "options": [
+      "A counter serving sodas and ice cream",
+      "A water fountain",
+      "A soda machine",
+      "A type of drink"
+    ],
+    "correct_index": 0,
+    "explanation": "Soda fountains were counters in drugstores and diners where sodas and ice cream were served.",
+    "id": "revenge-of-boomers-101",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What did \"going steady\" mean?",
+    "options": [
+      "Being in an exclusive relationship",
+      "Walking carefully",
+      "Driving slow",
+      "Working hard"
+    ],
+    "correct_index": 0,
+    "explanation": "Going steady meant you were in a committed, exclusive dating relationship.",
+    "id": "revenge-of-boomers-102",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What was a \"poodle skirt\"?",
+    "options": [
+      "A full skirt with a poodle design",
+      "A dog outfit",
+      "A hairstyle",
+      "A type of fabric"
+    ],
+    "correct_index": 0,
+    "explanation": "Poodle skirts were popular 1950s fashion - full skirts often with poodle appliques.",
+    "id": "revenge-of-boomers-103",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What was \"Howdy Doody\"?",
+    "options": [
+      "A popular children's TV show",
+      "A greeting",
+      "A cowboy movie",
+      "A toy brand"
+    ],
+    "correct_index": 0,
+    "explanation": "Howdy Doody was one of the first and most popular children's TV shows (1947-1960).",
+    "id": "revenge-of-boomers-104",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What were \"penny loafers\"?",
+    "options": [
+      "Shoes with a slot for a penny",
+      "Cheap shoes",
+      "Banking employees",
+      "Coin collectors"
+    ],
+    "correct_index": 0,
+    "explanation": "Penny loafers had a slot in the strap where people placed a penny as decoration.",
+    "id": "revenge-of-boomers-105",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What was \"American Bandstand\"?",
+    "options": [
+      "A dance show hosted by Dick Clark",
+      "A marching band",
+      "A patriotic song",
+      "A music store"
+    ],
+    "correct_index": 0,
+    "explanation": "American Bandstand was a hugely popular music and dance show that helped launch rock and roll.",
+    "id": "revenge-of-boomers-106",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was a \"greaser\"?",
+    "options": [
+      "A 1950s subculture with slicked hair and leather jackets",
+      "A mechanic",
+      "A chef",
+      "A cleaning product"
+    ],
+    "correct_index": 0,
+    "explanation": "Greasers were a youth subculture known for slicked-back hair, leather jackets, and hot rods.",
+    "id": "revenge-of-boomers-107",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What was the \"Red Scare\"?",
+    "options": [
+      "Fear of communist infiltration in America",
+      "A horror movie",
+      "A skin condition",
+      "A fire safety campaign"
+    ],
+    "correct_index": 0,
+    "explanation": "The Red Scare was the period of intense anti-communist fear and persecution.",
+    "id": "revenge-of-boomers-108",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was \"McCarthyism\"?",
+    "options": [
+      "Accusation of disloyalty without evidence",
+      "A political philosophy",
+      "An Irish tradition",
+      "A teaching method"
+    ],
+    "correct_index": 0,
+    "explanation": "McCarthyism refers to Senator McCarthy's witch hunts accusing people of being communists.",
+    "id": "revenge-of-boomers-109",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What was a \"console TV\"?",
+    "options": [
+      "A large TV in a wooden cabinet",
+      "A gaming system",
+      "A TV remote",
+      "A small TV"
+    ],
+    "correct_index": 0,
+    "explanation": "Console TVs were large televisions housed in wooden cabinets as furniture pieces.",
+    "id": "revenge-of-boomers-110",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "context",
+    "question": "Why did people need \"TV Guide\"?",
+    "options": [
+      "To see what shows were on and when",
+      "To fix the TV",
+      "To buy a TV",
+      "To learn how to use a remote"
+    ],
+    "correct_index": 0,
+    "explanation": "TV Guide was a magazine listing all TV programming before on-screen guides existed.",
+    "id": "revenge-of-boomers-111",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"transistor\"?",
+    "options": [
+      "An electronic component that revolutionized devices",
+      "A type of train",
+      "A musical instrument",
+      "A dance move"
+    ],
+    "correct_index": 0,
+    "explanation": "Transistors made devices smaller and more portable, replacing vacuum tubes.",
+    "id": "revenge-of-boomers-112",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What was \"color TV\" first available?",
+    "options": [
+      "1950s, but expensive and rare",
+      "1970s",
+      "1980s",
+      "1940s"
+    ],
+    "correct_index": 0,
+    "explanation": "Color TV broadcasts started in the 1950s but didn't become common until the late 1960s.",
+    "id": "revenge-of-boomers-113",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"hi-fi\"?",
+    "options": [
+      "A high-fidelity stereo system",
+      "A friendly greeting",
+      "A type of antenna",
+      "A car model"
+    ],
+    "correct_index": 0,
+    "explanation": "Hi-fi (high fidelity) referred to quality home stereo equipment for music lovers.",
+    "id": "revenge-of-boomers-114",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What was special about the \"Zenith Space Command\"?",
+    "options": [
+      "The first wireless TV remote control",
+      "A space program",
+      "A military operation",
+      "A radio station"
+    ],
+    "correct_index": 0,
+    "explanation": "The Zenith Space Command was the first practical wireless TV remote, introduced in 1956.",
+    "id": "revenge-of-boomers-115",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was an \"icebox\"?",
+    "options": [
+      "A box cooled by ice blocks",
+      "A freezer",
+      "An air conditioner",
+      "A cooler for drinks"
+    ],
+    "correct_index": 0,
+    "explanation": "Before electric refrigerators, iceboxes were cooled by blocks of ice delivered to homes.",
+    "id": "revenge-of-boomers-116",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What was the \"iceman\"?",
+    "options": [
+      "Someone who delivered ice blocks to homes",
+      "A superhero",
+      "A wrestler",
+      "A salesman"
+    ],
+    "correct_index": 0,
+    "explanation": "Icemen delivered blocks of ice to homes to keep iceboxes cold.",
+    "id": "revenge-of-boomers-117",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was a \"wringer washer\"?",
+    "options": [
+      "A washing machine with rollers to squeeze water out",
+      "A dishwasher",
+      "A car wash",
+      "A spin class"
+    ],
+    "correct_index": 0,
+    "explanation": "Before spin cycles, wringer washers squeezed water from clothes between rollers.",
+    "id": "revenge-of-boomers-118",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What was a \"clothesline\"?",
+    "options": [
+      "A rope to hang laundry for drying outdoors",
+      "A clothing store",
+      "A fashion line",
+      "A waiting line"
+    ],
+    "correct_index": 0,
+    "explanation": "Before dryers, clothes were hung on lines outdoors to dry in the sun and wind.",
+    "id": "revenge-of-boomers-119",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "Who was Elvis Presley?",
+    "options": [
+      "The King of Rock and Roll",
+      "A president",
+      "An astronaut",
+      "A scientist"
+    ],
+    "correct_index": 0,
+    "explanation": "Elvis Presley was the iconic rock and roll singer who revolutionized music in the 1950s.",
+    "id": "revenge-of-boomers-120",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What was controversial about Elvis on TV?",
+    "options": [
+      "His hip movements were considered too sexual",
+      "His music was too loud",
+      "He wore strange clothes",
+      "He was too young"
+    ],
+    "correct_index": 0,
+    "explanation": "Elvis's hip gyrations were so controversial that cameras only showed him from the waist up.",
+    "id": "revenge-of-boomers-121",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was \"I Love Lucy\"?",
+    "options": [
+      "A groundbreaking sitcom starring Lucille Ball",
+      "A romance movie",
+      "A love song",
+      "A perfume"
+    ],
+    "correct_index": 0,
+    "explanation": "I Love Lucy was one of the most popular and influential TV sitcoms of all time.",
+    "id": "revenge-of-boomers-122",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What was revolutionary about \"I Love Lucy\"?",
+    "options": [
+      "First show to feature a pregnant woman",
+      "First color show",
+      "First animated show",
+      "First game show"
+    ],
+    "correct_index": 0,
+    "explanation": "Lucy was the first TV show to depict a pregnant woman, though they couldn't say \"pregnant.\"",
+    "id": "revenge-of-boomers-123",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was \"Leave It to Beaver\"?",
+    "options": [
+      "A family sitcom about suburban life",
+      "A nature documentary",
+      "A cooking show",
+      "A game show"
+    ],
+    "correct_index": 0,
+    "explanation": "Leave It to Beaver was the quintessential 1950s family sitcom about the Cleaver family.",
+    "id": "revenge-of-boomers-124",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"manual transmission\"?",
+    "options": [
+      "A car with a clutch and gear shift",
+      "A radio setting",
+      "A type of letter",
+      "A TV channel"
+    ],
+    "correct_index": 0,
+    "explanation": "Manual transmissions require drivers to shift gears using a clutch, unlike modern automatic cars.",
+    "id": "revenge-of-boomers-125",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What was a \"rumble seat\"?",
+    "options": [
+      "An external fold-out seat at the back of a car",
+      "A vibrating massage seat",
+      "A loud speaker",
+      "A motorcycle seat"
+    ],
+    "correct_index": 0,
+    "explanation": "Rumble seats were external fold-out seats in the back of some cars, exposed to the elements.",
+    "id": "revenge-of-boomers-126",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"party line\" phone?",
+    "options": [
+      "A shared phone line with neighbors",
+      "A phone for parties",
+      "A business line",
+      "A long distance line"
+    ],
+    "correct_index": 0,
+    "explanation": "Party lines were shared by multiple households who could hear each other's calls.",
+    "id": "revenge-of-boomers-127",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What did \"getting an operator\" mean?",
+    "options": [
+      "Calling through a human switchboard operator",
+      "Hiring someone",
+      "Getting surgery",
+      "Fixing a machine"
+    ],
+    "correct_index": 0,
+    "explanation": "Before direct dial, operators manually connected your call to the right number.",
+    "id": "revenge-of-boomers-128",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"telegram\"?",
+    "options": [
+      "A message sent by telegraph",
+      "A weight measurement",
+      "A music chart",
+      "A type of letter"
+    ],
+    "correct_index": 0,
+    "explanation": "Telegrams were messages sent via electric telegraph, charged by the word.",
+    "id": "revenge-of-boomers-129",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "context",
+    "question": "Why did telegram language sound strange?",
+    "options": [
+      "People used abbreviated words to save money",
+      "It was a code",
+      "Machines couldn't print all letters",
+      "It was a different language"
+    ],
+    "correct_index": 0,
+    "explanation": "Since you paid per word, people cut out unnecessary words like \"ARRIVING TUESDAY STOP\"",
+    "id": "revenge-of-boomers-130",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What was a \"black and white TV\"?",
+    "options": [
+      "A television without color",
+      "A type of pattern",
+      "A newspaper",
+      "A photograph"
+    ],
+    "correct_index": 0,
+    "explanation": "Before color TV, all televisions displayed only in black and white.",
+    "id": "revenge-of-boomers-131",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "context",
+    "question": "What did \"changing the channel\" require?",
+    "options": [
+      "Getting up and turning a dial on the TV",
+      "Calling the station",
+      "Waiting for a commercial",
+      "Asking permission"
+    ],
+    "correct_index": 0,
+    "explanation": "Before remote controls, you had to physically get up and turn a dial to change channels.",
+    "id": "revenge-of-boomers-132",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"test pattern\"?",
+    "options": [
+      "An image shown when TV wasn't broadcasting",
+      "A sewing guide",
+      "A driving test",
+      "A school exam"
+    ],
+    "correct_index": 0,
+    "explanation": "TV stations showed test patterns overnight when they weren't broadcasting programming.",
+    "id": "revenge-of-boomers-133",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "Why did TV \"sign off\" at night?",
+    "options": [
+      "Stations stopped broadcasting",
+      "TVs needed rest",
+      "Power was limited",
+      "Laws required it"
+    ],
+    "correct_index": 0,
+    "explanation": "TV stations would stop broadcasting late at night and show a test pattern or nothing.",
+    "id": "revenge-of-boomers-134",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"latchkey kid\"?",
+    "options": [
+      "A child who let themselves in after school",
+      "A locksmith's child",
+      "A musical term",
+      "A type of student"
+    ],
+    "correct_index": 0,
+    "explanation": "Latchkey kids came home to empty houses and let themselves in with a key.",
+    "id": "revenge-of-boomers-135",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was \"Motown\"?",
+    "options": [
+      "Detroit record label famous for soul music",
+      "A type of car",
+      "A city nickname",
+      "A TV channel"
+    ],
+    "correct_index": 0,
+    "explanation": "Motown was the legendary Detroit record label that launched The Supremes, Stevie Wonder, and more.",
+    "id": "revenge-of-boomers-136",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What was the \"Motown Sound\"?",
+    "options": [
+      "Distinctive soul and R&B music style",
+      "Car engine sounds",
+      "Factory noise",
+      "A radio frequency"
+    ],
+    "correct_index": 0,
+    "explanation": "The Motown Sound was the distinctive, polished soul music style that crossed racial boundaries.",
+    "id": "revenge-of-boomers-137",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "Who were The Supremes?",
+    "options": [
+      "A famous Motown girl group",
+      "Supreme Court justices",
+      "A cooking show",
+      "A sports team"
+    ],
+    "correct_index": 0,
+    "explanation": "The Supremes were the most successful Motown act, featuring Diana Ross.",
+    "id": "revenge-of-boomers-138",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What was the \"payola scandal\"?",
+    "options": [
+      "DJs accepting bribes to play songs",
+      "A concert scandal",
+      "A ticket scheme",
+      "A record fraud"
+    ],
+    "correct_index": 0,
+    "explanation": "The payola scandal revealed that radio DJs were paid to play certain songs.",
+    "id": "revenge-of-boomers-139",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was a \"45\"?",
+    "options": [
+      "A small vinyl record with one song per side",
+      "A gun",
+      "An angle",
+      "A speed limit"
+    ],
+    "correct_index": 0,
+    "explanation": "45s were 7-inch records that spun at 45 RPM, typically with one hit song.",
+    "id": "revenge-of-boomers-140",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"percolator\"?",
+    "options": [
+      "A coffee maker that bubbles water through grounds",
+      "A musical instrument",
+      "A type of car",
+      "A radio type"
+    ],
+    "correct_index": 0,
+    "explanation": "Percolators made coffee by cycling boiling water through coffee grounds.",
+    "id": "revenge-of-boomers-141",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What was \"S&H Green Stamps\"?",
+    "options": [
+      "A store loyalty rewards program",
+      "Postage stamps",
+      "A grocery store",
+      "A catalog company"
+    ],
+    "correct_index": 0,
+    "explanation": "Green Stamps were a popular rewards program where stamps were redeemed for merchandise.",
+    "id": "revenge-of-boomers-142",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"Sears catalog\"?",
+    "options": [
+      "A mail-order catalog for buying everything",
+      "A fashion magazine",
+      "A repair manual",
+      "A phone book"
+    ],
+    "correct_index": 0,
+    "explanation": "The Sears catalog was how rural Americans bought everything from clothes to houses by mail.",
+    "id": "revenge-of-boomers-143",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What was \"layaway\"?",
+    "options": [
+      "Paying for items over time before taking them home",
+      "Returning items",
+      "Storing items",
+      "Discounting items"
+    ],
+    "correct_index": 0,
+    "explanation": "Layaway let you pay for items in installments while the store held them until paid off.",
+    "id": "revenge-of-boomers-144",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"blue law\"?",
+    "options": [
+      "Laws restricting activities on Sundays",
+      "Environmental laws",
+      "Traffic laws",
+      "Fashion rules"
+    ],
+    "correct_index": 0,
+    "explanation": "Blue laws prohibited certain businesses from operating on Sundays for religious reasons.",
+    "id": "revenge-of-boomers-145",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What were \"whitewall tires\"?",
+    "options": [
+      "Tires with a white stripe on the sidewall",
+      "White painted tires",
+      "Racing tires",
+      "Winter tires"
+    ],
+    "correct_index": 0,
+    "explanation": "Whitewall tires had a decorative white stripe and were very popular in the 1950s-60s.",
+    "id": "revenge-of-boomers-146",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What was a \"gas station attendant\"?",
+    "options": [
+      "Someone who pumped gas and checked your car",
+      "A mechanic",
+      "A cashier only",
+      "A security guard"
+    ],
+    "correct_index": 0,
+    "explanation": "Full-service stations had attendants who pumped gas, cleaned windows, and checked oil.",
+    "id": "revenge-of-boomers-147",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was \"leaded gasoline\"?",
+    "options": [
+      "Fuel with lead additives for performance",
+      "Heavy fuel",
+      "Diesel",
+      "Premium gas"
+    ],
+    "correct_index": 0,
+    "explanation": "Lead was added to gasoline until it was banned for causing health and environmental problems.",
+    "id": "revenge-of-boomers-148",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What was the \"gas crisis\" of the 1970s?",
+    "options": [
+      "Oil embargo causing fuel shortages and long lines",
+      "A gas leak",
+      "A price war",
+      "A delivery strike"
+    ],
+    "correct_index": 0,
+    "explanation": "Arab oil embargoes caused severe gas shortages, rationing, and long lines at stations.",
+    "id": "revenge-of-boomers-149",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What were \"fins\" on cars?",
+    "options": [
+      "Decorative tail wings on 1950s cars",
+      "Cooling vents",
+      "Antennas",
+      "Spoilers"
+    ],
+    "correct_index": 0,
+    "explanation": "Tail fins were dramatic decorative features on 1950s cars inspired by jet aircraft.",
+    "id": "revenge-of-boomers-150",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What were \"bell-bottoms\"?",
+    "options": [
+      "Pants with wide flared legs",
+      "A type of bell",
+      "Boat equipment",
+      "Musical instruments"
+    ],
+    "correct_index": 0,
+    "explanation": "Bell-bottoms were pants that flared dramatically from the knee down, popular in the 1970s.",
+    "id": "revenge-of-boomers-151",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What was a \"leisure suit\"?",
+    "options": [
+      "A casual polyester suit popular in the 1970s",
+      "Workout clothes",
+      "Pajamas",
+      "A business suit"
+    ],
+    "correct_index": 0,
+    "explanation": "Leisure suits were casual polyester suits that became synonymous with 1970s fashion.",
+    "id": "revenge-of-boomers-152",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"beehive hairdo\"?",
+    "options": [
+      "A tall, piled hairstyle",
+      "A hat with bees",
+      "A short haircut",
+      "A blonde style"
+    ],
+    "correct_index": 0,
+    "explanation": "The beehive was a tall, rounded hairstyle requiring lots of hairspray, popular in the 1960s.",
+    "id": "revenge-of-boomers-153",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What were \"go-go boots\"?",
+    "options": [
+      "White or brightly colored knee-high boots",
+      "Dancing shoes",
+      "Hiking boots",
+      "Work boots"
+    ],
+    "correct_index": 0,
+    "explanation": "Go-go boots were mid-calf or knee-high boots that symbolized 1960s fashion.",
+    "id": "revenge-of-boomers-154",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"Nehru jacket\"?",
+    "options": [
+      "A jacket with a mandarin collar, no lapels",
+      "A winter coat",
+      "A military uniform",
+      "A leather jacket"
+    ],
+    "correct_index": 0,
+    "explanation": "Nehru jackets had standing collars inspired by Indian fashion, popular with The Beatles.",
+    "id": "revenge-of-boomers-155",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was a \"love-in\"?",
+    "options": [
+      "A peaceful gathering promoting love and peace",
+      "A dating service",
+      "A TV show",
+      "A wedding ceremony"
+    ],
+    "correct_index": 0,
+    "explanation": "Love-ins were peaceful gatherings of the counterculture movement promoting love and peace.",
+    "id": "revenge-of-boomers-156",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What was \"free love\"?",
+    "options": [
+      "The idea of sexual freedom without marriage",
+      "Dating without paying",
+      "Charity matchmaking",
+      "A soap opera"
+    ],
+    "correct_index": 0,
+    "explanation": "Free love was the 1960s ideology rejecting marriage as a requirement for sexual relationships.",
+    "id": "revenge-of-boomers-157",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was \"dropping acid\"?",
+    "options": [
+      "Taking LSD",
+      "A chemistry experiment",
+      "Spilling something",
+      "A music technique"
+    ],
+    "correct_index": 0,
+    "explanation": "Dropping acid was slang for taking LSD, a hallucinogenic drug popular in the counterculture.",
+    "id": "revenge-of-boomers-158",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What was a \"transistor radio\"?",
+    "options": [
+      "A small portable radio",
+      "A radio station",
+      "A radio part",
+      "A car radio"
+    ],
+    "correct_index": 0,
+    "explanation": "Transistor radios were revolutionary small portable radios that teens could carry anywhere.",
+    "id": "revenge-of-boomers-159",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What was an \"antenna\" on a car for?",
+    "options": [
+      "Receiving radio signals",
+      "Decoration",
+      "GPS",
+      "Phone calls"
+    ],
+    "correct_index": 0,
+    "explanation": "Car antennas picked up AM/FM radio signals before satellite and digital radio.",
+    "id": "revenge-of-boomers-160",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What was a \"boom box\"?",
+    "options": [
+      "A large portable stereo",
+      "An explosive device",
+      "A speaker system",
+      "A musical instrument"
+    ],
+    "correct_index": 0,
+    "explanation": "Boom boxes were large portable stereos that became cultural icons in the 1980s.",
+    "id": "revenge-of-boomers-161",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What was \"AM radio\"?",
+    "options": [
+      "The original radio broadcast band",
+      "Morning radio",
+      "A music genre",
+      "A news station"
+    ],
+    "correct_index": 0,
+    "explanation": "AM (Amplitude Modulation) was the original radio broadcasting method before FM.",
+    "id": "revenge-of-boomers-162",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was a \"CB radio\"?",
+    "options": [
+      "Citizens Band two-way radio",
+      "A country music station",
+      "A car brand",
+      "A music player"
+    ],
+    "correct_index": 0,
+    "explanation": "CB radios were two-way radios popular with truckers and became a 1970s fad.",
+    "id": "revenge-of-boomers-163",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What was \"10-4\" in CB lingo?",
+    "options": [
+      "Acknowledgment/OK",
+      "Ten dollars and four cents",
+      "A time",
+      "A location"
+    ],
+    "correct_index": 0,
+    "explanation": "10-4 meant \"OK\" or \"message received\" in CB radio code, made famous by truckers.",
+    "id": "revenge-of-boomers-164",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was \"breaker breaker\"?",
+    "options": [
+      "CB radio call to start transmission",
+      "A dance move",
+      "A breakfast order",
+      "A car part"
+    ],
+    "correct_index": 0,
+    "explanation": "Breaker breaker was how you initiated a CB radio conversation, asking to break into the channel.",
+    "id": "revenge-of-boomers-165",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What was a \"handle\" on CB radio?",
+    "options": [
+      "Your nickname/callsign",
+      "The microphone",
+      "A door part",
+      "A control dial"
+    ],
+    "correct_index": 0,
+    "explanation": "Your handle was your CB radio nickname, like an early username.",
+    "id": "revenge-of-boomers-166",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was a \"smokey\"?",
+    "options": [
+      "CB slang for police officer",
+      "A fire",
+      "A cigar",
+      "A fast car"
+    ],
+    "correct_index": 0,
+    "explanation": "Truckers called police \"smokies\" because of their hats resembling Smokey Bear.",
+    "id": "revenge-of-boomers-167",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What was a \"Slinky\"?",
+    "options": [
+      "A spring toy that walks down stairs",
+      "A type of dress",
+      "A pet snake",
+      "A dance move"
+    ],
+    "correct_index": 0,
+    "explanation": "The Slinky was a spring toy that could \"walk\" down stairs, invented in 1943.",
+    "id": "revenge-of-boomers-168",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What was \"Silly Putty\"?",
+    "options": [
+      "A stretchy, bouncy toy material",
+      "A type of clay",
+      "A magic trick",
+      "A cleaning product"
+    ],
+    "correct_index": 0,
+    "explanation": "Silly Putty was a stretchy silicone toy that could bounce and copy newspaper print.",
+    "id": "revenge-of-boomers-169",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What was a \"Hula Hoop\"?",
+    "options": [
+      "A plastic ring toy spun around the waist",
+      "A Hawaiian dance",
+      "A basketball move",
+      "A jewelry item"
+    ],
+    "correct_index": 0,
+    "explanation": "Hula Hoops were plastic rings spun around the waist, a massive 1958 fad.",
+    "id": "revenge-of-boomers-170",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What was \"Etch A Sketch\"?",
+    "options": [
+      "A drawing toy with dials",
+      "A TV show",
+      "A sketch comedy",
+      "An art class"
+    ],
+    "correct_index": 0,
+    "explanation": "Etch A Sketch was a drawing toy using two dials to move a stylus through aluminum powder.",
+    "id": "revenge-of-boomers-171",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was \"Easy-Bake Oven\"?",
+    "options": [
+      "A toy oven using a light bulb for heat",
+      "A microwave",
+      "A cooking class",
+      "A restaurant"
+    ],
+    "correct_index": 0,
+    "explanation": "Easy-Bake Oven was a toy that let kids bake real treats using a light bulb as the heat source.",
+    "id": "revenge-of-boomers-172",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What were \"Lincoln Logs\"?",
+    "options": [
+      "Notched wooden logs for building",
+      "A president's diary",
+      "A math game",
+      "A history book"
+    ],
+    "correct_index": 0,
+    "explanation": "Lincoln Logs were notched wooden logs for building log cabins, invented in 1916.",
+    "id": "revenge-of-boomers-173",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was \"Tinkertoy\"?",
+    "options": [
+      "A construction toy with sticks and spools",
+      "A clock repair kit",
+      "A music box",
+      "A doll"
+    ],
+    "correct_index": 0,
+    "explanation": "Tinkertoys were wooden construction sets with sticks and spools for building.",
+    "id": "revenge-of-boomers-174",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What was \"Barrel of Monkeys\"?",
+    "options": [
+      "A game of linking plastic monkeys",
+      "A zoo exhibit",
+      "A circus act",
+      "A type of candy"
+    ],
+    "correct_index": 0,
+    "explanation": "Barrel of Monkeys was a game where you tried to link plastic monkeys together.",
+    "id": "revenge-of-boomers-175",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What was \"Rock 'Em Sock 'Em Robots\"?",
+    "options": [
+      "A boxing robots game",
+      "A band name",
+      "A dance move",
+      "A TV show"
+    ],
+    "correct_index": 0,
+    "explanation": "Rock 'Em Sock 'Em Robots was a game where two players controlled boxing robots.",
+    "id": "revenge-of-boomers-176",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What was a \"malt shop\"?",
+    "options": [
+      "A place serving milkshakes and ice cream",
+      "A beer bar",
+      "A grain store",
+      "A candy factory"
+    ],
+    "correct_index": 0,
+    "explanation": "Malt shops were soda fountains serving malted milkshakes, popular teen hangouts in the 1950s.",
+    "id": "revenge-of-boomers-177",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What was a \"TV dinner\"?",
+    "options": [
+      "A pre-packaged frozen meal",
+      "Dinner while watching TV",
+      "A TV show about cooking",
+      "A restaurant"
+    ],
+    "correct_index": 0,
+    "explanation": "TV dinners were complete frozen meals in trays, designed for eating while watching TV.",
+    "id": "revenge-of-boomers-178",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What was \"Tang\"?",
+    "options": [
+      "A powdered orange drink mix",
+      "A martial arts term",
+      "A doorbell sound",
+      "A type of fish"
+    ],
+    "correct_index": 0,
+    "explanation": "Tang was a powdered orange drink mix famously used by NASA astronauts.",
+    "id": "revenge-of-boomers-179",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What was \"Jell-O salad\"?",
+    "options": [
+      "Savory gelatin dishes with vegetables or meat",
+      "A fruit dessert",
+      "A healthy salad",
+      "A restaurant name"
+    ],
+    "correct_index": 0,
+    "explanation": "Jell-O salads were bizarre 1950s-60s creations mixing gelatin with savory ingredients.",
+    "id": "revenge-of-boomers-180",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was a \"casserole\"?",
+    "options": [
+      "A one-dish baked meal",
+      "A type of pot",
+      "A French restaurant",
+      "A cooking technique"
+    ],
+    "correct_index": 0,
+    "explanation": "Casseroles were convenient one-dish meals baked in the oven, popular with busy families.",
+    "id": "revenge-of-boomers-181",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"mimeograph\"?",
+    "options": [
+      "A machine for making copies",
+      "A type of graph",
+      "A memory game",
+      "A musical notation"
+    ],
+    "correct_index": 0,
+    "explanation": "Mimeographs made copies using stencils and were used for school handouts before photocopiers.",
+    "id": "revenge-of-boomers-182",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "Why did mimeograph copies smell?",
+    "options": [
+      "The solvent used in the ink was pungent",
+      "They used perfume",
+      "The paper was scented",
+      "The machine burned them"
+    ],
+    "correct_index": 0,
+    "explanation": "The distinctive mimeograph smell came from the methanol-based ink used in the process.",
+    "id": "revenge-of-boomers-183",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"slide rule\"?",
+    "options": [
+      "A mechanical calculator",
+      "A presentation tool",
+      "A ruler for slides",
+      "A playground rule"
+    ],
+    "correct_index": 0,
+    "explanation": "Slide rules were mechanical calculation devices used before electronic calculators.",
+    "id": "revenge-of-boomers-184",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What was \"penmanship class\"?",
+    "options": [
+      "Lessons in handwriting",
+      "A writing club",
+      "An art class",
+      "A PE class"
+    ],
+    "correct_index": 0,
+    "explanation": "Penmanship was formal instruction in proper handwriting, often using cursive.",
+    "id": "revenge-of-boomers-185",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"fountain pen\"?",
+    "options": [
+      "A pen with internal ink reservoir",
+      "A decorative water feature",
+      "A fancy pencil",
+      "A calligraphy tool"
+    ],
+    "correct_index": 0,
+    "explanation": "Fountain pens had internal ink reservoirs and were standard before ballpoint pens.",
+    "id": "revenge-of-boomers-186",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What was \"inkwell\" for?",
+    "options": [
+      "Dipping pen nibs for writing",
+      "Storing documents",
+      "Cleaning pens",
+      "Making stamps"
+    ],
+    "correct_index": 0,
+    "explanation": "Inkwells held ink for dipping pen nibs before self-contained pens were common.",
+    "id": "revenge-of-boomers-187",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was a \"blotter\"?",
+    "options": [
+      "Paper to absorb excess ink",
+      "A police record",
+      "A calendar",
+      "A notepad"
+    ],
+    "correct_index": 0,
+    "explanation": "Blotters were absorbent paper used to dry wet ink on documents.",
+    "id": "revenge-of-boomers-188",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What was \"reel-to-reel\"?",
+    "options": [
+      "A tape recording format",
+      "A fishing technique",
+      "A dance move",
+      "A film type"
+    ],
+    "correct_index": 0,
+    "explanation": "Reel-to-reel was a tape format where the tape wound between two reels, used for quality recording.",
+    "id": "revenge-of-boomers-189",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"telegram\"?",
+    "options": [
+      "A message sent by wire",
+      "A photo message",
+      "A type of letter",
+      "A phone message"
+    ],
+    "correct_index": 0,
+    "explanation": "Telegrams were messages transmitted electrically over wires, charged by the word.",
+    "id": "revenge-of-boomers-190",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What did \"STOP\" mean in telegrams?",
+    "options": [
+      "End of sentence/period",
+      "Halt transmission",
+      "Urgent message",
+      "Address end"
+    ],
+    "correct_index": 0,
+    "explanation": "STOP was used to indicate the end of a sentence since punctuation wasn't transmitted.",
+    "id": "revenge-of-boomers-191",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"carbon copy\"?",
+    "options": [
+      "A duplicate made using carbon paper",
+      "A photocopy",
+      "An exact replica",
+      "A twin sibling"
+    ],
+    "correct_index": 0,
+    "explanation": "Carbon paper created duplicates when typing, which is why emails have CC.",
+    "id": "revenge-of-boomers-192",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What was \"whiteout\" or \"liquid paper\"?",
+    "options": [
+      "Correction fluid for typing errors",
+      "White paint",
+      "Snow storm",
+      "Cleaning solution"
+    ],
+    "correct_index": 0,
+    "explanation": "Whiteout covered typing mistakes so you could type corrections over them.",
+    "id": "revenge-of-boomers-193",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"rolodex\"?",
+    "options": [
+      "A rotating card file for contacts",
+      "A type of watch",
+      "A file cabinet",
+      "A phone book"
+    ],
+    "correct_index": 0,
+    "explanation": "Rolodexes were rotating card files for storing business contacts and phone numbers.",
+    "id": "revenge-of-boomers-194",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What was a \"dictaphone\"?",
+    "options": [
+      "A voice recording device for dictation",
+      "A type of phone",
+      "A music player",
+      "An intercom"
+    ],
+    "correct_index": 0,
+    "explanation": "Dictaphones recorded spoken words so secretaries could transcribe them later.",
+    "id": "revenge-of-boomers-195",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was \"shorthand\"?",
+    "options": [
+      "A rapid writing system using symbols",
+      "Small handwriting",
+      "A left-handed technique",
+      "A nickname"
+    ],
+    "correct_index": 0,
+    "explanation": "Shorthand was a symbolic writing system that allowed secretaries to transcribe speech quickly.",
+    "id": "revenge-of-boomers-196",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What was a \"telex machine\"?",
+    "options": [
+      "A device for sending typed messages over wires",
+      "A telephone",
+      "A fax machine",
+      "A calculator"
+    ],
+    "correct_index": 0,
+    "explanation": "Telex machines sent typed messages between businesses before fax and email.",
+    "id": "revenge-of-boomers-197",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What was a \"house call\"?",
+    "options": [
+      "When a doctor visited patients at home",
+      "A phone call",
+      "A real estate visit",
+      "A party invitation"
+    ],
+    "correct_index": 0,
+    "explanation": "Doctors routinely visited sick patients at their homes instead of office visits.",
+    "id": "revenge-of-boomers-198",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What was \"iron lung\"?",
+    "options": [
+      "A machine that helped polio patients breathe",
+      "Strong lungs",
+      "An exercise device",
+      "A type of armor"
+    ],
+    "correct_index": 0,
+    "explanation": "Iron lungs were large machines that helped polio patients breathe before vaccines.",
+    "id": "revenge-of-boomers-199",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was \"the polio scare\"?",
+    "options": [
+      "Fear of the polio epidemic",
+      "A horror movie",
+      "A political scandal",
+      "A sports term"
+    ],
+    "correct_index": 0,
+    "explanation": "Before the vaccine, polio terrified parents as it paralyzed and killed children.",
+    "id": "revenge-of-boomers-200",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What was the \"Salk vaccine\"?",
+    "options": [
+      "The first polio vaccine",
+      "A flu shot",
+      "A vitamin supplement",
+      "A weight loss pill"
+    ],
+    "correct_index": 0,
+    "explanation": "Jonas Salk's 1955 vaccine effectively ended the polio epidemic in America.",
+    "id": "revenge-of-boomers-201",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was \"thalidomide\"?",
+    "options": [
+      "A drug that caused birth defects",
+      "A sleeping pill",
+      "An antibiotic",
+      "A vitamin"
+    ],
+    "correct_index": 0,
+    "explanation": "Thalidomide was a drug that caused severe birth defects and changed drug testing forever.",
+    "id": "revenge-of-boomers-202",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What was a \"double feature\"?",
+    "options": [
+      "Two movies shown for one admission",
+      "A magazine spread",
+      "A twin show",
+      "A special edition"
+    ],
+    "correct_index": 0,
+    "explanation": "Theaters showed two full-length movies for the price of one ticket.",
+    "id": "revenge-of-boomers-203",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What was a \"newsreel\"?",
+    "options": [
+      "A short news film shown before movies",
+      "A newspaper section",
+      "A TV news show",
+      "A radio program"
+    ],
+    "correct_index": 0,
+    "explanation": "Before TV news, people watched short newsreel films in theaters before the main movie.",
+    "id": "revenge-of-boomers-204",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was a \"serial\"?",
+    "options": [
+      "A continuing story shown in weekly chapters",
+      "A breakfast food",
+      "A number sequence",
+      "A magazine type"
+    ],
+    "correct_index": 0,
+    "explanation": "Movie serials were adventure stories shown in weekly chapters, ending in cliffhangers.",
+    "id": "revenge-of-boomers-205",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What was a \"matinee\"?",
+    "options": [
+      "An afternoon movie showing",
+      "A morning show",
+      "A dance performance",
+      "A coffee break"
+    ],
+    "correct_index": 0,
+    "explanation": "Matinees were afternoon movie showings, usually at a lower price than evening shows.",
+    "id": "revenge-of-boomers-206",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was \"Cinemascope\"?",
+    "options": [
+      "A widescreen film format",
+      "A movie theater",
+      "A camera brand",
+      "A film rating"
+    ],
+    "correct_index": 0,
+    "explanation": "Cinemascope was an early widescreen format that made movies feel more immersive.",
+    "id": "revenge-of-boomers-207",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"typing pool\"?",
+    "options": [
+      "A group of secretaries who typed documents",
+      "A swimming pool",
+      "A betting system",
+      "A car pool"
+    ],
+    "correct_index": 0,
+    "explanation": "Typing pools were groups of women who did all the typing for an organization.",
+    "id": "revenge-of-boomers-208",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What was a \"time clock\"?",
+    "options": [
+      "A device for punching in and out of work",
+      "A fancy clock",
+      "A race timer",
+      "A watch type"
+    ],
+    "correct_index": 0,
+    "explanation": "Time clocks recorded when employees arrived and left, stamping time cards.",
+    "id": "revenge-of-boomers-209",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"secretary\"?",
+    "options": [
+      "An administrative assistant (usually female)",
+      "A piece of furniture",
+      "A government official",
+      "A type of bird"
+    ],
+    "correct_index": 0,
+    "explanation": "Secretary was the term for office assistants who typed, filed, and managed schedules.",
+    "id": "revenge-of-boomers-210",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What was the \"steno pad\"?",
+    "options": [
+      "A notebook for shorthand notes",
+      "A steroid medication",
+      "A dance pad",
+      "A cooking surface"
+    ],
+    "correct_index": 0,
+    "explanation": "Steno pads were narrow notebooks designed for taking shorthand dictation.",
+    "id": "revenge-of-boomers-211",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was a \"comptroller\"?",
+    "options": [
+      "A financial controller/accountant",
+      "A computer",
+      "A remote control",
+      "An inspector"
+    ],
+    "correct_index": 0,
+    "explanation": "A comptroller was a chief accounting officer, still used in government titles.",
+    "id": "revenge-of-boomers-212",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"five-and-dime store\"?",
+    "options": [
+      "A store where most items cost 5 or 10 cents",
+      "A money exchange",
+      "A bank",
+      "A music store"
+    ],
+    "correct_index": 0,
+    "explanation": "Five-and-dime stores sold cheap household items, the precursor to dollar stores.",
+    "id": "revenge-of-boomers-213",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What was \"Woolworth's\"?",
+    "options": [
+      "A popular five-and-dime chain",
+      "A wool store",
+      "A clothing brand",
+      "A grocery store"
+    ],
+    "correct_index": 0,
+    "explanation": "Woolworth's was the iconic five-and-dime chain, also famous for lunch counter sit-ins.",
+    "id": "revenge-of-boomers-214",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"department store\"?",
+    "options": [
+      "A large store with multiple sections",
+      "A government building",
+      "A warehouse",
+      "A specialty shop"
+    ],
+    "correct_index": 0,
+    "explanation": "Department stores had different sections for various goods, with elevator operators and restaurants.",
+    "id": "revenge-of-boomers-215",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What was an \"elevator operator\"?",
+    "options": [
+      "A person who operated the elevator",
+      "A surgeon",
+      "A DJ",
+      "A phone operator"
+    ],
+    "correct_index": 0,
+    "explanation": "Elevator operators manually ran elevators in department stores and buildings.",
+    "id": "revenge-of-boomers-216",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"lunch counter\"?",
+    "options": [
+      "A casual dining counter in stores",
+      "A kitchen counter",
+      "A food scale",
+      "A meal planner"
+    ],
+    "correct_index": 0,
+    "explanation": "Lunch counters were informal dining areas in department stores and drugstores.",
+    "id": "revenge-of-boomers-217",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What was a \"passbook\"?",
+    "options": [
+      "A bank record book",
+      "A travel document",
+      "A password book",
+      "A phone directory"
+    ],
+    "correct_index": 0,
+    "explanation": "Passbooks were small books where banks recorded your deposits and withdrawals.",
+    "id": "revenge-of-boomers-218",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What was a \"bank teller\"?",
+    "options": [
+      "A person who handled transactions",
+      "A machine",
+      "A bank robber",
+      "A fortune teller"
+    ],
+    "correct_index": 0,
+    "explanation": "Tellers were bank employees who handled deposits, withdrawals, and transactions in person.",
+    "id": "revenge-of-boomers-219",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was a \"savings bond\"?",
+    "options": [
+      "A government-issued investment",
+      "A savings account",
+      "A safety deposit box",
+      "A gift card"
+    ],
+    "correct_index": 0,
+    "explanation": "Savings bonds were government debt securities, often given as gifts to children.",
+    "id": "revenge-of-boomers-220",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What was \"banker's hours\"?",
+    "options": [
+      "Short work hours (9-3)",
+      "Overtime work",
+      "Weekend hours",
+      "Holiday hours"
+    ],
+    "correct_index": 0,
+    "explanation": "Banker's hours referred to the short hours banks were open, typically 9am to 3pm.",
+    "id": "revenge-of-boomers-221",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was a \"traveler's check\"?",
+    "options": [
+      "Pre-paid checks for traveling",
+      "A travel insurance",
+      "A passport",
+      "A ticket"
+    ],
+    "correct_index": 0,
+    "explanation": "Traveler's checks were pre-paid, replaceable checks used instead of cash when traveling.",
+    "id": "revenge-of-boomers-222",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What was the \"domino theory\"?",
+    "options": [
+      "If one country fell to communism, others would follow",
+      "A game strategy",
+      "An economic model",
+      "A political scandal"
+    ],
+    "correct_index": 0,
+    "explanation": "The domino theory justified US intervention, fearing communist spread like falling dominos.",
+    "id": "revenge-of-boomers-223",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What was \"containment\"?",
+    "options": [
+      "US policy to stop communist expansion",
+      "A storage method",
+      "A military tactic",
+      "A medical term"
+    ],
+    "correct_index": 0,
+    "explanation": "Containment was the Cold War strategy to prevent the spread of communism.",
+    "id": "revenge-of-boomers-224",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What was the \"Iron Curtain\"?",
+    "options": [
+      "The political barrier between East and West Europe",
+      "A metal fence",
+      "A theater prop",
+      "A military defense"
+    ],
+    "correct_index": 0,
+    "explanation": "The Iron Curtain was Winston Churchill's term for the divide between communist and free Europe.",
+    "id": "revenge-of-boomers-225",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What was the \"Berlin Wall\"?",
+    "options": [
+      "A wall dividing East and West Berlin",
+      "A painting",
+      "A music album",
+      "A movie"
+    ],
+    "correct_index": 0,
+    "explanation": "The Berlin Wall (1961-1989) physically divided communist East Berlin from free West Berlin.",
+    "id": "revenge-of-boomers-226",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What was the \"Cuban Missile Crisis\"?",
+    "options": [
+      "A 1962 nuclear standoff between US and USSR",
+      "A baseball scandal",
+      "A dance craze",
+      "A music festival"
+    ],
+    "correct_index": 0,
+    "explanation": "The Cuban Missile Crisis brought the world closest to nuclear war when Soviet missiles were placed in Cuba.",
+    "id": "revenge-of-boomers-227",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What was \"MAD\"?",
+    "options": [
+      "Mutually Assured Destruction nuclear doctrine",
+      "A magazine",
+      "An emotion",
+      "A TV show"
+    ],
+    "correct_index": 0,
+    "explanation": "MAD was the nuclear strategy that prevented war because both sides would be destroyed.",
+    "id": "revenge-of-boomers-228",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 17,
+    "type": "context",
+    "question": "What was \"SALT\"?",
+    "options": [
+      "Strategic Arms Limitation Talks",
+      "A food additive",
+      "A weather pattern",
+      "A military unit"
+    ],
+    "correct_index": 0,
+    "explanation": "SALT were treaties between the US and USSR to limit nuclear weapons.",
+    "id": "revenge-of-boomers-229",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 18,
+    "type": "definition",
+    "question": "What was \"Sputnik\"?",
+    "options": [
+      "First artificial satellite, launched by USSR",
+      "A Russian dog",
+      "A space program",
+      "A nuclear weapon"
+    ],
+    "correct_index": 0,
+    "explanation": "Sputnik was the first satellite, shocking Americans when the USSR launched it in 1957.",
+    "id": "revenge-of-boomers-230",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 19,
+    "type": "context",
+    "question": "What was the \"Space Race\"?",
+    "options": [
+      "US-Soviet competition for space exploration",
+      "A video game",
+      "An Olympic event",
+      "A car race"
+    ],
+    "correct_index": 0,
+    "explanation": "The Space Race was the Cold War competition to achieve space exploration milestones.",
+    "id": "revenge-of-boomers-231",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 20,
+    "type": "definition",
+    "question": "What was \"Apollo 11\"?",
+    "options": [
+      "First mission to land humans on the moon",
+      "A music group",
+      "A car model",
+      "A satellite"
+    ],
+    "correct_index": 0,
+    "explanation": "Apollo 11 landed Neil Armstrong and Buzz Aldrin on the moon on July 20, 1969.",
+    "id": "revenge-of-boomers-232",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What was an \"iceman\"?",
+    "options": [
+      "Someone who delivered ice blocks to homes",
+      "A comic book character",
+      "A refrigerator repairman",
+      "An ice skater"
+    ],
+    "correct_index": 0,
+    "explanation": "Before refrigerators, icemen delivered blocks of ice to keep iceboxes cold.",
+    "id": "revenge-of-boomers-233",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "context",
+    "question": "What was a \"party line\" telephone?",
+    "options": [
+      "A phone line shared by multiple households",
+      "A phone for ordering party supplies",
+      "A phone with multiple ringtones",
+      "A conference call"
+    ],
+    "correct_index": 0,
+    "explanation": "Party lines were shared by several households who could hear each other's conversations.",
+    "id": "revenge-of-boomers-234",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What was a \"record hop\"?",
+    "options": [
+      "A dance party playing records",
+      "A music store",
+      "A radio station",
+      "A track and field event"
+    ],
+    "correct_index": 0,
+    "explanation": "Record hops were informal dances where a DJ played records, popular with teens.",
+    "id": "revenge-of-boomers-235",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What was \"necking\"?",
+    "options": [
+      "Kissing and light physical affection",
+      "A wrestling move",
+      "A type of dance",
+      "Looking at something"
+    ],
+    "correct_index": 0,
+    "explanation": "Necking was slang for kissing and light romantic physical contact.",
+    "id": "revenge-of-boomers-236",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"jalopy\"?",
+    "options": [
+      "An old, run-down car",
+      "A type of hat",
+      "A Mexican food",
+      "A dance style"
+    ],
+    "correct_index": 0,
+    "explanation": "A jalopy was slang for an old, beat-up car.",
+    "id": "revenge-of-boomers-237",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What was \"Roller Derby\"?",
+    "options": [
+      "A competitive roller skating sport",
+      "A horse race",
+      "A car race",
+      "A dance competition"
+    ],
+    "correct_index": 0,
+    "explanation": "Roller Derby was a contact sport on roller skates that was hugely popular on TV.",
+    "id": "revenge-of-boomers-238",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What were \"Bobby sox\"?",
+    "options": [
+      "White ankle socks worn by teenage girls",
+      "A baseball player",
+      "A type of boxing",
+      "A music genre"
+    ],
+    "correct_index": 0,
+    "explanation": "Bobby socks were white ankle socks that became synonymous with teenage girls in the 1940s-50s.",
+    "id": "revenge-of-boomers-239",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What was a \"bobby-soxer\"?",
+    "options": [
+      "A teenage girl fan of pop music",
+      "A boxer",
+      "A hair stylist",
+      "A sock maker"
+    ],
+    "correct_index": 0,
+    "explanation": "Bobby-soxers were teenage girls who wore bobby socks and screamed for Frank Sinatra.",
+    "id": "revenge-of-boomers-240",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What was the \"Twist\"?",
+    "options": [
+      "A popular 1960s dance",
+      "A pretzel",
+      "A magic trick",
+      "A wrestling move"
+    ],
+    "correct_index": 0,
+    "explanation": "The Twist was a wildly popular dance craze started by Chubby Checker in 1960.",
+    "id": "revenge-of-boomers-241",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What were \"go-go dancers\"?",
+    "options": [
+      "Dancers in boots at nightclubs",
+      "Marathon dancers",
+      "Ballet dancers",
+      "Street dancers"
+    ],
+    "correct_index": 0,
+    "explanation": "Go-go dancers danced in cages or on platforms at clubs, wearing go-go boots.",
+    "id": "revenge-of-boomers-242",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What was a \"calculator watch\"?",
+    "options": [
+      "A watch with a built-in calculator",
+      "A time-tracking device",
+      "A sports timer",
+      "A stopwatch"
+    ],
+    "correct_index": 0,
+    "explanation": "Calculator watches combined a digital watch with a tiny calculator, popular in the 1980s.",
+    "id": "revenge-of-boomers-243",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What was a \"Walkman\"?",
+    "options": [
+      "Sony's portable cassette player",
+      "A pedestrian",
+      "A type of radio",
+      "A hiking guide"
+    ],
+    "correct_index": 0,
+    "explanation": "The Sony Walkman revolutionized portable music when it launched in 1979.",
+    "id": "revenge-of-boomers-244",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What was a \"boombox\"?",
+    "options": [
+      "A large portable stereo",
+      "A type of speaker",
+      "A music genre",
+      "A dance move"
+    ],
+    "correct_index": 0,
+    "explanation": "Boomboxes were large portable stereos carried on shoulders, iconic in hip-hop culture.",
+    "id": "revenge-of-boomers-245",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What was \"Atari\"?",
+    "options": [
+      "An early video game console",
+      "A martial arts style",
+      "A Japanese word",
+      "A car brand"
+    ],
+    "correct_index": 0,
+    "explanation": "Atari was the pioneering video game company that popularized home gaming.",
+    "id": "revenge-of-boomers-246",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What was \"Pong\"?",
+    "options": [
+      "One of the first video games",
+      "A table tennis term",
+      "A bad smell",
+      "A type of drink"
+    ],
+    "correct_index": 0,
+    "explanation": "Pong was one of the earliest arcade video games, a simple tennis simulation.",
+    "id": "revenge-of-boomers-247",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What was a \"laser disc\"?",
+    "options": [
+      "A precursor to DVDs",
+      "A music format",
+      "A computer disk",
+      "A frisbee"
+    ],
+    "correct_index": 0,
+    "explanation": "Laser discs were large optical discs for movies, a precursor to DVDs but didn't catch on.",
+    "id": "revenge-of-boomers-248",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What was a \"word processor\"?",
+    "options": [
+      "An early computer for document creation",
+      "A proofreader",
+      "A dictionary",
+      "A typing class"
+    ],
+    "correct_index": 0,
+    "explanation": "Word processors were specialized computers for typing documents before PCs became common.",
+    "id": "revenge-of-boomers-249",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What was \"Wang Laboratories\"?",
+    "options": [
+      "An early computer/word processor company",
+      "A martial arts school",
+      "A restaurant chain",
+      "A toy manufacturer"
+    ],
+    "correct_index": 0,
+    "explanation": "Wang was a major word processor manufacturer that dominated offices before PCs.",
+    "id": "revenge-of-boomers-250",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What was a \"mainframe\"?",
+    "options": [
+      "A large, centralized computer",
+      "A picture frame",
+      "A building support",
+      "A TV type"
+    ],
+    "correct_index": 0,
+    "explanation": "Mainframes were room-sized computers that organizations shared for processing.",
+    "id": "revenge-of-boomers-251",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What were \"punch cards\"?",
+    "options": [
+      "Cards with holes used for computer input",
+      "Reward cards",
+      "Business cards",
+      "Playing cards"
+    ],
+    "correct_index": 0,
+    "explanation": "Punch cards were how data was input to early computers, using patterns of holes.",
+    "id": "revenge-of-boomers-252",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What was BASIC?",
+    "options": [
+      "An early computer programming language",
+      "A simple concept",
+      "A military base",
+      "A chemistry term"
+    ],
+    "correct_index": 0,
+    "explanation": "BASIC was a beginner-friendly programming language that came with early PCs.",
+    "id": "revenge-of-boomers-253",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What was a \"BBS\"?",
+    "options": [
+      "Bulletin Board System - early online communities",
+      "A radio station",
+      "A TV network",
+      "A music label"
+    ],
+    "correct_index": 0,
+    "explanation": "BBSs were early online systems you dialed into for messages and files before the internet.",
+    "id": "revenge-of-boomers-254",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 17,
+    "type": "definition",
+    "question": "What was \"CompuServe\"?",
+    "options": [
+      "An early online service before the internet",
+      "A computer store",
+      "A tech support line",
+      "A software company"
+    ],
+    "correct_index": 0,
+    "explanation": "CompuServe was one of the first major online services, predating the public internet.",
+    "id": "revenge-of-boomers-255",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 18,
+    "type": "context",
+    "question": "What was \"Prodigy\"?",
+    "options": [
+      "An early online service",
+      "A gifted child",
+      "A music group",
+      "A TV show"
+    ],
+    "correct_index": 0,
+    "explanation": "Prodigy was an early online service offering email, news, and shopping before the web.",
+    "id": "revenge-of-boomers-256",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 19,
+    "type": "definition",
+    "question": "What was \"America Online\" (AOL)?",
+    "options": [
+      "A major early internet service provider",
+      "An airline",
+      "A TV network",
+      "A phone company"
+    ],
+    "correct_index": 0,
+    "explanation": "AOL was the biggest internet service provider of the 1990s, famous for \"You've got mail.\"",
+    "id": "revenge-of-boomers-257",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 20,
+    "type": "context",
+    "question": "What did \"surfing the web\" originally mean?",
+    "options": [
+      "Browsing the early internet",
+      "An extreme sport",
+      "Watching TV",
+      "Channel surfing"
+    ],
+    "correct_index": 0,
+    "explanation": "Surfing the web described the experience of navigating between websites on the early internet.",
+    "id": "revenge-of-boomers-258",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 1,
+    "type": "truefalse",
+    "question": "True or False: Microwaves were common in homes by 1960.",
+    "options": [
+      "False - they became common in the 1970s-80s",
+      "True - every home had one",
+      "False - they were never popular",
+      "True - but only in Europe"
+    ],
+    "correct_index": 0,
+    "explanation": "Microwaves didn't become common household items until the late 1970s and 1980s.",
+    "id": "revenge-of-boomers-259",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 2,
+    "type": "truefalse",
+    "question": "True or False: Color TV was common by 1955.",
+    "options": [
+      "False - it didn't become common until late 1960s",
+      "True - everyone had color TV",
+      "False - color TV was never invented",
+      "True - but only in cities"
+    ],
+    "correct_index": 0,
+    "explanation": "While color TV broadcasts started in the 1950s, most homes had black and white until the late 1960s.",
+    "id": "revenge-of-boomers-260",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 3,
+    "type": "truefalse",
+    "question": "True or False: Credit cards existed in the 1950s.",
+    "options": [
+      "True - Diners Club started in 1950",
+      "False - they started in the 1980s",
+      "False - only cash was used",
+      "True - but only for gas"
+    ],
+    "correct_index": 0,
+    "explanation": "The Diners Club card, the first general-purpose charge card, launched in 1950.",
+    "id": "revenge-of-boomers-261",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 4,
+    "type": "truefalse",
+    "question": "True or False: Air conditioning was common in homes in the 1950s.",
+    "options": [
+      "False - it was a luxury until the 1970s",
+      "True - every home had it",
+      "False - it wasn't invented yet",
+      "True - but only in the South"
+    ],
+    "correct_index": 0,
+    "explanation": "Home air conditioning was rare and expensive until the 1970s when it became more affordable.",
+    "id": "revenge-of-boomers-262",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "revenge-of-boomers",
+    "difficulty": 5,
+    "type": "truefalse",
+    "question": "True or False: Fast food restaurants existed in the 1950s.",
+    "options": [
+      "True - McDonald's started in 1955",
+      "False - fast food started in the 1980s",
+      "False - only diners existed",
+      "True - but only in California"
+    ],
+    "correct_index": 0,
+    "explanation": "McDonald's franchising began in 1955, though the first McDonald's was in 1940.",
+    "id": "revenge-of-boomers-263",
+    "category": "generational",
+    "family_safe": true
+  }
+]

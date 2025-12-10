@@ -62,8 +62,37 @@ export default defineConfig({
     },
   },
   build: {
+    chunkSizeWarningLimit: 1200,
     rollupOptions: {
       external: ['sonner'], // Externalize sonner to prevent bundling
+      output: {
+        manualChunks: {
+          admin: ['src/pages/Admin.jsx', 'src/components/admin/ContentSafetyPanel.jsx', 'src/components/admin/FlagPreviewPanel.jsx'],
+          gameplay: ['src/pages/Gameplay.jsx', 'src/pages/PersonalityGameplay.jsx', 'src/pages/OpinionGameplay.jsx'],
+          'game-mechanics': [
+            'src/components/game/ImageQuestion.jsx',
+            'src/components/game/AudioQuestion.jsx',
+            'src/components/game/SwipeQuestion.jsx',
+            'src/components/game/MatchingQuestion.jsx',
+            'src/components/game/RankingQuestion.jsx',
+            'src/components/game/ScenarioSwipe.jsx',
+            'src/components/game/mechanics/TimelineDraggable.jsx',
+            'src/components/game/mechanics/ConnectionBoard.jsx',
+          ],
+          'admin-analytics': [
+            'src/components/admin/AnalyticsDeepDive.jsx',
+            'src/components/admin/AdminOverview.jsx',
+            'src/components/admin/RiskCenter.jsx',
+          ],
+          'share-suite': [
+            'src/components/share/ShareableResultCard.jsx',
+            'src/components/share/SocialShareButtons.jsx',
+            'src/components/share/ShareComparePrompt.jsx',
+            'src/components/share/BeatMeLink.jsx',
+          ],
+          charts: ['recharts'],
+        },
+      },
     },
   },
-}) 
+})

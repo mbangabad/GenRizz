@@ -1,0 +1,882 @@
+[
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You're at a party and notice someone standing alone, checking their phone constantly. What's most likely happening?",
+    "options": [
+      "They're just antisocial and don't want to be there",
+      "They're probably waiting for someone to arrive",
+      "They might feel uncomfortable and are using their phone as a social shield",
+      "Could be many things - I'd go introduce myself to find out"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Recognizing social anxiety in others shows emotional intelligence.",
+    "id": "social-intelligence-1",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Your friend says 'I'm fine' but their voice is flat and they won't make eye contact. What do you do?",
+    "options": [
+      "Accept it - they said they're fine",
+      "Push harder: 'No really, what's wrong?'",
+      "Say 'Okay, but I'm here if you want to talk' and give them space",
+      "Acknowledge the disconnect: 'You say fine but you seem off. No pressure, but I'm here'"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Reading beyond words while respecting boundaries is high EQ.",
+    "id": "social-intelligence-2",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "During a group discussion, you notice one person keeps getting interrupted. What do you do?",
+    "options": [
+      "Nothing - they should speak up for themselves",
+      "Make a mental note but don't intervene",
+      "Wait for a pause and say 'I'd love to hear what [name] was saying'",
+      "After they're cut off, directly ask them to continue their thought"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Advocating for others' voices shows social awareness.",
+    "id": "social-intelligence-3",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You're telling a story and realize halfway through that your audience seems bored. What do you do?",
+    "options": [
+      "Keep going - I started so I'll finish",
+      "Speed up to get to the end faster",
+      "Acknowledge it: 'I'm rambling, long story short...' and wrap up",
+      "Pause and pivot: 'Actually, the main point is...' then invite their input"
+    ],
+    "weights": [
+      1,
+      2,
+      4,
+      3
+    ],
+    "explanation": "Adapting to audience feedback shows social calibration.",
+    "id": "social-intelligence-4",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "At dinner, someone makes an offensive joke. The room goes quiet. What do you do?",
+    "options": [
+      "Laugh along to ease the tension",
+      "Stay silent and hope someone else handles it",
+      "Change the subject smoothly",
+      "Acknowledge it wasn't cool without attacking: 'Yikes, that's not it'"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Addressing discomfort without escalating shows maturity.",
+    "id": "social-intelligence-5",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Two friends are having a disagreement and both ask you to take their side. What do you do?",
+    "options": [
+      "Choose the one I agree with more",
+      "Refuse to get involved at all",
+      "Listen to both and acknowledge each perspective without choosing",
+      "Help them understand each other's viewpoint without taking sides"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Navigating conflict without choosing sides shows wisdom.",
+    "id": "social-intelligence-6",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Someone criticizes your work harshly in front of others. Your first reaction?",
+    "options": [
+      "Defend yourself immediately and counter-attack",
+      "Shut down and say nothing",
+      "Thank them for feedback and process it later privately",
+      "Stay calm, ask clarifying questions, and address valid points professionally"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Handling public criticism with grace shows emotional control.",
+    "id": "social-intelligence-7",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You realize you've hurt a friend's feelings unintentionally. What's your approach?",
+    "options": [
+      "Wait for them to bring it up",
+      "Apologize: 'Sorry if you were offended'",
+      "Apologize sincerely: 'I'm sorry I hurt you, that wasn't my intention'",
+      "Apologize, take responsibility, and ask how you can make it right"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Genuine apologies without deflection show high EQ.",
+    "id": "social-intelligence-8",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "A colleague takes credit for your idea in a meeting. What do you do?",
+    "options": [
+      "Call them out immediately in front of everyone",
+      "Say nothing and fume internally",
+      "After the meeting, privately mention that you'd like credit for contributions",
+      "In the meeting, add on: 'Building on that idea I shared earlier...' without accusation"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Reclaiming credit diplomatically requires social finesse.",
+    "id": "social-intelligence-9",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Your partner seems upset but insists nothing is wrong. You...",
+    "options": [
+      "Accept it and move on",
+      "Keep asking until they tell you",
+      "Let it go for now but check in later: 'Earlier you seemed off...'",
+      "Create a safe space: 'I sense something's up. Whenever you're ready, I'm here'"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Patience and creating psychological safety is high EQ.",
+    "id": "social-intelligence-10",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "A friend is venting about a problem. You know exactly how to fix it. What do you do?",
+    "options": [
+      "Immediately share the solution - why let them suffer?",
+      "Wait for them to finish, then offer the solution",
+      "Ask 'Do you want advice or do you need to vent?'",
+      "Listen fully, validate their feelings, then gently ask if they'd like input"
+    ],
+    "weights": [
+      1,
+      2,
+      4,
+      3
+    ],
+    "explanation": "Asking before advising respects emotional needs.",
+    "id": "social-intelligence-11",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Someone shares news they're excited about that you think is a bad idea. You...",
+    "options": [
+      "Tell them honestly it's a bad idea",
+      "Fake enthusiasm to not hurt their feelings",
+      "Ask questions to understand their thinking before reacting",
+      "Share in their excitement first, then later explore potential concerns gently"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Leading with validation before concerns preserves relationships.",
+    "id": "social-intelligence-12",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "A coworker you don't know well tears up at their desk. What do you do?",
+    "options": [
+      "Pretend not to notice - it's not my business",
+      "Ask loudly 'Are you okay?' so others might help",
+      "Quietly offer tissues or water without drawing attention",
+      "Approach discreetly, offer support, and ask if they need privacy or company"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Offering help while protecting dignity shows care.",
+    "id": "social-intelligence-13",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Your friend is going through something you've never experienced. How do you support them?",
+    "options": [
+      "Share a similar story of your own to relate",
+      "Give advice based on what I'd do",
+      "Acknowledge I can't fully understand but I'm here to listen",
+      "Ask what kind of support would be most helpful for them specifically"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Acknowledging limits while offering presence is powerful.",
+    "id": "social-intelligence-14",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Someone shares an unpopular opinion that you strongly disagree with. You...",
+    "options": [
+      "Tell them they're wrong and explain why",
+      "Change the subject to avoid conflict",
+      "Ask questions to understand their perspective first",
+      "Seek to understand, then share your view respectfully as a different perspective"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Curiosity before judgment enables real dialogue.",
+    "id": "social-intelligence-15",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You're in a bad mood and someone asks for a favor. You...",
+    "options": [
+      "Snap at them or be short",
+      "Do the favor but with obvious reluctance",
+      "Politely decline and explain you're not at your best right now",
+      "Acknowledge your mood, ask if it's urgent, and respond appropriately"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Recognizing and communicating your state prevents damage.",
+    "id": "social-intelligence-16",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You realize you've been dominating a conversation. What do you do?",
+    "options": [
+      "Keep going - I have a lot to say",
+      "Stop talking abruptly",
+      "Pause and ask others for their thoughts",
+      "Acknowledge it: 'I've been talking a lot - I want to hear from you all'"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Self-correcting social behavior shows awareness.",
+    "id": "social-intelligence-17",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You're feeling jealous of a friend's success. How do you handle it?",
+    "options": [
+      "Distance yourself from them",
+      "Congratulate them but feel resentful inside",
+      "Acknowledge the jealousy privately, then genuinely celebrate them",
+      "Recognize it as a signal about your own desires and use it for self-reflection"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Processing difficult emotions productively is emotional intelligence.",
+    "id": "social-intelligence-18",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You made a mistake that affected others. Your approach?",
+    "options": [
+      "Minimize it - it wasn't that big a deal",
+      "Apologize generally and hope it blows over",
+      "Take full responsibility and apologize sincerely",
+      "Own it, apologize, explain how you'll prevent it, and ask what else you can do"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Complete accountability with action shows maturity.",
+    "id": "social-intelligence-19",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You notice you often react defensively to feedback. What do you do?",
+    "options": [
+      "Feedback is usually just criticism in disguise",
+      "Try to listen but still feel defensive",
+      "Practice pausing before responding to feedback",
+      "Actively seek feedback as a growth opportunity and thank people for it"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Transforming defensive patterns shows growth mindset.",
+    "id": "social-intelligence-20",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You're the new person in a group with established dynamics. Your approach?",
+    "options": [
+      "Try to make a big impression right away",
+      "Stay quiet and observe indefinitely",
+      "Observe first, then gradually participate as you learn the culture",
+      "Observe the dynamics, find natural entry points, and add value authentically"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Reading group dynamics before acting shows calibration.",
+    "id": "social-intelligence-21",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You need to deliver bad news to someone. How do you approach it?",
+    "options": [
+      "Just say it directly - rip off the bandaid",
+      "Cushion it with so much positive that the message gets lost",
+      "Find the right time and place, be direct but compassionate",
+      "Prepare them, deliver clearly with empathy, and offer support after"
+    ],
+    "weights": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Delivering hard truths with care is a delicate skill.",
+    "id": "social-intelligence-22",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You sense tension between two people you're with. What do you do?",
+    "options": [
+      "Ignore it - not my problem",
+      "Acknowledge it directly: 'Is something going on between you two?'",
+      "Subtly try to lighten the mood without addressing it",
+      "Navigate around the tension while staying neutral and keeping things moving"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Managing group dynamics without escalating shows skill.",
+    "id": "social-intelligence-23",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Someone you just met overshares personal information. Your reaction?",
+    "options": [
+      "Feel uncomfortable and end the conversation quickly",
+      "Share something personal back to even things out",
+      "Listen without judgment and gently redirect",
+      "Acknowledge what they shared, set gentle boundaries, and show warmth"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Handling vulnerability with boundaries and warmth is advanced.",
+    "id": "social-intelligence-24",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You're asked your opinion on someone's creative work and you don't like it. You...",
+    "options": [
+      "Be brutally honest - they need to hear the truth",
+      "Lie and say it's great",
+      "Find genuine positives to mention and keep critiques gentle",
+      "Ask what kind of feedback they want, then tailor your response accordingly"
+    ],
+    "weights": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Tailoring feedback to needs shows sophistication.",
+    "id": "social-intelligence-25",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "A friend keeps making self-deprecating jokes that seem to mask real pain. You...",
+    "options": [
+      "Laugh along - they're obviously joking",
+      "Tell them to stop being so negative",
+      "Privately check in: 'Your jokes about yourself - are you okay?'",
+      "Find a natural moment to gently say 'I notice you're hard on yourself. What's up?'"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Reading pain behind humor shows depth.",
+    "id": "social-intelligence-26",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You overhear gossip about someone you know. What do you do?",
+    "options": [
+      "Join in - everyone gossips",
+      "Stay silent but keep listening",
+      "Remove yourself from the conversation",
+      "Politely redirect or defend the person without being preachy"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Handling gossip with integrity shows character.",
+    "id": "social-intelligence-27",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Someone gives you a compliment that feels manipulative. Your response?",
+    "options": [
+      "Accept it and feel suspicious",
+      "Reject it directly: 'What do you want?'",
+      "Thank them neutrally and stay alert",
+      "Accept graciously while mentally noting the context for later"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Navigating potential manipulation with grace is sophisticated.",
+    "id": "social-intelligence-28",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You realize a friend only calls when they need something. How do you handle it?",
+    "options": [
+      "Stop answering their calls",
+      "Help them but feel resentful",
+      "Have an honest conversation about the pattern",
+      "Set boundaries while leaving room for the relationship to evolve"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Addressing patterns while preserving relationships is skillful.",
+    "id": "social-intelligence-29",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You're in a group where one person is clearly not being included. What do you do?",
+    "options": [
+      "It's not my responsibility to include everyone",
+      "Feel bad for them but don't act",
+      "Make an effort to bring them into conversation",
+      "Actively create opportunities for them to contribute and feel valued"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Proactive inclusion shows social leadership.",
+    "id": "social-intelligence-30",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Your manager seems stressed and short-tempered. How do you approach them?",
+    "options": [
+      "Avoid them until they're in a better mood",
+      "Proceed as normal and ignore the mood",
+      "Acknowledge: 'Seems like a tough day - is there anything I can help with?'",
+      "Read the situation - offer support if appropriate, give space if needed"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Reading and responding to authority figures requires nuance.",
+    "id": "social-intelligence-31",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "A colleague constantly interrupts you in meetings. Your approach?",
+    "options": [
+      "Start interrupting them back",
+      "Complain about them to others",
+      "Address it privately: 'I've noticed we talk over each other - can we work on that?'",
+      "In the moment: 'Let me finish my thought' - then follow up privately"
+    ],
+    "weights": [
+      1,
+      2,
+      4,
+      3
+    ],
+    "explanation": "Addressing behavior directly but professionally is effective.",
+    "id": "social-intelligence-32",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You disagree with your boss's decision. What do you do?",
+    "options": [
+      "Say nothing - they're the boss",
+      "Disagree publicly in a meeting",
+      "Request a private conversation to share your perspective",
+      "Prepare your thoughts, present them privately, then support the final decision"
+    ],
+    "weights": [
+      2,
+      1,
+      3,
+      4
+    ],
+    "explanation": "Respectful disagreement with commitment to outcomes shows maturity.",
+    "id": "social-intelligence-33",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "A new team member seems to be struggling but hasn't asked for help. You...",
+    "options": [
+      "Wait for them to ask - I don't want to overstep",
+      "Tell your manager they're struggling",
+      "Offer help: 'Starting here can be tough - I'm happy to help if needed'",
+      "Create casual opportunities to connect and offer support naturally"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Offering help without judgment or embarrassment shows care.",
+    "id": "social-intelligence-34",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You notice workplace culture that seems exclusionary. What do you do?",
+    "options": [
+      "It's not my place to change culture",
+      "Complain to trusted colleagues",
+      "Model inclusive behavior yourself",
+      "Model inclusive behavior and find appropriate ways to raise concerns"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Being a culture carrier shows leadership.",
+    "id": "social-intelligence-35",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "Someone you barely know trauma-dumps on you at a social event. You...",
+    "options": [
+      "Look for an excuse to leave immediately",
+      "Listen uncomfortably and nod",
+      "Listen briefly, validate, then gently suggest professional support",
+      "Hold space briefly, set kind boundaries, and suggest resources if appropriate"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Managing unexpected emotional labor with boundaries is advanced.",
+    "id": "social-intelligence-36",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "A friend cancels plans last minute for the third time. Your response?",
+    "options": [
+      "Passive-aggressively say 'it's fine'",
+      "Stop making plans with them",
+      "Express disappointment and ask if everything's okay",
+      "Express how it affects you while checking in on them - could be a pattern or a phase"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Addressing patterns with curiosity and care preserves relationships.",
+    "id": "social-intelligence-37",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You catch someone in a lie but confronting them would cause drama. You...",
+    "options": [
+      "Call them out publicly",
+      "Pretend you didn't notice and distance yourself",
+      "File it away and adjust trust levels accordingly",
+      "Depending on stakes, address privately or adjust relationship with awareness"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Strategic response to dishonesty requires judgment.",
+    "id": "social-intelligence-38",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You're hosting an event and two guests who don't get along both show up. You...",
+    "options": [
+      "Let them figure it out themselves",
+      "Seat them far apart and hope for the best",
+      "Briefly acknowledge to each that the other is here and suggest civility",
+      "Actively manage the dynamic, create buffer interactions, and monitor the vibe"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Proactively managing social dynamics shows hosting skill.",
+    "id": "social-intelligence-39",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  },
+  {
+    "game_id": "social-intelligence",
+    "type": "scenario",
+    "question": "You sense someone is flirting with you but you're not interested. You...",
+    "options": [
+      "Ignore it completely hoping they'll get the hint",
+      "Be cold or rude to shut it down",
+      "Keep it friendly but redirect conversation to non-flirty topics",
+      "Acknowledge them warmly while subtly not reciprocating the flirty energy"
+    ],
+    "weights": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "explanation": "Declining romantic interest gracefully preserves dignity for both.",
+    "id": "social-intelligence-40",
+    "category": "social",
+    "difficulty": 1,
+    "family_safe": true
+  }
+]

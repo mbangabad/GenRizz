@@ -1,0 +1,1090 @@
+[
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What is an \"iPad kid\"?",
+    "options": [
+      "A repair technician",
+      "A child raised with tablets/screens from early age",
+      "An Apple employee",
+      "A kid who hates technology"
+    ],
+    "correct_index": 1,
+    "explanation": "iPad kids grew up with touchscreens as a primary form of entertainment and learning.",
+    "id": "ipad-kid-culture-1",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 1,
+    "type": "context",
+    "question": "What is Cocomelon?",
+    "options": [
+      "A fruit",
+      "A children's YouTube channel with songs",
+      "A video game",
+      "A toy brand"
+    ],
+    "correct_index": 1,
+    "explanation": "Cocomelon is one of the most-watched YouTube channels, dominated by young viewers.",
+    "id": "ipad-kid-culture-2",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 1,
+    "type": "definition",
+    "question": "What is Roblox?",
+    "options": [
+      "A robot toy",
+      "A gaming platform where kids can play and create games",
+      "A building block",
+      "An educational app"
+    ],
+    "correct_index": 1,
+    "explanation": "Roblox is hugely popular with Gen Alpha - a platform of user-created games.",
+    "id": "ipad-kid-culture-3",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 1,
+    "type": "context",
+    "question": "What are \"unboxing videos\"?",
+    "options": [
+      "Moving tutorials",
+      "Videos of people opening new products",
+      "Boxing sports",
+      "Storage tips"
+    ],
+    "correct_index": 1,
+    "explanation": "Kids love watching others open toys - it's a massive genre on YouTube.",
+    "id": "ipad-kid-culture-4",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What is Minecraft?",
+    "options": [
+      "A mining simulator",
+      "A block-building sandbox game",
+      "An educational math game",
+      "A music app"
+    ],
+    "correct_index": 1,
+    "explanation": "Minecraft's creative and survival modes make it universally loved by kids.",
+    "id": "ipad-kid-culture-5",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 2,
+    "type": "context",
+    "question": "What is \"screen time\" in parenting context?",
+    "options": [
+      "Movie watching",
+      "Duration spent on electronic devices",
+      "Screenwriting",
+      "Photography"
+    ],
+    "correct_index": 1,
+    "explanation": "Screen time limits are a major parenting concern with digital native kids.",
+    "id": "ipad-kid-culture-6",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 2,
+    "type": "definition",
+    "question": "What is Ryan's World?",
+    "options": [
+      "A globe",
+      "A kid's YouTube channel and brand",
+      "A theme park",
+      "A video game"
+    ],
+    "correct_index": 1,
+    "explanation": "Ryan Kaji became a child millionaire through his toy review channel.",
+    "id": "ipad-kid-culture-7",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 2,
+    "type": "context",
+    "question": "What is \"Bluey\"?",
+    "options": [
+      "A color",
+      "An Australian cartoon dog show",
+      "A fish",
+      "A music group"
+    ],
+    "correct_index": 1,
+    "explanation": "Bluey is beloved by kids AND parents for its thoughtful storytelling.",
+    "id": "ipad-kid-culture-8",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What is YouTube Kids?",
+    "options": [
+      "Young YouTubers",
+      "A filtered version of YouTube for children",
+      "A cartoon",
+      "A video game"
+    ],
+    "correct_index": 1,
+    "explanation": "YouTube Kids filters content for younger viewers (with varying success).",
+    "id": "ipad-kid-culture-9",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What is \"Paw Patrol\"?",
+    "options": [
+      "Police dogs",
+      "A cartoon about rescue pups",
+      "A security app",
+      "A pet training show"
+    ],
+    "correct_index": 1,
+    "explanation": "Paw Patrol is one of the biggest kids' franchises with shows, toys, and movies.",
+    "id": "ipad-kid-culture-10",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 3,
+    "type": "definition",
+    "question": "What is a \"fidget toy\"?",
+    "options": [
+      "A broken toy",
+      "Sensory toys for focus and stress relief",
+      "An old toy",
+      "A musical instrument"
+    ],
+    "correct_index": 1,
+    "explanation": "Fidget spinners and pop-its became massive trends among kids.",
+    "id": "ipad-kid-culture-11",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 3,
+    "type": "context",
+    "question": "What is \"Among Us\"?",
+    "options": [
+      "A philosophy book",
+      "A social deduction game about finding imposters",
+      "A hide-and-seek game",
+      "A math app"
+    ],
+    "correct_index": 1,
+    "explanation": "Among Us became hugely popular with kids during the pandemic.",
+    "id": "ipad-kid-culture-12",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What are \"Robux\"?",
+    "options": [
+      "Rubies",
+      "Virtual currency in Roblox",
+      "Robots",
+      "A vitamin"
+    ],
+    "correct_index": 1,
+    "explanation": "Robux are Roblox's currency - kids often want to buy them.",
+    "id": "ipad-kid-culture-13",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What is \"Fortnite\"?",
+    "options": [
+      "A castle",
+      "A battle royale game popular with tweens",
+      "A building game only",
+      "A music app"
+    ],
+    "correct_index": 1,
+    "explanation": "Fortnite became a cultural phenomenon with its dances and collaborations.",
+    "id": "ipad-kid-culture-14",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 4,
+    "type": "definition",
+    "question": "What is a \"Let's Play\" video?",
+    "options": [
+      "Sports highlights",
+      "Videos of someone playing games with commentary",
+      "Music videos",
+      "Tutorials"
+    ],
+    "correct_index": 1,
+    "explanation": "Kids watch others play games as entertainment - a massive YouTube genre.",
+    "id": "ipad-kid-culture-15",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 4,
+    "type": "context",
+    "question": "What is \"Peppa Pig\"?",
+    "options": [
+      "A farm animal",
+      "A British animated show for preschoolers",
+      "A cooking show",
+      "A video game"
+    ],
+    "correct_index": 1,
+    "explanation": "Peppa Pig is a global phenomenon in children's programming.",
+    "id": "ipad-kid-culture-16",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What is \"ASMR for kids\"?",
+    "options": [
+      "Music class",
+      "Soothing sensory videos for relaxation",
+      "Action movies",
+      "Loud entertainment"
+    ],
+    "correct_index": 1,
+    "explanation": "Gentle sounds and visuals for calming kids is its own content genre.",
+    "id": "ipad-kid-culture-17",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What is \"Numberblocks\"?",
+    "options": [
+      "Calculator app",
+      "Educational BBC show teaching math",
+      "Phone game",
+      "Building toys"
+    ],
+    "correct_index": 1,
+    "explanation": "Numberblocks teaches math through characters that are numbers.",
+    "id": "ipad-kid-culture-18",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 5,
+    "type": "definition",
+    "question": "What are \"Squishmallows\"?",
+    "options": [
+      "Marshmallows",
+      "Plush collectible stuffed toys",
+      "Slime toys",
+      "Bath bombs"
+    ],
+    "correct_index": 1,
+    "explanation": "Squishmallows became a collecting craze among kids and teens.",
+    "id": "ipad-kid-culture-19",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 5,
+    "type": "context",
+    "question": "What is \"Diana and Roma\"?",
+    "options": [
+      "A band",
+      "A kids' YouTube channel with massive viewership",
+      "A cartoon",
+      "A book series"
+    ],
+    "correct_index": 1,
+    "explanation": "Diana and Roma have billions of views on their kid-focused content.",
+    "id": "ipad-kid-culture-20",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What is \"slime\" content?",
+    "options": [
+      "Gross videos",
+      "Satisfying videos of making/playing with slime",
+      "Horror content",
+      "Nature documentaries"
+    ],
+    "correct_index": 1,
+    "explanation": "Slime making and playing videos became massive on YouTube and TikTok.",
+    "id": "ipad-kid-culture-21",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What is a \"reaction video\"?",
+    "options": [
+      "Chemistry experiment",
+      "Videos of people reacting to other content",
+      "Allergy videos",
+      "News clips"
+    ],
+    "correct_index": 1,
+    "explanation": "Kids love watching others react to videos, songs, and shows.",
+    "id": "ipad-kid-culture-22",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 6,
+    "type": "definition",
+    "question": "What is \"Stumble Guys\"?",
+    "options": [
+      "A cartoon",
+      "A battle royale obstacle course game",
+      "A music app",
+      "A learning game"
+    ],
+    "correct_index": 1,
+    "explanation": "Stumble Guys is a free-to-play Fall Guys alternative popular with kids.",
+    "id": "ipad-kid-culture-23",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 6,
+    "type": "context",
+    "question": "What is \"Gacha Life\"?",
+    "options": [
+      "A snack",
+      "An anime-style character creation app",
+      "A game console",
+      "A music app"
+    ],
+    "correct_index": 1,
+    "explanation": "Gacha games let kids create characters and mini-movies.",
+    "id": "ipad-kid-culture-24",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What is a \"MrBeast\" video style?",
+    "options": [
+      "Nature documentaries",
+      "Extreme challenges with big prizes and production",
+      "Quiet vlogs",
+      "Music videos"
+    ],
+    "correct_index": 1,
+    "explanation": "MrBeast's expensive stunts and giveaways are hugely popular with kids.",
+    "id": "ipad-kid-culture-25",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What is \"autoplay\" concern for parents?",
+    "options": [
+      "Car videos",
+      "Videos playing automatically leading to inappropriate content",
+      "Music playlists",
+      "Radio"
+    ],
+    "correct_index": 1,
+    "explanation": "Autoplay can lead kids down rabbit holes to unsuitable content.",
+    "id": "ipad-kid-culture-26",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 7,
+    "type": "definition",
+    "question": "What are \"LOL Surprise\" dolls?",
+    "options": [
+      "Comedy toys",
+      "Collectible dolls in surprise packaging",
+      "Educational toys",
+      "Board games"
+    ],
+    "correct_index": 1,
+    "explanation": "LOL Surprise dolls have layers of surprises to unwrap - very popular.",
+    "id": "ipad-kid-culture-27",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 7,
+    "type": "context",
+    "question": "What is \"Brawl Stars\"?",
+    "options": [
+      "Wrestling show",
+      "A mobile multiplayer battle game",
+      "A cartoon",
+      "A music app"
+    ],
+    "correct_index": 1,
+    "explanation": "Brawl Stars is a popular mobile game from the makers of Clash Royale.",
+    "id": "ipad-kid-culture-28",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What is \"brainrot\" content?",
+    "options": [
+      "Medical videos",
+      "Low-quality addictive content that \"rots\" attention spans",
+      "Educational content",
+      "Nature documentaries"
+    ],
+    "correct_index": 1,
+    "explanation": "Brainrot describes mindless content that keeps kids watching but offers no value.",
+    "id": "ipad-kid-culture-29",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What is \"Adopt Me\" in Roblox?",
+    "options": [
+      "Adoption service",
+      "A pet collection and trading game",
+      "A dating game",
+      "An educational game"
+    ],
+    "correct_index": 1,
+    "explanation": "Adopt Me is one of Roblox's most popular games with virtual pets.",
+    "id": "ipad-kid-culture-30",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 8,
+    "type": "definition",
+    "question": "What is a \"family channel\"?",
+    "options": [
+      "TV network",
+      "YouTube channels featuring kids and families",
+      "Genealogy sites",
+      "Photo albums"
+    ],
+    "correct_index": 1,
+    "explanation": "Family channels feature kids in content - raising ethical questions.",
+    "id": "ipad-kid-culture-31",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 8,
+    "type": "context",
+    "question": "What is \"Blippi\"?",
+    "options": [
+      "A noise",
+      "An educational kids' entertainer on YouTube",
+      "A video game",
+      "A cartoon character"
+    ],
+    "correct_index": 1,
+    "explanation": "Blippi's high-energy educational videos are hugely popular with preschoolers.",
+    "id": "ipad-kid-culture-32",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What is \"Elsagate\"?",
+    "options": [
+      "A Disney scandal",
+      "Disturbing content disguised as kids' videos",
+      "A video game",
+      "A theme park"
+    ],
+    "correct_index": 1,
+    "explanation": "Elsagate exposed inappropriate content using kid-friendly characters.",
+    "id": "ipad-kid-culture-33",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What is \"parasocial relationship\" in kids' context?",
+    "options": [
+      "Parallel play",
+      "Kids feeling connected to YouTubers they've never met",
+      "Playdates",
+      "School friends"
+    ],
+    "correct_index": 1,
+    "explanation": "Kids develop one-sided emotional bonds with content creators.",
+    "id": "ipad-kid-culture-34",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 9,
+    "type": "definition",
+    "question": "What is \"moderated\" Roblox?",
+    "options": [
+      "Slow Roblox",
+      "Content filtering for safety",
+      "Old version",
+      "A different game"
+    ],
+    "correct_index": 1,
+    "explanation": "Roblox attempts to filter inappropriate content and chat.",
+    "id": "ipad-kid-culture-35",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 9,
+    "type": "context",
+    "question": "What is \"in-app purchase\" concern for parents?",
+    "options": [
+      "App downloads",
+      "Kids spending real money in games accidentally",
+      "Safe purchases",
+      "Gift cards"
+    ],
+    "correct_index": 1,
+    "explanation": "Kids can rack up huge bills with in-app purchases on parents' accounts.",
+    "id": "ipad-kid-culture-36",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What is \"content farming\"?",
+    "options": [
+      "Agricultural videos",
+      "Mass-producing low-quality content for views",
+      "Farming games",
+      "Educational content"
+    ],
+    "correct_index": 1,
+    "explanation": "Content farms churn out quantity over quality for ad revenue.",
+    "id": "ipad-kid-culture-37",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What is \"screen addiction\" in children?",
+    "options": [
+      "Eye problems",
+      "Compulsive need to use devices affecting behavior",
+      "Movie watching",
+      "Photography"
+    ],
+    "correct_index": 1,
+    "explanation": "Some kids show withdrawal and behavioral issues when screens are removed.",
+    "id": "ipad-kid-culture-38",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 10,
+    "type": "definition",
+    "question": "What are \"surprise eggs\"?",
+    "options": [
+      "Chocolate eggs",
+      "Videos of opening toy-filled plastic eggs",
+      "Easter tradition",
+      "Cooking videos"
+    ],
+    "correct_index": 1,
+    "explanation": "Surprise egg videos get billions of views from young children.",
+    "id": "ipad-kid-culture-39",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 10,
+    "type": "context",
+    "question": "What is \"algorithmic rabbit hole\" for kids?",
+    "options": [
+      "A game",
+      "Recommendations leading kids deeper into niche content",
+      "A cartoon",
+      "A book"
+    ],
+    "correct_index": 1,
+    "explanation": "Algorithms can lead kids to increasingly extreme or age-inappropriate content.",
+    "id": "ipad-kid-culture-40",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What is \"digital babysitting\"?",
+    "options": [
+      "Online nanny",
+      "Using devices to keep kids occupied/quiet",
+      "Video calls with grandparents",
+      "Educational apps"
+    ],
+    "correct_index": 1,
+    "explanation": "Using screens to pacify kids is common but debated among parents.",
+    "id": "ipad-kid-culture-41",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What is \"COPPA\" in relation to kid content?",
+    "options": [
+      "A cartoon",
+      "US law protecting children's online privacy",
+      "A video game",
+      "A platform"
+    ],
+    "correct_index": 1,
+    "explanation": "COPPA regulates data collection from children under 13.",
+    "id": "ipad-kid-culture-42",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 11,
+    "type": "definition",
+    "question": "What is a \"kidfluencer\"?",
+    "options": [
+      "A teacher",
+      "A child social media influencer",
+      "A parent",
+      "A toy"
+    ],
+    "correct_index": 1,
+    "explanation": "Kidfluencers promote products to their young audience for money.",
+    "id": "ipad-kid-culture-43",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 11,
+    "type": "context",
+    "question": "What is \"blue light\" concern for kids?",
+    "options": [
+      "Pretty lights",
+      "Screen light affecting sleep and eye health",
+      "Blue toys",
+      "A cartoon"
+    ],
+    "correct_index": 1,
+    "explanation": "Blue light from screens may affect children's sleep patterns.",
+    "id": "ipad-kid-culture-44",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What is \"media literacy\" for kids?",
+    "options": [
+      "Reading books",
+      "Understanding and critically evaluating digital content",
+      "Computer skills",
+      "Typing"
+    ],
+    "correct_index": 1,
+    "explanation": "Teaching kids to think critically about what they watch is crucial.",
+    "id": "ipad-kid-culture-45",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What is \"predatory monetization\" in kids' games?",
+    "options": [
+      "Animal games",
+      "Tactics that exploit children to spend money",
+      "Fair pricing",
+      "Educational games"
+    ],
+    "correct_index": 1,
+    "explanation": "Some games use psychological tactics to get kids to spend money.",
+    "id": "ipad-kid-culture-46",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 12,
+    "type": "definition",
+    "question": "What is \"parental controls\"?",
+    "options": [
+      "Remote controls",
+      "Settings limiting what kids can access on devices",
+      "Rules",
+      "Punishments"
+    ],
+    "correct_index": 1,
+    "explanation": "Parental controls filter content, limit time, and restrict purchases.",
+    "id": "ipad-kid-culture-47",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 12,
+    "type": "context",
+    "question": "What is \"sharenting\"?",
+    "options": [
+      "Sharing toys",
+      "Parents oversharing kids' lives on social media",
+      "Co-parenting",
+      "Babysitting"
+    ],
+    "correct_index": 1,
+    "explanation": "Sharenting raises privacy concerns for children who can't consent.",
+    "id": "ipad-kid-culture-48",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What is \"digital footprint\" for children?",
+    "options": [
+      "Computer files",
+      "Online trail of data about a child starting from birth",
+      "Walking app",
+      "Fitness tracker"
+    ],
+    "correct_index": 1,
+    "explanation": "Children have digital identities before they can consent to them.",
+    "id": "ipad-kid-culture-49",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What is \"attention economy\" impact on kids?",
+    "options": [
+      "Economics class",
+      "Designing content to capture and hold children's attention",
+      "Focus training",
+      "Educational apps"
+    ],
+    "correct_index": 1,
+    "explanation": "Kids' attention is monetized, leading to increasingly addictive content.",
+    "id": "ipad-kid-culture-50",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 13,
+    "type": "definition",
+    "question": "What is \"developmental impact\" of early screen use?",
+    "options": [
+      "Growth charts",
+      "How screens affect brain development",
+      "Learning apps",
+      "Physical growth"
+    ],
+    "correct_index": 1,
+    "explanation": "Research studies how early screen exposure affects development.",
+    "id": "ipad-kid-culture-51",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 13,
+    "type": "context",
+    "question": "What is \"dopamine loop\" in kids' content?",
+    "options": [
+      "Exercise",
+      "Reward cycles that create addictive viewing patterns",
+      "Music",
+      "Dancing"
+    ],
+    "correct_index": 1,
+    "explanation": "Notifications, likes, and content create dopamine-driven habits.",
+    "id": "ipad-kid-culture-52",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What is \"commercial content\" concern in kids' videos?",
+    "options": [
+      "Business videos",
+      "Blurred lines between entertainment and advertising",
+      "Shopping shows",
+      "Educational content"
+    ],
+    "correct_index": 1,
+    "explanation": "Kids often can't distinguish ads from content in influencer videos.",
+    "id": "ipad-kid-culture-53",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What is \"social comparison\" online for kids?",
+    "options": [
+      "Math skills",
+      "Comparing themselves to idealized online images",
+      "Friend groups",
+      "School rankings"
+    ],
+    "correct_index": 1,
+    "explanation": "Kids compare themselves to curated online lives, affecting self-esteem.",
+    "id": "ipad-kid-culture-54",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 14,
+    "type": "definition",
+    "question": "What is \"platform design\" ethics for kids?",
+    "options": [
+      "Building apps",
+      "How apps are designed to maximize engagement in children",
+      "Architecture",
+      "Construction"
+    ],
+    "correct_index": 1,
+    "explanation": "Platforms are designed to be addictive - raising ethical concerns for kids.",
+    "id": "ipad-kid-culture-55",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 14,
+    "type": "context",
+    "question": "What is \"data harvesting\" from children?",
+    "options": [
+      "Farm games",
+      "Collecting children's behavioral data for profit",
+      "Research",
+      "Education"
+    ],
+    "correct_index": 1,
+    "explanation": "Kids' online behavior is tracked and monetized from early ages.",
+    "id": "ipad-kid-culture-56",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What is \"dark patterns\" in kids' apps?",
+    "options": [
+      "Night mode",
+      "Deceptive design that tricks users into actions",
+      "Color schemes",
+      "Themes"
+    ],
+    "correct_index": 1,
+    "explanation": "Dark patterns manipulate kids into purchases, watching, or sharing.",
+    "id": "ipad-kid-culture-57",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What is \"age verification\" problem online?",
+    "options": [
+      "Birthday parties",
+      "Inability to truly verify if users are children",
+      "ID checking",
+      "Age calculators"
+    ],
+    "correct_index": 1,
+    "explanation": "Platforms struggle to verify age, exposing kids to adult content.",
+    "id": "ipad-kid-culture-58",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 15,
+    "type": "definition",
+    "question": "What is \"digital wellness\" for families?",
+    "options": [
+      "Online doctors",
+      "Healthy relationship with technology",
+      "Fitness apps",
+      "Health tracking"
+    ],
+    "correct_index": 1,
+    "explanation": "Digital wellness focuses on balanced, healthy technology use.",
+    "id": "ipad-kid-culture-59",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 15,
+    "type": "context",
+    "question": "What is \"technoference\" in parenting?",
+    "options": [
+      "Tech conference",
+      "Technology interfering with parent-child interaction",
+      "Interference",
+      "Signals"
+    ],
+    "correct_index": 1,
+    "explanation": "Parents on phones during family time affects relationships.",
+    "id": "ipad-kid-culture-60",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What is \"passive consumption\" vs \"active creation\"?",
+    "options": [
+      "Eating habits",
+      "Watching content vs making/coding content",
+      "Reading vs writing",
+      "Listening vs talking"
+    ],
+    "correct_index": 1,
+    "explanation": "Experts encourage kids to create, not just consume digital content.",
+    "id": "ipad-kid-culture-61",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What is \"algorithmic curation\" impact on kids?",
+    "options": [
+      "Art class",
+      "AI deciding what children see, shaping worldview",
+      "Museum tours",
+      "Collections"
+    ],
+    "correct_index": 1,
+    "explanation": "Algorithms shape what reality looks like to children.",
+    "id": "ipad-kid-culture-62",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 16,
+    "type": "definition",
+    "question": "What is \"consent\" issue with children online?",
+    "options": [
+      "Agreement",
+      "Kids can't legally consent to terms of service/data use",
+      "Permission slips",
+      "Parent approval"
+    ],
+    "correct_index": 1,
+    "explanation": "Children agree to terms they don't understand, raising legal questions.",
+    "id": "ipad-kid-culture-63",
+    "category": "generational",
+    "family_safe": true
+  },
+  {
+    "game_id": "ipad-kid-culture",
+    "difficulty": 16,
+    "type": "context",
+    "question": "What is \"surveillance capitalism\" effect on kids?",
+    "options": [
+      "Security cameras",
+      "Business model profiting from children's data",
+      "Child labor",
+      "Economics class"
+    ],
+    "correct_index": 1,
+    "explanation": "Children's data is valuable commodity in the attention economy.",
+    "id": "ipad-kid-culture-64",
+    "category": "generational",
+    "family_safe": true
+  }
+]

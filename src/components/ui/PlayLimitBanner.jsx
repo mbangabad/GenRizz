@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Crown, Play, Zap, Gift, Clock } from 'lucide-react';
+import { useToast } from '@/components/ui/use-toast';
+import { requestRecoveryAd } from '@/services/ads';
 
 const FREE_DAILY_LIMIT = 5;
 
@@ -12,9 +14,26 @@ export default function PlayLimitBanner({
   isPremium = false,
   onWatchAd 
 }) {
+  const { toast } = useToast();
   const remaining = FREE_DAILY_LIMIT + bonusPlays - gamesPlayed;
   const atLimit = remaining <= 0;
   const nearLimit = remaining <= 2 && remaining > 0;
+
+  const handleWatchAd = async () => {
+    const result = await requestRecoveryAd();
+    if (result.shown && onWatchAd) {
+      await onWatchAd();
+    }
+    if (result.shown) {
+      toast({ title: '+1 play granted', description: 'Recovery-only ad watched.' });
+    } else {
+      toast({
+        variant: 'destructive',
+        title: 'Ad unavailable',
+        description: 'Ads are disabled or cooling down (15m, max 3/day).',
+      });
+    }
+  };
 
   if (isPremium) {
     return (
@@ -52,7 +71,7 @@ export default function PlayLimitBanner({
           </Link>
           
           <button
-            onClick={onWatchAd}
+            onClick={handleWatchAd}
             className="flex items-center justify-center gap-2 px-4 py-3 bg-slate-700 rounded-xl font-bold text-sm hover:bg-slate-600 transition-colors"
           >
             <Play className="w-4 h-4" />
@@ -102,6 +121,23 @@ export default function PlayLimitBanner({
 }
 
 export function PlayLimitModal({ onClose, onWatchAd, onUpgrade }) {
+  const { toast } = useToast();
+
+  const handleWatchAd = async () => {
+    const result = await requestRecoveryAd();
+    if (result.shown) {
+      if (onWatchAd) await onWatchAd();
+      toast({ title: '+1 play granted', description: 'Recovery-only ad watched.' });
+      onClose?.();
+    } else {
+      toast({
+        variant: 'destructive',
+        title: 'Ad unavailable',
+        description: 'Ads are disabled or cooling down (15m, max 3/day).',
+      });
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -136,7 +172,7 @@ export function PlayLimitModal({ onClose, onWatchAd, onUpgrade }) {
           </button>
 
           <button
-            onClick={onWatchAd}
+            onClick={handleWatchAd}
             className="w-full flex items-center justify-center gap-2 py-3 bg-slate-700 rounded-xl font-bold hover:bg-slate-600 transition-colors"
           >
             <Play className="w-5 h-5" />

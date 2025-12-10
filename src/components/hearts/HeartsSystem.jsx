@@ -6,6 +6,8 @@ import { auth } from '@/api/auth';
 import { Subscription } from '@/api/entities';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import { requestRecoveryAd } from '@/services/ads';
+import { useToast } from '@/components/ui/use-toast';
 
 const MAX_HEARTS = 5;
 const REGEN_TIME_MINUTES = 30;
@@ -13,6 +15,7 @@ const REGEN_TIME_MINUTES = 30;
 export default function HeartsSystem({ userId, onHeartChange }) {
   const [showModal, setShowModal] = useState(false);
   const queryClient = useQueryClient();
+  const { toast } = useToast();
 
   // Get user's hearts data
   const { data: heartsData } = useQuery({
@@ -97,6 +100,20 @@ export default function HeartsSystem({ userId, onHeartChange }) {
     await auth.updateMe({ hearts: Math.min(MAX_HEARTS, hearts + 1) });
     queryClient.invalidateQueries(['hearts', userId]);
     setShowModal(false);
+  };
+
+  const handleWatchAd = async () => {
+    const result = await requestRecoveryAd();
+    if (result.shown) {
+      await refillHeart();
+      toast({ title: 'Bonus granted', description: 'Recovery-only ad watched. +1 heart added.' });
+    } else {
+      toast({
+        variant: 'destructive',
+        title: 'Ad unavailable',
+        description: 'Recovery ads are disabled or on cooldown (15m, max 3/day).',
+      });
+    }
   };
 
   const timeUntilNext = getTimeUntilNextHeart();
@@ -194,7 +211,7 @@ export default function HeartsSystem({ userId, onHeartChange }) {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      onClick={refillHeart}
+                      onClick={handleWatchAd}
                       className="w-full btn-3d btn-3d-blue py-3 flex items-center justify-center gap-2"
                     >
                       <Play className="w-5 h-5" />

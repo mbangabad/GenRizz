@@ -18,6 +18,10 @@ import AnalyticsDeepDive from '@/components/admin/AnalyticsDeepDive';
 import RiskCenter from '@/components/admin/RiskCenter';
 import BetaAccess from '@/components/admin/BetaAccess';
 import InviteManager from '@/components/admin/InviteManager';
+import FlagPreviewPanel from '@/components/admin/FlagPreviewPanel';
+import ValidatorSummary from '@/components/admin/ValidatorSummary';
+import { getFlagOverrides, getFlags } from '@/services/flags';
+import ContentSafetyPanel from '@/components/admin/ContentSafetyPanel';
 
 // Simple Moderation Component
 function ModerationPanel() {
@@ -97,32 +101,46 @@ const MENU_ITEMS = [
   { id: 'risks', label: 'Risk & Health', icon: Activity, color: 'text-[#FF4B4B]' },
   { id: 'games', label: 'Game Manager', icon: Gamepad2, color: 'text-[#FFC800]' },
   { id: 'content', label: 'Content Engine', icon: Sparkles, color: 'text-[#58CC02]' },
+  { id: 'safety', label: 'Content Safety', icon: ShieldAlert, color: 'text-[#FF9600]' },
   { id: 'invites', label: 'Invites', icon: Ticket, color: 'text-[#FFC800]' },
   { id: 'moderation', label: 'Moderation', icon: ShieldAlert, color: 'text-[#FF9600]' },
   { id: 'beta', label: 'Beta Access', icon: Users, color: 'text-[#3C3C3C]' },
 ];
 
 export default function Admin() {
+  // Admin already rendered within app Router; no need to wrap again
+  return <AdminShell />;
+}
+
+function AdminShell() {
   const [activeTab, setActiveTab] = useState('overview');
   const [stats, setStats] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [overrideCount, setOverrideCount] = useState(0);
+  const adsEnabled = Boolean(getFlags().ADS_RECOVERY_ONLY);
+  const devAdminBypass = String(import.meta.env.VITE_DEV_ADMIN_BYPASS || '').toLowerCase() === 'true';
+  const devAdminEmail = import.meta.env.VITE_DEV_ADMIN_EMAIL || 'dev@genrizz.local';
 
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const currentUser = await auth.me();
-        if (!currentUser || currentUser.role !== 'admin') {
-          window.location.href = createPageUrl('Home'); // Redirect non-admins
-          return;
+        if (devAdminBypass) {
+          setUser({ id: 'dev-admin', email: devAdminEmail, role: 'admin' });
+        } else {
+          const currentUser = await auth.me();
+          if (!currentUser || currentUser.role !== 'admin') {
+            window.location.href = createPageUrl('Home'); // Redirect non-admins
+            return;
+          }
+          setUser(currentUser);
+          
+          // Fetch platform stats
+          const res = await PlatformStats.list('created_at', 1, false);
+          if (res && res.length > 0) setStats(res[0]);
         }
-        setUser(currentUser);
-        
-        // Fetch platform stats
-        const res = await PlatformStats.list('created_at', 1, false);
-        if (res && res.length > 0) setStats(res[0]);
       } catch (error) {
         window.location.href = createPageUrl('Home');
       } finally {
@@ -130,6 +148,7 @@ export default function Admin() {
       }
     };
     checkAuth();
+    setOverrideCount(Object.keys(getFlagOverrides()).length);
   }, []);
 
   if (loading) return <div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#3C3C3C]" /></div>;
@@ -212,20 +231,40 @@ export default function Admin() {
               <h2 className="text-3xl font-black text-[#3C3C3C] tracking-tight">
                 {MENU_ITEMS.find(i => i.id === activeTab)?.label}
               </h2>
-              <p className="text-[#AFAFAF] font-semibold mt-1">
+              {overrideCount > 0 && (
+                <p className="text-xs font-bold text-[#58CC02] mt-1">
+                  Local flag overrides active: {overrideCount}
+                </p>
+              )}
+              <p className="text-\[#AFAFAF\] font-semibold mt-1">
                 {activeTab === 'overview' && "Real-time platform performance overview."}
                 {activeTab === 'analytics' && "Deep dive into retention, cohorts, and user behavior."}
                 {activeTab === 'risks' && "System health monitoring and active alerts."}
                 {activeTab === 'content' && "AI-powered content generation studio."}
+                {activeTab === 'safety' && "Manage banned terms and admin whitelist (family-friendly defaults)."}
                 {activeTab === 'games' && "Manage configurations and A/B tests."}
+                {activeTab === 'invites' && "Manage invite codes and early access cohorts."}
+                {activeTab === 'moderation' && "Resolve reports and community content."}
+                {activeTab === 'beta' && "Manage beta users and roles."}
               </p>
             </div>
 
             {activeTab === 'overview' && <AdminOverview stats={stats} />}
             {activeTab === 'analytics' && <AnalyticsDeepDive />}
             {activeTab === 'risks' && <RiskCenter />}
-            {activeTab === 'games' && <GameManager />}
-            {activeTab === 'content' && <ContentEngine />}
+            {activeTab === 'games' && (
+              <div className="space-y-6">
+                <FlagPreviewPanel />
+                <GameManager />
+              </div>
+            )}
+            {activeTab === 'content' && (
+              <div className="space-y-6">
+                <ValidatorSummary />
+                <ContentEngine />
+              </div>
+            )}
+            {activeTab === 'safety' && <ContentSafetyPanel />}
             {activeTab === 'invites' && <InviteManager />}
             {activeTab === 'moderation' && <ModerationPanel />}
             {activeTab === 'beta' && <BetaAccess />}

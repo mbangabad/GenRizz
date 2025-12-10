@@ -1,11 +1,18 @@
 import { supabase } from '@/lib/supabase'
 import OpenAI from 'openai'
 import { Resend } from 'resend'
+import { serverlessLLM, serverlessEmail, serverlessImage } from './serverless'
+
+const useServerless = String(import.meta?.env?.VITE_FLAG_USE_SERVERLESS || '').toLowerCase() === 'true'
 
 /**
  * LLM Integration - OpenAI API
  */
 export const InvokeLLM = async ({ prompt, response_json_schema }) => {
+  if (useServerless) {
+    return serverlessLLM({ prompt, response_json_schema })
+  }
+
   const apiKey = import.meta.env.VITE_OPENAI_API_KEY
   
   if (!apiKey) {
@@ -43,6 +50,10 @@ export const InvokeLLM = async ({ prompt, response_json_schema }) => {
  * Email Integration - Resend API
  */
 export const SendEmail = async ({ to, subject, html, body, from = 'GenRizz <noreply@genrizz.com>' }) => {
+  if (useServerless) {
+    return serverlessEmail({ to, subject, html, body, from })
+  }
+
   const apiKey = import.meta.env.VITE_RESEND_API_KEY
   
   if (!apiKey) {
@@ -127,6 +138,10 @@ export const UploadPrivateFile = async (file, path, options = {}) => {
  * Generate Image - OpenAI DALL-E
  */
 export const GenerateImage = async ({ prompt, size = '1024x1024' }) => {
+  if (useServerless) {
+    return serverlessImage({ prompt, size })
+  }
+
   const apiKey = import.meta.env.VITE_OPENAI_API_KEY
   
   if (!apiKey) {

@@ -10,6 +10,8 @@ import {
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import Mascot from '@/components/ui/Mascot';
+import { requestRecoveryAd } from '@/services/ads';
+import { useToast } from '@/components/ui/use-toast';
 
 const SHOP_ITEMS = [
   {
@@ -117,10 +119,27 @@ export default function Shop() {
   const [user, setUser] = useState(null);
   const [purchasing, setPurchasing] = useState(null);
   const [activeTab, setActiveTab] = useState('powerups'); // 'powerups' | 'avatar'
+  const { toast } = useToast();
 
   useEffect(() => {
     auth.me().then(setUser).catch(() => {});
   }, []);
+
+  const handleRecoveryAd = async () => {
+    const result = await requestRecoveryAd();
+    if (result.shown) {
+      if (user?.id) {
+        await auth.updateMe({ hearts: Math.min(5, (user.hearts || 0) + 1) });
+      }
+      toast({ title: 'Bonus heart granted', description: 'Recovery-only ad watched (capped & cooldown enforced).' });
+    } else {
+      toast({
+        variant: 'destructive',
+        title: 'Ad unavailable',
+        description: 'Ads are off or cooling down (15m, max 3/day).',
+      });
+    }
+  };
 
   const handlePurchase = async (item) => {
     if (!user) {
@@ -305,7 +324,7 @@ export default function Shop() {
               </div>
               <button 
                 className="btn-3d btn-3d-blue px-4 py-2 text-sm"
-                onClick={() => alert("Ad watched! (Mock)")}
+                onClick={handleRecoveryAd}
               >
                 Watch
               </button>
