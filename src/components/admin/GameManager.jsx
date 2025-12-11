@@ -14,6 +14,7 @@ import { Switch } from '@/components/ui/switch';
 import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { logAdminAction } from '@/services/telemetry';
 
 // Mock data for charts
 const GAME_STATS_DATA = [
@@ -62,6 +63,7 @@ export default function GameManager() {
 
   const handleSaveConfig = () => {
     // In a real app, this would save to backend
+    logAdminAction('game_config_save', { gameId: editingGame?.id, config: gameConfig });
     alert(`Configuration saved for ${editingGame.title}!`);
     setEditingGame(null);
   };
@@ -76,6 +78,7 @@ export default function GameManager() {
     setExperiments([experiment, ...experiments]);
     setCreatingExperiment(false);
     setNewExperiment({ name: '', traffic: 50, variantA: 'Control', variantB: 'Variant B' });
+    logAdminAction('experiment_create', { name: newExperiment.name, traffic: newExperiment.traffic });
   };
 
   return (
