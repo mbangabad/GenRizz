@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { auth } from '@/api/auth';
 import { Purchase, PowerUp } from '@/api/entities';
+import { emitEvent, emitError } from '@/services/telemetry';
 import { motion } from 'framer-motion';
 import { 
   ShoppingCart, Heart, Zap, Crown, Star, Shield, 
@@ -132,12 +133,14 @@ export default function Shop() {
         await auth.updateMe({ hearts: Math.min(5, (user.hearts || 0) + 1) });
       }
       toast({ title: 'Bonus heart granted', description: 'Recovery-only ad watched (capped & cooldown enforced).' });
+      emitEvent('ad_shown', { placement: 'shop_recovery', reward: 'heart' });
     } else {
       toast({
         variant: 'destructive',
         title: 'Ad unavailable',
         description: 'Ads are off or cooling down (15m, max 3/day).',
       });
+      emitEvent('ad_blocked', { placement: 'shop_recovery', reason: result.reason || 'cooldown' });
     }
   };
 
@@ -166,6 +169,7 @@ export default function Shop() {
         });
         
         alert(`Purchased ${item.name}!`);
+        emitEvent('purchase_complete', { itemId: item.id, sku: item.id, currency: 'coins', price: item.price, type: item.type, effect: item.effect });
       } else {
         // Real Money Purchase (Mock)
         await Purchase.create({
@@ -177,6 +181,7 @@ export default function Shop() {
           price: item.price,
           status: 'completed'
         });
+        emitEvent('purchase_complete', { itemId: item.id, sku: item.id, currency: 'USD', price: item.price, type: item.type, effect: item.effect });
 
         // Apply Effects
         if (item.effect === 'hearts') {
@@ -210,6 +215,7 @@ export default function Shop() {
 
     } catch (error) {
       console.error("Purchase failed", error);
+      emitError({ message: 'purchase_failed', page: 'Shop', meta: { itemId: item.id, error: error?.message } });
       alert("Purchase failed. Please try again.");
     } finally {
       setPurchasing(null);
