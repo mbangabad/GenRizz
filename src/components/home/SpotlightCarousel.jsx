@@ -3,6 +3,7 @@ import { Sparkles, Play } from 'lucide-react';
 import { fetchSpotlightPlaylists } from '@/services/events';
 import { createPageUrl } from '@/utils';
 import { useNavigate } from 'react-router-dom';
+import { emitEvent } from '@/services/telemetry';
 
 export default function SpotlightCarousel() {
   const [events, setEvents] = useState([]);
@@ -18,6 +19,7 @@ export default function SpotlightCarousel() {
     const first = event.games?.[0];
     if (!first) return;
     const gameId = typeof first === 'string' ? first : first.game_id || first.id;
+    emitEvent('cta_click', { cta: 'spotlight_play', eventId: event.id || event.title, gameId });
     if (gameId) navigate(createPageUrl('Gameplay') + `?gameId=${gameId}`);
   };
 

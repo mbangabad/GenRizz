@@ -68,6 +68,9 @@ export default function Home() {
   const progressMap = userProgress.reduce((acc, p) => ({ ...acc, [p.game_id]: p }), {});
   const totalXP = userProgress.reduce((sum, p) => sum + (p.total_xp || 0), 0);
   const streak = userStreak?.current_streak || 0;
+  useEffect(() => {
+    if (streak > 0) emitEvent('streak_status', { streak });
+  }, [streak]);
   const gamesPlayedToday = dailyPlayCount?.count || dailyPlayCount?.games_played || 0;
 
   // Check if it's Sunday for Weekly Recap

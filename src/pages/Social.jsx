@@ -15,6 +15,7 @@ import SeasonalBanner from '@/components/events/SeasonalBanner';
 import { isFlagEnabled } from '@/services/flags';
 import SubmitQuestion from '@/components/ugc/SubmitQuestion';
 import { listRematchChallenges } from '@/services/rematch';
+import { emitEvent } from '@/services/telemetry';
 
 export default function Social() {
   const [user, setUser] = useState(null);
@@ -64,6 +65,7 @@ export default function Social() {
       });
       setSearchEmail('');
       refetchFriends();
+      emitEvent('invite_sent', { target: searchEmail });
     } catch (e) {
       console.error(e);
     }
@@ -71,6 +73,7 @@ export default function Social() {
 
   const handleAcceptRequest = async (requestId) => {
     await Friendship.update(requestId, { status: 'accepted' });
+    emitEvent('invite_accepted', { requestId });
     refetchFriends();
   };
 
