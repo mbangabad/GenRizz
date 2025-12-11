@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import { emitEvent } from '@/services/telemetry';
 import { GAMES_LIST } from '@/components/constants/games';
 import { MiniMascot } from '@/components/ui/Mascot';
 import Confetti from '@/components/ui/Confetti';
@@ -84,11 +85,13 @@ export default function BattleArena() {
 
   const startMatchmaking = () => {
     setGameState('searching');
+    emitEvent('battle_arena_matchmaking_start');
     // Mock search delay
     setTimeout(() => {
       const randomBot = BOTS[Math.floor(Math.random() * BOTS.length)];
       setOpponent(randomBot);
       setGameState('found');
+      emitEvent('battle_arena_found', { opponent: randomBot.name });
       
       // Start Countdown
       let count = 3;
@@ -111,6 +114,7 @@ export default function BattleArena() {
     setOppScore(0);
     setMyProgress(0);
     setOppProgress(0);
+    emitEvent('battle_arena_start', { opponent: opponent?.name || 'bot' });
     startQuestionTimer();
     startBotLogic();
   };
@@ -164,6 +168,7 @@ export default function BattleArena() {
     clearInterval(timerRef.current);
 
     const isCorrect = index === QUESTIONS[currentQIndex].correct;
+    emitEvent('battle_arena_answer', { correct: isCorrect, questionId: QUESTIONS[currentQIndex].id });
     if (isCorrect) {
       // Score based on time remaining
       const points = 100 + (timer * 10);
@@ -185,11 +190,12 @@ export default function BattleArena() {
     }
   };
 
-  const endGame = () => {
-    clearInterval(timerRef.current);
-    clearInterval(botIntervalRef.current);
-    setGameState('result');
-  };
+const endGame = () => {
+  clearInterval(timerRef.current);
+  clearInterval(botIntervalRef.current);
+  setGameState('result');
+  emitEvent('battle_arena_complete', { myScore, oppScore, opponent: opponent?.name || 'bot' });
+};
 
   // --- RENDERERS ---
 
