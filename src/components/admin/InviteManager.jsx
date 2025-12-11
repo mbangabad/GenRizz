@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { InviteCode } from '@/api/entities';
 import { Ticket, Copy, Trash2, Plus, Check, RefreshCw } from 'lucide-react';
-// Temporarily disabled to fix React hooks error
-// import { toast } from 'sonner';
-const toast = { error: () => {}, success: () => {}, info: () => {} };
 import { motion } from 'framer-motion';
+import { logAdminAction } from '@/services/telemetry';
 
 export default function InviteManager() {
   const [codes, setCodes] = useState([]);
@@ -54,6 +52,7 @@ export default function InviteManager() {
       });
       setNewCodeSettings({ max_uses: 1, note: '' });
       toast.success('Invite code generated!');
+      logAdminAction('invite_create', { code, max_uses: parseInt(newCodeSettings.max_uses), note: newCodeSettings.note });
       fetchCodes();
     } catch (e) {
       toast.error('Failed to generate code');
@@ -67,15 +66,15 @@ export default function InviteManager() {
     try {
       await InviteCode.delete(id);
       setCodes(codes.filter(c => c.id !== id));
-      toast.success('Code deleted');
+      logAdminAction('invite_delete', { id });
     } catch (e) {
-      toast.error('Failed to delete');
+      console.error(e);
     }
   };
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    toast.success('Code copied to clipboard');
+    logAdminAction('invite_copy', { code: text });
   };
 
   return (
