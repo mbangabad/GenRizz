@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { auth } from '@/api/auth';
 import { UserProgress, UserStreak, DailyPlayCount } from '@/api/entities';
 import { useNavigate, Link } from 'react-router-dom';
+import { emitEvent } from '@/services/telemetry';
 import { useLanguage } from '@/components/contexts/LanguageContext';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
@@ -398,12 +399,16 @@ export default function Home() {
 
           {/* CTA to Daily Drop */}
           {flags.DAILY_DROP && dailyDrop && (
-            <motion.button
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.99 }}
-              onClick={() => navigate(createPageUrl('Gameplay') + `?gameId=${dailyDrop.items?.[0]?.game_id || 'gen-z-fluency'}`)}
-              className="card-3d card-3d-blue p-4 flex items-center gap-3"
-            >
+          <motion.button
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.99 }}
+            onClick={() => {
+              const gid = dailyDrop.items?.[0]?.game_id || 'gen-z-fluency';
+              emitEvent('cta_click', { cta: 'home_daily_drop', gameId: gid });
+              navigate(createPageUrl('Gameplay') + `?gameId=${gid}`);
+            }}
+            className="card-3d card-3d-blue p-4 flex items-center gap-3"
+          >
               <div className="w-10 h-10 rounded-xl bg-[#1CB0F6]/20 flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-[#1CB0F6]" />
               </div>
@@ -421,7 +426,11 @@ export default function Home() {
             transition={{ delay: 0.25 }}
             whileHover={{ scale: 1.01 }}
             whileTap={{ scale: 0.99 }}
-            onClick={() => goToGame(GAMES_LIST[Math.floor(Math.random() * GAMES_LIST.length)].id)}
+            onClick={() => {
+              const gid = GAMES_LIST[Math.floor(Math.random() * GAMES_LIST.length)].id;
+              emitEvent('cta_click', { cta: 'quick_play', gameId: gid });
+              goToGame(gid);
+            }}
             className="card-3d card-3d-blue p-5 cursor-pointer"
           >
             <div className="flex items-center gap-4">

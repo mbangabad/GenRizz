@@ -3,6 +3,7 @@ import { Switch } from '@/components/ui/switch';
 import { FEATURE_FLAGS } from '@/config/featureFlags';
 import { getFlags, setFlagOverride, clearFlagOverride, clearAllFlagOverrides, getFlagOverrides, fetchRemoteFlags, pushRemoteFlags } from '@/services/flags';
 import { supabase } from '@/lib/supabase';
+import { logAdminAction } from '@/services/telemetry';
 
 const FLAG_DESCRIPTIONS = {
   BLITZ: 'Enable Blitz timed mode selection.',
@@ -50,6 +51,7 @@ export default function FlagPreviewPanel() {
     setFlags(res.flags);
     setOverrides(getFlagOverrides());
     setStatus({ source: res.source, message: res.message || 'Synced from Supabase' });
+    logAdminAction('flags_sync_from_remote', { source: res.source });
     setLoading(false);
   };
 
@@ -57,6 +59,7 @@ export default function FlagPreviewPanel() {
     setLoading(true);
     const res = await pushRemoteFlags();
     setStatus({ source: res.source, message: res.message || 'Pushed to Supabase' });
+    logAdminAction('flags_push_remote', { source: res.source });
     setLoading(false);
   };
 
@@ -73,6 +76,7 @@ export default function FlagPreviewPanel() {
       setFlags(res.flags);
       setOverrides(getFlagOverrides());
       setStatus({ source: 'supabase', message: 'Seeded defaults' });
+      logAdminAction('flags_seed_defaults');
     } catch (e) {
       setStatus({ source: 'supabase', message: `Seed failed: ${e.message}` });
     } finally {

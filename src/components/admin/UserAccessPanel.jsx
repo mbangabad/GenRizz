@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AllowedUser, BetaAccess } from '@/api/entities';
 import { RefreshCw, Plus, ShieldCheck, Sparkles } from 'lucide-react';
+import { logAdminAction } from '@/services/telemetry';
 
 export default function UserAccessPanel() {
   const [allowed, setAllowed] = useState([]);
@@ -42,6 +43,7 @@ export default function UserAccessPanel() {
       setEmail('');
       await load();
       setStatus('Allowlist updated');
+      logAdminAction('access_allowlist_add', { email });
     } catch (e) {
       setStatus(`Allowlist failed: ${e.message}`);
     } finally {
@@ -57,6 +59,7 @@ export default function UserAccessPanel() {
       setBetaEmail('');
       await load();
       setStatus('Beta access granted');
+      logAdminAction('access_beta_add', { email: betaEmail });
     } catch (e) {
       setStatus(`Beta grant failed: ${e.message}`);
     } finally {
@@ -71,6 +74,7 @@ export default function UserAccessPanel() {
       await Promise.all(SEED_BETA.map((addr) => BetaAccess.upsert({ email: addr, granted_at: new Date().toISOString() })));
       await load();
       setStatus('Seeded default allowlist/beta');
+      logAdminAction('access_seed_defaults', { emails: SEED_ALLOW });
     } catch (e) {
       setStatus(`Seed failed: ${e.message}`);
     } finally {

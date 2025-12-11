@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ShieldCheck, ShieldAlert, Plus, Trash2, Copy, DownloadCloud, UploadCloud } from 'lucide-react';
 import { getEffectiveSafetyLists, addWhitelistTerm, removeWhitelistTerm, syncWhitelistFromRemote, syncWhitelistToRemote, seedWhitelistDefaults } from '@/services/contentSafety';
 import { Sparkles } from 'lucide-react';
+import { logAdminAction } from '@/services/telemetry';
 
 export default function ContentSafetyPanel() {
   const [lists, setLists] = useState(getEffectiveSafetyLists());
@@ -30,6 +31,7 @@ export default function ContentSafetyPanel() {
     setLists(getEffectiveSafetyLists());
     setStatus({ source: res.source, message: res.message || 'Synced from Supabase' });
     setToast(res.ok ? 'Synced from Supabase' : `Sync failed: ${res.message || 'error'}`);
+    logAdminAction('safety_sync_from_remote', { source: res.source });
     setLoading(false);
   };
 
@@ -38,6 +40,7 @@ export default function ContentSafetyPanel() {
     const res = await syncWhitelistToRemote();
     setStatus({ source: res.source, message: res.message || 'Pushed whitelist to Supabase' });
     setToast(res.ok ? 'Pushed whitelist to Supabase' : `Push failed: ${res.message || 'error'}`);
+    logAdminAction('safety_push_remote', { source: res.source });
     setLoading(false);
   };
 
@@ -57,6 +60,7 @@ export default function ContentSafetyPanel() {
     setLists(getEffectiveSafetyLists());
     setStatus({ source: res.source, message: res.message || 'Seeded defaults' });
     setToast(res.ok ? 'Seeded defaults' : `Seed failed: ${res.message || 'error'}`);
+    logAdminAction('safety_seed_defaults', { source: res.source });
     setLoading(false);
   };
 

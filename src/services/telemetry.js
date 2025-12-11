@@ -47,3 +47,13 @@ export async function emitError(payload) {
 export function getSession() {
   return { session_id: getSessionId() }
 }
+
+export async function logAdminAction(action, meta = {}) {
+  try {
+    const { data } = await supabase.auth.getUser()
+    const adminId = data?.user?.id || null
+    await supabase.from('admin_audit_log').insert({ admin_id: adminId, action, meta })
+  } catch (e) {
+    console.warn('admin audit log failed', e?.message)
+  }
+}

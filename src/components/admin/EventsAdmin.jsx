@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { RefreshCw, Save, Plus, Sparkles } from 'lucide-react';
+import { logAdminAction } from '@/services/telemetry';
 import mockSpotlight from '@/components/constants/events/mockSpotlight.json';
 import mockDailyDrop from '@/components/constants/events/mockDailyDrop.json';
 
@@ -76,6 +77,7 @@ export default function EventsAdmin() {
       games: gamesArr,
     });
     setDraft({ title: '', description: '', emoji: '✨', active: true, games: '[]' });
+    logAdminAction('events_save_playlist', { title: draft.title, active: draft.active });
   };
 
   const saveDaily = async (payload) => {
@@ -85,6 +87,7 @@ export default function EventsAdmin() {
       const { error } = await supabase.from(DAILY_TABLE).upsert(payload, { onConflict: 'id' });
       if (error) throw error;
       setStatus('Daily Drop saved');
+      logAdminAction('events_save_daily', { id: payload.id || payload.title, active: payload.active });
       await load();
     } catch (e) {
       setStatus(`Daily save failed: ${e.message}`);
@@ -105,6 +108,7 @@ export default function EventsAdmin() {
       const { error: dailyErr } = await supabase.from(DAILY_TABLE).upsert(SEED_DAILY, { onConflict: 'id' });
       if (dailyErr) throw dailyErr;
       setStatus('Seeded demo playlists and daily drop');
+      logAdminAction('events_seed_demo');
       await load();
     } catch (e) {
       setStatus(`Seed failed: ${e.message}`);

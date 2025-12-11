@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { DailyScore } from '@/api/entities';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import { emitEvent } from '@/services/telemetry';
 import { GAMES_LIST, GAMES } from '@/components/constants/games';
 import { Calendar, Zap, Trophy, Clock, ChevronRight, Sparkles } from 'lucide-react';
 import GameIcon from '@/components/home/GameIcon';
@@ -144,6 +145,7 @@ export default function DailyChallenge({ user }) {
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => emitEvent('cta_click', { cta: 'daily_challenge', gameId: dailyGame.id, completed: isCompleted })}
             className={`w-full py-4 font-black text-lg flex items-center justify-center gap-2 rounded-xl ${
               isCompleted 
                 ? 'bg-[#F7F4F0] text-[#777777] border-2 border-[#E5E0DA]'
