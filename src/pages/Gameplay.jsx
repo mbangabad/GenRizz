@@ -38,6 +38,7 @@ import { isFlagEnabled, getFlags } from '@/services/flags';
 import ErrorBoundary from '@/components/ui/ErrorBoundary';
 import Celebration from '@/components/ui/Celebration';
 import CompletionAnimation from '@/components/ui/CompletionAnimation';
+import { emitEvent, emitError } from '@/services/telemetry';
 import { hapticSuccess, hapticError, hapticStreak, hapticLevelUp } from '@/utils/haptic';
 
 const GAME_MODES = {
@@ -578,6 +579,7 @@ export default function Gameplay() {
     const challenge = createRematchChallenge({ gameId, percentage, user });
     const url = challenge?.link || buildRematchLink({ gameId, percentage, user });
     if (url) navigate(url);
+    emitEvent('cta_click', { cta: 'rematch', gameId, percentage });
   };
 
   const { data: allQuestions = [], isLoading: questionsLoading } = useQuery({
@@ -652,6 +654,7 @@ export default function Gameplay() {
     // CRITICAL FIX: Validate questions exist
     if (!allQuestions || allQuestions.length === 0) {
       console.error('No questions available for this game');
+      emitError({ message: 'No questions for game', page: 'Gameplay', meta: { gameId } });
       return;
     }
 
@@ -693,6 +696,7 @@ export default function Gameplay() {
     setBonusTime(0);
     setAnsweredCount(0);
     setHasEnded(false);
+    emitEvent('game_start', { gameId, mode: gameMode, blitz: gameMode === 'BLITZ' });
     setIsTimeUp(false);
     setEndReason('complete');
     setFinalPercentage(null);
@@ -899,6 +903,7 @@ export default function Gameplay() {
       const reason = blitzActive && blitzTimeLeft <= 0 ? 'timer' : 'complete';
       endGame({ reason, answeredOverride: nextAnswered });
     }
+    emitEvent('game_complete', { gameId, mode: gameMode, percentage, reason, answered: denominator, score });
   };
 
   // Loading state while parsing gameId
