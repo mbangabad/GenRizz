@@ -2,12 +2,14 @@ import React from 'react';
 import { Sparkles, Play } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import { useNavigate } from 'react-router-dom';
+import { emitEvent } from '@/services/telemetry';
 
 export default function DailyDropCard({ drop }) {
   const navigate = useNavigate();
   if (!drop) return null;
   const handlePlay = () => {
     if (drop.items && drop.items.length > 0) {
+      emitEvent('cta_click', { cta: 'daily_drop_play', gameId: drop.items[0].game_id });
       navigate(createPageUrl('Gameplay') + `?gameId=${drop.items[0].game_id}`);
     }
   };

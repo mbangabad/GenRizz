@@ -92,10 +92,9 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
-    "@lhci/cli": "^0.15.1",
     "@eslint/js": "^9.39.1",
     "@flydotio/dockerfile": "^0.7.10",
-    "@lhci/cli": "^0.12.0",
+    "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.49.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",

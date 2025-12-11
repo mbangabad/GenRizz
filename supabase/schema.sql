@@ -589,3 +589,92 @@ CREATE POLICY feature_flags_update ON feature_flags
   TO authenticated;
 
 COMMENT ON TABLE feature_flags IS 'Admin-managed feature flags synced from the Command Center.';
+
+-- ============================================
+-- Pricing, Telemetry, Analytics
+-- ============================================
+
+-- Price catalog
+CREATE TABLE IF NOT EXISTS prices (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  sku TEXT NOT NULL,
+  currency TEXT NOT NULL DEFAULT 'USD',
+  amount_cents INTEGER NOT NULL,
+  region TEXT DEFAULT 'global',
+  test_group TEXT,
+  active BOOLEAN DEFAULT TRUE,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Generic event stream
+CREATE TABLE IF NOT EXISTS events (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID,
+  session_id TEXT,
+  name TEXT NOT NULL,
+  props JSONB DEFAULT '{}',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Session facts
+CREATE TABLE IF NOT EXISTS sessions (
+  id TEXT PRIMARY KEY,
+  user_id UUID,
+  device TEXT,
+  entry_page TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  last_activity TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Client/runtime errors
+CREATE TABLE IF NOT EXISTS errors (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID,
+  session_id TEXT,
+  page TEXT,
+  message TEXT,
+  stack TEXT,
+  meta JSONB DEFAULT '{}',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Admin audit log
+CREATE TABLE IF NOT EXISTS admin_audit_log (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  admin_id UUID,
+  action TEXT NOT NULL,
+  target TEXT,
+  meta JSONB DEFAULT '{}',
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Extend purchases with sku/pricing metadata
+ALTER TABLE IF EXISTS purchases
+  ADD COLUMN IF NOT EXISTS sku TEXT,
+  ADD COLUMN IF NOT EXISTS price_paid_cents INTEGER,
+  ADD COLUMN IF NOT EXISTS currency TEXT DEFAULT 'USD',
+  ADD COLUMN IF NOT EXISTS experiment_id TEXT;
+
+-- RLS placeholders (open read; restrict writes to authenticated)
+ALTER TABLE prices ENABLE ROW LEVEL SECURITY;
+CREATE POLICY IF NOT EXISTS prices_read ON prices FOR SELECT USING (true);
+CREATE POLICY IF NOT EXISTS prices_write ON prices FOR INSERT WITH CHECK (auth.role() = 'authenticated') TO authenticated;
+CREATE POLICY IF NOT EXISTS prices_update ON prices FOR UPDATE USING (auth.role() = 'authenticated') TO authenticated;
+
+ALTER TABLE events ENABLE ROW LEVEL SECURITY;
+CREATE POLICY IF NOT EXISTS events_read ON events FOR SELECT USING (auth.role() = 'authenticated');
+CREATE POLICY IF NOT EXISTS events_write ON events FOR INSERT WITH CHECK (true);
+
+ALTER TABLE sessions ENABLE ROW LEVEL SECURITY;
+CREATE POLICY IF NOT EXISTS sessions_read ON sessions FOR SELECT USING (auth.role() = 'authenticated');
+CREATE POLICY IF NOT EXISTS sessions_write ON sessions FOR INSERT WITH CHECK (true);
+CREATE POLICY IF NOT EXISTS sessions_update ON sessions FOR UPDATE USING (auth.role() = 'authenticated');
+
+ALTER TABLE errors ENABLE ROW LEVEL SECURITY;
+CREATE POLICY IF NOT EXISTS errors_read ON errors FOR SELECT USING (auth.role() = 'authenticated');
+CREATE POLICY IF NOT EXISTS errors_write ON errors FOR INSERT WITH CHECK (true);
+
+ALTER TABLE admin_audit_log ENABLE ROW LEVEL SECURITY;
+CREATE POLICY IF NOT EXISTS admin_audit_read ON admin_audit_log FOR SELECT USING (auth.role() = 'authenticated');
+CREATE POLICY IF NOT EXISTS admin_audit_write ON admin_audit_log FOR INSERT WITH CHECK (auth.role() = 'authenticated');

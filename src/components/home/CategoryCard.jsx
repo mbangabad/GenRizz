@@ -5,6 +5,7 @@ import { ChevronRight } from 'lucide-react';
 import { getGameLevel } from '../constants/games';
 import GameIcon from './GameIcon';
 import { createPageUrl } from '@/utils';
+import { emitEvent } from '@/services/telemetry';
 
 export default function CategoryCard({ category, games, progressMap, onGameClick, index }) {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
   const avgScore = games.reduce((sum, g) => sum + (progressMap[g.id]?.highest_score || 0), 0) / (gamesPlayed || 1);
   const goToGame = (gameId) => {
     const url = createPageUrl('Gameplay') + '?gameId=' + gameId;
+    emitEvent('cta_click', { cta: 'category_play', gameId, category: category.id });
     try {
       navigate(url);
     } catch {

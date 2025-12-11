@@ -34,6 +34,7 @@ const Notifications = lazy(() => import("./Notifications"));
 const Blueprint = lazy(() => import("./Blueprint"));
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import TelemetryTracker from '@/components/TelemetryTracker';
 
 const PAGE_NAMES = [
   'Leaderboards',
@@ -92,6 +93,7 @@ function PagesContent() {
     // All other pages go through Layout
   return (
     <Layout currentPageName={currentPage}>
+      <TelemetryTracker />
       <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
         <Routes>
           <Route path="/" element={<Leaderboards />} />
