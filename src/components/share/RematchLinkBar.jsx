@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { Copy, Check, Share2 } from 'lucide-react';
 import { createRematchChallenge } from '@/services/rematch';
+import { emitEvent } from '@/services/telemetry';
 
 export default function RematchLinkBar({ gameId, score, user }) {
   const [copied, setCopied] = useState(false);
@@ -20,6 +21,7 @@ export default function RematchLinkBar({ gameId, score, user }) {
     try {
       await navigator.clipboard.writeText(link);
       setCopied(true);
+      emitEvent('cta_click', { cta: 'rematch_copy', gameId, percentage });
       setTimeout(() => setCopied(false), 2000);
     } catch {
       setCopied(false);
@@ -38,7 +40,7 @@ export default function RematchLinkBar({ gameId, score, user }) {
       </button>
       {navigator.share && (
         <button
-          onClick={() => navigator.share({ title: 'Rematch me', url: link })}
+          onClick={() => { navigator.share({ title: 'Rematch me', url: link }); emitEvent('cta_click', { cta: 'rematch_share', gameId, percentage }); }}
           className="btn-3d btn-3d-blue px-3 py-2 text-sm flex items-center gap-1"
         >
           <Share2 className="w-4 h-4" /> Share

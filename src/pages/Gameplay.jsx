@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { auth } from '@/api/auth';
 import { UserProgress, UserStreak, Question, Score, ConnectionPuzzle, SquadMember, Squad } from '@/api/entities';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { GAMES, getTier, getGameLevel, getXpProgress, calculateXpEarned } from '@/components/constants/games';
 import { getQuestionsForGame } from '@/components/constants/questions';
@@ -508,6 +508,8 @@ export default function Gameplay() {
   const [showXP, setShowXP] = useState(false);
   const [xpEarned, setXpEarned] = useState(0);
   const navigate = useNavigate();
+  const location = useLocation();
+  const isDaily = new URLSearchParams(location.search).get('daily') === 'true';
   
   const queryClient = useQueryClient();
   const flags = getFlags();
@@ -696,7 +698,7 @@ export default function Gameplay() {
     setBonusTime(0);
     setAnsweredCount(0);
     setHasEnded(false);
-    emitEvent('game_start', { gameId, mode: gameMode, blitz: gameMode === 'BLITZ' });
+    emitEvent('game_start', { gameId, mode: gameMode, blitz: gameMode === 'BLITZ', daily: isDaily });
     setIsTimeUp(false);
     setEndReason('complete');
     setFinalPercentage(null);
@@ -835,6 +837,10 @@ export default function Gameplay() {
     }
     
     setGameState('results');
+    emitEvent('game_complete', { gameId, mode: gameMode, percentage, reason, answered: denominator, score, daily: isDaily });
+    if (isDaily) {
+      emitEvent('daily_drop_complete', { gameId, percentage, answered: denominator });
+    }
   };
 
   const handleAnswer = (isCorrect, timeRemaining = 0) => {

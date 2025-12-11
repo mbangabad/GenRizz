@@ -15,6 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { logAdminAction } from '@/services/telemetry';
+import { supabase } from '@/lib/supabase';
 
 // Mock data for charts
 const GAME_STATS_DATA = [
@@ -64,6 +65,7 @@ export default function GameManager() {
   const handleSaveConfig = () => {
     // In a real app, this would save to backend
     logAdminAction('game_config_save', { gameId: editingGame?.id, config: gameConfig });
+    supabase.from('game_configs').upsert({ game_id: editingGame?.id, config: gameConfig, active: true }).catch(() => {});
     alert(`Configuration saved for ${editingGame.title}!`);
     setEditingGame(null);
   };

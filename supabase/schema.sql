@@ -594,6 +594,15 @@ COMMENT ON TABLE feature_flags IS 'Admin-managed feature flags synced from the C
 -- Pricing, Telemetry, Analytics
 -- ============================================
 
+-- Game configurations (admin-managed)
+CREATE TABLE IF NOT EXISTS game_configs (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  game_id TEXT NOT NULL,
+  config JSONB DEFAULT '{}',
+  active BOOLEAN DEFAULT TRUE,
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Price catalog
 CREATE TABLE IF NOT EXISTS prices (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -678,3 +687,21 @@ CREATE POLICY IF NOT EXISTS errors_write ON errors FOR INSERT WITH CHECK (true);
 ALTER TABLE admin_audit_log ENABLE ROW LEVEL SECURITY;
 CREATE POLICY IF NOT EXISTS admin_audit_read ON admin_audit_log FOR SELECT USING (auth.role() = 'authenticated');
 CREATE POLICY IF NOT EXISTS admin_audit_write ON admin_audit_log FOR INSERT WITH CHECK (auth.role() = 'authenticated');
+
+ALTER TABLE game_configs ENABLE ROW LEVEL SECURITY;
+CREATE POLICY IF NOT EXISTS game_configs_read ON game_configs FOR SELECT USING (true);
+CREATE POLICY IF NOT EXISTS game_configs_write ON game_configs FOR INSERT WITH CHECK (auth.role() = 'authenticated') TO authenticated;
+CREATE POLICY IF NOT EXISTS game_configs_update ON game_configs FOR UPDATE USING (auth.role() = 'authenticated') TO authenticated;
+
+-- Simple views for analytics
+CREATE OR REPLACE VIEW event_counts_by_name AS
+  SELECT name, count(*) as count
+  FROM events
+  GROUP BY name
+  ORDER BY count DESC;
+
+CREATE OR REPLACE VIEW event_counts_by_mode AS
+  SELECT COALESCE(props->>'mode', props->>'gameId', 'unknown') as mode, count(*) as count
+  FROM events
+  GROUP BY mode
+  ORDER BY count DESC;

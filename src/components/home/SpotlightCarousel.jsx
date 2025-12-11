@@ -4,13 +4,19 @@ import { fetchSpotlightPlaylists } from '@/services/events';
 import { createPageUrl } from '@/utils';
 import { useNavigate } from 'react-router-dom';
 import { emitEvent } from '@/services/telemetry';
+import { emitEvent } from '@/services/telemetry';
 
 export default function SpotlightCarousel() {
   const [events, setEvents] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchSpotlightPlaylists().then(setEvents).catch(() => setEvents([]));
+    fetchSpotlightPlaylists().then((data) => {
+      setEvents(data);
+      if (data && data.length) {
+        emitEvent('spotlight_impression', { events: data.map((e) => e.id || e.title) });
+      }
+    }).catch(() => setEvents([]));
   }, []);
 
   if (!events || events.length === 0) return null;
