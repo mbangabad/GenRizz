@@ -9,6 +9,7 @@ export default function AnalyticsPanel() {
   const [status, setStatus] = useState('Idle')
   const [metrics, setMetrics] = useState({ dau: 0, events: 0, revenue: 0, purchases: 0 })
   const [topEvents, setTopEvents] = useState([])
+  const [modeUsage, setModeUsage] = useState([])
 
   const load = async () => {
     if (!canUseSupabase()) { setStatus('Supabase env missing'); return }
@@ -28,7 +29,16 @@ export default function AnalyticsPanel() {
         return map
       }, {})
       const top = Object.entries(eventCounts).sort((a, b) => b[1] - a[1]).slice(0, 5)
+      const byMode = eventRows
+        .filter((r) => r.props?.mode || r.props?.gameId)
+        .reduce((map, row) => {
+          const key = row.props?.mode || `game:${row.props?.gameId}`
+          map[key] = (map[key] || 0) + 1
+          return map
+        }, {})
+      const modeArr = Object.entries(byMode).sort((a, b) => b[1] - a[1]).slice(0, 5)
       setTopEvents(top)
+      setModeUsage(modeArr)
       setMetrics({
         dau: usersRes.count || 0,
         events: eventsRes.count || eventRows.length,
@@ -83,6 +93,16 @@ export default function AnalyticsPanel() {
         <p className="text-sm font-bold text-[#3C3C3C]">Top events (sampled)</p>
         {topEvents.length === 0 && <p className="text-xs text-[#AFAFAF]">No events yet.</p>}
         {topEvents.map(([name, count]) => (
+          <div key={name} className="flex items-center justify-between text-sm border rounded-lg px-3 py-2">
+            <span className="font-bold text-[#3C3C3C]">{name}</span>
+            <span className="text-xs text-[#777777]">{count}</span>
+          </div>
+        ))}
+      </div>
+      <div className="space-y-2">
+        <p className="text-sm font-bold text-[#3C3C3C]">Top modes/games (sampled)</p>
+        {modeUsage.length === 0 && <p className="text-xs text-[#AFAFAF]">No mode usage yet.</p>}
+        {modeUsage.map(([name, count]) => (
           <div key={name} className="flex items-center justify-between text-sm border rounded-lg px-3 py-2">
             <span className="font-bold text-[#3C3C3C]">{name}</span>
             <span className="text-xs text-[#777777]">{count}</span>

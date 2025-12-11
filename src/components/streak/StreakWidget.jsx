@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { UserStreak } from '@/api/entities';
 import { Flame, Shield, Calendar, Gift, X, Check } from 'lucide-react';
+import { emitEvent } from '@/services/telemetry';
 
 const STREAK_MILESTONES = [
   { days: 7, reward: '🏆 7-Day Badge', xp: 100 },
@@ -49,7 +50,10 @@ export default function StreakWidget({ userId }) {
   return (
     <>
       <motion.button
-        onClick={() => setShowCalendar(true)}
+        onClick={() => {
+          setShowCalendar(true);
+          emitEvent('cta_click', { cta: 'streak_widget_open', streak: currentStreak });
+        }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="card-3d card-3d-orange p-4 text-center cursor-pointer w-full"
