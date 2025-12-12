@@ -28,6 +28,14 @@ export default function SpotlightCarousel() {
     if (gameId) navigate(createPageUrl('Gameplay') + `?gameId=${gameId}`);
   };
 
+  useEffect(() => {
+    if (events && events.length) {
+      events.forEach((evt) => {
+        emitEvent('spotlight_card_impression', { eventId: evt.id || evt.title, games: evt.games?.map((g) => (typeof g === 'string' ? g : g.game_id || g.id)) });
+      });
+    }
+  }, [events]);
+
   return (
     <div className="card-3d p-5 bg-white border border-[#E5E0DA] space-y-4">
       <div className="flex items-center gap-2">
