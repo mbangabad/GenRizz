@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { AlertCircle, RefreshCw, Home } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
+import { emitError } from '@/services/telemetry';
 
 export default class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export default class ErrorBoundary extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     console.error('Error caught by boundary:', error, errorInfo);
+    emitError({ message: error?.message || 'boundary_error', stack: error?.stack, page: window.location.pathname, meta: { info: errorInfo } });
   }
 
   render() {
@@ -89,4 +91,3 @@ export default class ErrorBoundary extends React.Component {
     return this.props.children;
   }
 }
-

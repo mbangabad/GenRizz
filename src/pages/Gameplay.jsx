@@ -39,6 +39,7 @@ import ErrorBoundary from '@/components/ui/ErrorBoundary';
 import Celebration from '@/components/ui/Celebration';
 import CompletionAnimation from '@/components/ui/CompletionAnimation';
 import { emitEvent, emitError } from '@/services/telemetry';
+import { fetchGameConfigs, mergeGameConfig } from '@/services/gameConfig';
 import { hapticSuccess, hapticError, hapticStreak, hapticLevelUp } from '@/utils/haptic';
 
 const GAME_MODES = {
@@ -531,8 +532,11 @@ export default function Gameplay() {
   useEffect(() => {
     auth.me().then(setUser).catch(() => {});
   }, []);
+  useEffect(() => {
+    fetchGameConfigs();
+  }, []);
 
-  const game = gameId ? GAMES[gameId] : null;
+  const game = gameId ? mergeGameConfig(gameId) : null;
   const registryRenderer = game?.gameMode ? getRenderer(game.gameMode) : null;
 
   useEffect(() => {

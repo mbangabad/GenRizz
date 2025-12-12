@@ -4,7 +4,6 @@ import { fetchSpotlightPlaylists } from '@/services/events';
 import { createPageUrl } from '@/utils';
 import { useNavigate } from 'react-router-dom';
 import { emitEvent } from '@/services/telemetry';
-import { emitEvent } from '@/services/telemetry';
 
 export default function SpotlightCarousel() {
   const [events, setEvents] = useState([]);
