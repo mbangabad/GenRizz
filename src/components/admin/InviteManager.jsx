@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { InviteCode } from '@/api/entities';
-import { Ticket, Copy, Trash2, Plus, Check, RefreshCw } from 'lucide-react';
+import { Ticket, Copy, Trash2, Plus, Check, RefreshCw, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { logAdminAction } from '@/services/telemetry';
 
@@ -75,6 +75,40 @@ export default function InviteManager() {
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
     logAdminAction('invite_copy', { code: text });
+  };
+
+  const handleBulkGenerate = async () => {
+    setGenerating(true);
+    const newCodes = [];
+    try {
+      for (let i = 0; i < bulkCount; i++) {
+        const code = generateCode();
+        await InviteCode.create({
+          code,
+          status: 'active',
+          max_uses: parseInt(newCodeSettings.max_uses) || 1,
+          used_count: 0,
+          note: newCodeSettings.note,
+          created_at: new Date().toISOString()
+        });
+        newCodes.push(code);
+      }
+      fetchCodes();
+      logAdminAction('invite_bulk_create', { count: bulkCount, max_uses: newCodeSettings.max_uses, note: newCodeSettings.note });
+    } catch (e) {
+      console.error('Bulk invite generation failed', e);
+    } finally {
+      setGenerating(false);
+    }
+    if (newCodes.length) {
+      const blob = new Blob([newCodes.join('\\n')], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `invites-${newCodes.length}.txt`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
   };
 
   return (
