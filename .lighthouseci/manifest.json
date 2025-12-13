@@ -1,0 +1,41 @@
+[
+  {
+    "url": "http://localhost:5174/Home",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/cortex/klogW/ventures/games/genRizz/.lighthouseci/localhost-_Home-2025_12_13_05_33_15.report.html",
+    "jsonPath": "/Users/cortex/klogW/ventures/games/genRizz/.lighthouseci/localhost-_Home-2025_12_13_05_33_15.report.json",
+    "summary": {
+      "performance": 0.55,
+      "accessibility": 1,
+      "best-practices": 0.78,
+      "seo": 0.92,
+      "pwa": 0.88
+    }
+  },
+  {
+    "url": "http://localhost:5174/Gameplay?gameId=gen-z-fluency",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/cortex/klogW/ventures/games/genRizz/.lighthouseci/localhost-_Gameplay-2025_12_13_05_33_29.report.html",
+    "jsonPath": "/Users/cortex/klogW/ventures/games/genRizz/.lighthouseci/localhost-_Gameplay-2025_12_13_05_33_29.report.json",
+    "summary": {
+      "performance": 0.55,
+      "accessibility": 0.68,
+      "best-practices": 0.74,
+      "seo": 0.92,
+      "pwa": 1
+    }
+  },
+  {
+    "url": "http://localhost:5174/Profile",
+    "isRepresentativeRun": true,
+    "htmlPath": "/Users/cortex/klogW/ventures/games/genRizz/.lighthouseci/localhost-_Profile-2025_12_13_05_33_41.report.html",
+    "jsonPath": "/Users/cortex/klogW/ventures/games/genRizz/.lighthouseci/localhost-_Profile-2025_12_13_05_33_41.report.json",
+    "summary": {
+      "performance": 0.55,
+      "accessibility": 0.77,
+      "best-practices": 0.74,
+      "seo": 0.92,
+      "pwa": 1
+    }
+  }
+]
