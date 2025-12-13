@@ -8,7 +8,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || 'http://localhost:5174',
+    baseURL: process.env.PLAYWRIGHT_TEST_BASE_URL || `http://localhost:${process.env.PLAYWRIGHT_PORT || 5174}`,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -36,9 +36,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:5174',
+    command: `PORT=${process.env.PLAYWRIGHT_PORT || 5174} npm run dev -- --host --port ${process.env.PLAYWRIGHT_PORT || 5174}`,
+    url: `http://localhost:${process.env.PLAYWRIGHT_PORT || 5174}`,
     reuseExistingServer: !process.env.CI,
   },
 });
-

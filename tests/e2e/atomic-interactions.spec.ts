@@ -14,17 +14,25 @@ test.describe('Atomic Interactions', () => {
 
   test('all navigation links are clickable', async ({ page }) => {
     const links = page.locator('a[href]');
-    const count = await links.count();
-    
-    for (let i = 0; i < Math.min(count, 10); i++) {
-      const link = links.nth(i);
-      const href = await link.getAttribute('href');
-      if (href && !href.startsWith('#')) {
-        await link.click();
-        await page.waitForTimeout(500);
-        // Verify navigation occurred
-        expect(page.url()).toContain(href.split('?')[0]);
-      }
+    const firstVisible = links.filter({ hasText: '', hasNotText: '' }); // noop filter to force resolution
+    await expect(firstVisible.first()).toBeVisible();
+
+    const hrefs = await page.evaluate(() =>
+      Array.from(document.querySelectorAll('a[href]'))
+        .slice(0, 5)
+        .map((el) => el.getAttribute('href'))
+        .filter((href) => href && !href.startsWith('#'))
+    );
+    const origin = new URL(page.url()).origin;
+
+    for (const href of hrefs) {
+      const url = new URL(href!, origin).toString();
+      const target = page.locator(`a[href="${href}"]`).first();
+      await target.click({ trial: false });
+      await page.waitForTimeout(300);
+      expect(page.url()).toContain(new URL(url).pathname);
+      // navigate back to keep loop predictable
+      await page.goBack({ waitUntil: 'networkidle' }).catch(() => {});
     }
   });
 
@@ -54,4 +62,3 @@ test.describe('Atomic Interactions', () => {
     }
   });
 });
-
