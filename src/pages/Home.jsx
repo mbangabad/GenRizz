@@ -205,6 +205,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="w-11 h-11 rounded-xl bg-white hover:bg-[#F0EDE8] flex items-center justify-center relative transition-all border-2 border-[#E5E0DA] shadow-sm"
+              aria-label="Notifications"
             >
               <Bell className="w-5 h-5 text-[#777777]" />
             </motion.button>
@@ -214,6 +215,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-11 h-11 rounded-xl bg-white hover:bg-[#F0EDE8] flex items-center justify-center relative transition-all border-2 border-[#E5E0DA] shadow-sm"
+                aria-label="Help & support"
               >
                 <HelpCircle className="w-5 h-5 text-[#777777]" />
               </motion.button>
@@ -224,6 +226,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="w-11 h-11 rounded-xl bg-white hover:bg-[#F0EDE8] flex items-center justify-center relative transition-all border-2 border-[#E5E0DA] shadow-sm"
+                aria-label="Settings"
               >
                 <Settings className="w-5 h-5 text-[#777777]" />
               </motion.button>
@@ -233,7 +236,7 @@ export default function Home() {
       </header>
 
       {/* Enhanced Quick Nav Bar */}
-      <div className="bg-white/50 border-b border-[#E5E0DA]/50 overflow-x-auto backdrop-blur-sm">
+      <nav className="bg-white/50 border-b border-[#E5E0DA]/50 overflow-x-auto backdrop-blur-sm" aria-label="Quick navigation">
         <div className="max-w-7xl mx-auto container-padding py-3 flex items-center gap-2 md:gap-4 text-sm font-bold whitespace-nowrap scrollbar-hide">
           <Link 
             to={createPageUrl('Shop')} 
@@ -268,9 +271,9 @@ export default function Home() {
             </Link>
           )}
         </div>
-      </div>
+      </nav>
 
-      <main className="max-w-7xl mx-auto container-padding py-6 md:py-8 space-section">
+      <main className="max-w-7xl mx-auto container-padding py-6 md:py-8 space-section" role="main">
         {/* Enhanced Hero Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10">
           {/* Welcome + Goal */}
@@ -334,9 +337,9 @@ export default function Home() {
                 </div>
 
                 <div className="flex-1">
-                  <h3 className="font-black text-[#3C3C3C] text-xl">
+                  <h2 className="font-black text-[#3C3C3C] text-xl">
                     {isGoalComplete ? t('common.goal_complete') : t('common.daily_goal')}
-                  </h3>
+                  </h2>
                   <p className="text-[#777777] font-semibold">
                     {isGoalComplete 
                       ? 'Amazing! Come back tomorrow 🔥' 

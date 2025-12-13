@@ -7,7 +7,9 @@ const url = process.env.A11Y_URL || 'http://localhost:5174/Home'
 
 const run = async () => {
   const browser = await chromium.launch({ headless: true })
-  const page = await browser.newPage()
+  // axe-core/playwright requires a page created from a context
+  const context = await browser.newContext()
+  const page = await context.newPage()
   await page.goto(url, { waitUntil: 'networkidle' })
   const results = await new AxeBuilder({ page }).analyze()
   console.log(`A11y Violations for ${url}: ${results.violations.length}`)

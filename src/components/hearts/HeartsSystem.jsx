@@ -125,6 +125,7 @@ export default function HeartsSystem({ userId, onHeartChange }) {
         onClick={() => setShowModal(true)}
         whileHover={{ scale: 1.05 }}
         className="flex items-center gap-1 px-3 py-1.5 bg-white rounded-xl border-2 border-[#FF4B4B]/30"
+        aria-label="View hearts status and options"
       >
         <div className="flex">
           {[...Array(MAX_HEARTS)].map((_, i) => (
