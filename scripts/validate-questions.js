@@ -154,15 +154,20 @@ const validateQuestion = (q) => {
   }
 }
 
+const normalizeOptions = (opts = []) =>
+  Array.isArray(opts) ? opts.map((o) => String(o).trim().toLowerCase()).join('|') : ''
+
 const findDuplicates = (questions) => {
   const seen = new Map()
   for (const q of questions) {
-    const key = (q.prompt || '').trim().toLowerCase()
-    if (!key) continue
+    const prompt = (q.prompt || q.question || '').trim().toLowerCase()
+    if (!prompt) continue
+    const key = [prompt, q.type || 'unknown', normalizeOptions(q.options || [])].join('::')
+    const loc = `${q.__file || q.id || 'unknown'} (game: ${q.game_id || 'none'})`
     if (seen.has(key)) {
-      errors.push(`Duplicate prompt between ${seen.get(key)} and ${q.__file || q.id}`)
+      errors.push(`Duplicate question detected between ${seen.get(key)} and ${loc}`)
     } else {
-      seen.set(key, q.__file || q.id)
+      seen.set(key, loc)
     }
   }
 }

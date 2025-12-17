@@ -1,0 +1,28 @@
+## Production Deploy Checklist (Vercel + PWA)
+
+- Branch: choose release branch (e.g., `audit/pre-beta-20251213`) or create `release/x.y`.
+- Env vars on Vercel (Production):
+  - `VITE_SUPABASE_URL` = your Supabase URL
+  - `VITE_SUPABASE_ANON_KEY` = anon key
+  - `VITE_FEATURE_FLAGS_TABLE` = feature_flags (optional if default)
+  - `VITE_CONTENT_SAFETY_TABLE` = content_safety_whitelist
+  - `VITE_EVENTS_TABLE` = events_playlist
+  - `VITE_FLAG_EVENTS` = true/false
+  - `VITE_FLAG_DAILY_DROP` = true/false
+  - `VITE_FLAG_ADS_RECOVERY_ONLY` = true/false
+  - `VITE_ENABLE_REMOTE_TELEMETRY` = true (if you want Supabase events/errors)
+  - Any auth/email keys your flows need (Resend, etc.)
+- Build/Output:
+  - Framework: Vite
+  - Build command: `npm run build`
+  - Output dir: `dist`
+- Custom domain:
+  - Add domain in Vercel → set primary → configure DNS (A/ALIAS/CNAME per Vercel).
+  - Verify SSL on domain once DNS propagates.
+- PWA/client cache:
+  - After deploy, force-refresh once; if clients see stale content, clear site data due to service worker.
+- Feature gating for beta:
+  - Keep risky modes behind flags; distribute invite codes via Admin → Invites.
+- Post-deploy smoke:
+  - Hit `/Home`, `/Gameplay?gameId=gen-z-fluency`, `/Profile` and check console (no red errors).
+  - Run `npm run test:a11y` and optional `npx @lhci/cli autorun` locally against the release branch if needed.
