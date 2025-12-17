@@ -162,8 +162,9 @@ const findDuplicates = (questions) => {
   for (const q of questions) {
     const prompt = (q.prompt || q.question || '').trim().toLowerCase()
     if (!prompt) continue
-    const key = [prompt, q.type || 'unknown', normalizeOptions(q.options || [])].join('::')
-    const loc = `${q.__file || q.id || 'unknown'} (game: ${q.game_id || 'none'})`
+    const game = q.game_id || 'none'
+    const key = [game, prompt, q.type || 'unknown', normalizeOptions(q.options || [])].join('::')
+    const loc = `${q.__file || q.id || 'unknown'} (game: ${game})`
     if (seen.has(key)) {
       errors.push(`Duplicate question detected between ${seen.get(key)} and ${loc}`)
     } else {
