@@ -2653,23 +2653,6 @@
   },
   {
     "game_id": "dad-jokes",
-    "difficulty": 10,
-    "type": "fill",
-    "question": "Why don't eggs tell jokes? They'd crack each other _____.",
-    "options": [
-      "up",
-      "open",
-      "apart",
-      "down"
-    ],
-    "correct_index": 0,
-    "explanation": "Crack up = laugh hard + eggs crack!",
-    "id": "dad-jokes-157",
-    "category": "humor",
-    "family_safe": true
-  },
-  {
-    "game_id": "dad-jokes",
     "difficulty": 11,
     "type": "fill",
     "question": "What do lawyers wear to court? _____.",
