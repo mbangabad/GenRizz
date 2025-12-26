@@ -89,9 +89,9 @@ export default function PartyMode({
         {/* Close */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#F0EDE8] flex items-center justify-center"
+          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[var(--surface-2)] flex items-center justify-center"
         >
-          <X className="w-4 h-4 text-[#777777]" />
+          <X className="w-4 h-4 text-[var(--text-secondary)]" />
         </button>
 
         {/* Menu */}
@@ -104,8 +104,8 @@ export default function PartyMode({
             >
               🎉
             </motion.div>
-            <h2 className="text-2xl font-black text-[#3C3C3C] mb-2">Party Mode</h2>
-            <p className="text-[#777777] font-semibold mb-6">Play with friends in real-time!</p>
+            <h2 className="text-2xl font-black text-[var(--text-primary)] mb-2">Party Mode</h2>
+            <p className="text-[var(--text-secondary)] font-semibold mb-6">Play with friends in real-time!</p>
 
             <div className="space-y-3">
               <motion.button
@@ -127,7 +127,7 @@ export default function PartyMode({
               </motion.button>
             </div>
 
-            <p className="text-xs text-[#AFAFAF] font-semibold mt-4">
+            <p className="text-xs text-[var(--text-muted)] font-semibold mt-4">
               2-8 players • Real-time competition
             </p>
           </div>
@@ -136,15 +136,15 @@ export default function PartyMode({
         {/* Join */}
         {mode === 'join' && (
           <div className="text-center">
-            <h2 className="text-2xl font-black text-[#3C3C3C] mb-2">Join Room</h2>
-            <p className="text-[#777777] font-semibold mb-6">Enter the 6-digit room code</p>
+            <h2 className="text-2xl font-black text-[var(--text-primary)] mb-2">Join Room</h2>
+            <p className="text-[var(--text-secondary)] font-semibold mb-6">Enter the 6-digit room code</p>
 
             <input
               type="text"
               value={inputCode}
               onChange={(e) => setInputCode(e.target.value.toUpperCase().slice(0, 6))}
               placeholder="ABCD12"
-              className="w-full text-center text-3xl font-black tracking-[0.5em] py-4 rounded-xl border-2 border-[#E5E0DA] bg-white mb-4"
+              className="w-full text-center text-3xl font-black tracking-[0.5em] py-4 rounded-xl border-2 border-[var(--border-subtle)] bg-white mb-4"
               maxLength={6}
             />
 
@@ -172,19 +172,19 @@ export default function PartyMode({
         {mode === 'lobby' && (
           <div>
             <div className="text-center mb-6">
-              <h2 className="text-xl font-black text-[#3C3C3C] mb-2">Room Code</h2>
+              <h2 className="text-xl font-black text-[var(--text-primary)] mb-2">Room Code</h2>
               <div className="flex items-center justify-center gap-3 mb-3">
-                <span className="text-3xl font-black tracking-[0.3em] text-[#1CB0F6]">{roomCode}</span>
+                <span className="text-3xl font-black tracking-[0.3em] text-[var(--brand-blue)]">{roomCode}</span>
                 <button
                   onClick={copyCode}
-                  className="w-10 h-10 rounded-xl bg-[#F0EDE8] flex items-center justify-center"
+                  className="w-10 h-10 rounded-xl bg-[var(--surface-2)] flex items-center justify-center"
                 >
-                  {copied ? <Check className="w-5 h-5 text-[#58CC02]" /> : <Copy className="w-5 h-5 text-[#777777]" />}
+                  {copied ? <Check className="w-5 h-5 text-[var(--brand-green)]" /> : <Copy className="w-5 h-5 text-[var(--text-secondary)]" />}
                 </button>
               </div>
               <button
                 onClick={shareRoom}
-                className="text-sm text-[#1CB0F6] font-bold"
+                className="text-sm text-[var(--brand-blue)] font-bold"
               >
                 📤 Share invite link
               </button>
@@ -192,16 +192,16 @@ export default function PartyMode({
 
             {/* Players */}
             <div className="card-3d p-4 mb-4">
-              <p className="text-xs text-[#777777] font-semibold mb-3">PLAYERS ({players.length}/8)</p>
+              <p className="text-xs text-[var(--text-secondary)] font-semibold mb-3">PLAYERS ({players.length}/8)</p>
               <div className="space-y-2">
                 {players.map((player, i) => (
-                  <div key={player.id} className="flex items-center gap-3 p-2 rounded-xl bg-[#F7F4F0]">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center text-white font-bold">
+                  <div key={player.id} className="flex items-center gap-3 p-2 rounded-xl bg-[var(--surface-1)]"
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--brand-green)] to-[var(--brand-green-hover)] flex items-center justify-center text-white font-bold">
                       {player.name[0]}
                     </div>
-                    <span className="font-bold text-[#3C3C3C] flex-1">{player.name}</span>
+                    <span className="font-bold text-[var(--text-primary)] flex-1">{player.name}</span>
                     {player.isHost && (
-                      <Crown className="w-5 h-5 text-[#FFC800]" />
+                      <Crown className="w-5 h-5 text-[var(--brand-yellow)]" />
                     )}
                   </div>
                 ))}
@@ -211,7 +211,7 @@ export default function PartyMode({
             {/* Game Selection (Host only) */}
             {isHost && (
               <div className="mb-4">
-                <p className="text-xs text-[#777777] font-semibold mb-2">SELECT GAME</p>
+                <p className="text-xs text-[var(--text-secondary)] font-semibold mb-2">SELECT GAME</p>
                 <div className="grid grid-cols-3 gap-2 max-h-32 overflow-y-auto">
                   {Object.values(GAMES).slice(0, 6).map((game) => (
                     <button
@@ -219,12 +219,12 @@ export default function PartyMode({
                       onClick={() => setSelectedGame(game.id)}
                       className={`p-3 rounded-xl text-center transition-all ${
                         selectedGame === game.id
-                          ? 'bg-[#58CC02]/20 border-2 border-[#58CC02]'
-                          : 'bg-[#F7F4F0] border-2 border-transparent'
+                          ? 'bg-[var(--brand-green)]/20 border-2 border-[var(--brand-green)]'
+                          : 'bg-[var(--surface-1)] border-2 border-transparent'
                       }`}
                     >
                       <span className="text-2xl">{game.icon}</span>
-                      <p className="text-xs font-bold text-[#3C3C3C] truncate">{game.title}</p>
+                      <p className="text-xs font-bold text-[var(--text-primary)] truncate">{game.title}</p>
                     </button>
                   ))}
                 </div>
@@ -245,8 +245,8 @@ export default function PartyMode({
               </motion.button>
             ) : (
               <div className="text-center py-4">
-                <Loader2 className="w-6 h-6 animate-spin text-[#1CB0F6] mx-auto mb-2" />
-                <p className="text-[#777777] font-semibold">Waiting for host to start...</p>
+                <Loader2 className="w-6 h-6 animate-spin text-[var(--brand-blue)] mx-auto mb-2" />
+                <p className="text-[var(--text-secondary)] font-semibold">Waiting for host to start...</p>
               </div>
             )}
           </div>

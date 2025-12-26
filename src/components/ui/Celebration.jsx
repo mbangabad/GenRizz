@@ -50,7 +50,7 @@ export default function Celebration({
         <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
           {/* Confetti particles */}
           {Array.from({ length: confettiCount }).map((_, i) => {
-            const colors = ['#4ADE80', '#FBBF24', '#3B82F6', '#EF4444', '#A855F7', '#EC4899'];
+            const colors = ['var(--brand-green)', 'var(--brand-yellow)', 'var(--brand-blue)', 'var(--brand-red)', 'var(--brand-purple)', 'var(--brand-pink)'];
             const color = colors[Math.floor(Math.random() * colors.length)];
             const left = Math.random() * 100;
             const delay = Math.random() * 0.5;
@@ -218,7 +218,7 @@ export function Confetti({ trigger, count = 30 }) {
   return (
     <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
       {Array.from({ length: count }).map((_, i) => {
-        const colors = ['#4ADE80', '#FBBF24', '#3B82F6', '#EF4444', '#A855F7'];
+        const colors = ['var(--brand-green)', 'var(--brand-yellow)', 'var(--brand-blue)', 'var(--brand-red)', 'var(--brand-purple)'];
         const color = colors[Math.floor(Math.random() * colors.length)];
         const left = Math.random() * 100;
         const delay = Math.random() * 0.3;

@@ -81,67 +81,67 @@ export default function AdminOverview({ stats }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="card-3d p-4 flex items-center justify-between bg-white">
           <div>
-            <p className="text-xs font-bold text-[#AFAFAF] uppercase">Active Users</p>
-            <h3 className="text-2xl font-black text-[#3C3C3C]">{(liveStats?.activeUsers || 0).toLocaleString()}</h3>
-            <span className="text-xs font-bold text-[#58CC02] flex items-center gap-1">
+            <p className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Active Users</p>
+            <h3 className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>{(liveStats?.activeUsers || 0).toLocaleString()}</h3>
+            <span className="text-xs font-bold flex items-center gap-1" style={{ color: 'var(--brand-green)' }}>
               <TrendingUp className="w-3 h-3" /> +12% vs last hour
             </span>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-[#1CB0F6]/10 flex items-center justify-center text-[#1CB0F6]">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'color-mix(in srgb, var(--brand-blue) 10%, transparent)', color: 'var(--brand-blue)' }}>
             <Activity className="w-6 h-6" />
           </div>
         </div>
 
         <div className="card-3d p-4 flex items-center justify-between bg-white">
           <div>
-            <p className="text-xs font-bold text-[#AFAFAF] uppercase">Total Plays</p>
-            <h3 className="text-2xl font-black text-[#3C3C3C]">{(liveStats?.totalPlays || 0).toLocaleString()}</h3>
-            <span className="text-xs font-bold text-[#58CC02] flex items-center gap-1">
+            <p className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Total Plays</p>
+            <h3 className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>{(liveStats?.totalPlays || 0).toLocaleString()}</h3>
+            <span className="text-xs font-bold flex items-center gap-1" style={{ color: 'var(--brand-green)' }}>
               <TrendingUp className="w-3 h-3" /> +5% vs yesterday
             </span>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-[#58CC02]/10 flex items-center justify-center text-[#58CC02]">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'color-mix(in srgb, var(--brand-green) 10%, transparent)', color: 'var(--brand-green)' }}>
             <Smartphone className="w-6 h-6" />
           </div>
         </div>
 
         <div className="card-3d p-4 flex items-center justify-between bg-white">
           <div>
-            <p className="text-xs font-bold text-[#AFAFAF] uppercase">Retention D1</p>
-            <h3 className="text-2xl font-black text-[#3C3C3C]">{`${liveStats?.retention ?? 42.8}%`}</h3>
-            <span className="text-xs font-bold text-[#FF4B4B] flex items-center gap-1">
+            <p className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Retention D1</p>
+            <h3 className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>{`${liveStats?.retention ?? 42.8}%`}</h3>
+            <span className="text-xs font-bold flex items-center gap-1" style={{ color: 'var(--brand-red)' }}>
               <AlertCircle className="w-3 h-3" /> -1.2% vs avg
             </span>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-[#FFC800]/10 flex items-center justify-center text-[#FFC800]">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'color-mix(in srgb, var(--brand-yellow) 10%, transparent)', color: 'var(--brand-yellow)' }}>
             <Clock className="w-6 h-6" />
           </div>
         </div>
 
         <div className="card-3d p-4 flex items-center justify-between bg-white">
           <div>
-            <p className="text-xs font-bold text-[#AFAFAF] uppercase">Est. Revenue</p>
-            <h3 className="text-2xl font-black text-[#3C3C3C]">${(liveStats?.revenue || 0).toLocaleString()}</h3>
-            <span className="text-xs font-bold text-[#58CC02] flex items-center gap-1">
+            <p className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Est. Revenue</p>
+            <h3 className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>${(liveStats?.revenue || 0).toLocaleString()}</h3>
+            <span className="text-xs font-bold flex items-center gap-1" style={{ color: 'var(--brand-green)' }}>
               <TrendingUp className="w-3 h-3" /> +8% vs target
             </span>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-[#CE82FF]/10 flex items-center justify-center text-[#CE82FF]">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'color-mix(in srgb, var(--brand-purple) 10%, transparent)', color: 'var(--brand-purple)' }}>
             <DollarSign className="w-6 h-6" />
           </div>
         </div>
       </div>
 
       {/* Ads Guardrail Status */}
-      <div className="card-3d p-4 bg-white border border-[#E5E0DA] flex items-center justify-between">
+      <div className="card-3d p-4 bg-white border flex items-center justify-between" style={{ borderColor: 'var(--border-subtle)' }}>
         <div className="flex items-center gap-3">
-          <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${adsEnabled ? 'bg-[#58CC02]/10 text-[#58CC02]' : 'bg-[#FF4B4B]/10 text-[#FF4B4B]'}`}>
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: adsEnabled ? 'color-mix(in srgb, var(--brand-green) 10%, transparent)' : 'color-mix(in srgb, var(--brand-red) 10%, transparent)', color: adsEnabled ? 'var(--brand-green)' : 'var(--brand-red)' }}>
             <Shield className="w-6 h-6" />
           </div>
           <div>
-            <p className="text-xs font-bold text-[#AFAFAF] uppercase">Ads Guard</p>
-            <h4 className="font-black text-[#3C3C3C]">{adsEnabled ? 'Recovery-only enabled' : 'Ads disabled'}</h4>
-            <p className="text-xs text-[#777777] font-semibold">{adsCaption}</p>
+            <p className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Ads Guard</p>
+            <h4 className="font-black" style={{ color: 'var(--text-primary)' }}>{adsEnabled ? 'Recovery-only enabled' : 'Ads disabled'}</h4>
+            <p className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>{adsCaption}</p>
           </div>
         </div>
         {!adsEnabled && (
@@ -151,34 +151,34 @@ export default function AdminOverview({ stats }) {
 
       {/* Benchmark Row */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="card-3d p-4 bg-white border-l-4 border-l-[#58CC02]">
+        <div className="card-3d p-4 bg-white border-l-4" style={{ borderLeftColor: 'var(--brand-green)' }}>
           <div className="flex justify-between mb-2">
-            <span className="text-xs font-bold text-[#AFAFAF] uppercase">User Satisfaction (NPS)</span>
+            <span className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>User Satisfaction (NPS)</span>
             <span className="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded font-bold">Top 10%</span>
           </div>
           <div className="flex items-end gap-2">
-            <span className="text-2xl font-black text-[#3C3C3C]">72</span>
-            <span className="text-xs font-bold text-[#AFAFAF] mb-1">/ 100</span>
+            <span className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>72</span>
+            <span className="text-xs font-bold mb-1" style={{ color: 'var(--text-muted)' }}>/ 100</span>
           </div>
           <p className="text-xs text-green-600 mt-1 font-bold">Beat industry avg (45)</p>
         </div>
-        <div className="card-3d p-4 bg-white border-l-4 border-l-[#FFC800]">
+        <div className="card-3d p-4 bg-white border-l-4" style={{ borderLeftColor: 'var(--brand-yellow)' }}>
           <div className="flex justify-between mb-2">
-            <span className="text-xs font-bold text-[#AFAFAF] uppercase">Load Time (P95)</span>
+            <span className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Load Time (P95)</span>
             <span className="bg-yellow-100 text-yellow-700 text-xs px-2 py-0.5 rounded font-bold">Average</span>
           </div>
           <div className="flex items-end gap-2">
-            <span className="text-2xl font-black text-[#3C3C3C]">1.2s</span>
+            <span className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>1.2s</span>
           </div>
           <p className="text-xs text-yellow-600 mt-1 font-bold">Match industry avg (1.1s)</p>
         </div>
-        <div className="card-3d p-4 bg-white border-l-4 border-l-[#1CB0F6]">
+        <div className="card-3d p-4 bg-white border-l-4" style={{ borderLeftColor: 'var(--brand-blue)' }}>
           <div className="flex justify-between mb-2">
-            <span className="text-xs font-bold text-[#AFAFAF] uppercase">Viral Coefficient</span>
+            <span className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Viral Coefficient</span>
             <span className="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded font-bold">Top 5%</span>
           </div>
           <div className="flex items-end gap-2">
-            <span className="text-2xl font-black text-[#3C3C3C]">1.8</span>
+            <span className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>1.8</span>
           </div>
           <p className="text-xs text-blue-600 mt-1 font-bold">Exceptional growth</p>
         </div>
@@ -187,8 +187,8 @@ export default function AdminOverview({ stats }) {
       {/* Main Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 card-3d p-6 bg-white">
-          <h3 className="font-black text-[#3C3C3C] mb-6 flex items-center gap-2">
-            <Users className="w-5 h-5 text-[#1CB0F6]" /> Growth Trends
+          <h3 className="font-black mb-6 flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
+            <Users className="w-5 h-5" style={{ color: 'var(--brand-blue)' }} /> Growth Trends
           </h3>
           <div className="h-[300px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -203,9 +203,9 @@ export default function AdminOverview({ stats }) {
                     <stop offset="95%" stopColor="#58CC02" stopOpacity={0}/>
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E0DA" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: '#AFAFAF'}} />
-                <YAxis axisLine={false} tickLine={false} tick={{fill: '#AFAFAF'}} />
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border-subtle)" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill: 'var(--text-muted)'}} />
+                <YAxis axisLine={false} tickLine={false} tick={{fill: 'var(--text-muted)'}} />
                 <Tooltip 
                   contentStyle={{borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)'}}
                 />
@@ -217,8 +217,8 @@ export default function AdminOverview({ stats }) {
         </div>
 
         <div className="card-3d p-6 bg-white">
-          <h3 className="font-black text-[#3C3C3C] mb-6 flex items-center gap-2">
-            <Globe className="w-5 h-5 text-[#CE82FF]" /> Demographics
+          <h3 className="font-black mb-6 flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
+            <Globe className="w-5 h-5" style={{ color: 'var(--brand-purple)' }} /> Demographics
           </h3>
           <div className="h-[300px] relative">
             <ResponsiveContainer width="100%" height="100%">
@@ -241,13 +241,13 @@ export default function AdminOverview({ stats }) {
               </PieChart>
             </ResponsiveContainer>
             <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-              <span className="text-3xl font-black text-[#3C3C3C]">127k</span>
-              <span className="text-xs text-[#AFAFAF] font-bold uppercase">Users</span>
+              <span className="text-3xl font-black" style={{ color: 'var(--text-primary)' }}>127k</span>
+              <span className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Users</span>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {demographics.map((d, i) => (
-              <div key={i} className="flex items-center gap-2 text-xs font-bold text-[#777777]">
+              <div key={i} className="flex items-center gap-2 text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>
                 <div className="w-3 h-3 rounded-full" style={{background: COLORS[i]}} />
                 {d.name} ({d.value}%)
               </div>

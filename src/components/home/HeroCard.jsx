@@ -34,7 +34,7 @@ export default function HeroCard({ game, onPlay }) {
       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-purple-900/20" />
       
       {/* Animated Particles */}
-      <AnimatedParticles count={15} colors={['#CE82FF', '#FF86D0', '#FFD700']} />
+      <AnimatedParticles count={15} colors={['var(--brand-purple)', 'var(--brand-pink)', 'var(--brand-yellow)']} />
 
       {/* Shine Effect */}
       <motion.div

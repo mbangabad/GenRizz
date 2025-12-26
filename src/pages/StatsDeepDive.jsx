@@ -59,22 +59,30 @@ export default function StatsDeepDive() {
   if (!data) return null;
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
-      <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
+    <div className="min-h-screen pb-24" style={{ backgroundColor: 'var(--page-bg)' }}>
+      <header className="glass-header">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link to={createPageUrl('Profile')}>
-              <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">
-                <ArrowLeft className="w-5 h-5 text-[#777777]" />
+              <button className="w-10 h-10 rounded-xl border-2 flex items-center justify-center transition-colors"
+                style={{
+                  backgroundColor: 'var(--surface-0)',
+                  borderColor: 'var(--border-subtle)'
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--surface-0)'}
+                <ArrowLeft className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
               </button>
             </Link>
             <div>
-              <h1 className="font-black text-[#3C3C3C] text-lg">Stats Deep Dive</h1>
-              <p className="text-xs text-[#AFAFAF] font-semibold">Advanced Analytics</p>
+              <h1 className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>Stats Deep Dive</h1>
+              <p className="text-xs font-semibold" style={{ color: 'var(--text-muted)' }}>Advanced Analytics</p>
             </div>
           </div>
-          <button className="p-2 hover:bg-[#F0EDE8] rounded-xl transition-colors">
-            <Share2 className="w-5 h-5 text-[#1CB0F6]" />
+          <button className="p-2 rounded-xl transition-colors"
+            onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+            <Share2 className="w-5 h-5" style={{ color: 'var(--brand-blue)' }} />
           </button>
         </div>
       </header>
@@ -120,29 +128,32 @@ export default function StatsDeepDive() {
             className="card-3d p-6"
           >
             <div className="flex items-center justify-between mb-6">
-              <h2 className="font-black text-[#3C3C3C] text-lg">Skill Breakdown</h2>
-              <span className="text-xs font-bold text-[#AFAFAF] uppercase bg-[#F7F4F0] px-2 py-1 rounded">Lifetime</span>
+              <h2 className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>Skill Breakdown</h2>
+              <span className="text-xs font-bold uppercase px-2 py-1 rounded" style={{ 
+                color: 'var(--text-muted)',
+                backgroundColor: 'var(--surface-1)'
+              }}>Lifetime</span>
             </div>
             <div className="h-[300px] w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data.categories}>
                   <PolarGrid stroke="#E5E0DA" />
-                  <PolarAngleAxis dataKey="subject" tick={{ fill: '#777777', fontSize: 12, fontWeight: 700 }} />
+                  <PolarAngleAxis dataKey="subject" tick={{ fill: 'var(--text-secondary)', fontSize: 12, fontWeight: 700 }} />
                   <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
                   <Radar
                     name="User"
                     dataKey="A"
-                    stroke="#1CB0F6"
+                    stroke="var(--brand-blue)"
                     strokeWidth={3}
-                    fill="#1CB0F6"
+                    fill="var(--brand-blue)"
                     fillOpacity={0.3}
                   />
                 </RadarChart>
               </ResponsiveContainer>
             </div>
             <div className="mt-4 text-center">
-              <p className="text-sm text-[#777777]">
-                Your strongest subject is <strong className="text-[#1CB0F6]">Vibe Check</strong>.
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                Your strongest subject is <strong style={{ color: 'var(--brand-blue)' }}>Vibe Check</strong>.
               </p>
             </div>
           </motion.div>
@@ -155,33 +166,36 @@ export default function StatsDeepDive() {
             className="card-3d p-6"
           >
             <div className="flex items-center justify-between mb-6">
-              <h2 className="font-black text-[#3C3C3C] text-lg">XP Growth</h2>
-              <span className="text-xs font-bold text-[#AFAFAF] uppercase bg-[#F7F4F0] px-2 py-1 rounded">Last 7 Days</span>
+              <h2 className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>XP Growth</h2>
+              <span className="text-xs font-bold uppercase px-2 py-1 rounded" style={{ 
+                color: 'var(--text-muted)',
+                backgroundColor: 'var(--surface-1)'
+              }}>Last 7 Days</span>
             </div>
             <div className="h-[300px] w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data.xpHistory}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E0DA" />
-                  <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{fill: '#AFAFAF', fontSize: 12}} />
-                  <YAxis axisLine={false} tickLine={false} tick={{fill: '#AFAFAF', fontSize: 12}} />
+                  <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{fill: 'var(--text-muted)', fontSize: 12}} />
+                  <YAxis axisLine={false} tickLine={false} tick={{fill: 'var(--text-muted)', fontSize: 12}} />
                   <Tooltip 
                     contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
-                    itemStyle={{ color: '#3C3C3C', fontWeight: 'bold' }}
+                    itemStyle={{ color: 'var(--text-primary)', fontWeight: 'bold' }}
                   />
                   <Line 
                     type="monotone" 
                     dataKey="xp" 
-                    stroke="#58CC02" 
+                    stroke="var(--brand-green)" 
                     strokeWidth={4} 
-                    dot={{ r: 4, fill: '#58CC02', strokeWidth: 0 }}
+                    dot={{ r: 4, fill: 'var(--brand-green)', strokeWidth: 0 }}
                     activeDot={{ r: 6 }}
                   />
                 </LineChart>
               </ResponsiveContainer>
             </div>
             <div className="mt-4 text-center">
-              <p className="text-sm text-[#777777]">
-                You earned <strong className="text-[#58CC02]">4,600 XP</strong> this week!
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                You earned <strong style={{ color: 'var(--brand-green)' }}>4,600 XP</strong> this week!
               </p>
             </div>
           </motion.div>
@@ -195,19 +209,22 @@ export default function StatsDeepDive() {
           className="card-3d p-6"
         >
           <div className="flex items-center justify-between mb-6">
-            <h2 className="font-black text-[#3C3C3C] text-lg">Peak Performance Time</h2>
-            <span className="text-xs font-bold text-[#AFAFAF] uppercase bg-[#F7F4F0] px-2 py-1 rounded">24 Hours</span>
+            <h2 className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>Peak Performance Time</h2>
+            <span className="text-xs font-bold uppercase px-2 py-1 rounded" style={{ 
+              color: 'var(--text-muted)',
+              backgroundColor: 'var(--surface-1)'
+            }}>24 Hours</span>
           </div>
           <div className="h-[200px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={data.activityByHour}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E5E0DA" />
-                <XAxis dataKey="hour" axisLine={false} tickLine={false} tick={{fill: '#AFAFAF', fontSize: 12}} />
+                <XAxis dataKey="hour" axisLine={false} tickLine={false} tick={{fill: 'var(--text-muted)', fontSize: 12}} />
                 <Tooltip 
-                  cursor={{ fill: '#F7F4F0' }}
+                  cursor={{ fill: 'var(--surface-1)' }}
                   contentStyle={{ borderRadius: '12px', border: 'none' }}
                 />
-                <Bar dataKey="value" fill="#FFC800" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="value" fill="var(--brand-yellow)" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -225,9 +242,9 @@ function StatCard({ icon: Icon, label, value, subtext, color }) {
            style={{ backgroundColor: `${color}20` }}>
         <Icon className="w-5 h-5" style={{ color: color }} />
       </div>
-      <div className="text-2xl font-black text-[#3C3C3C]">{value}</div>
-      <div className="text-xs font-bold text-[#777777] uppercase mt-1 mb-1">{label}</div>
-      <div className="text-[10px] text-[#AFAFAF] font-semibold">{subtext}</div>
+      <div className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>{value}</div>
+      <div className="text-xs font-bold uppercase mt-1 mb-1" style={{ color: 'var(--text-secondary)' }}>{label}</div>
+      <div className="text-[10px] font-semibold" style={{ color: 'var(--text-muted)' }}>{subtext}</div>
     </div>
   );
 }

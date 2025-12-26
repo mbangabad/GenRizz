@@ -55,15 +55,15 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
               {category.emoji}
             </motion.div>
             <div>
-              <h3 className="font-black text-[#3C3C3C] text-xl">{category.name}</h3>
-              <p className="text-sm text-[#777777] font-semibold">{games.length} games</p>
+              <h3 className="font-black text-[var(--text-primary)] text-xl">{category.name}</h3>
+              <p className="text-sm text-[var(--text-secondary)] font-semibold">{games.length} games</p>
             </div>
           </div>
           
           {gamesPlayed > 0 && (
             <div className="text-right">
               <p className="text-2xl font-black" style={{ color: category.color }}>{Math.round(avgScore)}%</p>
-              <p className="text-xs text-[#AFAFAF] font-semibold">avg score</p>
+              <p className="text-xs text-[var(--text-muted)] font-semibold">avg score</p>
             </div>
           )}
         </div>
@@ -80,7 +80,7 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
             }}
           />
         </div>
-        <p className="text-xs text-[#AFAFAF] mt-2 font-semibold">
+        <p className="text-xs text-[var(--text-muted)] mt-2 font-semibold">
           {gamesPlayed}/{games.length} completed
         </p>
       </div>
@@ -103,7 +103,7 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
               }}
               whileHover={{ scale: 1.02, x: 4 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full flex items-center gap-3 p-3 rounded-xl bg-[#F7F4F0] hover:bg-[#F0EDE8] border border-[#E5E0DA] hover:border-[#D4CFC7] transition-all text-left cursor-pointer group no-underline outline-none focus-visible:ring-2 focus-visible:ring-[#58CC02]"
+              className="w-full flex items-center gap-3 p-3 rounded-xl bg-[var(--surface-1)] hover:bg-[var(--surface-2)] border border-[var(--border-subtle)] hover:border-[var(--border-strong)] transition-all text-left cursor-pointer group no-underline outline-none focus-visible:ring-2 focus-visible:ring-[var(--brand-green)]"
               aria-label={`Play ${game.title}`}
               style={{ textDecoration: 'none', color: 'inherit' }}
               role="button"
@@ -111,8 +111,8 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
               <GameIcon gameId={game.id} size="sm" />
               
               <div className="flex-1 min-w-0">
-                <p className="font-bold text-[#3C3C3C] truncate group-hover:text-[#58CC02] transition-colors">{game.title}</p>
-                <p className="text-xs text-[#777777] truncate font-semibold">
+                <p className="font-bold text-[var(--text-primary)] truncate group-hover:text-[var(--brand-green)] transition-colors">{game.title}</p>
+                <p className="text-xs text-[var(--text-secondary)] truncate font-semibold">
                   {hasPlayed 
                     ? `Lvl ${level.level} · ${progress.highest_score}% best` 
                     : game.subtitle
@@ -123,7 +123,7 @@ export default function CategoryCard({ category, games, progressMap, onGameClick
               {hasPlayed ? (
                 <div className="flex items-center gap-2">
                   <span className="text-lg">{level.emoji}</span>
-                  <ChevronRight className="w-4 h-4 text-[#AFAFAF] group-hover:text-[#58CC02] transition-colors" />
+                  <ChevronRight className="w-4 h-4 text-[var(--text-muted)] group-hover:text-[var(--brand-green)] transition-colors" />
                 </div>
               ) : (
                 <span className="badge-3d badge-green text-xs py-1 px-2">

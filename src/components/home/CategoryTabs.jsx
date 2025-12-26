@@ -40,8 +40,8 @@ export default function CategoryTabs({ activeCategory, onCategoryChange }) {
           onClick={() => onCategoryChange(cat.id)}
           className={`relative flex items-center gap-1.5 px-4 py-2 rounded-xl font-bold text-sm whitespace-nowrap transition-all ${
             activeCategory === cat.id
-              ? 'bg-[#FF6B35] text-white shadow-lg shadow-[#FF6B35]/20'
-              : 'bg-[#1E1E1E] text-white/50 hover:text-white hover:bg-[#252525] border border-white/5'
+              ? 'bg-[var(--brand-orange)] text-white shadow-lg shadow-[var(--brand-orange)]/20'
+              : 'bg-[var(--surface-2)] text-white/50 hover:text-white hover:bg-[var(--surface-3)] border border-white/5'
           }`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -51,7 +51,7 @@ export default function CategoryTabs({ activeCategory, onCategoryChange }) {
           {activeCategory === cat.id && (
             <motion.div
               layoutId="activeTab"
-              className="absolute inset-0 bg-[#FF6B35] rounded-xl -z-10"
+              className="absolute inset-0 bg-[var(--brand-orange)] rounded-xl -z-10"
               transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
             />
           )}

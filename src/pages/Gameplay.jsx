@@ -174,7 +174,7 @@ function QuestionCard3D({
       transition={{ duration: 0.4 }}
     >
       <div className="flex items-center justify-between">
-        <span className="text-sm font-bold text-[#777777]">
+        <span className="text-sm font-bold" style={{ color: 'var(--text-secondary)' }}>
           {questionNumber} / {totalQuestions}
         </span>
         {timedMode && <QuestionTimer3D timeLeft={timeLeft} />}
@@ -203,7 +203,7 @@ function QuestionCard3D({
         animate={{ opacity: 1, y: 0 }}
         className="card-3d p-6"
       >
-        <h2 className="text-xl font-black text-[#3C3C3C] text-center leading-relaxed">
+        <h2 className="text-xl font-black text-center leading-relaxed" style={{ color: 'var(--text-primary)' }}>
           {question.question}
         </h2>
       </motion.div>
@@ -215,7 +215,7 @@ function QuestionCard3D({
           animate={{ opacity: 1, scale: 1 }}
           className="card-3d card-3d-green p-3"
         >
-          <p className="text-sm text-[#3C3C3C] font-semibold">💡 Hint: {question.explanation}</p>
+          <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>💡 Hint: {question.explanation}</p>
         </motion.div>
       )}
 
@@ -248,13 +248,17 @@ function QuestionCard3D({
               className={`w-full ${optionClass}`}
             >
               <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg font-black ${
-                  showResult && isCorrect
-                    ? 'bg-[#58CC02] text-white'
-                    : showResult && isSelected
-                      ? 'bg-[#FF4B4B] text-white'
-                      : 'bg-[#E8E4DF] text-[#777777]'
-                }`}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg font-black"
+                  style={{
+                    backgroundColor: showResult && isCorrect
+                      ? 'var(--brand-green)'
+                      : showResult && isSelected
+                        ? 'var(--brand-red)'
+                        : 'var(--surface-3)',
+                    color: showResult && (isCorrect || isSelected)
+                      ? 'white'
+                      : 'var(--text-secondary)'
+                  }}>
                   {showResult && isCorrect ? (
                     <CheckCircle className="w-5 h-5" />
                   ) : showResult && isSelected ? (
@@ -263,7 +267,7 @@ function QuestionCard3D({
                     String.fromCharCode(65 + index)
                   )}
                 </div>
-                <span className="flex-1 text-[#3C3C3C] font-semibold text-left">{option}</span>
+                <span className="flex-1 font-semibold text-left" style={{ color: showResult && (isCorrect || isSelected) ? 'white' : 'var(--text-primary)' }}>{option}</span>
               </div>
             </motion.button>
           );
@@ -281,7 +285,7 @@ function QuestionCard3D({
                 selectedIndex === question.correct_index ? 'card-3d-green' : 'card-3d-blue'
               }`}
             >
-              <p className="text-sm text-[#3C3C3C] font-semibold">💡 {question.explanation}</p>
+              <p className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>💡 {question.explanation}</p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -363,14 +367,14 @@ function ResultsCard3D({
 
       <div className="grid grid-cols-2 gap-4">
         <div className="card-3d card-3d-yellow p-4 text-center">
-          <Zap className="w-8 h-8 text-[#FFC800] mx-auto mb-2" />
+          <Zap className="w-8 h-8 mx-auto mb-2" style={{ color: 'var(--brand-yellow)' }} />
           <p className="text-3xl font-black text-gradient-yellow">+{xpEarned}</p>
-          <p className="text-xs text-[#777777] font-bold uppercase">XP Earned</p>
+          <p className="text-xs font-bold uppercase" style={{ color: 'var(--text-secondary)' }}>XP Earned</p>
         </div>
         <div className="card-3d card-3d-orange p-4 text-center">
           <span className="text-3xl">🔥</span>
-          <p className="text-3xl font-black text-[#FF9600]">{maxStreak}</p>
-          <p className="text-xs text-[#777777] font-bold uppercase">Best Streak</p>
+          <p className="text-3xl font-black" style={{ color: 'var(--brand-orange)' }}>{maxStreak}</p>
+          <p className="text-xs font-bold uppercase" style={{ color: 'var(--text-secondary)' }}>Best Streak</p>
         </div>
       </div>
 
@@ -919,8 +923,8 @@ export default function Gameplay() {
   // Loading state while parsing gameId
   if (gameId === null) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#FAF8F5]">
-        <Loader2 className="w-10 h-10 animate-spin text-[#58CC02]" />
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--page-bg)' }}>
+        <Loader2 className="w-10 h-10 animate-spin" style={{ color: 'var(--brand-green)' }} />
       </div>
     );
   }
@@ -946,11 +950,11 @@ export default function Gameplay() {
   // Game not found
   if (!game) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#FAF8F5] p-4">
+      <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: 'var(--page-bg)' }}>
         <div className="card-3d p-8 text-center max-w-md w-full">
           <div className="mx-auto mb-4 text-4xl">😕</div>
-          <h2 className="text-xl font-black text-[#3C3C3C] mb-2">Game Not Found</h2>
-          <p className="text-[#777777] mb-6 font-semibold">Please select a game from home.</p>
+          <h2 className="text-xl font-black mb-2" style={{ color: 'var(--text-primary)' }}>Game Not Found</h2>
+          <p className="mb-6 font-semibold" style={{ color: 'var(--text-secondary)' }}>Please select a game from home.</p>
           <Link to={createPageUrl('Home')}>
             <button className="btn-3d btn-3d-lime px-6 py-3 flex items-center justify-center gap-2 mx-auto">
               <Home className="w-5 h-5" /> Go Home
@@ -969,7 +973,7 @@ export default function Gameplay() {
   const blitzBar = blitzActive && gameState === 'playing' ? Math.max(blitzTimeLeft, 0) : null;
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--page-bg)' }}>
       {enabledModes.length > 0 && (
         <div className="sticky top-0 z-40 px-4 py-2 bg-yellow-50 text-xs font-bold text-yellow-700 flex items-center gap-2">
           Experimental modes active: {enabledModes.join(', ')}
@@ -991,14 +995,14 @@ export default function Gameplay() {
               style={{ width: `${Math.max((blitzBar / (mode.time || 1)) * 100, 0)}%`, transition: 'width 0.2s linear' }}
             />
           </div>
-          <p className="text-[11px] text-[#AFAFAF] font-bold mt-1">Blitz ends in {blitzBar}s</p>
+          <p className="text-[11px] font-bold mt-1" style={{ color: 'var(--text-muted)' }}>Blitz ends in {blitzBar}s</p>
         </div>
       )}
       
-      <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
+      <header className="glass-header">
         <div className="max-w-lg mx-auto px-4 py-3 flex items-center gap-3">
           <Link to={createPageUrl('Home')}>
-            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">
+            <button className="w-10 h-10 rounded-xl bg-white border-2 flex items-center justify-center transition-colors" style={{ borderColor: 'var(--border-subtle)' }} onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'} onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}>
               <ArrowLeft className="w-5 h-5 text-[#777777]" />
             </button>
           </Link>

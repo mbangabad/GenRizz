@@ -70,44 +70,44 @@ export default function Notifications() {
 
   const getIcon = (type) => {
     switch (type) {
-      case 'challenge_received': return <Trophy className="w-5 h-5 text-[#FFC800]" />;
-      case 'friend_accepted': return <UserPlus className="w-5 h-5 text-[#58CC02]" />;
-      case 'streak_warning': return <Zap className="w-5 h-5 text-[#FF9600]" />;
-      case 'reward': return <Star className="w-5 h-5 text-[#CE82FF]" />;
-      case 'level_up': return <Crown className="w-5 h-5 text-[#1CB0F6]" />;
-      default: return <Bell className="w-5 h-5 text-[#777777]" />;
+      case 'challenge_received': return <Trophy className="w-5 h-5 text-[var(--brand-yellow)]" />;
+      case 'friend_accepted': return <UserPlus className="w-5 h-5 text-[var(--brand-green)]" />;
+      case 'streak_warning': return <Zap className="w-5 h-5 text-[var(--brand-orange)]" />;
+      case 'reward': return <Star className="w-5 h-5 text-[var(--brand-purple)]" />;
+      case 'level_up': return <Crown className="w-5 h-5 text-[var(--brand-blue)]" />;
+      default: return <Bell className="w-5 h-5 text-[var(--text-secondary)]" />;
     }
   };
 
   const getColor = (type) => {
     switch (type) {
-      case 'challenge_received': return '#FFC800';
-      case 'friend_accepted': return '#58CC02';
-      case 'streak_warning': return '#FF9600';
-      case 'reward': return '#CE82FF';
-      case 'level_up': return '#1CB0F6';
-      default: return '#777777';
+      case 'challenge_received': return 'var(--brand-yellow)';
+      case 'friend_accepted': return 'var(--brand-green)';
+      case 'streak_warning': return 'var(--brand-orange)';
+      case 'reward': return 'var(--brand-purple)';
+      case 'level_up': return 'var(--brand-blue)';
+      default: return 'var(--text-secondary)';
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
-      <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
+    <div className="min-h-screen bg-[var(--page-bg)] pb-24">
+      <header className="glass-header">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link to={createPageUrl('Home')}>
-              <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">
-                <ArrowLeft className="w-5 h-5 text-[#777777]" />
+              <button className="w-10 h-10 rounded-xl bg-white border-2 border-[var(--border-subtle)] flex items-center justify-center hover:bg-[var(--surface-2)] transition-colors">
+                <ArrowLeft className="w-5 h-5 text-[var(--text-secondary)]" />
               </button>
             </Link>
             <div>
-              <h1 className="font-black text-[#3C3C3C] text-lg">Notifications</h1>
-              <p className="text-xs text-[#AFAFAF] font-semibold">Stay updated</p>
+              <h1 className="font-black text-[var(--text-primary)] text-lg">Notifications</h1>
+              <p className="text-xs text-[var(--text-muted)] font-semibold">Stay updated</p>
             </div>
           </div>
           <button 
             onClick={markAllRead}
-            className="text-xs font-bold text-[#1CB0F6] hover:text-[#1899D6] bg-[#1CB0F6]/10 px-3 py-1.5 rounded-lg transition-colors"
+            className="text-xs font-bold text-[var(--brand-blue)] hover:text-[var(--brand-blue-hover)] bg-[var(--brand-blue)]/10 px-3 py-1.5 rounded-lg transition-colors"
           >
             Mark all read
           </button>
@@ -122,11 +122,11 @@ export default function Notifications() {
               animate={{ opacity: 1 }}
               className="text-center py-12"
             >
-              <div className="w-24 h-24 bg-[#E5E0DA] rounded-full flex items-center justify-center mx-auto mb-4">
-                <Bell className="w-10 h-10 text-[#AFAFAF]" />
+              <div className="w-24 h-24 bg-[var(--border-subtle)] rounded-full flex items-center justify-center mx-auto mb-4">
+                <Bell className="w-10 h-10 text-[var(--text-muted)]" />
               </div>
-              <h3 className="font-bold text-[#777777]">No notifications</h3>
-              <p className="text-sm text-[#AFAFAF]">You're all caught up!</p>
+              <h3 className="font-bold text-[var(--text-secondary)]">No notifications</h3>
+              <p className="text-sm text-[var(--text-muted)]">You're all caught up!</p>
             </motion.div>
           ) : (
             notifications.map((notification) => (
@@ -136,10 +136,10 @@ export default function Notifications() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 layout
-                className={`card-3d p-4 flex gap-4 ${!notification.read ? 'bg-white border-[#1CB0F6]/30' : 'bg-[#FAF8F5] border-transparent shadow-none'}`}
+                className={`card-3d p-4 flex gap-4 ${!notification.read ? 'bg-white border-[var(--brand-blue)]/30' : 'bg-[var(--page-bg)] border-transparent shadow-none'}`}
               >
                 <div 
-                  className="w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center bg-white border-2 border-[#E5E0DA]"
+                  className="w-12 h-12 rounded-2xl flex-shrink-0 flex items-center justify-center bg-white border-2 border-[var(--border-subtle)]"
                   style={{ borderColor: !notification.read ? getColor(notification.type) : undefined }}
                 >
                   {getIcon(notification.type)}
@@ -147,21 +147,21 @@ export default function Notifications() {
                 
                 <div className="flex-1 min-w-0">
                   <div className="flex justify-between items-start">
-                    <h3 className={`font-bold truncate pr-2 ${!notification.read ? 'text-[#3C3C3C]' : 'text-[#777777]'}`}>
+                    <h3 className={`font-bold truncate pr-2 ${!notification.read ? 'text-[var(--text-primary)]' : 'text-[var(--text-secondary)]'}`}>
                       {notification.title}
                     </h3>
-                    <span className="text-[10px] font-bold text-[#AFAFAF] whitespace-nowrap">
+                    <span className="text-[10px] font-bold text-[var(--text-muted)] whitespace-nowrap">
                       {notification.time}
                     </span>
                   </div>
-                  <p className="text-sm text-[#777777] leading-snug mb-2">
+                  <p className="text-sm text-[var(--text-secondary)] leading-snug mb-2">
                     {notification.message}
                   </p>
                   
                   {notification.actionUrl && (
                     <div className="flex gap-2">
                        {/* In real app, use Link or button depending on action */}
-                       <button className="text-xs font-bold text-[#1CB0F6] hover:underline">
+                       <button className="text-xs font-bold text-[var(--brand-blue)] hover:underline">
                          View Details
                        </button>
                     </div>
@@ -170,7 +170,7 @@ export default function Notifications() {
 
                 <button 
                   onClick={() => deleteNotification(notification.id)}
-                  className="self-start p-1 text-[#AFAFAF] hover:text-[#FF4B4B] transition-colors"
+                  className="self-start p-1 text-[var(--text-muted)] hover:text-[var(--brand-red)] transition-colors"
                 >
                   <Trash2 className="w-4 h-4" />
                 </button>

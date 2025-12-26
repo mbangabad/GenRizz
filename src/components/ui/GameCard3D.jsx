@@ -37,7 +37,7 @@ export default function GameCard3D({
           alt={game.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--text-strong)] via-[color-mix(in_srgb,var(--text-strong),transparent_40%)] to-transparent" />
       </motion.div>
 
       {/* Glow Effect on Hover */}
@@ -80,10 +80,10 @@ export default function GameCard3D({
 
       {/* Lock Overlay */}
       {isLocked && (
-        <div className="absolute inset-0 bg-[#0A0A0A]/60 backdrop-blur-sm flex items-center justify-center z-20">
+        <div className="absolute inset-0 bg-[color-mix(in_srgb,var(--text-strong),transparent_40%)] backdrop-blur-sm flex items-center justify-center z-20">
           <div className="text-center">
-            <Lock className="w-8 h-8 text-white/40 mx-auto mb-2" />
-            <p className="text-xs text-white/40">Unlock at Level 5</p>
+            <Lock className="w-8 h-8 text-[color-mix(in_srgb,var(--text-inverse),transparent_60%)] mx-auto mb-2" />
+            <p className="text-xs text-[color-mix(in_srgb,var(--text-inverse),transparent_60%)]">Unlock at Level 5</p>
           </div>
         </div>
       )}
@@ -99,14 +99,14 @@ export default function GameCard3D({
           {game.icon}
         </motion.div>
         
-        <h3 className="font-bold text-white mb-1 group-hover:text-white transition-colors">
+        <h3 className="font-bold text-[var(--text-inverse)] mb-1 group-hover:text-[var(--text-inverse)] transition-colors">
           {game.title}
         </h3>
         
         {progress ? (
           <div className="space-y-1.5">
             <div className="flex items-center gap-2">
-              <div className="flex-1 h-1.5 bg-[#1A1A1A] rounded-full overflow-hidden">
+              <div className="flex-1 h-1.5 bg-[var(--surface-1)] rounded-full overflow-hidden">
                 <motion.div 
                   className="h-full rounded-full"
                   style={{ background: `linear-gradient(90deg, ${game.color}, ${game.color}80)` }}
@@ -115,15 +115,15 @@ export default function GameCard3D({
                   transition={{ duration: 1, delay: 0.2 }}
                 />
               </div>
-              <span className="text-[10px] font-bold text-white/60">Lvl {level?.level || 1}</span>
+              <span className="text-[10px] font-bold text-[color-mix(in_srgb,var(--text-inverse),transparent_40%)]">Lvl {level?.level || 1}</span>
             </div>
-            <div className="flex items-center gap-1.5 text-[10px] text-white/40">
+            <div className="flex items-center gap-1.5 text-[10px] text-[color-mix(in_srgb,var(--text-inverse),transparent_60%)]"
               <TrendingUp className="w-3 h-3" />
               <span>Best: {progress.highest_score || 0}%</span>
             </div>
           </div>
         ) : (
-          <p className="text-[11px] text-white/40 line-clamp-1">{game.subtitle}</p>
+          <p className="text-[11px] text-[color-mix(in_srgb,var(--text-inverse),transparent_60%)] line-clamp-1">{game.subtitle}</p>
         )}
       </div>
     </motion.div>

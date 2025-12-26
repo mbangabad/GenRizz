@@ -7,10 +7,10 @@ import { Trophy, ChevronUp, ChevronDown, Crown, Minus, X, Medal } from 'lucide-r
 const LEAGUES = [
   { id: 'bronze', name: 'Bronze', emoji: '🥉', color: '#CD7F32', minXP: 0 },
   { id: 'silver', name: 'Silver', emoji: '🥈', color: '#C0C0C0', minXP: 500 },
-  { id: 'gold', name: 'Gold', emoji: '🥇', color: '#FFD700', minXP: 1500 },
+  { id: 'gold', name: 'Gold', emoji: '🥇', color: 'var(--brand-yellow)', minXP: 1500 },
   { id: 'platinum', name: 'Platinum', emoji: '💎', color: '#E5E4E2', minXP: 3000 },
-  { id: 'diamond', name: 'Diamond', emoji: '💠', color: '#B9F2FF', minXP: 5000 },
-  { id: 'obsidian', name: 'Obsidian', emoji: '🖤', color: '#3C3C3C', minXP: 10000 },
+  { id: 'diamond', name: 'Diamond', emoji: '💠', color: 'var(--brand-blue)', minXP: 5000 },
+  { id: 'obsidian', name: 'Obsidian', emoji: '🖤', color: 'var(--text-primary)', minXP: 10000 },
 ];
 
 // Get current league based on XP
@@ -93,7 +93,7 @@ export default function XPLeagues({ userId }) {
         <p className="font-black text-lg" style={{ color: currentLeague.color }}>
           {currentLeague.name}
         </p>
-        <p className="text-sm text-[#777777] font-semibold">Rank #{userRank}</p>
+        <p className="text-sm text-[var(--text-secondary)] font-semibold">Rank #{userRank}</p>
         
         {/* Progress to next league */}
         {nextLeague && (
@@ -107,7 +107,7 @@ export default function XPLeagues({ userId }) {
                 }}
               />
             </div>
-            <p className="text-xs text-[#AFAFAF] mt-1 font-semibold">
+            <p className="text-xs text-[var(--text-muted)] mt-1 font-semibold">
               {nextLeague.minXP - weeklyXP} XP to {nextLeague.name}
             </p>
           </div>
@@ -139,14 +139,14 @@ export default function XPLeagues({ userId }) {
                     <h3 className="text-xl font-black" style={{ color: currentLeague.color }}>
                       {currentLeague.name} League
                     </h3>
-                    <p className="text-sm text-[#777777] font-semibold">Week 48 • 3 days left</p>
+                    <p className="text-sm text-[var(--text-secondary)] font-semibold">Week 48 • 3 days left</p>
                   </div>
                 </div>
                 <button 
                   onClick={() => setShowModal(false)}
-                  className="w-8 h-8 rounded-lg bg-[#F7F4F0] flex items-center justify-center"
+                  className="w-8 h-8 rounded-lg bg-[var(--surface-1)] flex items-center justify-center"
                 >
-                  <X className="w-4 h-4 text-[#777777]" />
+                  <X className="w-4 h-4 text-[var(--text-secondary)]" />
                 </button>
               </div>
 
@@ -182,18 +182,18 @@ export default function XPLeagues({ userId }) {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.05 }}
                       className={`flex items-center gap-3 p-3 rounded-xl ${
-                        entry.isUser ? 'bg-[#58CC02]/10 border-2 border-[#58CC02]' :
-                        zone === 'promote' ? 'bg-[#58CC02]/5' :
-                        zone === 'demote' ? 'bg-[#FF4B4B]/5' :
-                        'bg-[#F7F4F0]'
+                        entry.isUser ? 'bg-[var(--brand-green)]/10 border-2 border-[var(--brand-green)]' :
+                        zone === 'promote' ? 'bg-[var(--brand-green)]/5' :
+                        zone === 'demote' ? 'bg-[var(--brand-red)]/5' :
+                        'bg-[var(--surface-1)]'
                       }`}
                     >
                       {/* Rank */}
                       <div className={`w-8 text-center font-black ${
-                        entry.rank === 1 ? 'text-[#FFD700]' :
+                        entry.rank === 1 ? 'text-[var(--brand-yellow)]' :
                         entry.rank === 2 ? 'text-[#C0C0C0]' :
                         entry.rank === 3 ? 'text-[#CD7F32]' :
-                        'text-[#777777]'
+                        'text-[var(--text-secondary)]'
                       }`}>
                         {entry.rank <= 3 ? (
                           <Medal className="w-5 h-5 mx-auto" />
@@ -204,26 +204,26 @@ export default function XPLeagues({ userId }) {
 
                       {/* Name */}
                       <div className="flex-1">
-                        <p className={`font-bold ${entry.isUser ? 'text-[#58CC02]' : 'text-[#3C3C3C]'}`}>
+                        <p className={`font-bold ${entry.isUser ? 'text-[var(--brand-green)]' : 'text-[var(--text-primary)]'}`}>
                           {entry.name}
                         </p>
                       </div>
 
                       {/* XP */}
                       <div className="text-right">
-                        <p className="font-black text-[#3C3C3C]">{entry.xp}</p>
-                        <p className="text-xs text-[#AFAFAF]">XP</p>
+                        <p className="font-black text-[var(--text-primary)]">{entry.xp}</p>
+                        <p className="text-xs text-[var(--text-muted)]">XP</p>
                       </div>
 
                       {/* Zone indicator */}
                       {zone === 'promote' && (
-                        <ChevronUp className="w-4 h-4 text-[#58CC02]" />
+                        <ChevronUp className="w-4 h-4 text-[var(--brand-green)]" />
                       )}
                       {zone === 'demote' && (
-                        <ChevronDown className="w-4 h-4 text-[#FF4B4B]" />
+                        <ChevronDown className="w-4 h-4 text-[var(--brand-red)]" />
                       )}
                       {zone === 'safe' && (
-                        <Minus className="w-4 h-4 text-[#AFAFAF]" />
+                        <Minus className="w-4 h-4 text-[var(--text-muted)]" />
                       )}
                     </motion.div>
                   );
@@ -231,14 +231,14 @@ export default function XPLeagues({ userId }) {
               </div>
 
               {/* Legend */}
-              <div className="mt-4 p-3 bg-[#F7F4F0] rounded-xl text-xs">
-                <div className="flex items-center justify-between text-[#777777]">
+              <div className="mt-4 p-3 bg-[var(--surface-1)] rounded-xl text-xs">
+                <div className="flex items-center justify-between text-[var(--text-secondary)]">
                   <span className="flex items-center gap-1">
-                    <ChevronUp className="w-3 h-3 text-[#58CC02]" />
+                    <ChevronUp className="w-3 h-3 text-[var(--brand-green)]" />
                     Top 3 promote
                   </span>
                   <span className="flex items-center gap-1">
-                    <ChevronDown className="w-3 h-3 text-[#FF4B4B]" />
+                    <ChevronDown className="w-3 h-3 text-[var(--brand-red)]" />
                     Bottom 3 demote
                   </span>
                 </div>

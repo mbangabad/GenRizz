@@ -139,10 +139,10 @@ export default function ResultsCard({ gameId, score, totalQuestions, userLevel, 
         <div className="p-4 rounded-xl mb-6" style={{ background: 'linear-gradient(135deg, rgba(0, 206, 209, 0.15), rgba(100, 255, 218, 0.1))' }}>
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-2">
-              <Zap className="w-5 h-5 text-[#00CED1]" />
+              <Zap className="w-5 h-5 text-[var(--brand-blue)]" />
               <span className="font-bold text-white">+{xpEarned} XP</span>
               {newLevel.xpMultiplier > 1 && (
-                <span className="text-xs text-[#00CED1]">({Math.round((newLevel.xpMultiplier - 1) * 100)}% bonus!)</span>
+                <span className="text-xs text-[var(--brand-blue)]">({Math.round((newLevel.xpMultiplier - 1) * 100)}% bonus!)</span>
               )}
             </div>
             <div className="flex items-center gap-1">
@@ -165,7 +165,7 @@ export default function ResultsCard({ gameId, score, totalQuestions, userLevel, 
         {/* Stats */}
         <div className="grid grid-cols-3 gap-3 mb-6">
           <div className="stat-card">
-            <TrendingUp className="w-5 h-5 mx-auto mb-1" style={{ color: isNewBest ? '#4ADE80' : '#6B6B6B' }} />
+            <TrendingUp className="w-5 h-5 mx-auto mb-1" style={{ color: isNewBest ? 'var(--brand-green)' : 'var(--text-muted)' }} />
             <p className="font-bold text-white text-sm">{isNewBest ? 'NEW!' : `${previousBest || 0}%`}</p>
             <p className="text-[10px] text-white/40">{isNewBest ? 'Record' : 'Previous'}</p>
           </div>
@@ -175,7 +175,7 @@ export default function ResultsCard({ gameId, score, totalQuestions, userLevel, 
             <p className="text-[10px] text-white/40">Difficulty</p>
           </div>
           <div className="stat-card">
-            <Zap className="w-5 h-5 mx-auto mb-1 text-[#00CED1]" />
+            <Zap className="w-5 h-5 mx-auto mb-1 text-[var(--brand-blue)]" />
             <p className="font-bold text-white text-sm">+{xpEarned}</p>
             <p className="text-[10px] text-white/40">XP</p>
           </div>
@@ -185,30 +185,30 @@ export default function ResultsCard({ gameId, score, totalQuestions, userLevel, 
         {(maxStreak >= 3 || timeBonus > 0) && (
           <div className="grid grid-cols-2 gap-3 mb-6">
             {maxStreak >= 3 && (
-              <div className="p-3 rounded-xl bg-[#FF6B35]/10 border border-[#FF6B35]/30">
+              <div className="p-3 rounded-xl bg-[var(--brand-orange)]/10 border border-[var(--brand-orange)]/30">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <Flame className="w-4 h-4 text-[#FF6B35]" />
-                  <span className="font-bold text-[#FF6B35]">{maxStreak}x Streak</span>
+                  <Flame className="w-4 h-4 text-[var(--brand-orange)]" />
+                  <span className="font-bold text-[var(--brand-orange)]">{maxStreak}x Streak</span>
                 </div>
-                <p className="text-xs text-[#FF8F6B]">+{streakBonus} XP</p>
+                <p className="text-xs text-[var(--brand-orange-hover)]">+{streakBonus} XP</p>
               </div>
             )}
             {timeBonus > 0 && (
-              <div className="p-3 rounded-xl bg-[#00CED1]/10 border border-[#00CED1]/30">
+              <div className="p-3 rounded-xl bg-[var(--brand-blue)]/10 border border-[var(--brand-blue)]/30">
                 <div className="flex items-center justify-center gap-2 mb-1">
-                  <Clock className="w-4 h-4 text-[#00CED1]" />
-                  <span className="font-bold text-[#00CED1]">Speed Bonus</span>
+                  <Clock className="w-4 h-4 text-[var(--brand-blue)]" />
+                  <span className="font-bold text-[var(--brand-blue)]">Speed Bonus</span>
                 </div>
-                <p className="text-xs text-[#64FFDA]">+{timeBonus} XP</p>
+                <p className="text-xs text-[var(--brand-blue-hover)]">+{timeBonus} XP</p>
               </div>
             )}
           </div>
         )}
 
         {isNewBest && (
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-[#FFE066]/20 border-2 border-[#FFE066]">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-[var(--brand-yellow)]/20 border-2 border-[var(--brand-yellow)]">
             <span>🏆</span>
-            <span className="font-bold text-sm text-[#FFE066]">New Personal Best!</span>
+            <span className="font-bold text-sm text-[var(--brand-yellow)]">New Personal Best!</span>
           </div>
         )}
 

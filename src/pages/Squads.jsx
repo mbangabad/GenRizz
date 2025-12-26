@@ -127,17 +127,17 @@ export default function Squads() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
-      <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
+    <div className="min-h-screen bg-[var(--page-bg)] pb-24">
+      <header className="glass-header">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center gap-3">
           <Link to={createPageUrl('Home')}>
-            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">
-              <ArrowLeft className="w-5 h-5 text-[#777777]" />
+            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[var(--border-subtle)] flex items-center justify-center hover:bg-[var(--surface-2)] transition-colors">
+              <ArrowLeft className="w-5 h-5 text-[var(--text-secondary)]" />
             </button>
           </Link>
           <div className="flex-1">
-            <h1 className="font-black text-[#3C3C3C] text-lg">Squads</h1>
-            <p className="text-xs text-[#AFAFAF] font-semibold">Team up & compete</p>
+            <h1 className="font-black text-[var(--text-primary)] text-lg">Squads</h1>
+            <p className="text-xs text-[var(--text-muted)] font-semibold">Team up & compete</p>
           </div>
         </div>
       </header>
@@ -146,15 +146,15 @@ export default function Squads() {
         {mySquad ? (
           // My Squad View
           <div className="space-y-6">
-            <div className="card-3d p-6 bg-gradient-to-br from-[#58CC02]/10 to-[#58CC02]/5 border-[#58CC02]/30">
+            <div className="card-3d p-6 bg-gradient-to-br from-[var(--brand-green)]/10 to-[var(--brand-green)]/5 border-[var(--brand-green)]/30">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-2xl bg-[#58CC02] flex items-center justify-center text-3xl shadow-lg">
+                  <div className="w-16 h-16 rounded-2xl bg-[var(--brand-green)] flex items-center justify-center text-3xl shadow-lg">
                     {mySquad.icon}
                   </div>
                   <div>
-                    <h2 className="text-2xl font-black text-[#3C3C3C]">{mySquad.name}</h2>
-                    <p className="text-[#777777] font-semibold">{mySquad.member_count} members • {mySquad.total_xp} XP</p>
+                    <h2 className="text-2xl font-black text-[var(--text-primary)]">{mySquad.name}</h2>
+                    <p className="text-[var(--text-secondary)] font-semibold">{mySquad.member_count} members • {mySquad.total_xp} XP</p>
                   </div>
                 </div>
                 {mySquad.role === 'leader' && (
@@ -165,9 +165,9 @@ export default function Squads() {
               </div>
 
               <div className="flex gap-2 mb-6">
-                <div className="bg-white px-3 py-2 rounded-xl border-2 border-[#E5E0DA] flex items-center gap-2 font-mono text-sm">
-                  <span className="text-[#AFAFAF]">Code:</span>
-                  <span className="font-bold text-[#3C3C3C] select-all">{mySquad.join_code}</span>
+                <div className="bg-white px-3 py-2 rounded-xl border-2 border-[var(--border-subtle)] flex items-center gap-2 font-mono text-sm">
+                  <span className="text-[var(--text-muted)]">Code:</span>
+                  <span className="font-bold text-[var(--text-primary)] select-all">{mySquad.join_code}</span>
                 </div>
               </div>
 
@@ -182,21 +182,21 @@ export default function Squads() {
             </div>
 
             <div>
-              <h3 className="font-bold text-[#AFAFAF] uppercase tracking-wide mb-3">Squad Members ({squadMembers.length})</h3>
+              <h3 className="font-bold text-[var(--text-muted)] uppercase tracking-wide mb-3">Squad Members ({squadMembers.length})</h3>
               <div className="space-y-3">
                 {squadMembers.map((member, i) => (
                   <div key={member.id} className="card-3d p-4 flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1CB0F6] to-[#1899D6] flex items-center justify-center text-white font-bold">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--brand-blue)] to-[var(--brand-blue-hover)] flex items-center justify-center text-white font-bold">
                       {member.user_name?.[0] || 'U'}
                     </div>
                     <div className="flex-1">
                       <h4 className="font-bold text-[#3C3C3C] flex items-center gap-2">
                         {member.user_name}
-                        {member.role === 'leader' && <Crown className="w-3 h-3 text-[#FFC800]" />}
+                        {member.role === 'leader' && <Crown className="w-3 h-3 text-[var(--brand-yellow)]" />}
                       </h4>
-                      <p className="text-xs text-[#AFAFAF]">{member.role}</p>
+                      <p className="text-xs text-[var(--text-muted)]">{member.role}</p>
                     </div>
-                    <div className="font-black text-[#AFAFAF]">
+                    <div className="font-black text-[var(--text-muted)]">
                       {member.contribution_xp} XP
                     </div>
                   </div>
@@ -210,14 +210,14 @@ export default function Squads() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Create */}
               <div className="card-3d p-6">
-                <h2 className="text-xl font-black text-[#3C3C3C] mb-2">Create a Squad</h2>
-                <p className="text-[#777777] text-sm mb-4">Start your own team and invite friends.</p>
+                <h2 className="text-xl font-black text-[var(--text-primary)] mb-2">Create a Squad</h2>
+                <p className="text-[var(--text-secondary)] text-sm mb-4">Start your own team and invite friends.</p>
                 <form onSubmit={handleCreateSquad} className="space-y-3">
                   <Input 
                     placeholder="Squad Name" 
                     value={newSquadName}
                     onChange={e => setNewSquadName(e.target.value)}
-                    className="border-2 border-[#E5E0DA]"
+                    className="border-2 border-[var(--border-subtle)]"
                   />
                   <button className="btn-3d btn-3d-green w-full py-3">
                     Create Squad
@@ -227,14 +227,14 @@ export default function Squads() {
 
               {/* Join */}
               <div className="card-3d p-6">
-                <h2 className="text-xl font-black text-[#3C3C3C] mb-2">Join a Squad</h2>
-                <p className="text-[#777777] text-sm mb-4">Enter a code to join an existing team.</p>
+                <h2 className="text-xl font-black text-[var(--text-primary)] mb-2">Join a Squad</h2>
+                <p className="text-[var(--text-secondary)] text-sm mb-4">Enter a code to join an existing team.</p>
                 <form onSubmit={handleJoinSquad} className="space-y-3">
                   <Input 
                     placeholder="Enter Squad Code" 
                     value={joinCode}
                     onChange={e => setJoinCode(e.target.value.toUpperCase())}
-                    className="border-2 border-[#E5E0DA]"
+                    className="border-2 border-[var(--border-subtle)]"
                   />
                   <button className="btn-3d btn-3d-blue w-full py-3">
                     Join Squad
@@ -245,18 +245,18 @@ export default function Squads() {
 
             {/* Browse */}
             <div>
-              <h3 className="font-bold text-[#AFAFAF] uppercase tracking-wide mb-3">Top Squads</h3>
+              <h3 className="font-bold text-[var(--text-muted)] uppercase tracking-wide mb-3">Top Squads</h3>
               <div className="space-y-3">
                 {allSquads.map(squad => (
                   <div key={squad.id} className="card-3d p-4 flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#F7F4F0] flex items-center justify-center text-xl">
+                    <div className="w-12 h-12 rounded-xl bg-[var(--surface-1)] flex items-center justify-center text-xl">
                       {squad.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-[#3C3C3C]">{squad.name}</h4>
-                      <p className="text-xs text-[#AFAFAF]">{squad.member_count} members • {squad.total_xp} XP</p>
+                      <h4 className="font-bold text-[var(--text-primary)]">{squad.name}</h4>
+                      <p className="text-xs text-[var(--text-muted)]">{squad.member_count} members • {squad.total_xp} XP</p>
                     </div>
-                    <div className="text-2xl font-black text-[#AFAFAF]">#{allSquads.indexOf(squad) + 1}</div>
+                    <div className="text-2xl font-black text-[var(--text-muted)]">#{allSquads.indexOf(squad) + 1}</div>
                   </div>
                 ))}
               </div>

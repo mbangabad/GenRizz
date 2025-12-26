@@ -78,7 +78,7 @@ export default function DailyChallenge({ user }) {
       className="card-3d card-3d-purple overflow-hidden"
     >
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#CE82FF] to-[#A855F7] p-4 text-white">
+      <div className="bg-gradient-to-r from-[var(--brand-purple)] to-[var(--brand-purple-dark)] p-4 text-white">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5" />
@@ -96,8 +96,8 @@ export default function DailyChallenge({ user }) {
         <div className="flex items-center gap-4 mb-4">
           <GameIcon gameId={dailyGame.id} size="lg" />
           <div className="flex-1">
-            <h3 className="font-black text-[#3C3C3C] text-lg">{dailyGame.title}</h3>
-            <p className="text-sm text-[#777777] font-semibold">{dailyGame.subtitle}</p>
+            <h3 className="font-black text-[var(--text-primary)] text-lg">{dailyGame.title}</h3>
+            <p className="text-sm text-[var(--text-secondary)] font-semibold">{dailyGame.subtitle}</p>
             <div className="flex items-center gap-2 mt-1">
               <span className="badge-3d badge-xp text-xs py-0.5 px-2">
                 <Zap className="w-3 h-3" />
@@ -114,10 +114,10 @@ export default function DailyChallenge({ user }) {
 
         {/* User's Score */}
         {isCompleted && (
-          <div className="bg-[#F7F4F0] rounded-xl p-3 mb-4">
+          <div className="bg-[var(--surface-1)] rounded-xl p-3 mb-4">
             <div className="flex items-center justify-between">
-              <span className="text-sm font-bold text-[#777777]">Your Score</span>
-              <span className="text-xl font-black text-[#CE82FF]">{todayScore.percentage}%</span>
+              <span className="text-sm font-bold text-[var(--text-secondary)]">Your Score</span>
+              <span className="text-xl font-black text-[var(--brand-purple)]">{todayScore.percentage}%</span>
             </div>
           </div>
         )}
@@ -125,15 +125,15 @@ export default function DailyChallenge({ user }) {
         {/* Mini Leaderboard */}
         {leaderboard.length > 0 && (
           <div className="mb-4">
-            <p className="text-xs font-bold text-[#AFAFAF] uppercase mb-2">Today's Top Scores</p>
+            <p className="text-xs font-bold text-[var(--text-muted)] uppercase mb-2">Today's Top Scores</p>
             <div className="space-y-1">
               {leaderboard.slice(0, 3).map((entry, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm">
-                  <span className="w-5 text-center font-black text-[#CE82FF]">{i + 1}</span>
-                  <span className="flex-1 font-semibold text-[#3C3C3C] truncate">
+                  <span className="w-5 text-center font-black text-[var(--brand-purple)]">{i + 1}</span>
+                  <span className="flex-1 font-semibold text-[var(--text-primary)] truncate">
                     {entry.user_id === user?.id ? 'You' : `Player ${i + 1}`}
                   </span>
-                  <span className="font-black text-[#3C3C3C]">{entry.percentage}%</span>
+                  <span className="font-black text-[var(--text-primary)]">{entry.percentage}%</span>
                 </div>
               ))}
             </div>
@@ -148,7 +148,7 @@ export default function DailyChallenge({ user }) {
             onClick={() => emitEvent('cta_click', { cta: 'daily_challenge', gameId: dailyGame.id, completed: isCompleted })}
             className={`w-full py-4 font-black text-lg flex items-center justify-center gap-2 rounded-xl ${
               isCompleted 
-                ? 'bg-[#F7F4F0] text-[#777777] border-2 border-[#E5E0DA]'
+                ? 'bg-[var(--surface-1)] text-[var(--text-secondary)] border-2 border-[var(--border-subtle)]'
                 : 'btn-3d btn-3d-green'
             }`}
           >

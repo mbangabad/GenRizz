@@ -61,11 +61,11 @@ function ModerationPanel() {
 
   return (
     <div className="space-y-6">
-      <div className="flex gap-4 border-b border-[#E5E0DA]">
-        <button onClick={() => setTab('ugc')} className={`pb-3 font-bold px-4 ${tab === 'ugc' ? 'text-[#58CC02] border-b-2 border-[#58CC02]' : 'text-[#AFAFAF]'}`}>
+      <div className="flex gap-4 border-b" style={{ borderColor: 'var(--border-subtle)' }}>
+        <button onClick={() => setTab('ugc')} className={`pb-3 font-bold px-4 ${tab === 'ugc' ? 'border-b-2' : ''}`} style={{ color: tab === 'ugc' ? 'var(--brand-green)' : 'var(--text-muted)', borderColor: tab === 'ugc' ? 'var(--brand-green)' : 'transparent' }}>
           UGC Queue ({pendingQuestions.length})
         </button>
-        <button onClick={() => setTab('reports')} className={`pb-3 font-bold px-4 ${tab === 'reports' ? 'text-[#FF4B4B] border-b-2 border-[#FF4B4B]' : 'text-[#AFAFAF]'}`}>
+        <button onClick={() => setTab('reports')} className={`pb-3 font-bold px-4 ${tab === 'reports' ? 'border-b-2' : ''}`} style={{ color: tab === 'reports' ? 'var(--brand-red)' : 'var(--text-muted)', borderColor: tab === 'reports' ? 'var(--brand-red)' : 'transparent' }}>
           Reports ({reports.length})
         </button>
       </div>
@@ -74,9 +74,9 @@ function ModerationPanel() {
         {tab === 'ugc' && pendingQuestions.map(q => (
           <div key={q.id} className="card-3d p-4 bg-white flex justify-between items-center">
             <div>
-              <span className="text-xs font-bold text-[#AFAFAF] uppercase">{q.game_id}</span>
-              <h3 className="font-bold text-[#3C3C3C]">{q.question}</h3>
-              <p className="text-xs text-[#777777] mt-1">{q.options.join(', ')}</p>
+              <span className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>{q.game_id}</span>
+              <h3 className="font-bold" style={{ color: 'var(--text-primary)' }}>{q.question}</h3>
+              <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>{q.options.join(', ')}</p>
             </div>
             <div className="flex gap-2">
               <button onClick={() => handleModeration(q, 'approved', 'ugc')} className="btn-3d btn-3d-green px-4 py-2 text-xs">Approve</button>
@@ -87,31 +87,31 @@ function ModerationPanel() {
         {tab === 'reports' && reports.map(r => (
           <div key={r.id} className="card-3d p-4 bg-white border-l-4 border-l-red-500">
             <h3 className="font-bold text-red-500 uppercase text-xs">{r.type}</h3>
-            <p className="font-bold text-[#3C3C3C]">{r.reason}</p>
-            <p className="text-xs text-[#777777] mb-2">Target: {r.target_id}</p>
+            <p className="font-bold" style={{ color: 'var(--text-primary)' }}>{r.reason}</p>
+            <p className="text-xs mb-2" style={{ color: 'var(--text-secondary)' }}>Target: {r.target_id}</p>
             <button onClick={() => handleModeration(r, 'resolved', 'report')} className="btn-3d btn-3d-ghost px-3 py-1 text-xs">Resolve</button>
           </div>
         ))}
-        {pendingQuestions.length === 0 && tab === 'ugc' && <p className="text-[#AFAFAF] text-center py-8">All caught up!</p>}
-        {reports.length === 0 && tab === 'reports' && <p className="text-[#AFAFAF] text-center py-8">No reports.</p>}
+        {pendingQuestions.length === 0 && tab === 'ugc' && <p className="text-center py-8" style={{ color: 'var(--text-muted)' }}>All caught up!</p>}
+        {reports.length === 0 && tab === 'reports' && <p className="text-center py-8" style={{ color: 'var(--text-muted)' }}>No reports.</p>}
       </div>
     </div>
   );
 }
 
 const MENU_ITEMS = [
-  { id: 'overview', label: 'Overview', icon: LayoutDashboard, color: 'text-[#1CB0F6]' },
-  { id: 'analytics', label: 'Analytics & Trends', icon: TrendingUp, color: 'text-[#CE82FF]' },
-  { id: 'risks', label: 'Risk & Health', icon: Activity, color: 'text-[#FF4B4B]' },
-  { id: 'games', label: 'Game Manager', icon: Gamepad2, color: 'text-[#FFC800]' },
-  { id: 'content', label: 'Content Engine', icon: Sparkles, color: 'text-[#58CC02]' },
-  { id: 'events', label: 'Events & Daily', icon: Bell, color: 'text-[#1CB0F6]' },
-  { id: 'pricing', label: 'Pricing & Offers', icon: DollarSign, color: 'text-[#58CC02]' },
-  { id: 'safety', label: 'Content Safety', icon: ShieldAlert, color: 'text-[#FF9600]' },
-  { id: 'invites', label: 'Invites', icon: Ticket, color: 'text-[#FFC800]' },
-  { id: 'moderation', label: 'Moderation', icon: ShieldAlert, color: 'text-[#FF9600]' },
-  { id: 'beta', label: 'Beta Access', icon: Users, color: 'text-[#3C3C3C]' },
-  { id: 'access', label: 'User Access', icon: Bell, color: 'text-[#1CB0F6]' },
+  { id: 'overview', label: 'Overview', icon: LayoutDashboard, color: 'var(--brand-blue)' },
+  { id: 'analytics', label: 'Analytics & Trends', icon: TrendingUp, color: 'var(--brand-purple)' },
+  { id: 'risks', label: 'Risk & Health', icon: Activity, color: 'var(--brand-red)' },
+  { id: 'games', label: 'Game Manager', icon: Gamepad2, color: 'var(--brand-yellow)' },
+  { id: 'content', label: 'Content Engine', icon: Sparkles, color: 'var(--brand-green)' },
+  { id: 'events', label: 'Events & Daily', icon: Bell, color: 'var(--brand-blue)' },
+  { id: 'pricing', label: 'Pricing & Offers', icon: DollarSign, color: 'var(--brand-green)' },
+  { id: 'safety', label: 'Content Safety', icon: ShieldAlert, color: 'var(--brand-orange)' },
+  { id: 'invites', label: 'Invites', icon: Ticket, color: 'var(--brand-yellow)' },
+  { id: 'moderation', label: 'Moderation', icon: ShieldAlert, color: 'var(--brand-orange)' },
+  { id: 'beta', label: 'Beta Access', icon: Users, color: 'var(--text-primary)' },
+  { id: 'access', label: 'User Access', icon: Bell, color: 'var(--brand-blue)' },
 ];
 
 export default function Admin() {
@@ -158,25 +158,25 @@ function AdminShell() {
     setOverrideCount(Object.keys(getFlagOverrides()).length);
   }, []);
 
-  if (loading) return <div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#3C3C3C]" /></div>;
+  if (loading) return <div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2" style={{ borderColor: 'var(--text-primary)' }} /></div>;
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] flex flex-col md:flex-row font-sans">
+    <div className="min-h-screen flex flex-col md:flex-row font-sans" style={{ backgroundColor: 'var(--page-bg)' }}>
       {/* Sidebar */}
-      <aside className={`fixed md:sticky top-0 left-0 z-50 h-screen w-64 bg-white border-r border-[#E5E0DA] flex flex-col transition-transform transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
-        <div className="p-6 border-b border-[#E5E0DA] flex items-center justify-between">
+      <aside className={`fixed md:sticky top-0 left-0 z-50 h-screen w-64 bg-white border-r flex flex-col transition-transform transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`} style={{ borderColor: 'var(--border-subtle)' }}>
+        <div className="p-6 border-b flex items-center justify-between" style={{ borderColor: 'var(--border-subtle)' }}>
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#3C3C3C] flex items-center justify-center text-white shadow-lg">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white shadow-lg" style={{ backgroundColor: 'var(--text-primary)' }}>
               <Settings className="w-6 h-6" />
             </div>
             <div>
-              <h1 className="font-black text-[#3C3C3C] text-xl tracking-tight">Admin</h1>
-              <p className="text-[10px] font-bold text-[#AFAFAF] uppercase tracking-widest">Command Center</p>
+              <h1 className="font-black text-xl tracking-tight" style={{ color: 'var(--text-primary)' }}>Admin</h1>
+              <p className="text-[10px] font-bold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>Command Center</p>
             </div>
           </div>
           <button onClick={() => setIsMobileMenuOpen(false)} className="md:hidden" aria-label="Close admin sidebar">
-            <ArrowLeft className="w-6 h-6 text-[#3C3C3C]" />
+            <ArrowLeft className="w-6 h-6" style={{ color: 'var(--text-primary)' }} />
           </button>
         </div>
 
@@ -187,24 +187,28 @@ function AdminShell() {
               onClick={() => { setActiveTab(item.id); setIsMobileMenuOpen(false); }}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold transition-all ${
                 activeTab === item.id 
-                  ? 'bg-[#3C3C3C] text-white shadow-lg transform scale-105' 
-                  : 'text-[#777777] hover:bg-[#F0EDE8]'
+                  ? 'text-white shadow-lg transform scale-105' 
+                  : 'hover:bg-gray-100'
               }`}
+              style={{ 
+                backgroundColor: activeTab === item.id ? 'var(--text-primary)' : 'transparent',
+                color: activeTab === item.id ? 'white' : 'var(--text-secondary)'
+              }}
             >
-              <item.icon className={`w-5 h-5 ${activeTab === item.id ? 'text-white' : item.color}`} />
+              <item.icon className="w-5 h-5" style={{ color: activeTab === item.id ? 'white' : item.color }} />
               {item.label}
             </button>
           ))}
         </nav>
 
-        <div className="p-4 border-t border-[#E5E0DA]">
+        <div className="p-4 border-t" style={{ borderColor: 'var(--border-subtle)' }}>
           <div className="mb-4 px-2">
-            <div className="flex justify-between text-[10px] font-bold text-[#AFAFAF] uppercase mb-1">
+            <div className="flex justify-between text-[10px] font-bold uppercase mb-1" style={{ color: 'var(--text-muted)' }}>
               <span>System Status</span>
-              <span className="text-[#58CC02]">Operational</span>
+              <span style={{ color: 'var(--brand-green)' }}>Operational</span>
             </div>
-            <div className="h-1 bg-[#F0EDE8] rounded-full overflow-hidden">
-              <div className="h-full w-full bg-[#58CC02] animate-pulse" />
+            <div className="h-1 rounded-full overflow-hidden" style={{ backgroundColor: 'var(--surface-2)' }}>
+              <div className="h-full w-full animate-pulse" style={{ backgroundColor: 'var(--brand-green)' }} />
             </div>
           </div>
           <Link to={createPageUrl('Home')}>
@@ -218,12 +222,12 @@ function AdminShell() {
       {/* Main Content */}
       <main className="flex-1 min-w-0 h-screen overflow-y-auto">
         {/* Mobile Header */}
-        <div className="md:hidden flex items-center justify-between p-4 bg-white border-b border-[#E5E0DA] sticky top-0 z-40">
+        <div className="md:hidden flex items-center justify-between p-4 bg-white border-b sticky top-0 z-40" style={{ borderColor: 'var(--border-subtle)' }}>
           <div className="flex items-center gap-3">
             <button onClick={() => setIsMobileMenuOpen(true)}>
-              <Menu className="w-6 h-6 text-[#3C3C3C]" />
+              <Menu className="w-6 h-6" style={{ color: 'var(--text-primary)' }} />
             </button>
-            <span className="font-black text-[#3C3C3C] text-lg">Admin Panel</span>
+            <span className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>Admin Panel</span>
           </div>
         </div>
 
@@ -235,11 +239,11 @@ function AdminShell() {
             transition={{ duration: 0.3 }}
           >
             <div className="mb-8">
-              <h2 className="text-3xl font-black text-[#3C3C3C] tracking-tight">
+              <h2 className="text-3xl font-black tracking-tight" style={{ color: 'var(--text-primary)' }}>
                 {MENU_ITEMS.find(i => i.id === activeTab)?.label}
               </h2>
               {overrideCount > 0 && (
-                <p className="text-xs font-bold text-[#58CC02] mt-1">
+                <p className="text-xs font-bold mt-1" style={{ color: 'var(--brand-green)' }}>
                   Local flag overrides active: {overrideCount}
                 </p>
               )}

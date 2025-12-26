@@ -50,7 +50,7 @@ export default function RankingQuestion({ question, questionNumber, totalQuestio
     <div className="space-y-6">
       {/* Progress */}
       <div className="flex items-center justify-between text-sm">
-        <span className="font-bold text-[#777777]">{questionNumber} / {totalQuestions}</span>
+        <span className="font-bold text-[var(--text-secondary)]">{questionNumber} / {totalQuestions}</span>
         <span className="badge-3d badge-purple">
           <span>📊</span>
           <span>Rank It</span>
@@ -73,11 +73,11 @@ export default function RankingQuestion({ question, questionNumber, totalQuestio
         animate={{ opacity: 1, y: 0 }}
         className="card-3d p-5"
       >
-        <h2 className="text-lg font-black text-[#3C3C3C] text-center leading-relaxed">
+        <h2 className="text-lg font-black text-[var(--text-primary)] text-center leading-relaxed">
           {question.question}
         </h2>
         {!submitted && (
-          <p className="text-sm text-[#AFAFAF] text-center mt-2 font-semibold">
+          <p className="text-sm text-[var(--text-muted)] text-center mt-2 font-semibold">
             Drag to reorder • #{1} = {question.rankLabel || 'Most'}
           </p>
         )}
@@ -98,14 +98,14 @@ export default function RankingQuestion({ question, questionNumber, totalQuestio
                   whileDrag={{ scale: 1.05, boxShadow: '0 8px 20px rgba(0,0,0,0.15)' }}
                   className="card-3d p-4 flex items-center gap-4"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#CE82FF] to-[#B388FF] flex items-center justify-center text-white font-black">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--brand-purple)] to-[var(--brand-purple-dark)] flex items-center justify-center text-white font-black">
                     {index + 1}
                   </div>
                   <div className="flex-1">
                     <span className="text-2xl mr-3">{item.emoji}</span>
-                    <span className="font-bold text-[#3C3C3C]">{item.text}</span>
+                    <span className="font-bold text-[var(--text-primary)]">{item.text}</span>
                   </div>
-                  <div className="text-[#AFAFAF]">
+                  <div className="text-[var(--text-muted)]">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
                     </svg>
@@ -132,20 +132,20 @@ export default function RankingQuestion({ question, questionNumber, totalQuestio
                 >
                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-black ${
                     isMatch 
-                      ? 'bg-[#58CC02] text-white' 
-                      : 'bg-[#E8E4DF] text-[#777777]'
+                      ? 'bg-[var(--brand-green)] text-white' 
+                      : 'bg-[var(--surface-3)] text-[var(--text-secondary)]'
                   }`}>
                     {index + 1}
                   </div>
                   <div className="flex-1">
                     <span className="text-2xl mr-3">{item.emoji}</span>
-                    <span className="font-bold text-[#3C3C3C]">{item.text}</span>
+                    <span className="font-bold text-[var(--text-primary)]">{item.text}</span>
                   </div>
                   <div className="text-right">
                     {isMatch ? (
-                      <span className="text-[#58CC02] font-bold">✓ Match!</span>
+                      <span className="text-[var(--brand-green)] font-bold">✓ Match!</span>
                     ) : (
-                      <span className="text-[#AFAFAF] text-sm font-semibold">
+                      <span className="text-[var(--text-muted)] text-sm font-semibold">
                         Crowd: #{crowdPos + 1}
                       </span>
                     )}
@@ -174,10 +174,10 @@ export default function RankingQuestion({ question, questionNumber, totalQuestio
             animate={{ opacity: 1, y: 0 }}
             className="card-3d card-3d-purple p-4 text-center"
           >
-            <p className="text-3xl font-black text-[#CE82FF] mb-2">
+            <p className="text-3xl font-black text-[var(--brand-purple)] mb-2">
               {calculateMatchScore(items.map(i => i.id))}% Match
             </p>
-            <p className="text-[#777777] font-semibold">
+            <p className="text-[var(--text-secondary)] font-semibold">
               {calculateMatchScore(items.map(i => i.id)) >= 60 
                 ? "You think like the crowd! 🎯" 
                 : "Your ranking is unique! 🦄"}

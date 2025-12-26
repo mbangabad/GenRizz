@@ -124,7 +124,7 @@ export default function HeartsSystem({ userId, onHeartChange }) {
       <motion.button
         onClick={() => setShowModal(true)}
         whileHover={{ scale: 1.05 }}
-        className="flex items-center gap-1 px-3 py-1.5 bg-white rounded-xl border-2 border-[#FF4B4B]/30"
+        className="flex items-center gap-1 px-3 py-1.5 bg-[var(--surface-0)] rounded-xl border-2 border-[color-mix(in_srgb,var(--brand-red),transparent_70%)]"
         aria-label="View hearts status and options"
       >
         <div className="flex">
@@ -136,13 +136,13 @@ export default function HeartsSystem({ userId, onHeartChange }) {
               transition={{ delay: i * 0.1 }}
             >
               <Heart 
-                className={`w-5 h-5 ${i < hearts ? 'text-[#FF4B4B] fill-[#FF4B4B]' : 'text-[#E5E0DA]'}`}
+                className={`w-5 h-5 ${i < hearts ? 'text-[var(--brand-red)] fill-[var(--brand-red)]' : 'text-[var(--border-subtle)]'}`}
               />
             </motion.div>
           ))}
         </div>
         {isPremium && (
-          <Crown className="w-4 h-4 text-[#FFC800] ml-1" />
+          <Crown className="w-4 h-4 text-[var(--brand-yellow)] ml-1" />
         )}
       </motion.button>
 
@@ -153,7 +153,7 @@ export default function HeartsSystem({ userId, onHeartChange }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-[color-mix(in_srgb,var(--text-strong),transparent_50%)] z-50 flex items-center justify-center p-4"
             onClick={() => setShowModal(false)}
           >
             <motion.div
@@ -164,12 +164,12 @@ export default function HeartsSystem({ userId, onHeartChange }) {
               className="card-3d p-6 max-w-sm w-full"
             >
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-black text-[#3C3C3C]">❤️ Hearts</h3>
+                <h3 className="text-xl font-black text-[var(--text-primary)]">❤️ Hearts</h3>
                 <button 
                   onClick={() => setShowModal(false)}
-                  className="w-8 h-8 rounded-lg bg-[#F7F4F0] flex items-center justify-center"
+                  className="w-8 h-8 rounded-lg bg-[var(--surface-1)] flex items-center justify-center"
                 >
-                  <X className="w-4 h-4 text-[#777777]" />
+                  <X className="w-4 h-4 text-[var(--text-secondary)]" />
                 </button>
               </div>
 
@@ -182,27 +182,27 @@ export default function HeartsSystem({ userId, onHeartChange }) {
                     transition={{ delay: i * 0.1 }}
                   >
                     <Heart 
-                      className={`w-10 h-10 ${i < hearts ? 'text-[#FF4B4B] fill-[#FF4B4B]' : 'text-[#E5E0DA]'}`}
+                      className={`w-10 h-10 ${i < hearts ? 'text-[var(--brand-red)] fill-[var(--brand-red)]' : 'text-[var(--border-subtle)]'}`}
                     />
                   </motion.div>
                 ))}
               </div>
 
               {isPremium ? (
-                <div className="text-center p-4 bg-gradient-to-r from-[#FFC800]/10 to-[#FF9600]/10 rounded-xl mb-4">
-                  <Crown className="w-8 h-8 text-[#FFC800] mx-auto mb-2" />
-                  <p className="font-black text-[#3C3C3C]">Unlimited Hearts!</p>
-                  <p className="text-sm text-[#777777]">You have Premium access</p>
+                <div className="text-center p-4 bg-gradient-to-r from-[color-mix(in_srgb,var(--brand-yellow),transparent_90%)] to-[color-mix(in_srgb,var(--brand-orange),transparent_90%)] rounded-xl mb-4">
+                  <Crown className="w-8 h-8 text-[var(--brand-yellow)] mx-auto mb-2" />
+                  <p className="font-black text-[var(--text-primary)]">Unlimited Hearts!</p>
+                  <p className="text-sm text-[var(--text-secondary)]">You have Premium access</p>
                 </div>
               ) : hearts === 0 ? (
                 <>
-                  <div className="text-center p-4 bg-[#FF4B4B]/10 rounded-xl mb-4">
-                    <p className="font-black text-[#FF4B4B] mb-1">Out of Hearts!</p>
-                    <p className="text-sm text-[#777777]">Wait or get more hearts</p>
+                  <div className="text-center p-4 bg-[color-mix(in_srgb,var(--brand-red),transparent_90%)] rounded-xl mb-4">
+                    <p className="font-black text-[var(--brand-red)] mb-1">Out of Hearts!</p>
+                    <p className="text-sm text-[var(--text-secondary)]">Wait or get more hearts</p>
                   </div>
 
                   {timeUntilNext && (
-                    <div className="flex items-center justify-center gap-2 text-[#777777] mb-4">
+                    <div className="flex items-center justify-center gap-2 text-[var(--text-secondary)] mb-4">
                       <Clock className="w-4 h-4" />
                       <span className="text-sm font-bold">Next heart in {timeUntilNext} min</span>
                     </div>
@@ -234,17 +234,17 @@ export default function HeartsSystem({ userId, onHeartChange }) {
               ) : (
                 <>
                   <div className="text-center mb-4">
-                    <p className="font-bold text-[#3C3C3C]">{hearts} hearts remaining</p>
+                    <p className="font-bold text-[var(--text-primary)]">{hearts} hearts remaining</p>
                     {timeUntilNext && (
-                      <p className="text-sm text-[#777777]">
+                      <p className="text-sm text-[var(--text-secondary)]">
                         <Clock className="w-3 h-3 inline mr-1" />
                         Next heart in {timeUntilNext} min
                       </p>
                     )}
                   </div>
 
-                  <div className="bg-[#F7F4F0] rounded-xl p-4 text-center">
-                    <p className="text-sm text-[#777777] font-semibold">
+                  <div className="bg-[var(--surface-1)] rounded-xl p-4 text-center">
+                    <p className="text-sm text-[var(--text-secondary)] font-semibold">
                       You lose a heart for each wrong answer.<br/>
                       Hearts regenerate every 30 minutes.
                     </p>

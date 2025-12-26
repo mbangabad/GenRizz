@@ -17,8 +17,8 @@ export default function LoadingSpinner({ size = 'md', text, fullScreen = false }
       className="flex flex-col items-center gap-3"
     >
       <motion.div
-        className={`${sizeClasses[size]} rounded-2xl bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center shadow-lg`}
-        style={{ boxShadow: '0 4px 0 #3D8C02' }}
+        className={`${sizeClasses[size]} rounded-2xl bg-gradient-to-br from-[var(--brand-green)] to-[var(--brand-green-dark)] flex items-center justify-center shadow-lg`}
+        style={{ boxShadow: '0 4px 0 var(--brand-green-dark)' }}
         animate={{ 
           rotate: [0, 10, -10, 0],
           scale: [1, 1.1, 1]
@@ -31,16 +31,16 @@ export default function LoadingSpinner({ size = 'md', text, fullScreen = false }
       >
         <span className="text-xl">⚡</span>
       </motion.div>
-      <Loader2 className={`${sizeClasses[size]} text-[#58CC02] animate-spin`} />
+      <Loader2 className={`${sizeClasses[size]} text-[var(--brand-green)] animate-spin`} />
       {text && (
-        <p className="text-sm font-semibold text-[#777777]">{text}</p>
+        <p className="text-sm font-semibold text-[var(--text-secondary)]">{text}</p>
       )}
     </motion.div>
   );
 
   if (fullScreen) {
     return (
-      <div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center">
+      <div className="min-h-screen bg-[var(--page-bg)] flex items-center justify-center">
         {spinner}
       </div>
     );

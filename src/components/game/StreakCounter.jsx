@@ -38,9 +38,9 @@ export default function StreakCounter({ streak, show }) {
           className="flex items-center gap-2 px-4 py-2 rounded-full"
           style={{
             background: streak >= 5 
-              ? 'linear-gradient(135deg, #FF6B35, #FF4B4B)' 
-              : 'linear-gradient(135deg, #FFE066, #FF6B35)',
-            boxShadow: `0 0 ${streak * 3}px ${streak >= 5 ? '#FF4B4B' : '#FF6B35'}`
+              ? 'linear-gradient(135deg, var(--brand-orange), var(--brand-red))' 
+              : 'linear-gradient(135deg, var(--brand-yellow), var(--brand-orange))',
+            boxShadow: `0 0 ${streak * 3}px ${streak >= 5 ? 'var(--brand-red)' : 'var(--brand-orange)'}`,
           }}
         >
           <Flame className="w-5 h-5 text-white" />

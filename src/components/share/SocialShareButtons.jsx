@@ -66,7 +66,7 @@ export default function SocialShareButtons({
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleWhatsApp}
-          className="w-11 h-11 flex items-center justify-center bg-[#25D366] text-white rounded-xl"
+          className="w-11 h-11 flex items-center justify-center rounded-xl" style={{ backgroundColor: 'var(--brand-green)', color: 'var(--text-inverse)' }}
         >
           <MessageCircle className="w-5 h-5" />
         </motion.button>
@@ -74,7 +74,7 @@ export default function SocialShareButtons({
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleNativeShare}
-          className="w-11 h-11 flex items-center justify-center bg-[#3C3C3C] text-white rounded-xl"
+          className="w-11 h-11 flex items-center justify-center rounded-xl" style={{ backgroundColor: 'var(--text-primary)', color: 'var(--text-inverse)' }}
         >
           <Share2 className="w-5 h-5" />
         </motion.button>
@@ -82,9 +82,9 @@ export default function SocialShareButtons({
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleCopy}
-          className="w-11 h-11 flex items-center justify-center bg-[#E8E4DF] text-[#777777] rounded-xl"
+          className="w-11 h-11 flex items-center justify-center rounded-xl" style={{ backgroundColor: 'var(--surface-3)', color: 'var(--text-secondary)' }}
         >
-          {copied ? <Check className="w-5 h-5 text-[#58CC02]" /> : <Copy className="w-5 h-5" />}
+          {copied ? <Check className="w-5 h-5" style={{ color: 'var(--brand-green)' }} /> : <Copy className="w-5 h-5" />}
         </motion.button>
       </div>
     );
@@ -110,12 +110,12 @@ export default function SocialShareButtons({
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleWhatsApp}
-          className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 transition-colors"
+          className="flex flex-col items-center gap-1.5 p-3 rounded-xl transition-colors" style={{ backgroundColor: 'rgba(88, 204, 2, 0.1)' }}
         >
-          <div className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center">
-            <MessageCircle className="w-5 h-5 text-white" />
+          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--brand-green)' }}>
+            <MessageCircle className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />
           </div>
-          <span className="text-xs font-bold text-[#25D366]">WhatsApp</span>
+          <span className="text-xs font-bold" style={{ color: 'var(--brand-green)' }}>WhatsApp</span>
         </motion.button>
 
         {/* iMessage/SMS */}
@@ -123,12 +123,12 @@ export default function SocialShareButtons({
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleiMessage}
-          className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-[#34C759]/10 hover:bg-[#34C759]/20 transition-colors"
+          className="flex flex-col items-center gap-1.5 p-3 rounded-xl transition-colors" style={{ backgroundColor: 'rgba(52, 199, 89, 0.1)' }}
         >
-          <div className="w-10 h-10 rounded-full bg-[#34C759] flex items-center justify-center">
-            <Smartphone className="w-5 h-5 text-white" />
+          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#34C759' }}>
+            <Smartphone className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />
           </div>
-          <span className="text-xs font-bold text-[#34C759]">iMessage</span>
+          <span className="text-xs font-bold" style={{ color: '#34C759' }}>iMessage</span>
         </motion.button>
 
         {/* Twitter/X */}
@@ -136,12 +136,12 @@ export default function SocialShareButtons({
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleTwitter}
-          className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-[#1DA1F2]/10 hover:bg-[#1DA1F2]/20 transition-colors"
+          className="flex flex-col items-center gap-1.5 p-3 rounded-xl transition-colors" style={{ backgroundColor: 'rgba(29, 161, 242, 0.1)' }}
         >
-          <div className="w-10 h-10 rounded-full bg-[#000000] flex items-center justify-center">
-            <Twitter className="w-5 h-5 text-white" />
+          <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
+            <Twitter className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />
           </div>
-          <span className="text-xs font-bold text-[#3C3C3C]">X</span>
+          <span className="text-xs font-bold" style={{ color: 'var(--text-primary)' }}>X</span>
         </motion.button>
 
         {/* Telegram */}
@@ -150,12 +150,12 @@ export default function SocialShareButtons({
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleTelegram}
-            className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-[#0088CC]/10 hover:bg-[#0088CC]/20 transition-colors"
+            className="flex flex-col items-center gap-1.5 p-3 rounded-xl transition-colors" style={{ backgroundColor: 'rgba(0, 136, 204, 0.1)' }}
           >
-            <div className="w-10 h-10 rounded-full bg-[#0088CC] flex items-center justify-center">
-              <Send className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#0088CC' }}>
+              <Send className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />
             </div>
-            <span className="text-xs font-bold text-[#0088CC]">Telegram</span>
+            <span className="text-xs font-bold" style={{ color: '#0088CC' }}>Telegram</span>
           </motion.button>
         )}
 
@@ -165,12 +165,12 @@ export default function SocialShareButtons({
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleTikTok}
-            className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-black/5 hover:bg-black/10 transition-colors"
+            className="flex flex-col items-center gap-1.5 p-3 rounded-xl transition-colors" style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}
           >
             <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
               <span className="text-lg">🎵</span>
             </div>
-            <span className="text-xs font-bold text-[#3C3C3C]">TikTok</span>
+            <span className="text-xs font-bold" style={{ color: 'var(--text-primary)' }}>TikTok</span>
           </motion.button>
         )}
 
@@ -179,12 +179,12 @@ export default function SocialShareButtons({
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleCopy}
-          className="flex flex-col items-center gap-1.5 p-3 rounded-xl bg-[#E8E4DF] hover:bg-[#D4CFC7] transition-colors"
+          className="flex flex-col items-center gap-1.5 p-3 rounded-xl transition-colors" style={{ backgroundColor: 'var(--surface-3)' }}
         >
-          <div className="w-10 h-10 rounded-full bg-[#777777] flex items-center justify-center">
-            {copied ? <Check className="w-5 h-5 text-white" /> : <Copy className="w-5 h-5 text-white" />}
+          <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--text-secondary)' }}>
+            {copied ? <Check className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} /> : <Copy className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />}
           </div>
-          <span className="text-xs font-bold text-[#777777]">{copied ? 'Copied!' : 'Copy'}</span>
+          <span className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>{copied ? 'Copied!' : 'Copy'}</span>
         </motion.button>
       </div>
     </div>

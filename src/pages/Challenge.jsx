@@ -60,21 +60,21 @@ export default function Challenge() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center">
-        <div className="animate-spin w-8 h-8 border-2 border-[#58CC02] border-t-transparent rounded-full" />
+      <div className="min-h-screen bg-[var(--page-bg)] flex items-center justify-center">
+        <div className="animate-spin w-8 h-8 border-2 border-[var(--brand-green)] border-t-transparent rounded-full" />
       </div>
     );
   }
 
   if (error || !challenge || !game) {
     return (
-      <div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center p-4">
+      <div className="min-h-screen bg-[var(--page-bg)] flex items-center justify-center p-4">
         <div className="card-3d p-8 text-center max-w-md w-full">
-          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[#FF4B4B]/20 flex items-center justify-center text-3xl">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-[var(--brand-red)]/20 flex items-center justify-center text-3xl">
             ❌
           </div>
-          <h2 className="text-xl font-bold text-[#3C3C3C] mb-2">{error || 'Challenge Not Found'}</h2>
-          <p className="text-[#777777] font-semibold mb-6">This challenge may have expired or doesn't exist.</p>
+          <h2 className="text-xl font-bold text-[var(--text-primary)] mb-2">{error || 'Challenge Not Found'}</h2>
+          <p className="text-[var(--text-secondary)] font-semibold mb-6">This challenge may have expired or doesn't exist.</p>
           <Link to={createPageUrl('Home')} className="btn-3d btn-3d-green py-3 px-6 inline-block">
             Go to Home
           </Link>
@@ -88,18 +88,18 @@ export default function Challenge() {
   const alreadyCompleted = challenge.status === 'completed';
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen bg-[var(--page-bg)]">
       {/* Header */}
-      <header className="glass-light border-b border-[#E5E0DA] px-4 py-4 sticky top-0 z-40">
+      <header className="glass-header px-4 py-4">
         <div className="max-w-lg mx-auto flex items-center gap-3">
           <Link to={createPageUrl('Home')}>
-            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">
-              <ArrowLeft className="w-5 h-5 text-[#777777]" />
+            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[var(--border-subtle)] flex items-center justify-center hover:bg-[var(--surface-2)] transition-colors">
+              <ArrowLeft className="w-5 h-5 text-[var(--text-secondary)]" />
             </button>
           </Link>
           <div className="flex items-center gap-2">
-            <Swords className="w-5 h-5 text-[#FF9600]" />
-            <span className="font-bold text-[#3C3C3C]">Challenge</span>
+            <Swords className="w-5 h-5 text-[var(--brand-orange)]" />
+            <span className="font-bold text-[var(--text-primary)]">Challenge</span>
           </div>
         </div>
       </header>
@@ -130,28 +130,28 @@ export default function Challenge() {
           <div className="p-6">
             {/* Challenger Info */}
             <div className="text-center mb-6">
-              <p className="text-[#777777] text-sm font-semibold mb-1">Challenged by</p>
-              <h2 className="text-2xl font-black text-[#3C3C3C]">{challenge.challenger_name || 'A Player'}</h2>
+              <p className="text-[var(--text-secondary)] text-sm font-semibold mb-1">Challenged by</p>
+              <h2 className="text-2xl font-black text-[var(--text-primary)]">{challenge.challenger_name || 'A Player'}</h2>
             </div>
 
             {/* Game Info */}
             <div className="card-3d p-4 mb-6">
-              <h3 className="font-bold text-lg text-[#3C3C3C] mb-1">{game.title}</h3>
-              <p className="text-[#777777] text-sm font-semibold">{game.subtitle}</p>
+              <h3 className="font-bold text-lg text-[var(--text-primary)] mb-1">{game.title}</h3>
+              <p className="text-[var(--text-secondary)] text-sm font-semibold">{game.subtitle}</p>
             </div>
 
             {/* Score to Beat */}
             <div className="card-3d card-3d-orange p-4 mb-6">
-              <p className="text-center text-[#777777] text-sm font-semibold mb-2">Score to Beat</p>
+              <p className="text-center text-[var(--text-secondary)] text-sm font-semibold mb-2">Score to Beat</p>
               <div className="flex items-center justify-center gap-4">
                 <div className="text-center">
-                  <p className="text-4xl font-black text-[#FF9600]">{challenge.challenger_percentage}%</p>
-                  <p className="text-sm text-[#777777] font-semibold">{challenge.challenger_score} correct</p>
+                  <p className="text-4xl font-black text-[var(--brand-orange)]">{challenge.challenger_percentage}%</p>
+                  <p className="text-sm text-[var(--text-secondary)] font-semibold">{challenge.challenger_score} correct</p>
                 </div>
                 {tier && (
                   <div className="text-center">
                     <p className="text-3xl">{tier.emoji}</p>
-                    <p className="text-xs text-[#777777] font-semibold">{tier.name}</p>
+                    <p className="text-xs text-[var(--text-secondary)] font-semibold">{tier.name}</p>
                   </div>
                 )}
               </div>
@@ -166,19 +166,19 @@ export default function Challenge() {
             {/* Actions */}
             {isExpired ? (
               <div className="card-3d p-4 text-center" style={{ background: 'rgba(255,75,75,0.1)', borderColor: 'rgba(255,75,75,0.3)' }}>
-                <p className="text-[#FF4B4B] font-bold">This challenge has expired</p>
+                <p className="text-[var(--brand-red)] font-bold">This challenge has expired</p>
               </div>
             ) : isOwn ? (
               <div className="card-3d p-4 text-center">
-                <p className="text-[#777777] font-semibold">This is your own challenge</p>
-                <p className="text-sm text-[#AFAFAF] font-semibold mt-1">Share the link with friends!</p>
+                <p className="text-[var(--text-secondary)] font-semibold">This is your own challenge</p>
+                <p className="text-sm text-[var(--text-muted)] font-semibold mt-1">Share the link with friends!</p>
               </div>
             ) : alreadyCompleted ? (
               <div className="card-3d card-3d-green p-4 text-center">
-                <Trophy className="w-8 h-8 text-[#58CC02] mx-auto mb-2" />
-                <p className="text-[#58CC02] font-bold">Challenge Completed!</p>
+                <Trophy className="w-8 h-8 text-[var(--brand-green)] mx-auto mb-2" />
+                <p className="text-[var(--brand-green)] font-bold">Challenge Completed!</p>
                 {challenge.winner_id === user?.id && (
-                  <p className="text-[#46A302] text-sm font-semibold mt-1">You won! 🎉</p>
+                  <p className="text-[var(--brand-green-dark)] text-sm font-semibold mt-1">You won! 🎉</p>
                 )}
               </div>
             ) : (
@@ -192,7 +192,7 @@ export default function Challenge() {
             )}
 
             {!user && !isExpired && !alreadyCompleted && (
-              <p className="text-center text-sm text-[#777777] font-semibold mt-3">
+              <p className="text-center text-sm text-[var(--text-secondary)] font-semibold mt-3">
                 You'll need to sign in to accept this challenge
               </p>
             )}
@@ -201,7 +201,7 @@ export default function Challenge() {
 
         {/* Back Link */}
         <div className="text-center mt-6">
-          <Link to={createPageUrl('Home')} className="text-[#777777] hover:text-[#3C3C3C] transition-colors font-semibold">
+          <Link to={createPageUrl('Home')} className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors font-semibold">
             ← Back to Games
           </Link>
         </div>

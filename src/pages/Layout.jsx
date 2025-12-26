@@ -95,15 +95,18 @@ export default function Layout({ children, currentPageName }) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--page-bg)' }}>
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           className="flex flex-col items-center gap-4"
         >
           <motion.div
-            className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center shadow-lg"
-            style={{ boxShadow: '0 4px 0 #3D8C02' }}
+            className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg"
+            style={{ 
+              background: 'linear-gradient(to bottom right, var(--brand-green), var(--brand-green-hover))',
+              boxShadow: '0 4px 0 var(--brand-green-dark)'
+            }}
             animate={{ 
               rotate: [0, 10, -10, 0],
               scale: [1, 1.1, 1]
@@ -116,8 +119,8 @@ export default function Layout({ children, currentPageName }) {
           >
             <span className="text-3xl">⚡</span>
           </motion.div>
-          <Loader2 className="w-6 h-6 text-[#58CC02] animate-spin" />
-          <p className="text-sm font-semibold text-[#777777]">Loading...</p>
+          <Loader2 className="w-6 h-6 animate-spin" style={{ color: 'var(--brand-green)' }} />
+          <p className="text-sm font-semibold" style={{ color: 'var(--text-secondary)' }}>Loading...</p>
         </motion.div>
       </div>
     );
@@ -126,12 +129,16 @@ export default function Layout({ children, currentPageName }) {
   if (!user) {
     return (
       <LanguageProvider>
-        <div className="min-h-screen bg-[#FAF8F5] flex flex-col items-center justify-center p-6">
+        <div className="min-h-screen flex flex-col items-center justify-center p-6" style={{ backgroundColor: 'var(--page-bg)' }}>
           <motion.div 
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             transition={{ type: "spring", bounce: 0.3 }}
-            className="text-center max-w-md w-full bg-white p-8 rounded-3xl shadow-2xl border-2 border-[#E5E0DA]"
+            className="text-center max-w-md w-full p-8 rounded-3xl shadow-2xl border-2"
+            style={{
+              backgroundColor: 'var(--surface-0)',
+              borderColor: 'var(--border-subtle)'
+            }}
           >
             <motion.div 
               className="mb-6 flex justify-center"
@@ -145,15 +152,24 @@ export default function Layout({ children, currentPageName }) {
                 ease: "easeInOut"
               }}
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-slate-900 to-slate-700 rounded-2xl flex items-center justify-center text-4xl shadow-lg" style={{ boxShadow: '0 4px 0 #1e293b' }}>
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shadow-lg" style={{ 
+                background: 'linear-gradient(to bottom right, #0f172a, #334155)',
+                boxShadow: '0 4px 0 #1e293b'
+              }}>
                 🔒
               </div>
             </motion.div>
-            <h1 className="text-3xl font-black text-slate-900 mb-3 tracking-tight">Private Access</h1>
-            <p className="text-slate-600 font-semibold mb-8 leading-relaxed">This environment is restricted to authorized personnel only.</p>
+            <h1 className="text-3xl font-black mb-3 tracking-tight" style={{ color: 'var(--text-strong)' }}>Private Access</h1>
+            <p className="font-semibold mb-8 leading-relaxed" style={{ color: 'var(--text-secondary)' }}>This environment is restricted to authorized personnel only.</p>
             <Link 
               to="/login"
-              className="w-full py-4 bg-gradient-to-br from-slate-900 to-slate-700 hover:from-slate-800 hover:to-slate-600 text-white rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg no-underline"
+              className="w-full py-4 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg no-underline"
+              style={{
+                background: 'linear-gradient(to bottom right, #0f172a, #334155)',
+                color: 'var(--text-inverse)'
+              }}
+              onMouseEnter={(e) => e.target.style.background = 'linear-gradient(to bottom right, #1e293b, #475569)'}
+              onMouseLeave={(e) => e.target.style.background = 'linear-gradient(to bottom right, #0f172a, #334155)'}
               style={{ boxShadow: '0 4px 0 #1e293b' }}
             >
               <Lock className="w-5 h-5" /> Authenticate
@@ -186,25 +202,31 @@ export default function Layout({ children, currentPageName }) {
 
   return (
     <LanguageProvider>
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+    <div className="min-h-screen font-sans" style={{ 
+      backgroundColor: 'var(--page-bg)', 
+      color: 'var(--text-primary)' 
+    }}>
       <OfflineIndicator />
       <InstallPrompt />
       <PWAInstallBanner />
       
       {/* Enhanced Desktop Header */}
-      <header className="hidden md:block sticky top-0 z-50 glass-light border-b border-slate-200/50 bg-white/90 backdrop-blur-lg shadow-sm">
+      <header className="hidden md:block glass-header z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Enhanced Logo */}
         <Link to={createPageUrl('Home')} className="flex items-center gap-3 group" aria-label="Go to Home">
             <motion.div 
-              className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform"
-              style={{ boxShadow: '0 3px 0 #3D8C02' }}
+              className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform"
+              style={{ 
+                background: 'linear-gradient(to bottom right, var(--brand-green), var(--brand-green-hover))',
+                boxShadow: '0 3px 0 var(--brand-green-dark)'
+              }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="text-xl">⚡</span>
             </motion.div>
-            <span className="text-xl font-black tracking-tight text-slate-900 group-hover:text-[#58CC02] transition-colors">
+            <span className="text-xl font-black tracking-tight transition-colors" style={{ color: 'var(--text-strong)' }} onMouseEnter={(e) => e.target.style.color = 'var(--brand-green)'} onMouseLeave={(e) => e.target.style.color = 'var(--text-strong)'}
               GenRizz
             </span>
           </Link>
@@ -220,22 +242,34 @@ export default function Layout({ children, currentPageName }) {
                   aria-label={`Go to ${item.name}`}
                 >
                   <motion.div
-                    className={`px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 transition-all relative ${
-                      isActive 
-                        ? 'bg-[#58CC02]/10 text-[#58CC02]' 
-                        : 'text-[#777777] hover:text-[#3C3C3C] hover:bg-[#F0EDE8]'
-                    }`}
+                    className="px-4 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 transition-all relative"
+                    style={{
+                      backgroundColor: isActive ? 'rgba(88, 204, 2, 0.1)' : 'transparent',
+                      color: isActive ? 'var(--brand-green)' : 'var(--text-secondary)'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) {
+                        e.target.style.color = 'var(--text-primary)';
+                        e.target.style.backgroundColor = 'var(--surface-2)';
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) {
+                        e.target.style.color = 'var(--text-secondary)';
+                        e.target.style.backgroundColor = 'transparent';
+                      }
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     {isActive && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute inset-0 bg-[#58CC02]/10 rounded-xl"
+                        className="absolute inset-0 rounded-xl" style={{ backgroundColor: 'rgba(88, 204, 2, 0.1)' }}
                         transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                       />
                     )}
-                    <item.icon className={`w-4 h-4 relative z-10 ${isActive ? 'text-[#58CC02]' : ''}`} />
+                    <item.icon className="w-4 h-4 relative z-10" style={{ color: isActive ? 'var(--brand-green)' : 'inherit' }} />
                     <span className="relative z-10">{item.name}</span>
                   </motion.div>
                 </Link>
@@ -246,17 +280,21 @@ export default function Layout({ children, currentPageName }) {
           {/* User Section */}
           <div className="flex items-center gap-4">
             {user ? (
-              <div className="flex items-center gap-3 pl-4 border-l border-[#E5E0DA]">
+              <div className="flex items-center gap-3 pl-4 border-l" style={{ borderColor: 'var(--border-subtle)' }}>
                 <NotificationBell userId={user.id} />
                 <div className="text-right hidden lg:block">
-                  <p className="text-sm font-bold text-[#3C3C3C]">{user.full_name}</p>
-                  <p className="text-xs text-[#AFAFAF] font-semibold">{user.email}</p>
+                  <p className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>{user.full_name}</p>
+                  <p className="text-xs font-semibold" style={{ color: 'var(--text-muted)' }}>{user.email}</p>
                 </div>
                 <Link to={createPageUrl('Profile')}>
                   <motion.div 
                     whileHover={{ scale: 1.05 }}
-                    className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center text-sm font-black text-white cursor-pointer"
-                    style={{ boxShadow: '0 3px 0 #3D8C02' }}
+                    className="w-10 h-10 rounded-xl flex items-center justify-center text-sm font-black cursor-pointer"
+                    style={{ 
+                      background: 'linear-gradient(to bottom right, var(--brand-green), var(--brand-green-hover))',
+                      color: 'var(--text-inverse)',
+                      boxShadow: '0 3px 0 var(--brand-green-dark)'
+                    }}
                   >
                     {user.avatar || user.full_name?.[0] || '?'}
                   </motion.div>
@@ -298,11 +336,11 @@ export default function Layout({ children, currentPageName }) {
                   {isActive && (
                     <motion.div
                       layoutId="activeMobileNav"
-                      className="absolute inset-0 bg-[#58CC02] rounded-xl"
+                      className="absolute inset-0 rounded-xl" style={{ backgroundColor: 'var(--brand-green)' }}
                       transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                     />
                   )}
-                  <item.icon className={`w-5 h-5 relative z-10 ${isActive ? 'text-white' : 'text-[#777777]'}`} />
+                  <item.icon className="w-5 h-5 relative z-10" style={{ color: isActive ? 'var(--text-inverse)' : 'var(--text-secondary)' }} />
                 </motion.div>
               </Link>
             );
@@ -311,13 +349,16 @@ export default function Layout({ children, currentPageName }) {
       </div>
 
       {/* Desktop Footer */}
-      <footer className="hidden md:block mt-20 py-8 border-t border-[#E5E0DA] bg-[#F7F4F0]">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-[#AFAFAF] text-sm font-semibold">
+      <footer className="hidden md:block mt-20 py-8 border-t" style={{ 
+        borderColor: 'var(--border-subtle)',
+        backgroundColor: 'var(--surface-1)'
+      }}>
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-sm font-semibold" style={{ color: 'var(--text-muted)' }}>
           <p>© 2025 GenRizz. Made with 🔥</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-[#3C3C3C] transition-colors">Privacy</a>
-            <a href="#" className="hover:text-[#3C3C3C] transition-colors">Terms</a>
-            <a href="#" className="hover:text-[#3C3C3C] transition-colors">Contact</a>
+            <a href="#" className="transition-colors" onMouseEnter={(e) => e.target.style.color = 'var(--text-primary)'} onMouseLeave={(e) => e.target.style.color = 'var(--text-muted)'}>Privacy</a>
+            <a href="#" className="transition-colors" onMouseEnter={(e) => e.target.style.color = 'var(--text-primary)'} onMouseLeave={(e) => e.target.style.color = 'var(--text-muted)'}>Terms</a>
+            <a href="#" className="transition-colors" onMouseEnter={(e) => e.target.style.color = 'var(--text-primary)'} onMouseLeave={(e) => e.target.style.color = 'var(--text-muted)'}>Contact</a>
           </div>
         </div>
         </footer>

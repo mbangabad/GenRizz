@@ -54,10 +54,10 @@ export default function VibeCheckSwipe({ question, onAnswer }) {
   return (
     <div className="w-full max-w-md mx-auto p-6 flex flex-col h-full justify-center">
       <div className="text-center mb-10">
-        <span className="inline-block px-3 py-1 rounded-full bg-[#CE82FF]/10 text-[#CE82FF] text-xs font-black uppercase tracking-widest mb-4">
+        <span className="inline-block px-3 py-1 rounded-full bg-[var(--brand-purple)]/10 text-[var(--brand-purple)] text-xs font-black uppercase tracking-widest mb-4">
           Vibe Check
         </span>
-        <h2 className="text-3xl font-black text-[#3C3C3C] leading-tight">{question.question}</h2>
+        <h2 className="text-3xl font-black text-[var(--text-primary)] leading-tight">{question.question}</h2>
       </div>
 
       {!voted ? (
@@ -66,7 +66,7 @@ export default function VibeCheckSwipe({ question, onAnswer }) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => handleVote('left')}
-            className="aspect-[4/5] rounded-3xl bg-[#FF4B4B] text-white flex flex-col items-center justify-center gap-4 shadow-[0_8px_0_#B91C1C] active:translate-y-[8px] active:shadow-none transition-all"
+            className="aspect-[4/5] rounded-3xl bg-[var(--brand-red)] text-white flex flex-col items-center justify-center gap-4 shadow-[0_8px_0_var(--brand-red-dark)] active:translate-y-[8px] active:shadow-none transition-all"
           >
             <span className="text-6xl">{config.left_emoji}</span>
             <span className="font-black text-xl uppercase">{config.left_label}</span>
@@ -76,7 +76,7 @@ export default function VibeCheckSwipe({ question, onAnswer }) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => handleVote('right')}
-            className="aspect-[4/5] rounded-3xl bg-[#58CC02] text-white flex flex-col items-center justify-center gap-4 shadow-[0_8px_0_#3D8C02] active:translate-y-[8px] active:shadow-none transition-all"
+            className="aspect-[4/5] rounded-3xl bg-[var(--brand-green)] text-white flex flex-col items-center justify-center gap-4 shadow-[0_8px_0_var(--brand-green-dark)] active:translate-y-[8px] active:shadow-none transition-all"
           >
             <span className="text-6xl">{config.right_emoji}</span>
             <span className="font-black text-xl uppercase">{config.right_label}</span>
@@ -88,22 +88,22 @@ export default function VibeCheckSwipe({ question, onAnswer }) {
           animate={{ opacity: 1, scale: 1 }}
           className="card-3d p-6 bg-white"
         >
-          <h3 className="text-center font-black text-[#3C3C3C] text-xl mb-6">Community Vibes</h3>
+          <h3 className="text-center font-black text-[var(--text-primary)] text-xl mb-6">Community Vibes</h3>
           
           <div className="space-y-6">
             {/* Left Bar */}
             <div>
               <div className="flex justify-between text-sm font-bold mb-2">
-                <span className="text-[#FF4B4B] flex items-center gap-2">
+                <span className="text-[var(--brand-red)] flex items-center gap-2">
                    {config.left_emoji} {config.left_label}
                 </span>
-                <span className="text-[#3C3C3C]">{leftPercent}%</span>
+                <span className="text-[var(--text-primary)]">{leftPercent}%</span>
               </div>
-              <div className="h-4 bg-[#F0EDE8] rounded-full overflow-hidden">
+              <div className="h-4 bg-[var(--surface-2)] rounded-full overflow-hidden">
                 <motion.div 
                   initial={{ width: 0 }}
                   animate={{ width: `${leftPercent}%` }}
-                  className="h-full bg-[#FF4B4B]"
+                  className="h-full bg-[var(--brand-red)]"
                 />
               </div>
             </div>
@@ -111,23 +111,23 @@ export default function VibeCheckSwipe({ question, onAnswer }) {
             {/* Right Bar */}
             <div>
               <div className="flex justify-between text-sm font-bold mb-2">
-                <span className="text-[#58CC02] flex items-center gap-2">
+                <span className="text-[var(--brand-green)] flex items-center gap-2">
                    {config.right_emoji} {config.right_label}
                 </span>
-                <span className="text-[#3C3C3C]">{rightPercent}%</span>
+                <span className="text-[var(--text-primary)]">{rightPercent}%</span>
               </div>
-              <div className="h-4 bg-[#F0EDE8] rounded-full overflow-hidden">
+              <div className="h-4 bg-[var(--surface-2)] rounded-full overflow-hidden">
                 <motion.div 
                   initial={{ width: 0 }}
                   animate={{ width: `${rightPercent}%` }}
-                  className="h-full bg-[#58CC02]"
+                  className="h-full bg-[var(--brand-green)]"
                 />
               </div>
             </div>
           </div>
 
           <div className="mt-8 text-center">
-             <p className="text-sm font-bold text-[#AFAFAF]">
+             <p className="text-sm font-bold text-[var(--text-muted)]">
                {leftPercent > rightPercent 
                  ? `Most people think this is ${config.left_label}` 
                  : `Most people think this is ${config.right_label}`}

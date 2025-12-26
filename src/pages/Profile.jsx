@@ -76,10 +76,10 @@ export default function Profile() {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center p-4">
+      <div className="min-h-screen flex items-center justify-center p-4" style={{ backgroundColor: 'var(--page-bg)' }}>
         <div className="card-3d p-8 text-center max-w-sm">
-          <User className="w-16 h-16 text-[#AFAFAF] mx-auto mb-4" />
-          <h2 className="text-xl font-black text-[#3C3C3C] mb-2">Sign in to view profile</h2>
+          <User className="w-16 h-16 mx-auto mb-4" style={{ color: 'var(--text-muted)' }} />
+          <h2 className="text-xl font-black mb-2" style={{ color: 'var(--text-primary)' }}>Sign in to view profile</h2>
           <button onClick={() => auth.redirectToLogin()} className="btn-3d btn-3d-green px-6 py-3">
             Sign In
           </button>
@@ -120,7 +120,7 @@ export default function Profile() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-32">
+    <div className="min-h-screen pb-32" style={{ backgroundColor: 'var(--page-bg)' }}>
       <div className="max-w-2xl mx-auto px-4 py-6 space-y-6">
         
         {/* Profile Card */}
@@ -129,38 +129,48 @@ export default function Profile() {
           animate={{ opacity: 1, y: 0 }}
           className="card-3d card-3d-purple p-6 relative overflow-hidden"
         >
-          <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#CE82FF]/20 rounded-full blur-2xl" />
+          <div className="absolute -right-10 -top-10 w-40 h-40 rounded-full blur-2xl" style={{ backgroundColor: 'rgba(206, 130, 255, 0.2)' }} />
           
           <div className="relative z-10">
             <div className="flex items-start justify-between mb-4">
               <div className="flex items-center gap-4">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#CE82FF] to-[#A855F7] flex items-center justify-center text-4xl text-white shadow-lg"
-                     style={{ boxShadow: '0 4px 0 #8B5CF6' }}>
+                <div className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shadow-lg"
+                     style={{ 
+                       background: 'linear-gradient(to bottom right, var(--brand-purple), var(--brand-purple-dark))',
+                       color: 'var(--text-inverse)',
+                       boxShadow: '0 4px 0 var(--brand-purple-dark)'
+                     }}>
                   {user.avatar || user.full_name?.[0] || '?'}
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h1 className="text-2xl font-black text-[#3C3C3C]">{user.full_name}</h1>
+                    <h1 className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>{user.full_name}</h1>
                     {isPremium && <PremiumBadge size="sm" />}
                   </div>
-                  <p className="text-[#777777] text-sm font-semibold">{user.email}</p>
-                  {user.bio && <p className="text-[#3C3C3C] text-sm mt-1">{user.bio}</p>}
+                  <p className="text-sm font-semibold" style={{ color: 'var(--text-secondary)' }}>{user.email}</p>
+                  {user.bio && <p className="text-sm mt-1" style={{ color: 'var(--text-primary)' }}>{user.bio}</p>}
                 </div>
               </div>
               <button 
                 onClick={() => setEditing(true)}
-                className="p-2.5 bg-white rounded-xl hover:bg-[#F0EDE8] border-2 border-[#E5E0DA] transition-colors"
+                className="p-2.5 rounded-xl border-2 transition-colors"
+                style={{
+                  backgroundColor: 'var(--surface-0)',
+                  borderColor: 'var(--border-subtle)'
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--surface-0)'}
               >
-                <Edit2 className="w-5 h-5 text-[#777777]" />
+                <Edit2 className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
               </button>
             </div>
 
             {/* Badge & XP */}
-            <div className="flex items-center gap-3 bg-white/60 rounded-xl p-3">
+            <div className="flex items-center gap-3 rounded-xl p-3" style={{ backgroundColor: 'rgba(255, 255, 255, 0.6)' }}>
               <span className="text-3xl">{badge.emoji}</span>
               <div className="flex-1">
-                <p className="font-bold text-[#3C3C3C]">{badge.name}</p>
-                <p className="text-sm text-[#777777] font-semibold">{totalXP.toLocaleString()} Total XP</p>
+                <p className="font-bold" style={{ color: 'var(--text-primary)' }}>{badge.name}</p>
+                <p className="text-sm font-semibold" style={{ color: 'var(--text-secondary)' }}>{totalXP.toLocaleString()} Total XP</p>
               </div>
               {!isPremium && (
                 <Link to={createPageUrl('Premium')} className="btn-3d btn-3d-yellow px-4 py-2 text-sm flex items-center gap-1.5">
@@ -173,16 +183,27 @@ export default function Profile() {
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex gap-2 bg-[#E8E4DF] p-1 rounded-2xl">
+        <div className="flex gap-2 p-1 rounded-2xl" style={{ backgroundColor: 'var(--surface-3)' }}>
           {TABS.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all ${
-                activeTab === tab.id 
-                  ? 'bg-white text-[#3C3C3C] shadow-md' 
-                  : 'text-[#777777] hover:text-[#3C3C3C]'
-              }`}
+              className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all"
+              style={{
+                backgroundColor: activeTab === tab.id ? 'var(--surface-0)' : 'transparent',
+                color: activeTab === tab.id ? 'var(--text-primary)' : 'var(--text-secondary)',
+                boxShadow: activeTab === tab.id ? 'var(--shadow-2)' : 'none'
+              }}
+              onMouseEnter={(e) => {
+                if (activeTab !== tab.id) {
+                  e.target.style.color = 'var(--text-primary)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (activeTab !== tab.id) {
+                  e.target.style.color = 'var(--text-secondary)';
+                }
+              }}
             >
               <tab.icon className="w-4 h-4" />
               {tab.label}
@@ -200,7 +221,14 @@ export default function Profile() {
             <ProfileStats stats={profileStats} />
             
             <Link to={createPageUrl('StatsDeepDive')}>
-              <button className="w-full py-3 bg-[#1CB0F6]/10 hover:bg-[#1CB0F6]/20 border-2 border-[#1CB0F6]/30 rounded-xl flex items-center justify-center gap-2 text-[#1CB0F6] font-black transition-colors">
+              <button className="w-full py-3 border-2 rounded-xl flex items-center justify-center gap-2 font-black transition-colors"
+                style={{
+                  backgroundColor: 'rgba(28, 176, 246, 0.1)',
+                  borderColor: 'rgba(28, 176, 246, 0.3)',
+                  color: 'var(--brand-blue)'
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = 'rgba(28, 176, 246, 0.2)'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = 'rgba(28, 176, 246, 0.1)'}
                 <TrendingUp className="w-5 h-5" />
                 View Deep Dive Analytics
               </button>
@@ -233,7 +261,14 @@ export default function Profile() {
 
         {/* Settings Link */}
         <Link to={createPageUrl('Settings')}>
-          <button className="w-full flex items-center justify-center gap-2 py-3 bg-white text-[#777777] rounded-xl font-bold hover:bg-[#F0EDE8] transition-colors border-2 border-[#E5E0DA] mb-3">
+          <button className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold border-2 transition-colors mb-3"
+            style={{
+              backgroundColor: 'var(--surface-0)',
+              color: 'var(--text-secondary)',
+              borderColor: 'var(--border-subtle)'
+            }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--surface-0)'}
             <SettingsIcon className="w-5 h-5" />
             Settings
           </button>
@@ -241,7 +276,14 @@ export default function Profile() {
 
         {/* Help Link */}
         <Link to={createPageUrl('Help')}>
-          <button className="w-full flex items-center justify-center gap-2 py-3 bg-white text-[#777777] rounded-xl font-bold hover:bg-[#F0EDE8] transition-colors border-2 border-[#E5E0DA] mb-3">
+          <button className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold border-2 transition-colors mb-3"
+            style={{
+              backgroundColor: 'var(--surface-0)',
+              color: 'var(--text-secondary)',
+              borderColor: 'var(--border-subtle)'
+            }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--surface-0)'}
             <HelpCircle className="w-5 h-5" />
             Help & Support
           </button>
@@ -250,7 +292,14 @@ export default function Profile() {
         {/* Logout */}
         <button
           onClick={() => auth.signOut()}
-          className="w-full flex items-center justify-center gap-2 py-3 bg-white text-[#FF4B4B] rounded-xl font-bold hover:bg-[#FFF5F5] transition-colors border-2 border-[#E5E0DA]"
+          className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold border-2 transition-colors"
+          style={{
+            backgroundColor: 'var(--surface-0)',
+            color: 'var(--brand-red)',
+            borderColor: 'var(--border-subtle)'
+          }}
+          onMouseEnter={(e) => e.target.style.backgroundColor = '#FFF5F5'}
+          onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--surface-0)'}
         >
           <LogOut className="w-5 h-5" />
           Sign Out
@@ -274,27 +323,29 @@ export default function Profile() {
               onClick={e => e.stopPropagation()}
               className="card-3d p-6 max-w-sm w-full"
             >
-              <h2 className="text-xl font-black text-[#3C3C3C] mb-4">Edit Profile</h2>
+              <h2 className="text-xl font-black mb-4" style={{ color: 'var(--text-primary)' }}>Edit Profile</h2>
               
               <div className="space-y-4">
                 <div>
-                  <label className="text-sm font-bold text-[#777777] mb-1 block">Avatar (emoji)</label>
+                  <label className="text-sm font-bold mb-1 block" style={{ color: 'var(--text-secondary)' }}>Avatar (emoji)</label>
                   <Input
                     value={editForm.avatar}
                     onChange={e => setEditForm({...editForm, avatar: e.target.value})}
                     placeholder="🔥"
                     maxLength={2}
-                    className="border-2 border-[#E5E0DA] rounded-xl"
+                    className="border-2 rounded-xl"
+                    style={{ borderColor: 'var(--border-subtle)' }}
                   />
                 </div>
                 <div>
-                  <label className="text-sm font-bold text-[#777777] mb-1 block">Bio</label>
+                  <label className="text-sm font-bold mb-1 block" style={{ color: 'var(--text-secondary)' }}>Bio</label>
                   <Input
                     value={editForm.bio}
                     onChange={e => setEditForm({...editForm, bio: e.target.value})}
                     placeholder="Chronically online since 2020"
                     maxLength={100}
-                    className="border-2 border-[#E5E0DA] rounded-xl"
+                    className="border-2 rounded-xl"
+                    style={{ borderColor: 'var(--border-subtle)' }}
                   />
                 </div>
               </div>

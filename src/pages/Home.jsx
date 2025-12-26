@@ -146,16 +146,16 @@ export default function Home() {
     });
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--page-bg)' }}>
       {/* Enhanced Header with better spacing */}
-      <header className="glass-light border-b border-slate-200/50 sticky top-0 z-40 bg-white/90 backdrop-blur-lg shadow-sm">
+      <header className="glass-header">
         <div className="max-w-7xl mx-auto container-padding py-4 flex items-center justify-between">
           <motion.div 
             className="flex items-center gap-3"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center text-white shadow-lg" style={{ boxShadow: '0 3px 0 #3D8C02' }}>
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white shadow-lg" style={{ background: 'linear-gradient(to bottom right, var(--brand-green), var(--brand-green-hover))', boxShadow: '0 3px 0 var(--brand-green-dark)' }}>
               <span className="text-xl">⚡</span>
             </div>
             <div>
@@ -170,8 +170,8 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
                 className="flex badge-3d badge-streak shadow-lg"
                 style={{
-                  background: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)',
-                  borderColor: '#FF6B35',
+                  background: 'linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-orange-hover) 100%)',
+                  borderColor: 'var(--brand-orange)',
                   boxShadow: '0 4px 14px rgba(255, 107, 53, 0.4)',
                 }}
               >
@@ -204,20 +204,26 @@ export default function Home() {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-11 h-11 rounded-xl bg-white hover:bg-[#F0EDE8] flex items-center justify-center relative transition-all border-2 border-[#E5E0DA] shadow-sm"
+              className="w-11 h-11 rounded-xl bg-white flex items-center justify-center relative transition-all border-2 shadow-sm"
+              style={{ borderColor: 'var(--border-subtle)' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
               aria-label="Notifications"
             >
-              <Bell className="w-5 h-5 text-[#777777]" />
+              <Bell className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
             </motion.button>
             
             <Link to={createPageUrl('Help')}>
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-11 h-11 rounded-xl bg-white hover:bg-[#F0EDE8] flex items-center justify-center relative transition-all border-2 border-[#E5E0DA] shadow-sm"
+                className="w-11 h-11 rounded-xl bg-white flex items-center justify-center relative transition-all border-2 shadow-sm"
+                style={{ borderColor: 'var(--border-subtle)' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
                 aria-label="Help & support"
               >
-                <HelpCircle className="w-5 h-5 text-[#777777]" />
+                <HelpCircle className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
               </motion.button>
             </Link>
 
@@ -225,10 +231,13 @@ export default function Home() {
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-11 h-11 rounded-xl bg-white hover:bg-[#F0EDE8] flex items-center justify-center relative transition-all border-2 border-[#E5E0DA] shadow-sm"
+                className="w-11 h-11 rounded-xl bg-white flex items-center justify-center relative transition-all border-2 shadow-sm"
+                style={{ borderColor: 'var(--border-subtle)' }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = 'white'}
                 aria-label="Settings"
               >
-                <Settings className="w-5 h-5 text-[#777777]" />
+                <Settings className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
               </motion.button>
             </Link>
           </div>
@@ -236,36 +245,51 @@ export default function Home() {
       </header>
 
       {/* Enhanced Quick Nav Bar */}
-      <nav className="bg-white/50 border-b border-[#E5E0DA]/50 overflow-x-auto backdrop-blur-sm" aria-label="Quick navigation">
+      <nav className="bg-white/50 border-b overflow-x-auto backdrop-blur-sm" style={{ borderColor: 'var(--border-subtle)' }} aria-label="Quick navigation">
         <div className="max-w-7xl mx-auto container-padding py-3 flex items-center gap-2 md:gap-4 text-sm font-bold whitespace-nowrap scrollbar-hide">
           <Link 
             to={createPageUrl('Shop')} 
-            className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-[#F7F4F0] text-[#3C3C3C] transition-all hover:scale-105"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl transition-all hover:scale-105"
+            style={{ color: 'var(--text-primary)' }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-1)'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
           >
             <span className="text-lg">🛒</span> <span className="hidden sm:inline">Shop</span>
           </Link>
           <Link 
             to={createPageUrl('WorldMap')} 
-            className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-[#F7F4F0] text-[#3C3C3C] transition-all hover:scale-105"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl transition-all hover:scale-105"
+            style={{ color: 'var(--text-primary)' }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-1)'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
           >
             <span className="text-lg">🌍</span> <span className="hidden sm:inline">Map</span>
           </Link>
           <Link 
             to={createPageUrl('Squads')} 
-            className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-[#F7F4F0] text-[#3C3C3C] transition-all hover:scale-105"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl transition-all hover:scale-105"
+            style={{ color: 'var(--text-primary)' }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-1)'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
           >
             <span className="text-lg">🛡️</span> <span className="hidden sm:inline">Squads</span>
           </Link>
           <Link 
             to={createPageUrl('CreatorStudio')} 
-            className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-[#F7F4F0] text-[#3C3C3C] transition-all hover:scale-105"
+            className="flex items-center gap-2 px-4 py-2 rounded-xl transition-all hover:scale-105"
+            style={{ color: 'var(--text-primary)' }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-1)'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
           >
             <span className="text-lg">🎨</span> <span className="hidden sm:inline">Creator</span>
           </Link>
           {user?.role === 'admin' && (
             <Link 
               to={createPageUrl('Admin')} 
-              className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-[#FF4B4B]/10 text-[#FF4B4B] transition-all hover:scale-105"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl transition-all hover:scale-105"
+              style={{ color: 'var(--brand-red)' }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--brand-red)/10'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
             >
               <span className="text-lg">⚡</span> <span className="hidden sm:inline">Admin</span>
             </Link>
@@ -308,11 +332,11 @@ export default function Home() {
                 {/* Progress Ring */}
                 <div className="relative w-20 h-20 flex-shrink-0">
                   <svg className="w-20 h-20 -rotate-90" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="40" fill="none" stroke="#E8E4DF" strokeWidth="10" />
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="var(--surface-3)" strokeWidth="10" />
                     <motion.circle
                       cx="50" cy="50" r="40"
                       fill="none"
-                      stroke={isGoalComplete ? '#FFC800' : '#58CC02'}
+                      stroke={isGoalComplete ? 'var(--brand-yellow)' : 'var(--brand-green)'}
                       strokeWidth="10"
                       strokeLinecap="round"
                       strokeDasharray={251}
@@ -331,16 +355,16 @@ export default function Home() {
                         🎉
                       </motion.span>
                     ) : (
-                      <span className="text-lg font-black text-[#3C3C3C]">{gamesPlayedToday}/{dailyGoal}</span>
+                      <span className="text-lg font-black" style={{ color: 'var(--text-primary)' }}>{gamesPlayedToday}/{dailyGoal}</span>
                     )}
                   </div>
                 </div>
 
                 <div className="flex-1">
-                  <h2 className="font-black text-[#3C3C3C] text-xl">
+                  <h2 className="font-black text-xl" style={{ color: 'var(--text-primary)' }}>
                     {isGoalComplete ? t('common.goal_complete') : t('common.daily_goal')}
                   </h2>
-                  <p className="text-[#777777] font-semibold">
+                  <p className="font-semibold" style={{ color: 'var(--text-secondary)' }}>
                     {isGoalComplete 
                       ? 'Amazing! Come back tomorrow 🔥' 
                       : `${t('common.play_more')} (${dailyGoal - gamesPlayedToday})`
@@ -371,13 +395,13 @@ export default function Home() {
                 <div className="flex items-center gap-4">
                   <GameIcon gameId={lastGame.id} size="md" />
                   <div className="flex-1 min-w-0">
-                    <span className="text-xs font-bold text-[#58CC02] uppercase tracking-wide">{t('common.continue_playing')}</span>
-                    <h3 className="font-black text-[#3C3C3C] text-lg truncate">{lastGame.title}</h3>
+                    <span className="text-xs font-bold uppercase tracking-wide" style={{ color: 'var(--brand-green)' }}>{t('common.continue_playing')}</span>
+                    <h3 className="font-black text-lg truncate" style={{ color: 'var(--text-primary)' }}>{lastGame.title}</h3>
                   </div>
                   <motion.div 
                     whileHover={{ scale: 1.1 }}
-                    className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center shadow-lg"
-                    style={{ boxShadow: '0 4px 0 #3D8C02' }}
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg"
+                    style={{ background: 'linear-gradient(to bottom right, var(--brand-green), var(--brand-green-hover))', boxShadow: '0 4px 0 var(--brand-green-dark)' }}
                   >
                     <Play className="w-6 h-6 text-white fill-current ml-0.5" />
                   </motion.div>
@@ -415,12 +439,12 @@ export default function Home() {
             }}
             className="card-3d card-3d-blue p-4 flex items-center gap-3"
           >
-              <div className="w-10 h-10 rounded-xl bg-[#1CB0F6]/20 flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-[#1CB0F6]" />
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'var(--brand-blue)/20' }}>
+                <Sparkles className="w-5 h-5" style={{ color: 'var(--brand-blue)' }} />
               </div>
               <div className="flex-1 text-left">
-                <p className="text-xs font-bold text-[#1CB0F6] uppercase">Today&apos;s Drop</p>
-                <p className="font-black text-[#3C3C3C] text-sm">Jump into the daily blend</p>
+                <p className="text-xs font-bold uppercase" style={{ color: 'var(--brand-blue)' }}>Today&apos;s Drop</p>
+                <p className="font-black text-sm" style={{ color: 'var(--text-primary)' }}>Jump into the daily blend</p>
               </div>
             </motion.button>
           )}
@@ -440,14 +464,14 @@ export default function Home() {
             className="card-3d card-3d-blue p-5 cursor-pointer"
           >
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-[#1CB0F6]/20 flex items-center justify-center">
-                <Rocket className="w-7 h-7 text-[#1CB0F6]" />
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center" style={{ backgroundColor: 'var(--brand-blue)/20' }}>
+                <Rocket className="w-7 h-7" style={{ color: 'var(--brand-blue)' }} />
               </div>
               <div className="flex-1">
-                <h3 className="font-black text-[#3C3C3C] text-lg">{t('common.quick_play')}</h3>
-                <p className="text-[#777777] font-semibold text-sm">5 questions, 90 seconds</p>
+                <h3 className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>{t('common.quick_play')}</h3>
+                <p className="font-semibold text-sm" style={{ color: 'var(--text-secondary)' }}>5 questions, 90 seconds</p>
               </div>
-              <ChevronRight className="w-6 h-6 text-[#AFAFAF]" />
+              <ChevronRight className="w-6 h-6" style={{ color: 'var(--text-muted)' }} />
             </div>
           </motion.div>
 
@@ -462,14 +486,14 @@ export default function Home() {
               className="card-3d card-3d-orange p-5 cursor-pointer h-full mt-4 md:mt-0"
             >
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#FF4B4B]/20 flex items-center justify-center text-3xl">
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl" style={{ backgroundColor: 'var(--brand-red)/20' }}>
                   ⚔️
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-black text-[#3C3C3C] text-lg">{t('common.battle_arena')}</h3>
-                  <p className="text-[#777777] font-semibold text-sm">Live PvP Trivia</p>
+                  <h3 className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>{t('common.battle_arena')}</h3>
+                  <p className="font-semibold text-sm" style={{ color: 'var(--text-secondary)' }}>Live PvP Trivia</p>
                 </div>
-                <ChevronRight className="w-6 h-6 text-[#AFAFAF]" />
+                <ChevronRight className="w-6 h-6" style={{ color: 'var(--text-muted)' }} />
               </div>
             </motion.div>
           </Link>
@@ -492,14 +516,14 @@ export default function Home() {
               className="card-3d card-3d-pink p-5 cursor-pointer h-full"
             >
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-[#FF86D0]/20 flex items-center justify-center text-3xl">
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl" style={{ backgroundColor: 'var(--brand-pink)/20' }}>
                   👨‍👩‍👧
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-black text-[#3C3C3C] text-lg">Parent vs Kid</h3>
-                  <p className="text-[#777777] font-semibold text-sm">Bridge the generation gap!</p>
+                  <h3 className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>Parent vs Kid</h3>
+                  <p className="font-semibold text-sm" style={{ color: 'var(--text-secondary)' }}>Bridge the generation gap!</p>
                 </div>
-                <ChevronRight className="w-6 h-6 text-[#AFAFAF]" />
+                <ChevronRight className="w-6 h-6" style={{ color: 'var(--text-muted)' }} />
               </div>
             </motion.div>
           </Link>
@@ -514,14 +538,14 @@ export default function Home() {
             className="card-3d card-3d-purple p-5 cursor-pointer"
           >
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-[#CE82FF]/20 flex items-center justify-center text-3xl">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl" style={{ backgroundColor: 'var(--brand-purple)/20' }}>
                 🎉
               </div>
               <div className="flex-1">
-                <h3 className="font-black text-[#3C3C3C] text-lg">Party Mode</h3>
-                <p className="text-[#777777] font-semibold text-sm">Play with 2-8 friends!</p>
+                <h3 className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>Party Mode</h3>
+                <p className="font-semibold text-sm" style={{ color: 'var(--text-secondary)' }}>Play with 2-8 friends!</p>
               </div>
-              <ChevronRight className="w-6 h-6 text-[#AFAFAF]" />
+              <ChevronRight className="w-6 h-6" style={{ color: 'var(--text-muted)' }} />
             </div>
           </motion.div>
         </div>
@@ -534,8 +558,8 @@ export default function Home() {
           className="mb-8"
         >
           <div className="flex items-center gap-2 mb-4">
-            <TrendingUp className="w-5 h-5 text-[#FF86D0]" />
-            <h2 className="text-xl font-black text-[#3C3C3C]">{t('common.trending')}</h2>
+            <TrendingUp className="w-5 h-5" style={{ color: 'var(--brand-pink)' }} />
+            <h2 className="text-xl font-black" style={{ color: 'var(--text-primary)' }}>{t('common.trending')}</h2>
           </div>
           <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
             {TRENDING_GAMES.map((gameId, i) => {
@@ -554,8 +578,8 @@ export default function Home() {
                   className="flex-shrink-0 card-3d card-3d-interactive p-4 min-w-[140px] text-center"
                 >
                   <GameIcon gameId={gameId} size="md" className="mx-auto mb-3" />
-                  <p className="font-bold text-[#3C3C3C] text-sm">{game.title}</p>
-                  <p className="text-xs text-[#AFAFAF] font-semibold">{progress?.highest_score || 0}% best</p>
+                  <p className="font-bold text-sm" style={{ color: 'var(--text-primary)' }}>{game.title}</p>
+                  <p className="text-xs font-semibold" style={{ color: 'var(--text-muted)' }}>{progress?.highest_score || 0}% best</p>
                 </motion.button>
               );
             })}
@@ -571,7 +595,7 @@ export default function Home() {
 
         {/* Category Cards Grid */}
         <div className="mb-8">
-          <h2 className="text-2xl font-black text-[#3C3C3C] mb-6">{t('common.all_categories')}</h2>
+          <h2 className="text-2xl font-black mb-6" style={{ color: 'var(--text-primary)' }}>{t('common.all_categories')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {orderedCategories.map(({ id, meta, games }, index) => (
               <CategoryCard

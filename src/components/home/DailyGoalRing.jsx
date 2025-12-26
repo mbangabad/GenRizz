@@ -33,7 +33,7 @@ export default function DailyGoalRing({
               cy="50"
               r="45"
               fill="none"
-              stroke="#E5E7EB"
+              stroke="var(--border-subtle)"
               strokeWidth="8"
             />
             {/* Progress circle */}
@@ -42,7 +42,7 @@ export default function DailyGoalRing({
               cy="50"
               r="45"
               fill="none"
-              stroke={isComplete ? '#F59E0B' : '#FF6B35'}
+              stroke={isComplete ? 'var(--brand-yellow)' : 'var(--brand-orange)'}
               strokeWidth="8"
               strokeLinecap="round"
               strokeDasharray={circumference}

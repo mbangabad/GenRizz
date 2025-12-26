@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { Clock, Eye, SkipForward } from 'lucide-react';
 
 const POWER_UPS = [
-  { id: 'fifty', icon: '50/50', name: '50/50', description: 'Remove 2 wrong answers', color: '#CE82FF' },
-  { id: 'time', icon: Clock, name: '+10s', description: 'Add 10 seconds', color: '#1CB0F6' },
-  { id: 'hint', icon: Eye, name: 'Hint', description: 'Show a hint', color: '#58CC02' },
-  { id: 'skip', icon: SkipForward, name: 'Skip', description: 'Skip (counts as correct)', color: '#FF9600' },
+  { id: 'fifty', icon: '50/50', name: '50/50', description: 'Remove 2 wrong answers', color: 'var(--brand-purple)' },
+  { id: 'time', icon: Clock, name: '+10s', description: 'Add 10 seconds', color: 'var(--brand-blue)' },
+  { id: 'hint', icon: Eye, name: 'Hint', description: 'Show a hint', color: 'var(--brand-green)' },
+  { id: 'skip', icon: SkipForward, name: 'Skip', description: 'Skip (counts as correct)', color: 'var(--brand-orange)' },
 ];
 
 export default function PowerUpsBar({ available = {}, onUse, disabled = false, showHint = false }) {
@@ -31,16 +31,16 @@ export default function PowerUpsBar({ available = {}, onUse, disabled = false, s
               isDisabled ? 'opacity-40 cursor-not-allowed' : 'cursor-pointer'
             }`}
             style={{ 
-              background: isDisabled ? '#E8E4DF' : `${powerUp.color}20`,
-              border: `2px solid ${isDisabled ? '#D4CFC7' : powerUp.color}`,
+              background: isDisabled ? 'var(--surface-3)' : `${powerUp.color}20`,
+              border: `2px solid ${isDisabled ? 'var(--border-strong)' : powerUp.color}`,
               boxShadow: isDisabled ? 'none' : `0 4px 0 ${powerUp.color}40`
             }}
             title={powerUp.description}
           >
             {typeof Icon === 'string' ? (
-              <span className="text-xs font-black" style={{ color: isDisabled ? '#AFAFAF' : powerUp.color }}>{Icon}</span>
+              <span className="text-xs font-black" style={{ color: isDisabled ? 'var(--text-muted)' : powerUp.color }}>{Icon}</span>
             ) : (
-              <Icon className="w-5 h-5" style={{ color: isDisabled ? '#AFAFAF' : powerUp.color }} />
+              <Icon className="w-5 h-5" style={{ color: isDisabled ? 'var(--text-muted)' : powerUp.color }} />
             )}
             {count > 0 && (
               <motion.span 

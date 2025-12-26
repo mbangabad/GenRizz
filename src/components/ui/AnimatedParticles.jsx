@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export default function AnimatedParticles({ count = 20, colors = ['#CE82FF', '#FF86D0', '#1CB0F6', '#FFD700'] }) {
+export default function AnimatedParticles({ count = 20, colors = ['var(--brand-purple)', 'var(--brand-pink)', 'var(--brand-blue)', 'var(--brand-yellow)'] }) {
   const particles = Array.from({ length: count }, (_, i) => ({
     id: i,
     x: Math.random() * 100,

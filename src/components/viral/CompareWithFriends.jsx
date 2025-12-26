@@ -48,23 +48,23 @@ export default function CompareWithFriends({
       className="card-3d card-3d-purple p-5"
     >
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 rounded-xl bg-[#CE82FF]/20 flex items-center justify-center">
-          <Users className="w-5 h-5 text-[#CE82FF]" />
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'rgba(206, 130, 255, 0.2)' }}>
+          <Users className="w-5 h-5" style={{ color: 'var(--brand-purple)' }} />
         </div>
         <div>
-          <h3 className="font-bold text-[#3C3C3C]">Compare With Friends</h3>
-          <p className="text-xs text-[#777777] font-semibold">See who knows more!</p>
+          <h3 className="font-bold" style={{ color: 'var(--text-primary)' }}>Compare With Friends</h3>
+          <p className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>See who knows more!</p>
         </div>
       </div>
 
       {/* Score display */}
-      <div className="bg-[#F7F4F0] rounded-xl p-4 mb-4 text-center">
-        <p className="text-sm text-[#777777] font-semibold mb-1">Your Score</p>
+      <div className="rounded-xl p-4 mb-4 text-center" style={{ backgroundColor: 'var(--surface-1)' }}>
+        <p className="text-sm font-semibold mb-1" style={{ color: 'var(--text-secondary)' }}>Your Score</p>
         <div className="flex items-center justify-center gap-2">
           <span className="text-3xl">{game?.icon}</span>
-          <span className="text-4xl font-black text-[#3C3C3C]">{userScore}%</span>
+          <span className="text-4xl font-black" style={{ color: 'var(--text-primary)' }}>{userScore}%</span>
         </div>
-        <p className="text-sm text-[#AFAFAF] font-semibold mt-1">{game?.title}</p>
+        <p className="text-sm font-semibold mt-1" style={{ color: 'var(--text-muted)' }}>{game?.title}</p>
       </div>
 
       {/* Challenge link */}
@@ -73,16 +73,16 @@ export default function CompareWithFriends({
           <Input 
             value={challengeLink}
             readOnly
-            className="bg-white border-2 border-[#E5E0DA] text-xs pr-10 truncate rounded-xl"
+            className="bg-white border-2 text-xs pr-10 truncate rounded-xl" style={{ borderColor: 'var(--border-subtle)' }}
           />
           <button
             onClick={copyLink}
             className="absolute right-2 top-1/2 -translate-y-1/2"
           >
             {copied ? (
-              <Check className="w-4 h-4 text-[#58CC02]" />
+              <Check className="w-4 h-4" style={{ color: 'var(--brand-green)' }} />
             ) : (
-              <Copy className="w-4 h-4 text-[#AFAFAF]" />
+              <Copy className="w-4 h-4" style={{ color: 'var(--text-muted)' }} />
             )}
           </button>
         </div>
@@ -97,7 +97,7 @@ export default function CompareWithFriends({
         Challenge Friends
       </button>
 
-      <p className="text-center text-xs text-[#AFAFAF] font-semibold mt-3">
+      <p className="text-center text-xs font-semibold mt-3" style={{ color: 'var(--text-muted)' }}>
         Friends will play the same game and compare scores!
       </p>
     </motion.div>
@@ -109,9 +109,9 @@ export function FriendLeaderboard({ scores = [], currentUserId }) {
   const sortedScores = [...scores].sort((a, b) => b.percentage - a.percentage);
   
   return (
-    <div className="bg-slate-800/50 rounded-xl p-4">
+    <div className="rounded-xl p-4" style={{ backgroundColor: 'rgba(15, 23, 42, 0.5)' }}>
       <div className="flex items-center gap-2 mb-4">
-        <Trophy className="w-5 h-5 text-yellow-500" />
+        <Trophy className="w-5 h-5" style={{ color: 'var(--brand-yellow)' }} />
         <h3 className="font-bold">Friend Scores</h3>
       </div>
 
@@ -122,18 +122,27 @@ export function FriendLeaderboard({ scores = [], currentUserId }) {
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
-            className={`flex items-center gap-3 p-3 rounded-lg ${
-              score.user_id === currentUserId 
-                ? 'bg-purple-500/20 border border-purple-500/30' 
-                : 'bg-slate-900/50'
-            }`}
+            className={`flex items-center gap-3 p-3 rounded-lg`}
+            style={{
+              backgroundColor: score.user_id === currentUserId 
+                ? 'rgba(168, 85, 247, 0.2)' 
+                : 'rgba(15, 23, 42, 0.5)',
+              border: score.user_id === currentUserId 
+                ? '1px solid rgba(168, 85, 247, 0.3)' 
+                : 'none'
+            }}
           >
-            <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-              i === 0 ? 'bg-yellow-500 text-black' :
-              i === 1 ? 'bg-slate-400 text-black' :
-              i === 2 ? 'bg-orange-600 text-white' :
-              'bg-slate-700 text-slate-400'
-            }`}>
+            <div className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+              style={{
+                backgroundColor: i === 0 ? 'var(--brand-yellow)' :
+                               i === 1 ? '#94a3b8' :
+                               i === 2 ? 'var(--brand-orange)' :
+                               '#374151',
+                color: i === 0 ? 'var(--text-primary)' :
+                       i === 1 ? 'var(--text-primary)' :
+                       i === 2 ? 'var(--text-inverse)' :
+                       '#9ca3af'
+              }}>
               {i + 1}
             </div>
             <div className="flex-1">

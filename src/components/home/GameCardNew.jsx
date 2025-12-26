@@ -93,7 +93,7 @@ export default function GameCardNew({
                 cy="32"
                 r="30"
                 fill="none"
-                stroke="#F3F4F6"
+                stroke="var(--surface-2)"
                 strokeWidth="3"
               />
               <motion.circle

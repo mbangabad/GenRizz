@@ -182,12 +182,13 @@ Play now: genrizz.app`;
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank')}
-            className="flex flex-col items-center gap-1 p-2 bg-[#25D366]/10 rounded-xl"
+            className="flex flex-col items-center gap-1 p-2 rounded-xl"
+            style={{ backgroundColor: 'rgba(37, 211, 102, 0.1)' }}
           >
-            <div className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center">
-              <MessageCircle className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--brand-green)' }}>
+              <MessageCircle className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />
             </div>
-            <span className="text-[10px] font-bold text-[#25D366]">WhatsApp</span>
+            <span className="text-[10px] font-bold" style={{ color: 'var(--brand-green)' }}>WhatsApp</span>
           </motion.button>
 
           {/* iMessage/SMS */}
@@ -195,12 +196,13 @@ Play now: genrizz.app`;
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.open(`sms:?&body=${encodeURIComponent(shareText)}`, '_self')}
-            className="flex flex-col items-center gap-1 p-2 bg-[#34C759]/10 rounded-xl"
+            className="flex flex-col items-center gap-1 p-2 rounded-xl"
+            style={{ backgroundColor: 'rgba(52, 199, 89, 0.1)' }}
           >
-            <div className="w-10 h-10 rounded-full bg-[#34C759] flex items-center justify-center">
-              <Smartphone className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#34C759' }}>
+              <Smartphone className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />
             </div>
-            <span className="text-[10px] font-bold text-[#34C759]">iMessage</span>
+            <span className="text-[10px] font-bold" style={{ color: '#34C759' }}>iMessage</span>
           </motion.button>
 
           {/* TikTok */}
@@ -211,12 +213,13 @@ Play now: genrizz.app`;
               await navigator.clipboard.writeText(shareText);
               window.open('https://www.tiktok.com/upload', '_blank');
             }}
-            className="flex flex-col items-center gap-1 p-2 bg-black/5 rounded-xl"
+            className="flex flex-col items-center gap-1 p-2 rounded-xl"
+            style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}
           >
             <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
               <span className="text-lg">🎵</span>
             </div>
-            <span className="text-[10px] font-bold text-[#3C3C3C]">TikTok</span>
+            <span className="text-[10px] font-bold" style={{ color: 'var(--text-primary)' }}>TikTok</span>
           </motion.button>
 
           {/* Twitter/X */}
@@ -224,12 +227,13 @@ Play now: genrizz.app`;
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleTwitterShare}
-            className="flex flex-col items-center gap-1 p-2 bg-black/5 rounded-xl"
+            className="flex flex-col items-center gap-1 p-2 rounded-xl"
+            style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}
           >
             <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
-              <Twitter className="w-5 h-5 text-white" />
+              <Twitter className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />
             </div>
-            <span className="text-[10px] font-bold text-[#3C3C3C]">X</span>
+            <span className="text-[10px] font-bold" style={{ color: 'var(--text-primary)' }}>X</span>
           </motion.button>
 
           {/* Share */}
@@ -237,12 +241,13 @@ Play now: genrizz.app`;
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleNativeShare}
-            className="flex flex-col items-center gap-1 p-2 bg-[#007AFF]/10 rounded-xl"
+            className="flex flex-col items-center gap-1 p-2 rounded-xl"
+            style={{ backgroundColor: 'rgba(0, 122, 255, 0.1)' }}
           >
-            <div className="w-10 h-10 rounded-full bg-[#007AFF] flex items-center justify-center">
-              <Share2 className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: '#007AFF' }}>
+              <Share2 className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />
             </div>
-            <span className="text-[10px] font-bold text-[#007AFF]">Share</span>
+            <span className="text-[10px] font-bold" style={{ color: '#007AFF' }}>Share</span>
           </motion.button>
 
           {/* Copy */}
@@ -250,12 +255,13 @@ Play now: genrizz.app`;
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleCopy}
-            className="flex flex-col items-center gap-1 p-2 bg-[#E8E4DF] rounded-xl"
+            className="flex flex-col items-center gap-1 p-2 rounded-xl"
+            style={{ backgroundColor: 'var(--surface-3)' }}
           >
-            <div className="w-10 h-10 rounded-full bg-[#777777] flex items-center justify-center">
-              {copied ? <Check className="w-5 h-5 text-white" /> : <Copy className="w-5 h-5 text-white" />}
+            <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--text-secondary)' }}>
+              {copied ? <Check className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} /> : <Copy className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />}
             </div>
-            <span className="text-[10px] font-bold text-[#777777]">{copied ? 'Copied!' : 'Copy'}</span>
+            <span className="text-[10px] font-bold" style={{ color: 'var(--text-secondary)' }}>{copied ? 'Copied!' : 'Copy'}</span>
           </motion.button>
         </div>
       </div>
@@ -266,7 +272,7 @@ Play now: genrizz.app`;
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="text-center text-sm text-gray-500 italic bg-gray-50 rounded-xl p-3"
+          className="text-center text-sm italic rounded-xl p-3" style={{ color: 'var(--text-secondary)', backgroundColor: 'var(--surface-1)' }}
         >
           "{tier.roast}"
         </motion.div>

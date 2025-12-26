@@ -2,10 +2,10 @@ import React from 'react';
 import { Zap, Clock, Eye, SkipForward } from 'lucide-react';
 
 const POWER_UPS = [
-  { id: 'fifty', icon: '50/50', name: '50/50', description: 'Remove 2 wrong answers', color: '#CE82FF' },
-  { id: 'time', icon: Clock, name: '+10s', description: 'Add 10 seconds', color: '#1CB0F6' },
-  { id: 'hint', icon: Eye, name: 'Hint', description: 'Show a hint', color: '#58CC02' },
-  { id: 'skip', icon: SkipForward, name: 'Skip', description: 'Skip question (counts as correct)', color: '#FF9600' },
+  { id: 'fifty', icon: '50/50', name: '50/50', description: 'Remove 2 wrong answers', color: 'var(--brand-purple)' },
+  { id: 'time', icon: Clock, name: '+10s', description: 'Add 10 seconds', color: 'var(--brand-blue)' },
+  { id: 'hint', icon: Eye, name: 'Hint', description: 'Show a hint', color: 'var(--brand-green)' },
+  { id: 'skip', icon: SkipForward, name: 'Skip', description: 'Skip question (counts as correct)', color: 'var(--brand-orange)' },
 ];
 
 export default function PowerUps({ available, onUse, disabled }) {

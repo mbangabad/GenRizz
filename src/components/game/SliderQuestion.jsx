@@ -38,7 +38,7 @@ export default function SliderQuestion({ question, questionNumber, totalQuestion
     <div className="space-y-6">
       {/* Progress */}
       <div className="flex items-center justify-between text-sm">
-        <span className="font-bold text-[#777777]">{questionNumber} / {totalQuestions}</span>
+        <span className="font-bold text-[var(--text-secondary)]">{questionNumber} / {totalQuestions}</span>
         <span className="badge-3d badge-blue">
           <span>📊</span>
           <span>Rate It</span>
@@ -61,7 +61,7 @@ export default function SliderQuestion({ question, questionNumber, totalQuestion
         animate={{ opacity: 1, y: 0 }}
         className="card-3d p-6"
       >
-        <h2 className="text-xl font-black text-[#3C3C3C] text-center leading-relaxed">
+        <h2 className="text-xl font-black text-[var(--text-primary)] text-center leading-relaxed">
           {question.question}
         </h2>
       </motion.div>
@@ -83,15 +83,15 @@ export default function SliderQuestion({ question, questionNumber, totalQuestion
           >
             {value}
           </motion.div>
-          <p className="text-[#777777] font-bold mt-2">{getPositionLabel()}</p>
+          <p className="text-[var(--text-secondary)] font-bold mt-2">{getPositionLabel()}</p>
         </div>
 
         {/* Slider */}
         <div className="relative px-2">
           {/* Track */}
-          <div className="h-4 bg-[#E8E4DF] rounded-full relative overflow-hidden">
+          <div className="h-4 bg-[var(--surface-3)] rounded-full relative overflow-hidden">
             <motion.div
-              className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#58CC02] to-[#A6E22E] rounded-full"
+              className="absolute inset-y-0 left-0 bg-gradient-to-r from-[var(--brand-green)] to-[var(--brand-green-hover)] rounded-full"
               style={{ width: `${value}%` }}
             />
           </div>
@@ -109,7 +109,7 @@ export default function SliderQuestion({ question, questionNumber, totalQuestion
 
           {/* Thumb */}
           <motion.div
-            className="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border-4 border-[#58CC02] shadow-lg pointer-events-none"
+            className="absolute top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white border-4 border-[var(--brand-green)] shadow-lg pointer-events-none"
             style={{ left: `calc(${value}% - 16px)` }}
             whileHover={{ scale: 1.1 }}
           />
@@ -122,14 +122,14 @@ export default function SliderQuestion({ question, questionNumber, totalQuestion
               className="absolute top-8 flex flex-col items-center pointer-events-none"
               style={{ left: `calc(${crowdAverage}% - 20px)` }}
             >
-              <div className="w-0.5 h-4 bg-[#FF86D0]" />
-              <span className="text-xs font-bold text-[#FF86D0] whitespace-nowrap">Avg: {Math.round(crowdAverage)}</span>
+              <div className="w-0.5 h-4 bg-[var(--brand-pink)]" />
+              <span className="text-xs font-bold text-[var(--brand-pink)] whitespace-nowrap">Avg: {Math.round(crowdAverage)}</span>
             </motion.div>
           )}
         </div>
 
         {/* Labels */}
-        <div className="flex justify-between text-sm font-bold text-[#AFAFAF]">
+        <div className="flex justify-between text-sm font-bold text-[var(--text-muted)]">
           <span>{question.minLabel || '0'}</span>
           <span>{question.maxLabel || '100'}</span>
         </div>
@@ -152,7 +152,7 @@ export default function SliderQuestion({ question, questionNumber, totalQuestion
             animate={{ opacity: 1, y: 0 }}
             className="card-3d card-3d-pink p-4 text-center"
           >
-            <p className="font-bold text-[#3C3C3C]">
+            <p className="font-bold text-[var(--text-primary)]">
               {Math.abs(value - crowdAverage) < 15
                 ? "You're close to the crowd average! 🎯"
                 : value > crowdAverage

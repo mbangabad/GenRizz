@@ -64,7 +64,7 @@ export default function Onboarding() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] flex flex-col">
+    <div className="min-h-screen bg-[var(--page-bg)] flex flex-col">
       {/* Progress */}
       <div className="px-4 pt-6">
         <div className="max-w-md mx-auto flex gap-2">
@@ -72,7 +72,7 @@ export default function Onboarding() {
             <div 
               key={i}
               className={`h-2 flex-1 rounded-full transition-all ${
-                i <= step ? 'bg-[#58CC02]' : 'bg-[#E8E4DF]'
+                i <= step ? 'bg-[var(--brand-green)]' : 'bg-[var(--surface-3)]'
               }`}
             />
           ))}
@@ -97,20 +97,20 @@ export default function Onboarding() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.2, type: 'spring' }}
-                    className="w-24 h-24 mx-auto mb-8 rounded-3xl bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center shadow-lg"
-                    style={{ boxShadow: '0 6px 0 #3D8C02' }}
+                    className="w-24 h-24 mx-auto mb-8 rounded-3xl bg-gradient-to-br from-[var(--brand-green)] to-[var(--brand-green-dark)] flex items-center justify-center shadow-lg"
+                    style={{ boxShadow: '0 6px 0 var(--brand-green-dark)' }}
                   >
                     <span className="text-5xl">🔥</span>
                   </motion.div>
                   
-                  <h1 className="text-4xl font-black text-[#3C3C3C] mb-4">{STEPS[step].title}</h1>
-                  <p className="text-xl text-[#777777] mb-12">{STEPS[step].subtitle}</p>
+                  <h1 className="text-4xl font-black text-[var(--text-primary)] mb-4">{STEPS[step].title}</h1>
+                  <p className="text-xl text-[var(--text-secondary)] mb-12">{STEPS[step].subtitle}</p>
 
                   <div className="grid grid-cols-3 gap-4 mb-12">
                     {[
-                      { icon: Sparkles, label: "12 Games", color: '#CE82FF' },
-                      { icon: Users, label: "All Ages", color: '#FF86D0' },
-                      { icon: Trophy, label: "Compete", color: '#FFC800' },
+                      { icon: Sparkles, label: "12 Games", color: 'var(--brand-purple)' },
+                      { icon: Users, label: "All Ages", color: 'var(--brand-pink)' },
+                      { icon: Trophy, label: "Compete", color: 'var(--brand-yellow)' },
                     ].map((item, i) => (
                       <motion.div
                         key={i}
@@ -120,7 +120,7 @@ export default function Onboarding() {
                         className="card-3d p-4"
                       >
                         <item.icon className="w-6 h-6 mx-auto mb-2" style={{ color: item.color }} />
-                        <p className="text-sm font-bold text-[#3C3C3C]">{item.label}</p>
+                        <p className="text-sm font-bold text-[var(--text-primary)]">{item.label}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -130,8 +130,8 @@ export default function Onboarding() {
               {/* Step 2: Generation */}
               {STEPS[step].content === 'generation' && (
                 <>
-                  <h1 className="text-3xl font-black text-[#3C3C3C] mb-2">{STEPS[step].title}</h1>
-                  <p className="text-[#777777] mb-8">{STEPS[step].subtitle}</p>
+                  <h1 className="text-3xl font-black text-[var(--text-primary)] mb-2">{STEPS[step].title}</h1>
+                  <p className="text-[var(--text-secondary)] mb-8">{STEPS[step].subtitle}</p>
 
                   <div className="space-y-3">
                     {GENERATIONS.map((gen, i) => (
@@ -143,17 +143,17 @@ export default function Onboarding() {
                         onClick={() => setSelectedGen(gen.id)}
                         className={`w-full p-4 rounded-xl border-2 transition-all flex items-center gap-4 text-left ${
                           selectedGen === gen.id
-                            ? 'border-[#58CC02] bg-[#58CC02]/10'
-                            : 'border-[#E5E0DA] bg-white hover:border-[#D4CFC7]'
+                            ? 'border-[var(--brand-green)] bg-[var(--brand-green)]/10'
+                            : 'border-[var(--border-subtle)] bg-white hover:border-[var(--border-strong)]'
                         }`}
                       >
                         <span className="text-3xl">{gen.emoji}</span>
                         <div className="flex-1">
-                          <div className="font-bold text-[#3C3C3C]">{gen.label}</div>
-                          <div className="text-sm text-[#777777]">{gen.years} • {gen.desc}</div>
+                          <div className="font-bold text-[var(--text-primary)]">{gen.label}</div>
+                          <div className="text-sm text-[var(--text-secondary)]">{gen.years} • {gen.desc}</div>
                         </div>
                         {selectedGen === gen.id && (
-                          <div className="w-6 h-6 rounded-full bg-[#58CC02] flex items-center justify-center">
+                          <div className="w-6 h-6 rounded-full bg-[var(--brand-green)] flex items-center justify-center">
                             <span className="text-xs text-white">✓</span>
                           </div>
                         )}
@@ -170,14 +170,14 @@ export default function Onboarding() {
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: 'spring' }}
-                    className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center shadow-lg"
-                    style={{ boxShadow: '0 6px 0 #3D8C02' }}
+                    className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-[var(--brand-green)] to-[var(--brand-green-dark)] flex items-center justify-center shadow-lg"
+                    style={{ boxShadow: '0 6px 0 var(--brand-green-dark)' }}
                   >
                     <span className="text-6xl">✨</span>
                   </motion.div>
                   
-                  <h1 className="text-4xl font-black text-[#3C3C3C] mb-4">{STEPS[step].title}</h1>
-                  <p className="text-xl text-[#777777] mb-8">{STEPS[step].subtitle}</p>
+                  <h1 className="text-4xl font-black text-[var(--text-primary)] mb-4">{STEPS[step].title}</h1>
+                  <p className="text-xl text-[var(--text-secondary)] mb-8">{STEPS[step].subtitle}</p>
 
                   {selectedGen && (
                     <motion.div
@@ -185,12 +185,12 @@ export default function Onboarding() {
                       animate={{ opacity: 1, y: 0 }}
                       className="card-3d p-6 mb-8"
                     >
-                      <p className="text-[#777777] text-sm mb-2">Your generation</p>
+                      <p className="text-[var(--text-secondary)] text-sm mb-2">Your generation</p>
                       <div className="flex items-center justify-center gap-3">
                         <span className="text-4xl">
                           {GENERATIONS.find(g => g.id === selectedGen)?.emoji}
                         </span>
-                        <span className="text-2xl font-bold text-[#3C3C3C]">
+                        <span className="text-2xl font-bold text-[var(--text-primary)]">
                           {GENERATIONS.find(g => g.id === selectedGen)?.label}
                         </span>
                       </div>
@@ -198,8 +198,8 @@ export default function Onboarding() {
                   )}
 
                   <div className="card-3d card-3d-yellow p-4">
-                    <Zap className="w-6 h-6 text-[#FFC800] mx-auto mb-2" />
-                    <p className="text-sm text-[#3C3C3C] font-semibold">
+                    <Zap className="w-6 h-6 text-[var(--brand-yellow)] mx-auto mb-2" />
+                    <p className="text-sm text-[var(--text-primary)] font-semibold">
                       You'll start with <strong>5 free games per day</strong>. 
                       Upgrade to Premium for unlimited play!
                     </p>

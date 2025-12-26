@@ -57,7 +57,7 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] flex items-center justify-center p-6">
+    <div className="min-h-screen bg-[var(--page-bg)] flex items-center justify-center p-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -65,10 +65,10 @@ export default function Login() {
       >
         <div className="text-center mb-8">
           <Mascot mood="cool" size="xl" showSpeech speech={isSignUp ? "Join the fun! 🎮" : "Welcome back! 👋"} />
-          <h1 className="text-3xl font-black text-[#3C3C3C] mt-6 mb-2">
+          <h1 className="text-3xl font-black text-[var(--text-primary)] mt-6 mb-2">
             {isSignUp ? 'Create Account' : 'Welcome Back'}
           </h1>
-          <p className="text-[#777777] font-semibold">
+          <p className="text-[var(--text-secondary)] font-semibold">
             {isSignUp ? 'Start your GenRizz journey' : 'Sign in to continue playing'}
           </p>
         </div>
@@ -81,41 +81,41 @@ export default function Login() {
         >
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-bold text-[#3C3C3C] mb-2">
+              <label className="block text-sm font-bold text-[var(--text-primary)] mb-2">
                 Email
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#AFAFAF]" />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[var(--text-muted)]" />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full pl-10 pr-4 py-3 rounded-xl border-2 border-[#E5E0DA] focus:border-[#58CC02] focus:outline-none transition-colors font-semibold"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl border-2 border-[var(--border-subtle)] focus:border-[var(--brand-green)] focus:outline-none transition-colors font-semibold"
                   placeholder="your@email.com"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-bold text-[#3C3C3C] mb-2">
+              <label className="block text-sm font-bold text-[var(--text-primary)] mb-2">
                 Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#AFAFAF]" />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[var(--text-muted)]" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   minLength={6}
-                  className="w-full pl-10 pr-12 py-3 rounded-xl border-2 border-[#E5E0DA] focus:border-[#58CC02] focus:outline-none transition-colors font-semibold"
+                  className="w-full pl-10 pr-12 py-3 rounded-xl border-2 border-[var(--border-subtle)] focus:border-[var(--brand-green)] focus:outline-none transition-colors font-semibold"
                   placeholder="••••••••"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[#AFAFAF] hover:text-[#3C3C3C] transition-colors"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -137,8 +137,8 @@ export default function Login() {
               disabled={loading}
               whileHover={{ scale: loading ? 1 : 1.02 }}
               whileTap={{ scale: loading ? 1 : 0.98 }}
-              className="w-full py-4 bg-gradient-to-br from-[#58CC02] to-[#46A302] hover:from-[#46A302] hover:to-[#3D8C02] text-white rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-              style={{ boxShadow: '0 4px 0 #3D8C02' }}
+              className="w-full py-4 bg-gradient-to-br from-[var(--brand-green)] to-[var(--brand-green-dark)] hover:from-[var(--brand-green-dark)] hover:to-[var(--brand-green-dark)] text-white rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              style={{ boxShadow: '0 4px 0 var(--brand-green-dark)' }}
             >
               {loading ? (
                 <>
@@ -155,7 +155,7 @@ export default function Login() {
           </form>
 
           <div className="mt-6 text-center">
-            <p className="text-sm text-[#777777] font-semibold">
+            <p className="text-sm text-[var(--text-secondary)] font-semibold">
               {isSignUp ? 'Already have an account? ' : "Don't have an account? "}
               <button
                 type="button"
@@ -175,7 +175,7 @@ export default function Login() {
                   e.preventDefault();
                   e.stopPropagation();
                 }}
-                className="text-base text-[#58CC02] font-bold hover:text-[#46A302] transition-colors cursor-pointer bg-transparent border-none p-0 underline decoration-2 underline-offset-2 hover:decoration-[#46A302] inline-block"
+                className="text-base text-[var(--brand-green)] font-bold hover:text-[var(--brand-green-dark)] transition-colors cursor-pointer bg-transparent border-none p-0 underline decoration-2 underline-offset-2 hover:decoration-[var(--brand-green-dark)] inline-block"
                 style={{ 
                   textDecoration: 'underline', 
                   textDecorationThickness: '2px', 

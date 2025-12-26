@@ -234,17 +234,19 @@ export default function Roadmap() {
   const overallProgress = Math.round((completedTasks / totalTasks) * 100);
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen" style={{ backgroundColor: 'var(--page-bg)' }}>
       {/* Header */}
-      <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
+      <header className="glass-header">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link to={createPageUrl('Home')} className="p-2 hover:bg-[#F0EDE8] rounded-xl transition-colors">
-              <ChevronLeft className="w-5 h-5 text-[#777777]" />
+            <Link to={createPageUrl('Home')} className="p-2 rounded-xl transition-colors"
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+              <ChevronLeft className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
             </Link>
             <div>
-              <h1 className="font-black text-lg text-[#3C3C3C]">🗺️ Development Roadmap</h1>
-              <p className="text-xs text-[#AFAFAF] font-semibold">Progress tracker</p>
+              <h1 className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>🗺️ Development Roadmap</h1>
+              <p className="text-xs font-semibold" style={{ color: 'var(--text-muted)' }}>Progress tracker</p>
             </div>
           </div>
           <div className="badge-3d badge-xp">
@@ -262,8 +264,8 @@ export default function Roadmap() {
           className="card-3d p-6"
         >
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-black text-xl text-[#3C3C3C]">Overall Progress</h2>
-            <span className="text-sm text-[#777777] font-semibold">{completedTasks}/{totalTasks} tasks</span>
+            <h2 className="font-black text-xl" style={{ color: 'var(--text-primary)' }}>Overall Progress</h2>
+            <span className="text-sm font-semibold" style={{ color: 'var(--text-secondary)' }}>{completedTasks}/{totalTasks} tasks</span>
           </div>
           <div className="progress-bar-3d h-4 mb-6">
             <motion.div 
@@ -277,10 +279,10 @@ export default function Roadmap() {
           {/* KPIs */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {KPIS.map((kpi, i) => (
-              <div key={i} className="text-center p-3 bg-[#F7F4F0] rounded-xl">
-                <div className="text-2xl font-black text-[#3C3C3C]">{kpi.value}</div>
-                <div className="text-xs text-[#AFAFAF] font-semibold">{kpi.label}</div>
-                <div className="text-xs text-[#AFAFAF]">{kpi.timeframe}</div>
+              <div key={i} className="text-center p-3 rounded-xl" style={{ backgroundColor: 'var(--surface-1)' }}>
+                <div className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>{kpi.value}</div>
+                <div className="text-xs font-semibold" style={{ color: 'var(--text-muted)' }}>{kpi.label}</div>
+                <div className="text-xs" style={{ color: 'var(--text-muted)' }}>{kpi.timeframe}</div>
               </div>
             ))}
           </div>
@@ -293,19 +295,23 @@ export default function Roadmap() {
           transition={{ delay: 0.1 }}
           className="card-3d p-6"
         >
-          <h2 className="font-black text-lg text-[#3C3C3C] mb-4">🎉 Recent Updates</h2>
+          <h2 className="font-black text-lg mb-4" style={{ color: 'var(--text-primary)' }}>🎉 Recent Updates</h2>
           <div className="space-y-4">
             {RECENT_UPDATES.map((update, i) => (
               <div 
                 key={i} 
-                className={`p-4 rounded-xl ${update.highlight ? 'bg-[#58CC02]/10 border border-[#58CC02]/30' : 'bg-[#F7F4F0]'}`}
+                className="p-4 rounded-xl"
+                style={{
+                  backgroundColor: update.highlight ? 'rgba(88, 204, 2, 0.1)' : 'var(--surface-1)',
+                  border: update.highlight ? '1px solid rgba(88, 204, 2, 0.3)' : 'none'
+                }}
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="font-bold text-[#3C3C3C]">{update.date}</span>
-                  <span className="text-sm text-[#777777]">—</span>
-                  <span className="font-bold text-[#58CC02]">{update.title}</span>
+                  <span className="font-bold" style={{ color: 'var(--text-primary)' }}>{update.date}</span>
+                  <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>—</span>
+                  <span className="font-bold" style={{ color: 'var(--brand-green)' }}>{update.title}</span>
                 </div>
-                <ul className="text-sm text-[#777777] space-y-1">
+                <ul className="text-sm space-y-1" style={{ color: 'var(--text-secondary)' }}>
                   {update.items.map((item, j) => (
                     <li key={j}>{item}</li>
                   ))}
@@ -322,14 +328,14 @@ export default function Roadmap() {
           transition={{ delay: 0.15 }}
           className="card-3d p-6"
         >
-          <h2 className="font-black text-lg text-[#3C3C3C] mb-4">🔬 Research Insights</h2>
+          <h2 className="font-black text-lg mb-4" style={{ color: 'var(--text-primary)' }}>🔬 Research Insights</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {RESEARCH_INSIGHTS.map((item, i) => (
-              <div key={i} className="flex items-start gap-3 p-3 bg-[#F7F4F0] rounded-xl">
+              <div key={i} className="flex items-start gap-3 p-3 rounded-xl" style={{ backgroundColor: 'var(--surface-1)' }}>
                 <span className="text-2xl">{item.emoji}</span>
                 <div>
-                  <div className="font-bold text-[#3C3C3C] text-sm">{item.source}</div>
-                  <div className="text-xs text-[#777777]">{item.insight}</div>
+                  <div className="font-bold text-sm" style={{ color: 'var(--text-primary)' }}>{item.source}</div>
+                  <div className="text-xs" style={{ color: 'var(--text-secondary)' }}>{item.insight}</div>
                 </div>
               </div>
             ))}
@@ -338,7 +344,7 @@ export default function Roadmap() {
 
         {/* Phases */}
         <div className="space-y-4">
-          <h2 className="font-black text-xl text-[#3C3C3C]">📋 Development Phases</h2>
+          <h2 className="font-black text-xl" style={{ color: 'var(--text-primary)' }}>📋 Development Phases</h2>
           
           {PHASES.map((phase, index) => {
             const PhaseIcon = phase.icon;
@@ -368,7 +374,7 @@ export default function Roadmap() {
                   
                   <div className="flex-1 text-left">
                     <div className="flex items-center gap-2">
-                      <span className="font-black text-[#3C3C3C]">Phase {phase.id}: {phase.title}</span>
+                      <span className="font-black" style={{ color: 'var(--text-primary)' }}>Phase {phase.id}: {phase.title}</span>
                       <span 
                         className="text-xs font-bold px-2 py-0.5 rounded-full"
                         style={{ 
@@ -379,13 +385,13 @@ export default function Roadmap() {
                         {phase.priority}
                       </span>
                     </div>
-                    <div className="text-sm text-[#777777] font-semibold">{phase.subtitle}</div>
+                    <div className="text-sm font-semibold" style={{ color: 'var(--text-secondary)' }}>{phase.subtitle}</div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <div className="text-right hidden sm:block">
-                      <div className="text-sm font-bold text-[#3C3C3C]">{progress}%</div>
-                      <div className="text-xs text-[#AFAFAF]">{phase.tasks.filter(t => t.status === 'done').length}/{phase.tasks.length}</div>
+                      <div className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>{progress}%</div>
+                      <div className="text-xs" style={{ color: 'var(--text-muted)' }}>{phase.tasks.filter(t => t.status === 'done').length}/{phase.tasks.length}</div>
                     </div>
                     <div className="w-24 hidden md:block">
                       <div className="progress-bar-3d h-2">
@@ -395,7 +401,7 @@ export default function Roadmap() {
                         />
                       </div>
                     </div>
-                    <ChevronLeft className={`w-5 h-5 text-[#AFAFAF] transition-transform ${isExpanded ? '-rotate-90' : ''}`} />
+                    <ChevronLeft className={`w-5 h-5 transition-transform ${isExpanded ? '-rotate-90' : ''}`} style={{ color: 'var(--text-muted)' }} />
                   </div>
                 </button>
 
@@ -405,29 +411,33 @@ export default function Roadmap() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    className="border-t border-[#E5E0DA]"
+                    className="border-t" style={{ borderColor: 'var(--border-subtle)' }}
                   >
                     <div className="p-4 space-y-2">
                       {phase.tasks.map((task) => (
                         <div 
                           key={task.id}
-                          className={`flex items-start gap-3 p-3 rounded-xl transition-colors ${
-                            task.status === 'done' ? 'bg-[#58CC02]/10' : 
-                            task.status === 'in-progress' ? 'bg-[#FFC800]/10' : 
-                            'bg-[#F7F4F0]'
-                          }`}
+                          className="flex items-start gap-3 p-3 rounded-xl transition-colors"
+                          style={{
+                            backgroundColor: task.status === 'done' ? 'rgba(88, 204, 2, 0.1)' :
+                                           task.status === 'in-progress' ? 'rgba(255, 200, 0, 0.1)' :
+                                           'var(--surface-1)'
+                          }}
                         >
                           {getStatusIcon(task.status)}
                           <div className="flex-1">
                             <div className="flex items-center gap-2">
-                              <span className="font-bold text-[#3C3C3C] text-sm">{task.id} {task.title}</span>
+                              <span className="font-bold text-sm" style={{ color: 'var(--text-primary)' }}>{task.id} {task.title}</span>
                               {task.critical && (
-                                <span className="text-xs font-bold px-1.5 py-0.5 rounded bg-[#FF4B4B]/20 text-[#FF4B4B]">
+                                <span className="text-xs font-bold px-1.5 py-0.5 rounded" style={{ 
+                                  backgroundColor: 'rgba(255, 75, 75, 0.2)',
+                                  color: 'var(--brand-red)'
+                                }}>
                                   ⭐ CRITICAL
                                 </span>
                               )}
                             </div>
-                            <p className="text-xs text-[#777777] mt-0.5">{task.description}</p>
+                            <p className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>{task.description}</p>
                           </div>
                         </div>
                       ))}
@@ -446,24 +456,24 @@ export default function Roadmap() {
           transition={{ delay: 0.5 }}
           className="card-3d card-3d-green p-6"
         >
-          <h2 className="font-black text-lg text-[#3C3C3C] mb-4">🎉 Ready for Beta Launch!</h2>
+          <h2 className="font-black text-lg mb-4" style={{ color: 'var(--text-primary)' }}>🎉 Ready for Beta Launch!</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
-            <div className="p-4 bg-white/50 rounded-xl">
+            <div className="p-4 rounded-xl" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
               <span className="text-3xl block mb-2">✅</span>
-              <p className="font-bold text-[#3C3C3C]">12 Games</p>
-              <p className="text-xs text-[#777777]">All categories</p>
+              <p className="font-bold" style={{ color: 'var(--text-primary)' }}>12 Games</p>
+              <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>All categories</p>
             </div>
-            <div className="p-4 bg-white/50 rounded-xl">
+            <div className="p-4 rounded-xl" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
               <span className="text-3xl block mb-2">✅</span>
               <p className="font-bold text-[#3C3C3C]">Auth & Billing</p>
               <p className="text-xs text-[#777777]">Premium ready</p>
             </div>
-            <div className="p-4 bg-white/50 rounded-xl">
+            <div className="p-4 rounded-xl" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
               <span className="text-3xl block mb-2">✅</span>
               <p className="font-bold text-[#3C3C3C]">Social</p>
               <p className="text-xs text-[#777777]">Friends & challenges</p>
             </div>
-            <div className="p-4 bg-white/50 rounded-xl">
+            <div className="p-4 rounded-xl" style={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}>
               <span className="text-3xl block mb-2">✅</span>
               <p className="font-bold text-[#3C3C3C]">Viral Sharing</p>
               <p className="text-xs text-[#777777]">All platforms</p>

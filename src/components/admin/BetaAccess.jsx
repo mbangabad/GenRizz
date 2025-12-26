@@ -43,8 +43,8 @@ export default function BetaAccess() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-xl font-black text-[#3C3C3C]">Private Beta Access</h2>
-          <p className="text-sm text-[#777777]">Manage who can access the app.</p>
+          <h2 className="text-xl font-black" style={{ color: 'var(--text-primary)' }}>Private Beta Access</h2>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Manage who can access the app.</p>
         </div>
         <div className="badge-3d badge-green">
           {allowedUsers.length} Allowed
@@ -52,14 +52,14 @@ export default function BetaAccess() {
       </div>
 
       <div className="card-3d p-6 bg-white">
-        <h3 className="font-bold text-[#3C3C3C] mb-4 flex items-center gap-2">
+        <h3 className="font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
           <UserPlus className="w-5 h-5" /> Grant Access
         </h3>
         <form onSubmit={handleAddUser} className="flex gap-4 items-end">
           <div className="flex-1 space-y-1">
-            <label className="text-xs font-bold text-[#AFAFAF] uppercase">Email</label>
+            <label className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Email</label>
             <div className="relative">
-              <Mail className="absolute left-3 top-3 w-4 h-4 text-[#AFAFAF]" />
+              <Mail className="absolute left-3 top-3 w-4 h-4" style={{ color: 'var(--text-muted)' }} />
               <Input 
                 value={newUser.email}
                 onChange={e => setNewUser({...newUser, email: e.target.value.toLowerCase()})}
@@ -70,9 +70,9 @@ export default function BetaAccess() {
             </div>
           </div>
           <div className="flex-1 space-y-1">
-            <label className="text-xs font-bold text-[#AFAFAF] uppercase">Name (Optional)</label>
+            <label className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Name (Optional)</label>
             <div className="relative">
-              <User className="absolute left-3 top-3 w-4 h-4 text-[#AFAFAF]" />
+              <User className="absolute left-3 top-3 w-4 h-4" style={{ color: 'var(--text-muted)' }} />
               <Input 
                 value={newUser.name}
                 onChange={e => setNewUser({...newUser, name: e.target.value})}
@@ -93,19 +93,22 @@ export default function BetaAccess() {
 
       <div className="grid gap-3">
         {allowedUsers.map(user => (
-          <div key={user.id} className="card-3d p-4 flex items-center justify-between hover:border-[#1CB0F6] transition-colors bg-white">
+          <div key={user.id} className="card-3d p-4 flex items-center justify-between transition-colors bg-white" onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--brand-blue)'} onMouseLeave={e => e.currentTarget.style.borderColor = ''}>
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#1CB0F6] to-[#1899D6] flex items-center justify-center text-white font-bold">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold" style={{ background: 'linear-gradient(to bottom right, var(--brand-blue), #1899D6)' }}>
                 {user.name?.[0] || user.email[0].toUpperCase()}
               </div>
               <div>
-                <p className="font-bold text-[#3C3C3C]">{user.name || 'No Name'}</p>
-                <p className="text-sm text-[#777777]">{user.email}</p>
+                <p className="font-bold" style={{ color: 'var(--text-primary)' }}>{user.name || 'No Name'}</p>
+                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{user.email}</p>
               </div>
             </div>
             <button 
               onClick={() => handleDelete(user.id)}
-              className="p-2 hover:bg-[#FFF5F5] rounded-lg text-[#FF4B4B] transition-colors"
+              className="p-2 rounded-lg transition-colors"
+              style={{ color: 'var(--brand-red)' }}
+              onMouseEnter={e => e.target.style.backgroundColor = 'color-mix(in srgb, var(--brand-red) 5%, transparent)'}
+              onMouseLeave={e => e.target.style.backgroundColor = 'transparent'}
               title="Revoke Access"
             >
               <Trash2 className="w-5 h-5" />
@@ -113,7 +116,7 @@ export default function BetaAccess() {
           </div>
         ))}
         {allowedUsers.length === 0 && (
-          <div className="text-center py-8 text-[#AFAFAF] font-semibold">
+          <div className="text-center py-8 font-semibold" style={{ color: 'var(--text-muted)' }}>
             No users allowed yet. Add someone above!
           </div>
         )}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const COLORS = ['#4ade80', '#facc15', '#38bdf8', '#c084fc', '#fb923c', '#f472b6'];
+const COLORS = ['var(--brand-green)', 'var(--brand-yellow)', 'var(--brand-blue)', 'var(--brand-purple)', 'var(--brand-orange)', 'var(--brand-pink)'];
 
 export default function Confetti({ trigger, duration = 2000 }) {
   const [particles, setParticles] = useState([]);

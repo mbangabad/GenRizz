@@ -37,10 +37,10 @@ export default function SpotlightCarousel() {
   }, [events]);
 
   return (
-    <div className="card-3d p-5 bg-white border border-[#E5E0DA] space-y-4">
+    <div className="card-3d p-5 bg-white border border-[var(--border-subtle)] space-y-4">
       <div className="flex items-center gap-2">
-        <Sparkles className="w-5 h-5 text-[#9b87f5]" />
-        <h3 className="font-black text-[#3C3C3C] text-lg">Spotlight</h3>
+        <Sparkles className="w-5 h-5 text-[var(--brand-purple)]" />
+        <h3 className="font-black text-[var(--text-primary)] text-lg">Spotlight</h3>
       </div>
       <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
         {events.map((evt) => (
@@ -48,15 +48,15 @@ export default function SpotlightCarousel() {
             <div className="flex items-center gap-2 mb-2">
               <span className="text-xl">{evt.emoji || '✨'}</span>
               <div>
-                <p className="font-black text-[#3C3C3C]">{evt.title}</p>
-                <p className="text-xs text-[#777777]">{evt.description}</p>
+                <p className="font-black text-[var(--text-primary)]">{evt.title}</p>
+                <p className="text-xs text-[var(--text-secondary)]">{evt.description}</p>
               </div>
             </div>
-            <div className="flex flex-wrap gap-2 text-[11px] text-[#3C3C3C] font-semibold mb-3">
+            <div className="flex flex-wrap gap-2 text-[11px] text-[var(--text-primary)] font-semibold mb-3">
               {evt.games?.map((g, idx) => {
                 const id = typeof g === 'string' ? g : g.game_id || g.id || `item-${idx}`;
                 return (
-                  <span key={`${id}-${idx}`} className="px-2 py-1 rounded-full bg-[#F0EDE8] border border-[#E5E0DA]">
+                  <span key={`${id}-${idx}`} className="px-2 py-1 rounded-full bg-[var(--surface-2)] border border-[var(--border-subtle)]">
                     {id}
                   </span>
                 );

@@ -39,7 +39,7 @@ export default function WouldYouRather({ question, questionNumber, totalQuestion
     <div className="space-y-6">
       {/* Progress */}
       <div className="flex items-center justify-between text-sm">
-        <span className="font-bold text-[#777777]">{questionNumber} / {totalQuestions}</span>
+        <span className="font-bold text-[var(--text-secondary)]">{questionNumber} / {totalQuestions}</span>
         <span className="badge-3d badge-pink">
           <span>🤔</span>
           <span>Would You Rather</span>
@@ -63,7 +63,7 @@ export default function WouldYouRather({ question, questionNumber, totalQuestion
         className="card-3d p-6 text-center"
       >
         <span className="text-4xl mb-4 block">🤔</span>
-        <h2 className="text-xl font-black text-[#3C3C3C]">Would You Rather...</h2>
+        <h2 className="text-xl font-black text-[var(--text-primary)]">Would You Rather...</h2>
       </motion.div>
 
       {/* Options */}
@@ -80,7 +80,7 @@ export default function WouldYouRather({ question, questionNumber, totalQuestion
               onClick={() => handleSelect(index)}
               disabled={showResult}
               className={`relative overflow-hidden card-3d p-5 text-left transition-all ${
-                isSelected ? 'border-[#58CC02] ring-2 ring-[#58CC02]/30' : ''
+                isSelected ? 'border-[var(--brand-green)] ring-2 ring-[var(--brand-green)]/30' : ''
               } ${showResult && !isSelected ? 'opacity-60' : ''}`}
             >
               {/* Background fill for percentage */}
@@ -90,7 +90,7 @@ export default function WouldYouRather({ question, questionNumber, totalQuestion
                   animate={{ width: `${percentage}%` }}
                   transition={{ duration: 0.8, ease: 'easeOut' }}
                   className={`absolute inset-y-0 left-0 ${
-                    isSelected ? 'bg-[#58CC02]/20' : 'bg-[#E5E0DA]/50'
+                    isSelected ? 'bg-[var(--brand-green)]/20' : 'bg-[var(--border-subtle)]/50'
                   }`}
                 />
               )}
@@ -98,7 +98,7 @@ export default function WouldYouRather({ question, questionNumber, totalQuestion
               <div className="relative z-10 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <span className="text-2xl">{index === 0 ? '🅰️' : '🅱️'}</span>
-                  <span className="font-bold text-[#3C3C3C]">{option.text}</span>
+                  <span className="font-bold text-[var(--text-primary)]">{option.text}</span>
                 </div>
                 
                 {showResult && (
@@ -107,7 +107,7 @@ export default function WouldYouRather({ question, questionNumber, totalQuestion
                     animate={{ opacity: 1, scale: 1 }}
                     className="flex items-center gap-2"
                   >
-                    <span className="text-lg font-black text-[#3C3C3C]">{percentage}%</span>
+                    <span className="text-lg font-black text-[var(--text-primary)]">{percentage}%</span>
                     {isSelected && <span className="text-xl">✓</span>}
                   </motion.div>
                 )}
@@ -126,7 +126,7 @@ export default function WouldYouRather({ question, questionNumber, totalQuestion
             exit={{ opacity: 0 }}
             className="card-3d card-3d-green p-4 text-center"
           >
-            <p className="font-bold text-[#3C3C3C]">
+            <p className="font-bold text-[var(--text-primary)]">
               {getCrowdPercentage(selected) > 50 
                 ? "You're with the majority! 🎉" 
                 : "Bold choice! You're in the minority 💪"}

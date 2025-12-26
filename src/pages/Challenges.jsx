@@ -79,11 +79,11 @@ export default function Challenges() {
 
   if (!user) {
     return (
-      <div className="min-h-screen flex items-center justify-center px-4 bg-[#FAF8F5]">
+      <div className="min-h-screen flex items-center justify-center px-4 bg-[var(--page-bg)]">
         <div className="card-3d p-8 text-center max-w-sm">
-          <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-[#FF9600] to-[#FF6B35] flex items-center justify-center text-4xl mb-6 shadow-lg" style={{ boxShadow: '0 4px 0 #E58600' }}>⚔️</div>
-          <h2 className="text-2xl font-black text-[#3C3C3C] mb-2">Sign In Required</h2>
-          <p className="text-[#777777] font-semibold mb-6">Sign in to challenge friends</p>
+          <div className="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-[var(--brand-orange)] to-[var(--brand-orange-hover)] flex items-center justify-center text-4xl mb-6 shadow-lg" style={{ boxShadow: '0 4px 0 var(--brand-orange-dark)' }}>⚔️</div>
+          <h2 className="text-2xl font-black text-[var(--text-primary)] mb-2">Sign In Required</h2>
+          <p className="text-[var(--text-secondary)] font-semibold mb-6">Sign in to challenge friends</p>
           <button onClick={() => auth.redirectToLogin()} className="btn-3d btn-3d-green w-full py-4">Sign In</button>
         </div>
       </div>
@@ -91,17 +91,17 @@ export default function Challenges() {
   }
 
   return (
-    <div className="min-h-screen pb-24 bg-[#FAF8F5]">
-      <header className="glass-light border-b border-[#E5E0DA] px-4 py-3 sticky top-0 z-40">
+    <div className="min-h-screen pb-24 bg-[var(--page-bg)]">
+      <header className="glass-header px-4 py-3">
         <div className="max-w-lg mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link to={createPageUrl('Home')}>
-              <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">
-                <ArrowLeft className="w-5 h-5 text-[#777777]" />
+              <button className="w-10 h-10 rounded-xl bg-white border-2 border-[var(--border-subtle)] flex items-center justify-center hover:bg-[var(--surface-2)] transition-colors">
+                <ArrowLeft className="w-5 h-5 text-[var(--text-secondary)]" />
               </button>
             </Link>
-            <Swords className="w-6 h-6 text-[#FF9600]" />
-            <h1 className="text-xl font-black text-[#3C3C3C]">Challenges</h1>
+            <Swords className="w-6 h-6 text-[var(--brand-orange)]" />
+            <h1 className="text-xl font-black text-[var(--text-primary)]">Challenges</h1>
           </div>
           <button onClick={() => setShowCreateModal(true)} className="btn-3d btn-3d-green px-4 py-2 text-sm flex items-center gap-1">
             <Plus className="w-4 h-4" /> New
@@ -112,19 +112,19 @@ export default function Challenges() {
       <main className="max-w-lg mx-auto px-4 py-6 space-y-6">
         <div className="grid grid-cols-3 gap-3">
           <div className="card-3d card-3d-green p-4 text-center">
-            <Trophy className="w-6 h-6 mx-auto mb-1 text-[#58CC02]" />
-            <p className="text-2xl font-black text-[#3C3C3C]">{wins}</p>
-            <p className="text-xs text-[#777777] font-semibold">Wins</p>
+            <Trophy className="w-6 h-6 mx-auto mb-1 text-[var(--brand-green)]" />
+            <p className="text-2xl font-black text-[var(--text-primary)]">{wins}</p>
+            <p className="text-xs text-[var(--text-secondary)] font-semibold">Wins</p>
           </div>
-          <div className="card-3d p-4 text-center" style={{ background: 'linear-gradient(135deg, rgba(255, 75, 75, 0.08) 0%, rgba(255, 75, 75, 0.02) 100%)', borderColor: 'rgba(255, 75, 75, 0.3)' }}>
-            <XCircle className="w-6 h-6 mx-auto mb-1 text-[#FF4B4B]" />
-            <p className="text-2xl font-black text-[#3C3C3C]">{losses}</p>
-            <p className="text-xs text-[#777777] font-semibold">Losses</p>
+          <div className="card-3d card-3d-red p-4 text-center">
+            <XCircle className="w-6 h-6 mx-auto mb-1 text-[var(--brand-red)]" />
+            <p className="text-2xl font-black text-[var(--text-primary)]">{losses}</p>
+            <p className="text-xs text-[var(--text-secondary)] font-semibold">Losses</p>
           </div>
           <div className="card-3d card-3d-yellow p-4 text-center">
-            <Clock className="w-6 h-6 mx-auto mb-1 text-[#FFC800]" />
-            <p className="text-2xl font-black text-[#3C3C3C]">{allChallenges.filter(c => ['pending', 'accepted'].includes(c.status)).length}</p>
-            <p className="text-xs text-[#777777] font-semibold">Pending</p>
+            <Clock className="w-6 h-6 mx-auto mb-1 text-[var(--brand-yellow)]" />
+            <p className="text-2xl font-black text-[var(--text-primary)]">{allChallenges.filter(c => ['pending', 'accepted'].includes(c.status)).length}</p>
+            <p className="text-xs text-[var(--text-secondary)] font-semibold">Pending</p>
           </div>
         </div>
 
@@ -133,10 +133,10 @@ export default function Challenges() {
             <button key={f} onClick={() => setStatusFilter(f)}
                     className={`flex-1 py-2.5 rounded-xl font-bold text-sm transition-all ${
                       statusFilter === f 
-                        ? 'bg-[#1CB0F6] text-white shadow-md' 
-                        : 'bg-white border-2 border-[#E5E0DA] text-[#777777] hover:text-[#3C3C3C]'
+                        ? 'bg-[var(--brand-blue)] text-white shadow-md' 
+                        : 'bg-white border-2 border-[var(--border-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                     }`}
-                    style={statusFilter === f ? { boxShadow: '0 3px 0 #1899D6' } : {}}>
+                    style={statusFilter === f ? { boxShadow: '0 3px 0 var(--brand-blue-dark)' } : {}}>
               {f.charAt(0).toUpperCase() + f.slice(1)}
             </button>
           ))}
@@ -144,8 +144,8 @@ export default function Challenges() {
 
         {received.length > 0 && (
           <div>
-            <h2 className="font-bold text-[#3C3C3C] mb-3 flex items-center gap-2">
-              <Swords className="w-5 h-5 text-[#FF9600]" /> Received
+            <h2 className="font-bold text-[var(--text-primary)] mb-3 flex items-center gap-2">
+              <Swords className="w-5 h-5 text-[var(--brand-orange)]" /> Received
             </h2>
             <div className="space-y-3">
               {received.map(c => <ChallengeCard key={c.id} challenge={c} userId={user.id} onAccept={acceptMutation.mutate} onDecline={declineMutation.mutate} />)}
@@ -155,8 +155,8 @@ export default function Challenges() {
 
         {sent.length > 0 && (
           <div>
-            <h2 className="font-bold text-[#3C3C3C] mb-3 flex items-center gap-2">
-              <Trophy className="w-5 h-5 text-[#CE82FF]" /> Sent
+            <h2 className="font-bold text-[var(--text-primary)] mb-3 flex items-center gap-2">
+              <Trophy className="w-5 h-5 text-[var(--brand-purple)]" /> Sent
             </h2>
             <div className="space-y-3">
               {sent.map(c => <ChallengeCard key={c.id} challenge={c} userId={user.id} />)}
@@ -166,8 +166,8 @@ export default function Challenges() {
 
         {filtered.length === 0 && !isLoading && (
           <div className="card-3d p-8 text-center">
-            <Swords className="w-12 h-12 mx-auto mb-4 text-[#AFAFAF]" />
-            <p className="text-[#777777] font-semibold">No challenges yet</p>
+            <Swords className="w-12 h-12 mx-auto mb-4 text-[var(--text-muted)]" />
+            <p className="text-[var(--text-secondary)] font-semibold">No challenges yet</p>
             <button onClick={() => setShowCreateModal(true)} className="btn-3d btn-3d-green mt-4 px-6 py-3">Create Challenge</button>
           </div>
         )}

@@ -118,12 +118,12 @@ export default function EventsAdmin() {
   };
 
   return (
-    <div className="card-3d p-5 bg-white border border-[#E5E0DA] shadow-sm space-y-4">
+    <div className="card-3d p-5 bg-white border shadow-sm space-y-4" style={{ borderColor: 'var(--border-subtle)' }}>
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="font-black text-[#3C3C3C]">Events & Daily Drop</h3>
-          <p className="text-xs text-[#777777]">CRUD against Supabase tables ({EVENTS_TABLE}, {DAILY_TABLE}).</p>
-          <p className="text-[11px] text-[#777777]">Status: {loading ? 'Working…' : status}</p>
+          <h3 className="font-black" style={{ color: 'var(--text-primary)' }}>Events & Daily Drop</h3>
+          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>CRUD against Supabase tables ({EVENTS_TABLE}, {DAILY_TABLE}).</p>
+          <p className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>Status: {loading ? 'Working…' : status}</p>
         </div>
         <div className="flex gap-2">
           <button onClick={seedDemo} disabled={loading} className="btn-3d btn-3d-ghost px-3 py-2 text-xs flex items-center gap-2">
@@ -137,21 +137,24 @@ export default function EventsAdmin() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="space-y-3">
-          <div className="p-3 bg-[#F7F4F0] rounded-xl border border-[#E5E0DA]">
-            <h4 className="font-bold text-sm text-[#3C3C3C] mb-2">Playlists</h4>
-            {events.length === 0 && <p className="text-xs text-[#AFAFAF]">No events yet.</p>}
+          <div className="p-3 rounded-xl border" style={{ backgroundColor: 'var(--surface-2)', borderColor: 'var(--border-subtle)' }}>
+            <h4 className="font-bold text-sm mb-2" style={{ color: 'var(--text-primary)' }}>Playlists</h4>
+            {events.length === 0 && <p className="text-xs" style={{ color: 'var(--text-muted)' }}>No events yet.</p>}
             <div className="space-y-2">
               {events.map((evt) => (
                 <div key={evt.id || evt.title} className="border rounded-lg px-3 py-2 flex items-center justify-between">
                   <div>
-                    <p className="font-bold text-sm text-[#3C3C3C]">{evt.emoji || '✨'} {evt.title}</p>
-                    <p className="text-[11px] text-[#777777]">{evt.description}</p>
-                    <p className="text-[11px] text-[#58CC02]">{Array.isArray(evt.games) ? evt.games.join(', ') : ''}</p>
+                    <p className="font-bold text-sm" style={{ color: 'var(--text-primary)' }}>{evt.emoji || '✨'} {evt.title}</p>
+                    <p className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>{evt.description}</p>
+                    <p className="text-[11px]" style={{ color: 'var(--brand-green)' }}>{Array.isArray(evt.games) ? evt.games.join(', ') : ''}</p>
                   </div>
                   <button
                     onClick={() => toggleEvent(evt)}
                     className={`text-xs font-bold px-2 py-1 rounded ${
-                      evt.active ? 'bg-[#58CC02]/15 text-[#58CC02]' : 'bg-[#E5E0DA] text-[#777777]'
+                      evt.active ? '' : ''
+                    } style={{
+                      backgroundColor: evt.active ? 'color-mix(in srgb, var(--brand-green) 15%, transparent)' : 'var(--border-subtle)',
+                      color: evt.active ? 'var(--brand-green)' : 'var(--text-secondary)'
                     }`}
                   >
                     {evt.active ? 'Active' : 'Inactive'}
@@ -161,22 +164,25 @@ export default function EventsAdmin() {
             </div>
           </div>
 
-          <div className="p-3 bg-[#F7F4F0] rounded-xl border border-[#E5E0DA] space-y-2">
-            <h4 className="font-bold text-sm text-[#3C3C3C] mb-1">New Playlist</h4>
+          <div className="p-3 rounded-xl border space-y-2" style={{ backgroundColor: 'var(--surface-2)', borderColor: 'var(--border-subtle)' }}>
+            <h4 className="font-bold text-sm mb-1" style={{ color: 'var(--text-primary)' }}>New Playlist</h4>
             <input
-              className="w-full text-sm px-3 py-2 rounded border border-[#E5E0DA]"
+              className="w-full text-sm px-3 py-2 rounded border"
+              style={{ borderColor: 'var(--border-subtle)' }}
               placeholder="Title"
               value={draft.title}
               onChange={(e) => setDraft({ ...draft, title: e.target.value })}
             />
             <input
-              className="w-full text-sm px-3 py-2 rounded border border-[#E5E0DA]"
+              className="w-full text-sm px-3 py-2 rounded border"
+              style={{ borderColor: 'var(--border-subtle)' }}
               placeholder="Emoji"
               value={draft.emoji}
               onChange={(e) => setDraft({ ...draft, emoji: e.target.value })}
             />
             <textarea
-              className="w-full text-sm px-3 py-2 rounded border border-[#E5E0DA]"
+              className="w-full text-sm px-3 py-2 rounded border"
+              style={{ borderColor: 'var(--border-subtle)' }}
               placeholder="Description"
               value={draft.description}
               onChange={(e) => setDraft({ ...draft, description: e.target.value })}
@@ -187,7 +193,7 @@ export default function EventsAdmin() {
               value={draft.games}
               onChange={(e) => setDraft({ ...draft, games: e.target.value })}
             />
-            <label className="flex items-center gap-2 text-xs font-bold text-[#3C3C3C]">
+            <label className="flex items-center gap-2 text-xs font-bold" style={{ color: 'var(--text-primary)' }}>
               <input
                 type="checkbox"
                 checked={draft.active}
@@ -205,13 +211,14 @@ export default function EventsAdmin() {
           </div>
         </div>
 
-        <div className="p-3 bg-[#F7F4F0] rounded-xl border border-[#E5E0DA] space-y-2">
+        <div className="p-3 rounded-xl border space-y-2" style={{ backgroundColor: 'var(--surface-2)', borderColor: 'var(--border-subtle)' }}>
           <div className="flex items-center justify-between">
-            <h4 className="font-bold text-sm text-[#3C3C3C]">Daily Drop</h4>
+            <h4 className="font-bold text-sm" style={{ color: 'var(--text-primary)' }}>Daily Drop</h4>
             <button
               onClick={() => daily && saveDaily({ ...daily, active: !daily.active })}
               disabled={!daily || loading}
-              className="text-xs font-bold px-2 py-1 rounded bg-white border border-[#E5E0DA]"
+              className="text-xs font-bold px-2 py-1 rounded bg-white border"
+              style={{ borderColor: 'var(--border-subtle)' }}
             >
               {daily?.active ? 'Disable' : 'Enable'}
             </button>

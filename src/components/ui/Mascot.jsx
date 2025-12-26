@@ -66,15 +66,15 @@ export default function Mascot({
         className={`${s.container} relative`}
       >
         {/* Glow Effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#FFD93D]/30 to-[#FF6B35]/30 rounded-full blur-xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-yellow)]/30 to-[var(--brand-orange)]/30 rounded-full blur-xl" />
         
         {/* Main Character */}
         <motion.div 
-          className={`relative ${s.container} rounded-full bg-gradient-to-br from-[#FFD93D] via-[#FF8F35] to-[#FF6B35] flex items-center justify-center shadow-lg`}
+          className={`relative ${s.container} rounded-full bg-gradient-to-br from-[var(--brand-yellow)] via-[var(--brand-orange)] to-[var(--brand-orange-dark)] flex items-center justify-center shadow-lg`}
           whileHover={{ scale: 1.1, rotate: 10 }}
           whileTap={{ scale: 0.9 }}
           style={{
-            boxShadow: '0 8px 0 #E55A2B, 0 12px 30px rgba(255, 107, 53, 0.4)'
+            boxShadow: '0 8px 0 var(--brand-orange-dark), 0 12px 30px rgba(255, 107, 53, 0.4)'
           }}
         >
           {/* Face */}
@@ -124,7 +124,7 @@ export function CelebrationMascot({ className = '' }) {
           key={i}
           className="absolute w-3 h-3 rounded-full"
           style={{
-            background: ['#A6E22E', '#FF6B9D', '#58D0FF', '#FFD93D', '#B388FF'][i % 5],
+            background: ['var(--brand-green)', 'var(--brand-pink)', 'var(--brand-blue)', 'var(--brand-yellow)', 'var(--brand-purple)'][i % 5],
             left: `${20 + Math.random() * 60}%`,
             top: '-20px',
           }}

@@ -47,18 +47,18 @@ export default function Achievements() {
   }, 0);
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-32">
+    <div className="min-h-screen bg-[var(--page-bg)] pb-32">
       {/* Header */}
-      <header className="sticky top-0 z-40 px-4 py-3 glass-light border-b border-[#E5E0DA]">
+      <header className="glass-header px-4 py-3">
         <div className="max-w-4xl mx-auto flex items-center gap-3">
           <Link to={createPageUrl('Home')}>
-            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">
-              <ArrowLeft className="w-5 h-5 text-[#777777]" />
+            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[var(--border-subtle)] flex items-center justify-center hover:bg-[var(--surface-2)] transition-colors">
+              <ArrowLeft className="w-5 h-5 text-[var(--text-secondary)]" />
             </button>
           </Link>
           <div className="flex-1">
-            <h1 className="text-xl font-black text-[#3C3C3C]">Achievements</h1>
-            <p className="text-sm text-[#777777] font-semibold">{unlockedCount}/{totalCount} unlocked</p>
+            <h1 className="text-xl font-black text-[var(--text-primary)]">Achievements</h1>
+            <p className="text-sm text-[var(--text-secondary)] font-semibold">{unlockedCount}/{totalCount} unlocked</p>
           </div>
           <div className="badge-3d badge-xp">
             <Zap className="w-4 h-4" />
@@ -72,31 +72,31 @@ export default function Achievements() {
         <div className="card-3d card-3d-yellow p-6 mb-6">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#FFC800] to-[#FF9600] flex items-center justify-center shadow-lg"
-                   style={{ boxShadow: '0 4px 0 #E58600' }}>
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--brand-yellow)] to-[var(--brand-orange)] flex items-center justify-center shadow-lg"
+                   style={{ boxShadow: '0 4px 0 var(--brand-orange-dark)' }}>
                 <Trophy className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h2 className="text-2xl font-black text-[#3C3C3C]">{unlockedCount}</h2>
-                <p className="text-[#777777] text-sm font-semibold">Achievements Unlocked</p>
+                <h2 className="text-2xl font-black text-[var(--text-primary)]">{unlockedCount}</h2>
+                <p className="text-[var(--text-secondary)] text-sm font-semibold">Achievements Unlocked</p>
               </div>
             </div>
             <div className="text-right">
-              <p className="text-3xl font-black text-[#CE82FF]">+{totalXpFromAchievements}</p>
-              <p className="text-[#777777] text-sm font-semibold">XP Earned</p>
+              <p className="text-3xl font-black text-[var(--brand-purple)]">+{totalXpFromAchievements}</p>
+              <p className="text-[var(--text-secondary)] text-sm font-semibold">XP Earned</p>
             </div>
           </div>
 
           {/* Progress bar */}
           <div className="progress-bar-3d">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-[#FFC800] to-[#FF9600]"
+              className="h-full rounded-full bg-gradient-to-r from-[var(--brand-yellow)] to-[var(--brand-orange)]"
               initial={{ width: 0 }}
               animate={{ width: `${(unlockedCount / totalCount) * 100}%` }}
               transition={{ duration: 1, ease: 'easeOut' }}
             />
           </div>
-          <p className="text-sm text-[#777777] font-semibold mt-2 text-center">
+          <p className="text-sm text-[var(--text-secondary)] font-semibold mt-2 text-center">
             {totalCount - unlockedCount} more to unlock
           </p>
         </div>
@@ -104,10 +104,10 @@ export default function Achievements() {
         {/* Rarity Stats */}
         <div className="grid grid-cols-4 gap-3 mb-6">
           {[
-            { rarity: 'common', color: '#58CC02', count: ACHIEVEMENTS.filter(a => a.rarity === 'common').length },
-            { rarity: 'rare', color: '#1CB0F6', count: ACHIEVEMENTS.filter(a => a.rarity === 'rare').length },
-            { rarity: 'epic', color: '#CE82FF', count: ACHIEVEMENTS.filter(a => a.rarity === 'epic').length },
-            { rarity: 'legendary', color: '#FFC800', count: ACHIEVEMENTS.filter(a => a.rarity === 'legendary').length },
+            { rarity: 'common', color: 'var(--brand-green)', count: ACHIEVEMENTS.filter(a => a.rarity === 'common').length },
+            { rarity: 'rare', color: 'var(--brand-blue)', count: ACHIEVEMENTS.filter(a => a.rarity === 'rare').length },
+            { rarity: 'epic', color: 'var(--brand-purple)', count: ACHIEVEMENTS.filter(a => a.rarity === 'epic').length },
+            { rarity: 'legendary', color: 'var(--brand-yellow)', count: ACHIEVEMENTS.filter(a => a.rarity === 'legendary').length },
           ].map((r) => {
             const unlocked = ACHIEVEMENTS.filter(a => 
               a.rarity === r.rarity && unlockedIds.includes(a.id)
@@ -115,7 +115,7 @@ export default function Achievements() {
             return (
               <div key={r.rarity} className="card-3d p-3 text-center">
                 <div className="text-lg font-black" style={{ color: r.color }}>{unlocked}/{r.count}</div>
-                <div className="text-xs text-[#777777] font-semibold capitalize">{r.rarity}</div>
+                <div className="text-xs text-[var(--text-secondary)] font-semibold capitalize">{r.rarity}</div>
               </div>
             );
           })}
@@ -127,10 +127,10 @@ export default function Achievements() {
             onClick={() => setActiveCategory('all')}
             className={`px-4 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap transition-all ${
               activeCategory === 'all'
-                ? 'bg-[#58CC02] text-white shadow-md'
-                : 'bg-white border-2 border-[#E5E0DA] text-[#777777] hover:text-[#3C3C3C]'
+                ? 'bg-[var(--brand-green)] text-white shadow-md'
+                : 'bg-white border-2 border-[var(--border-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
             }`}
-            style={activeCategory === 'all' ? { boxShadow: '0 3px 0 #46A302' } : {}}
+            style={activeCategory === 'all' ? { boxShadow: '0 3px 0 var(--brand-green-dark)' } : {}}
           >
             All ({ACHIEVEMENTS.length})
           </button>
@@ -145,10 +145,10 @@ export default function Achievements() {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-4 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap transition-all flex items-center gap-1.5 ${
                   activeCategory === cat.id
-                    ? 'bg-[#58CC02] text-white shadow-md'
-                    : 'bg-white border-2 border-[#E5E0DA] text-[#777777] hover:text-[#3C3C3C]'
+                    ? 'bg-[var(--brand-green)] text-white shadow-md'
+                    : 'bg-white border-2 border-[var(--border-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                 }`}
-                style={activeCategory === cat.id ? { boxShadow: '0 3px 0 #46A302' } : {}}
+                style={activeCategory === cat.id ? { boxShadow: '0 3px 0 var(--brand-green-dark)' } : {}}
               >
                 <span>{cat.icon}</span>
                 <span>{cat.name}</span>
@@ -183,8 +183,8 @@ export default function Achievements() {
 
         {sortedAchievements.length === 0 && (
           <div className="text-center py-16">
-            <Trophy className="w-12 h-12 mx-auto mb-4 text-[#AFAFAF]" />
-            <p className="text-[#777777] font-semibold">No achievements in this category yet</p>
+            <Trophy className="w-12 h-12 mx-auto mb-4 text-[var(--text-muted)]" />
+            <p className="text-[var(--text-secondary)] font-semibold">No achievements in this category yet</p>
           </div>
         )}
       </main>

@@ -7,12 +7,12 @@ export default function StreakBadge({ streak }) {
 
   return (
     <motion.div
-      className="relative flex items-center gap-1.5 bg-gradient-to-r from-[#FF6B35]/20 to-[#FF4B4B]/20 border border-[#FF6B35]/30 px-3 py-1.5 rounded-full overflow-hidden"
+      className="relative flex items-center gap-1.5 bg-gradient-to-r from-[color-mix(in_srgb,var(--brand-orange),transparent_80%)] to-[color-mix(in_srgb,var(--brand-red),transparent_80%)] border border-[color-mix(in_srgb,var(--brand-orange),transparent_70%)] px-3 py-1.5 rounded-full overflow-hidden"
       animate={{ 
         boxShadow: [
-          '0 0 10px rgba(255, 107, 53, 0.3)',
-          '0 0 20px rgba(255, 107, 53, 0.5)',
-          '0 0 10px rgba(255, 107, 53, 0.3)',
+          '0 0 10px color-mix(in srgb, var(--brand-orange), transparent 70%)',
+          '0 0 20px color-mix(in srgb, var(--brand-orange), transparent 50%)',
+          '0 0 10px color-mix(in srgb, var(--brand-orange), transparent 70%)',
         ]
       }}
       transition={{ duration: 2, repeat: Infinity }}
@@ -24,9 +24,9 @@ export default function StreakBadge({ streak }) {
         }}
         transition={{ duration: 0.5, repeat: Infinity }}
       >
-        <Flame className="w-4 h-4 text-[#FF6B35] fill-[#FF6B35]" />
+        <Flame className="w-4 h-4 text-[var(--brand-orange)] fill-[var(--brand-orange)]" />
       </motion.div>
-      <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B35] to-[#FF4B4B]">
+      <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-red)]">
         {streak} Day{streak > 1 ? 's' : ''}
       </span>
       
@@ -34,7 +34,7 @@ export default function StreakBadge({ streak }) {
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 rounded-full bg-[#FF6B35]"
+          className="absolute w-1 h-1 rounded-full bg-[var(--brand-orange)]"
           style={{ left: `${20 + i * 15}%` }}
           animate={{
             y: [0, -15, -25],

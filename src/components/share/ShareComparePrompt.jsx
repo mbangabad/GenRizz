@@ -88,19 +88,19 @@ ${percentage}% · Can you beat me?
           {/* Close button */}
           <button 
             onClick={handleDismiss}
-            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/50 flex items-center justify-center text-[#777777] hover:bg-white transition-colors"
+            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/50 flex items-center justify-center hover:bg-white transition-colors" style={{ color: 'var(--text-secondary)' }}
           >
             <X className="w-4 h-4" />
           </button>
 
           {/* Header */}
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-2xl bg-[#FF86D0]/30 flex items-center justify-center">
-              <Users className="w-6 h-6 text-[#FF86D0]" />
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center" style={{ backgroundColor: 'rgba(255, 134, 208, 0.3)' }}>
+              <Users className="w-6 h-6" style={{ color: 'var(--brand-pink)' }} />
             </div>
             <div>
-              <h3 className="font-black text-[#3C3C3C]">Compare with friends!</h3>
-              <p className="text-sm text-[#777777] font-semibold">See who's the real expert</p>
+              <h3 className="font-black" style={{ color: 'var(--text-primary)' }}>Compare with friends!</h3>
+              <p className="text-sm font-semibold" style={{ color: 'var(--text-secondary)' }}>See who's the real expert</p>
             </div>
           </div>
 
@@ -109,11 +109,11 @@ ${percentage}% · Can you beat me?
             <div className="flex items-center gap-3">
               <span className="text-3xl">{tier.emoji}</span>
               <div className="flex-1">
-                <p className="font-bold text-[#3C3C3C]">{tier.name}</p>
-                <p className="text-sm text-[#777777] font-mono">{generateEmojiGrid()}</p>
+                <p className="font-bold" style={{ color: 'var(--text-primary)' }}>{tier.name}</p>
+                <p className="text-sm font-mono" style={{ color: 'var(--text-secondary)' }}>{generateEmojiGrid()}</p>
               </div>
               <div className="text-right">
-                <p className="text-2xl font-black text-[#FF86D0]">{percentage}%</p>
+                <p className="text-2xl font-black" style={{ color: 'var(--brand-pink)' }}>{percentage}%</p>
               </div>
             </div>
           </div>
@@ -134,8 +134,7 @@ ${percentage}% · Can you beat me?
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleTwitterShare}
-              className="w-12 h-12 flex items-center justify-center bg-black text-white rounded-xl"
-              style={{ boxShadow: '0 3px 0 #333' }}
+              className="w-12 h-12 flex items-center justify-center bg-black rounded-xl" style={{ color: 'var(--text-inverse)', boxShadow: '0 3px 0 #333' }}
             >
               <Twitter className="w-5 h-5" />
             </motion.button>
@@ -144,15 +143,14 @@ ${percentage}% · Can you beat me?
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleCopy}
-              className="w-12 h-12 flex items-center justify-center bg-white text-[#3C3C3C] rounded-xl border-2 border-[#E5E0DA]"
-              style={{ boxShadow: '0 3px 0 #D4CFC7' }}
+              className="w-12 h-12 flex items-center justify-center bg-white rounded-xl border-2 rounded-xl" style={{ color: 'var(--text-primary)', borderColor: 'var(--border-subtle)', boxShadow: '0 3px 0 var(--border-strong)' }}
             >
-              {copied ? <Check className="w-5 h-5 text-[#58CC02]" /> : <Copy className="w-5 h-5" />}
+              {copied ? <Check className="w-5 h-5" style={{ color: 'var(--brand-green)' }} /> : <Copy className="w-5 h-5" />}
             </motion.button>
           </div>
 
           {/* Nudge text */}
-          <p className="text-xs text-center text-[#AFAFAF] mt-3 font-semibold">
+          <p className="text-xs text-center mt-3 font-semibold" style={{ color: 'var(--text-muted)' }}>
             🔥 Players who share get 2x more friends competing!
           </p>
         </div>

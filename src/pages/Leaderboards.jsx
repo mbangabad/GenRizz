@@ -101,7 +101,7 @@ export default function Leaderboards() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-32 md:pb-12">
+    <div className="min-h-screen bg-[var(--page-bg)] pb-32 md:pb-12">
       <main className="max-w-4xl mx-auto px-4 py-6 space-y-6">
         {/* Header */}
         <motion.div 
@@ -109,26 +109,26 @@ export default function Leaderboards() {
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center gap-3"
         >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFC800] to-[#FFB347] flex items-center justify-center shadow-lg"
-               style={{ boxShadow: '0 4px 0 #E5B400' }}>
+          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--brand-yellow)] to-[#FFB347] flex items-center justify-center shadow-lg"
+               style={{ boxShadow: '0 4px 0 var(--brand-yellow-dark)' }}>
             <Trophy className="w-7 h-7 text-white" />
           </div>
           <div>
-            <h1 className="text-2xl font-black text-[#3C3C3C]">Leaderboards</h1>
-            <p className="text-[#777777] font-semibold">Compete for the top spot</p>
+            <h1 className="text-2xl font-black text-[var(--text-primary)]">Leaderboards</h1>
+            <p className="text-[var(--text-secondary)] font-semibold">Compete for the top spot</p>
           </div>
         </motion.div>
 
         {/* Tabs */}
-        <div className="flex gap-2 bg-[#E8E4DF] p-1 rounded-2xl">
+        <div className="flex gap-2 bg-[var(--surface-3)] p-1 rounded-2xl">
           {TABS.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`flex-1 flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm transition-all ${
                 activeTab === tab.id 
-                  ? 'bg-white text-[#3C3C3C] shadow-md' 
-                  : 'text-[#777777] hover:text-[#3C3C3C]'
+                  ? 'bg-white text-[var(--text-primary)] shadow-md' 
+                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               }`}
             >
               <tab.icon className="w-4 h-4" />
@@ -141,10 +141,10 @@ export default function Leaderboards() {
         {activeTab !== 'squads' && (
           <div className="flex gap-3">
             <Select value={selectedGame} onValueChange={setSelectedGame}>
-              <SelectTrigger className="flex-1 py-3 px-4 rounded-xl border-2 border-[#E5E0DA] bg-white font-semibold text-[#3C3C3C]">
+              <SelectTrigger className="flex-1 py-3 px-4 rounded-xl border-2 border-[var(--border-subtle)] bg-white font-semibold text-[var(--text-primary)]">
                 <SelectValue placeholder="All Games" />
               </SelectTrigger>
-              <SelectContent className="bg-white border-[#E5E0DA]">
+              <SelectContent className="bg-white border-[var(--border-subtle)]">
                 <SelectItem value="all">🎮 All Games</SelectItem>
                 {GAMES_LIST.map(g => (
                   <SelectItem key={g.id} value={g.id}>{g.icon} {g.title}</SelectItem>
@@ -153,10 +153,10 @@ export default function Leaderboards() {
             </Select>
 
             <Select value={timeFilter} onValueChange={setTimeFilter}>
-              <SelectTrigger className="w-36 py-3 px-4 rounded-xl border-2 border-[#E5E0DA] bg-white font-semibold text-[#3C3C3C]">
+              <SelectTrigger className="w-36 py-3 px-4 rounded-xl border-2 border-[var(--border-subtle)] bg-white font-semibold text-[var(--text-primary)]">
                 <SelectValue placeholder="Time" />
               </SelectTrigger>
-              <SelectContent className="bg-white border-[#E5E0DA]">
+              <SelectContent className="bg-white border-[var(--border-subtle)]">
                 <SelectItem value="all_time">⏳ All Time</SelectItem>
                 <SelectItem value="weekly">📅 Weekly</SelectItem>
                 <SelectItem value="daily">🌅 Daily</SelectItem>
@@ -170,8 +170,8 @@ export default function Leaderboards() {
           <div className="space-y-3">
             {squads.length === 0 ? (
               <div className="card-3d p-8 text-center">
-                <Shield className="w-12 h-12 mx-auto mb-4 text-[#AFAFAF]" />
-                <p className="text-[#777777] font-semibold mb-4">No squads yet!</p>
+                <Shield className="w-12 h-12 mx-auto mb-4 text-[var(--text-muted)]" />
+                <p className="text-[var(--text-secondary)] font-semibold mb-4">No squads yet!</p>
                 <Link to={createPageUrl('Squads')} className="btn-3d btn-3d-blue px-6 py-3 inline-block">
                   Join a Squad
                 </Link>
@@ -185,15 +185,15 @@ export default function Leaderboards() {
                   transition={{ delay: i * 0.05 }}
                   className="card-3d p-4 flex items-center gap-4"
                 >
-                  <div className="w-8 h-8 flex items-center justify-center font-black text-[#AFAFAF]">
+                  <div className="w-8 h-8 flex items-center justify-center font-black text-[var(--text-muted)]">
                     #{i + 1}
                   </div>
-                  <div className="w-12 h-12 rounded-xl bg-[#F7F4F0] flex items-center justify-center text-2xl">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--surface-1)] flex items-center justify-center text-2xl">
                     {squad.icon}
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-bold text-[#3C3C3C]">{squad.name}</h3>
-                    <p className="text-xs text-[#AFAFAF]">{squad.member_count} members</p>
+                    <h3 className="font-bold text-[var(--text-primary)]">{squad.name}</h3>
+                    <p className="text-xs text-[var(--text-muted)]">{squad.member_count} members</p>
                   </div>
                   <div className="badge-3d badge-yellow">
                     <Crown className="w-3 h-3 mr-1" />
@@ -213,14 +213,14 @@ export default function Leaderboards() {
             className="card-3d card-3d-purple p-5"
           >
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#CE82FF] to-[#A855F7] flex items-center justify-center font-black text-white text-xl shadow-lg"
-                   style={{ boxShadow: '0 4px 0 #8B5CF6' }}>
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--brand-purple)] to-[var(--brand-purple-dark)] flex items-center justify-center font-black text-white text-xl shadow-lg"
+                   style={{ boxShadow: '0 4px 0 var(--brand-purple-dark)' }}>
                 {user.avatar || user.full_name?.[0] || '?'}
               </div>
               <div className="flex-1">
-                <p className="text-sm text-[#777777] font-semibold">Your Rank</p>
+                <p className="text-sm text-[var(--text-secondary)] font-semibold">Your Rank</p>
                 <div className="flex items-center gap-2">
-                  <p className="text-3xl font-black text-[#3C3C3C]">#{userRank}</p>
+                  <p className="text-3xl font-black text-[var(--text-primary)]">#{userRank}</p>
                   {userScore && (
                     <span className="badge-3d badge-level text-xs">
                       {getGameLevel(userScore.user_level_xp || 0).emoji} Lvl {getGameLevel(userScore.user_level_xp || 0).level}
@@ -229,10 +229,10 @@ export default function Leaderboards() {
                 </div>
               </div>
               <div className="text-right">
-                <p className="text-3xl font-black text-[#CE82FF]">
+                <p className="text-3xl font-black text-[var(--brand-purple)]">
                   {userScore?.percentage || 0}%
                 </p>
-                <p className="text-sm text-[#777777] font-semibold">{userScore?.tier_emoji} {userScore?.tier_name}</p>
+                <p className="text-sm text-[var(--text-secondary)] font-semibold">{userScore?.tier_emoji} {userScore?.tier_name}</p>
               </div>
             </div>
           </motion.div>
@@ -254,12 +254,12 @@ export default function Leaderboards() {
                 <div key={idx} className={`flex flex-col items-center justify-end ${sizes}`}>
                   <div className="text-3xl mb-2">{medals[idx]}</div>
                   <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${
-                    idx === 0 ? 'from-[#FFC800] to-[#FFB347]' : idx === 1 ? 'from-[#C0C0C0] to-[#A0A0A0]' : 'from-[#CD7F32] to-[#B87333]'
+                    idx === 0 ? 'from-[var(--brand-yellow)] to-[#FFB347]' : idx === 1 ? 'from-[#C0C0C0] to-[#A0A0A0]' : 'from-[#CD7F32] to-[#B87333]'
                   } flex items-center justify-center text-white font-black shadow-lg`}>
                     {s.user_name?.[0] || '?'}
                   </div>
-                  <p className="text-sm font-bold text-[#3C3C3C] mt-2 truncate max-w-full">{s.user_name || 'Player'}</p>
-                  <p className="text-xs text-[#777777] font-semibold">{s.percentage}%</p>
+                  <p className="text-sm font-bold text-[var(--text-primary)] mt-2 truncate max-w-full">{s.user_name || 'Player'}</p>
+                  <p className="text-xs text-[var(--text-secondary)] font-semibold">{s.percentage}%</p>
                 </div>
               );
             })}
@@ -273,18 +273,18 @@ export default function Leaderboards() {
               [...Array(5)].map((_, i) => (
                 <div key={i} className="card-3d p-4 animate-pulse">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#E8E4DF]" />
+                    <div className="w-10 h-10 rounded-xl bg-[var(--surface-3)]" />
                     <div className="flex-1 space-y-2">
-                      <div className="h-4 w-24 rounded bg-[#E8E4DF]" />
-                      <div className="h-3 w-16 rounded bg-[#E8E4DF]" />
+                      <div className="h-4 w-24 rounded bg-[var(--surface-3)]" />
+                      <div className="h-3 w-16 rounded bg-[var(--surface-3)]" />
                     </div>
                   </div>
                 </div>
               ))
             ) : scores.length === 0 ? (
               <div className="card-3d p-8 text-center">
-                <Trophy className="w-12 h-12 mx-auto mb-4 text-[#AFAFAF]" />
-                <p className="text-[#777777] font-semibold mb-4">
+                <Trophy className="w-12 h-12 mx-auto mb-4 text-[var(--text-muted)]" />
+                <p className="text-[var(--text-secondary)] font-semibold mb-4">
                   {activeTab === 'friends' 
                     ? 'No friend scores yet! Add some friends and send a challenge.'
                     : 'No scores yet. Play a quick game to claim the top spot.'}

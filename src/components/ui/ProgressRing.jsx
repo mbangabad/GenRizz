@@ -5,7 +5,7 @@ export default function ProgressRing({
   progress = 0, 
   size = 60, 
   strokeWidth = 6,
-  color = '#CE82FF',
+  color = 'var(--brand-purple)',
   bgColor = 'rgba(255,255,255,0.1)',
   children 
 }) {

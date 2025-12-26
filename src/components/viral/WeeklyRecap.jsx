@@ -53,9 +53,9 @@ Play at genrizz.com`;
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-[#F0EDE8] flex items-center justify-center"
+          className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: 'var(--surface-2)' }}
         >
-          <X className="w-4 h-4 text-[#777777]" />
+          <X className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
         </button>
 
         {/* Header */}
@@ -67,34 +67,34 @@ Play at genrizz.com`;
           >
             📊
           </motion.div>
-          <h2 className="text-2xl font-black text-[#3C3C3C]">Weekly Recap</h2>
-          <p className="text-[#777777] font-semibold">Your stats this week</p>
+          <h2 className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>Weekly Recap</h2>
+          <p className="font-semibold" style={{ color: 'var(--text-secondary)' }}>Your stats this week</p>
         </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 gap-3 mb-6">
           <div className="card-3d card-3d-blue p-4 text-center">
-            <Zap className="w-6 h-6 text-[#1CB0F6] mx-auto mb-1" />
-            <p className="text-2xl font-black text-[#3C3C3C]">{stats.totalXP}</p>
-            <p className="text-xs text-[#777777] font-semibold">XP Earned</p>
+            <Zap className="w-6 h-6 mx-auto mb-1" style={{ color: 'var(--brand-blue)' }} />
+            <p className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>{stats.totalXP}</p>
+            <p className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>XP Earned</p>
           </div>
 
           <div className="card-3d card-3d-green p-4 text-center">
-            <Target className="w-6 h-6 text-[#58CC02] mx-auto mb-1" />
-            <p className="text-2xl font-black text-[#3C3C3C]">{stats.avgScore}%</p>
-            <p className="text-xs text-[#777777] font-semibold">Avg Score</p>
+            <Target className="w-6 h-6 mx-auto mb-1" style={{ color: 'var(--brand-green)' }} />
+            <p className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>{stats.avgScore}%</p>
+            <p className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>Avg Score</p>
           </div>
 
           <div className="card-3d card-3d-orange p-4 text-center">
             <span className="text-2xl">🔥</span>
-            <p className="text-2xl font-black text-[#3C3C3C]">{stats.streak}</p>
-            <p className="text-xs text-[#777777] font-semibold">Day Streak</p>
+            <p className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>{stats.streak}</p>
+            <p className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>Day Streak</p>
           </div>
 
           <div className="card-3d card-3d-purple p-4 text-center">
-            <TrendingUp className="w-6 h-6 text-[#CE82FF] mx-auto mb-1" />
-            <p className="text-2xl font-black text-[#3C3C3C]">Top {100 - stats.percentile}%</p>
-            <p className="text-xs text-[#777777] font-semibold">Ranking</p>
+            <TrendingUp className="w-6 h-6 mx-auto mb-1" style={{ color: 'var(--brand-purple)' }} />
+            <p className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>Top {100 - stats.percentile}%</p>
+            <p className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>Ranking</p>
           </div>
         </div>
 
@@ -102,11 +102,11 @@ Play at genrizz.com`;
         {stats.bestGame && (
           <div className="card-3d card-3d-yellow p-4 mb-6">
             <div className="flex items-center gap-3">
-              <Trophy className="w-8 h-8 text-[#FFC800]" />
+              <Trophy className="w-8 h-8" style={{ color: 'var(--brand-yellow)' }} />
               <div>
-                <p className="text-xs text-[#777777] font-semibold">Best Performance</p>
-                <p className="font-black text-[#3C3C3C]">{stats.bestGame.title}</p>
-                <p className="text-sm text-[#58CC02] font-bold">{stats.bestGame.score}%</p>
+                <p className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>Best Performance</p>
+                <p className="font-black" style={{ color: 'var(--text-primary)' }}>{stats.bestGame.title}</p>
+                <p className="text-sm font-bold" style={{ color: 'var(--brand-green)' }}>{stats.bestGame.score}%</p>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ Play at genrizz.com`;
 
         {/* Improvement */}
         {stats.improvement !== 0 && (
-          <div className={`text-center mb-6 ${stats.improvement > 0 ? 'text-[#58CC02]' : 'text-[#FF4B4B]'}`}>
+          <div className="text-center mb-6" style={{ color: stats.improvement > 0 ? 'var(--brand-green)' : 'var(--brand-red)' }}>
             <span className="font-black text-lg">
               {stats.improvement > 0 ? '📈' : '📉'} {stats.improvement > 0 ? '+' : ''}{stats.improvement}% from last week
             </span>

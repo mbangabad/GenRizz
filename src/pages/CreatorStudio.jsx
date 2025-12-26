@@ -88,24 +88,24 @@ export default function CreatorStudio() {
 
   const getStatusColor = (status) => {
     switch(status) {
-      case 'approved': return 'text-[#58CC02]';
-      case 'rejected': return 'text-[#FF4B4B]';
-      default: return 'text-[#FFC800]';
+      case 'approved': return 'text-[var(--brand-green)]';
+      case 'rejected': return 'text-[var(--brand-red)]';
+      default: return 'text-[var(--brand-yellow)]';
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
-      <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
+    <div className="min-h-screen bg-[var(--page-bg)] pb-24">
+      <header className="glass-header">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center gap-3">
           <Link to={createPageUrl('Home')}>
-            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">
-              <ArrowLeft className="w-5 h-5 text-[#777777]" />
+            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[var(--border-subtle)] flex items-center justify-center hover:bg-[var(--surface-2)] transition-colors">
+              <ArrowLeft className="w-5 h-5 text-[var(--text-secondary)]" />
             </button>
           </Link>
           <div className="flex-1">
-            <h1 className="font-black text-[#3C3C3C] text-lg">Creator Studio</h1>
-            <p className="text-xs text-[#AFAFAF] font-semibold">Submit your own questions</p>
+            <h1 className="font-black text-[var(--text-primary)] text-lg">Creator Studio</h1>
+            <p className="text-xs text-[var(--text-muted)] font-semibold">Submit your own questions</p>
           </div>
         </div>
       </header>
@@ -122,8 +122,8 @@ export default function CreatorStudio() {
                 <Trophy className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-xs font-bold text-[#AFAFAF] uppercase">Level</p>
-                <p className="text-xl font-black text-[#3C3C3C]">{creatorLevel}</p>
+                <p className="text-xs font-bold text-[var(--text-muted)] uppercase">Level</p>
+                <p className="text-xl font-black text-[var(--text-primary)]">{creatorLevel}</p>
               </div>
             </div>
             <div className="card-3d p-4 flex items-center gap-3">
@@ -131,8 +131,8 @@ export default function CreatorStudio() {
                 <CheckCircle className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-xs font-bold text-[#AFAFAF] uppercase">Approved</p>
-                <p className="text-xl font-black text-[#3C3C3C]">{approvedCount}</p>
+                <p className="text-xs font-bold text-[var(--text-muted)] uppercase">Approved</p>
+                <p className="text-xl font-black text-[var(--text-primary)]">{approvedCount}</p>
               </div>
             </div>
             <div className="card-3d p-4 flex items-center gap-3">
@@ -140,14 +140,14 @@ export default function CreatorStudio() {
                 <Sparkles className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-xs font-bold text-[#AFAFAF] uppercase">Earned XP</p>
-                <p className="text-xl font-black text-[#3C3C3C]">{earnedXP}</p>
+                <p className="text-xs font-bold text-[var(--text-muted)] uppercase">Earned XP</p>
+                <p className="text-xl font-black text-[var(--text-primary)]">{earnedXP}</p>
               </div>
             </div>
           </div>
 
           {/* Incentive Banner */}
-          <div className="bg-gradient-to-r from-[#58CC02] to-[#46A302] rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[var(--brand-green)] to-[var(--brand-green-dark)] rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
             <div className="relative z-10 flex items-center justify-between">
               <div>
                 <h3 className="text-xl font-black mb-1">Become a Certified Creator!</h3>
@@ -160,19 +160,19 @@ export default function CreatorStudio() {
 
           {/* Editor Form */}
           <div className="card-3d p-6">
-            <h2 className="text-xl font-black text-[#3C3C3C] mb-6 flex items-center gap-2">
+            <h2 className="text-xl font-black text-[var(--text-primary)] mb-6 flex items-center gap-2">
               <PenTool className="w-5 h-5" /> Question Editor
             </h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="text-sm font-bold text-[#777777] mb-2 block">Target Game</label>
+                  <label className="text-sm font-bold text-[var(--text-secondary)] mb-2 block">Target Game</label>
                   <Select 
                     value={formData.game_id} 
                     onValueChange={(val) => setFormData({...formData, game_id: val})}
                   >
-                    <SelectTrigger className="bg-white border-2 border-[#E5E0DA] h-12 font-bold">
+                    <SelectTrigger className="bg-white border-2 border-[var(--border-subtle)] h-12 font-bold">
                       <SelectValue placeholder="Select category..." />
                     </SelectTrigger>
                     <SelectContent>
@@ -188,34 +188,34 @@ export default function CreatorStudio() {
                 </div>
 
                 <div>
-                  <label className="text-sm font-bold text-[#777777] mb-2 block">Image URL (Optional)</label>
+                  <label className="text-sm font-bold text-[var(--text-secondary)] mb-2 block">Image URL (Optional)</label>
                   <div className="relative">
                     <ImageIcon className="absolute left-3 top-3.5 w-5 h-5 text-gray-400" />
                     <Input 
                       value={formData.image_url}
                       onChange={e => setFormData({...formData, image_url: e.target.value})}
                       placeholder="https://..."
-                      className="pl-10 bg-white border-2 border-[#E5E0DA] h-12"
+                      className="pl-10 bg-white border-2 border-[var(--border-subtle)] h-12"
                     />
                   </div>
                 </div>
               </div>
 
               <div>
-                <label className="text-sm font-bold text-[#777777] mb-2 block">Question</label>
+                <label className="text-sm font-bold text-[var(--text-secondary)] mb-2 block">Question</label>
                 <Textarea 
                   required
                   value={formData.question}
                   onChange={e => setFormData({...formData, question: e.target.value})}
                   placeholder="Type your question here..."
-                  className="bg-white border-2 border-[#E5E0DA] min-h-[100px] text-lg font-medium"
+                  className="bg-white border-2 border-[var(--border-subtle)] min-h-[100px] text-lg font-medium"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-bold text-[#777777] mb-3 block flex justify-between">
+                <label className="text-sm font-bold text-[var(--text-secondary)] mb-3 block flex justify-between">
                   <span>Answer Options</span>
-                  <span className="text-xs text-[#58CC02] bg-[#58CC02]/10 px-2 py-1 rounded-full">Select the correct answer</span>
+                  <span className="text-xs text-[var(--brand-green)] bg-[var(--brand-green)]/10 px-2 py-1 rounded-full">Select the correct answer</span>
                 </label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[0, 1, 2, 3].map((idx) => (
@@ -224,13 +224,13 @@ export default function CreatorStudio() {
                       whileHover={{ scale: 1.01 }}
                       className={`relative p-1 rounded-xl transition-all ${
                         formData.correct_index === idx 
-                          ? 'bg-[#58CC02] shadow-[0_4px_0_#46A302]' 
+                          ? 'bg-[var(--brand-green)] shadow-[0_4px_0_var(--brand-green-dark)]' 
                           : 'bg-transparent'
                       }`}
                     >
                       <div className="relative">
                         <div className={`absolute left-0 top-0 bottom-0 w-12 flex items-center justify-center z-10 cursor-pointer ${
-                           formData.correct_index === idx ? 'text-[#58CC02]' : 'text-gray-400 hover:text-[#58CC02]'
+                           formData.correct_index === idx ? 'text-[var(--brand-green)]' : 'text-gray-400 hover:text-[var(--brand-green)]'
                         }`}
                         onClick={() => setFormData({...formData, correct_index: idx})}
                         >
@@ -247,8 +247,8 @@ export default function CreatorStudio() {
                           placeholder={`Option ${idx + 1}`}
                           className={`pl-12 h-14 border-2 font-bold ${
                             formData.correct_index === idx 
-                              ? 'border-[#58CC02] bg-green-50' 
-                              : 'border-[#E5E0DA] bg-white focus:border-[#1CB0F6]'
+                              ? 'border-[var(--brand-green)] bg-green-50' 
+                              : 'border-[var(--border-subtle)] bg-white focus:border-[var(--brand-blue)]'
                           }`}
                         />
                       </div>
@@ -258,12 +258,12 @@ export default function CreatorStudio() {
               </div>
 
               <div>
-                <label className="text-sm font-bold text-[#777777] mb-2 block">Did you know? (Explanation)</label>
+                <label className="text-sm font-bold text-[var(--text-secondary)] mb-2 block">Did you know? (Explanation)</label>
                 <Input 
                   value={formData.explanation}
                   onChange={e => setFormData({...formData, explanation: e.target.value})}
                   placeholder="Add a fun fact or explanation..."
-                  className="bg-white border-2 border-[#E5E0DA] h-12"
+                  className="bg-white border-2 border-[var(--border-subtle)] h-12"
                 />
               </div>
             </form>
@@ -276,25 +276,25 @@ export default function CreatorStudio() {
           {/* Live Preview */}
           <div className="sticky top-24">
             <div className="flex items-center gap-2 mb-4">
-              <Eye className="w-5 h-5 text-[#3C3C3C]" />
-              <h3 className="font-black text-[#3C3C3C]">Live Preview</h3>
+              <Eye className="w-5 h-5 text-[var(--text-primary)]" />
+              <h3 className="font-black text-[var(--text-primary)]">Live Preview</h3>
             </div>
 
-            <div className="card-3d p-5 bg-[#FAF8F5] border-4 border-[#E5E0DA]">
+            <div className="card-3d p-5 bg-[var(--page-bg)] border-4 border-[var(--border-subtle)]">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-xs font-bold text-[#AFAFAF]">1 / 10</span>
+                <span className="text-xs font-bold text-[var(--text-muted)]">1 / 10</span>
                 <span className="badge-3d badge-blue text-xs">Preview</span>
               </div>
 
               <div className="h-2 bg-gray-200 rounded-full mb-6 overflow-hidden">
-                <div className="h-full w-1/3 bg-[#58CC02]" />
+                <div className="h-full w-1/3 bg-[var(--brand-green)]" />
               </div>
 
               <div className="card-3d bg-white p-4 mb-4 min-h-[100px] flex items-center justify-center">
                 {formData.image_url ? (
                   <img src={formData.image_url} className="w-full h-32 object-cover rounded-lg" alt="Question" />
                 ) : (
-                  <h3 className="text-lg font-black text-[#3C3C3C] text-center">
+                  <h3 className="text-lg font-black text-[var(--text-primary)] text-center">
                     {formData.question || "Your question will appear here..."}
                   </h3>
                 )}
@@ -305,10 +305,10 @@ export default function CreatorStudio() {
                   <div key={i} className={`p-3 rounded-xl border-2 font-bold text-sm flex items-center gap-3 ${
                     formData.correct_index === i 
                       ? 'bg-green-100 border-green-500 text-green-700' 
-                      : 'bg-white border-[#E5E0DA] text-[#777777]'
+                      : 'bg-white border-[var(--border-subtle)] text-[var(--text-secondary)]'
                   }`}>
                     <div className={`w-6 h-6 rounded-md flex items-center justify-center text-xs border-2 ${
-                      formData.correct_index === i ? 'border-green-500 bg-green-500 text-white' : 'border-[#E5E0DA]'
+                      formData.correct_index === i ? 'border-green-500 bg-green-500 text-white' : 'border-[var(--border-subtle)]'
                     }`}>
                       {String.fromCharCode(65 + i)}
                     </div>
@@ -329,19 +329,19 @@ export default function CreatorStudio() {
 
           {/* Submission History */}
         <div className="mt-8">
-          <h3 className="font-black text-[#3C3C3C] mb-4 flex items-center justify-between">
+          <h3 className="font-black text-[var(--text-primary)] mb-4 flex items-center justify-between">
             <span>Recent Activity</span>
-            <span className="text-xs text-[#AFAFAF] bg-white px-2 py-1 rounded-lg border border-[#E5E0DA]">{submissions.length} total</span>
+            <span className="text-xs text-[var(--text-muted)] bg-white px-2 py-1 rounded-lg border border-[var(--border-subtle)]">{submissions.length} total</span>
           </h3>
           <div className="space-y-3 max-h-[400px] overflow-y-auto pr-2 scrollbar-hide">
             {submissions.length === 0 ? (
-              <div className="text-center py-8 bg-white rounded-2xl border-2 border-dashed border-[#E5E0DA]">
-                <p className="text-[#AFAFAF] font-bold">No submissions yet.</p>
-                <p className="text-sm text-[#D4CFC7]">Start creating to earn XP!</p>
+              <div className="text-center py-8 bg-white rounded-2xl border-2 border-dashed border-[var(--border-subtle)]">
+                <p className="text-[var(--text-muted)] font-bold">No submissions yet.</p>
+                <p className="text-sm text-[var(--border-strong)]">Start creating to earn XP!</p>
               </div>
             ) : (
               submissions.map(sub => (
-                <div key={sub.id} className="bg-white rounded-xl p-3 border-2 border-[#E5E0DA] hover:border-[#1CB0F6] transition-colors">
+                <div key={sub.id} className="bg-white rounded-xl p-3 border-2 border-[var(--border-subtle)] hover:border-[var(--brand-blue)] transition-colors">
                   <div className="flex justify-between items-start mb-1">
                     <span className={`text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-md ${
                       sub.status === 'approved' ? 'bg-green-100 text-green-600' :
@@ -350,10 +350,10 @@ export default function CreatorStudio() {
                     }`}>
                       {sub.status}
                     </span>
-                    <span className="text-[10px] text-[#AFAFAF] font-bold">{sub.game_id}</span>
+                    <span className="text-[10px] text-[var(--text-muted)] font-bold">{sub.game_id}</span>
                   </div>
-                  <p className="font-bold text-[#3C3C3C] text-sm line-clamp-2 mb-2">{sub.question}</p>
-                  <div className="flex items-center gap-2 text-xs text-[#777777]">
+                  <p className="font-bold text-[var(--text-primary)] text-sm line-clamp-2 mb-2">{sub.question}</p>
+                  <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
                      <Clock className="w-3 h-3" />
                      <span>{new Date(sub.created_date || Date.now()).toLocaleDateString()}</span>
                   </div>

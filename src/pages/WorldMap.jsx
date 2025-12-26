@@ -15,7 +15,7 @@ const REGIONS = [
     name: 'North America',
     description: 'Pop Culture Capital',
     icon: '🗽',
-    color: '#1CB0F6',
+    color: 'var(--brand-blue)',
     unlockLevel: 1,
     games: ['gen-z-fluency', 'millennial-nostalgia'],
     coordinates: { top: '25%', left: '20%' }
@@ -25,7 +25,7 @@ const REGIONS = [
     name: 'Europe',
     description: 'History & Heritage',
     icon: '🏰',
-    color: '#58CC02',
+    color: 'var(--brand-green)',
     unlockLevel: 3,
     games: ['boomer-era', 'generation-quiz'],
     coordinates: { top: '25%', left: '50%' }
@@ -35,7 +35,7 @@ const REGIONS = [
     name: 'Asia',
     description: 'Tech & Tradition',
     icon: '⛩️',
-    color: '#FF4B4B',
+    color: 'var(--brand-red)',
     unlockLevel: 5,
     games: ['gen-alpha', 'social-iq'],
     coordinates: { top: '35%', left: '70%' }
@@ -45,7 +45,7 @@ const REGIONS = [
     name: 'Latin America',
     description: 'Vibrant Vibes',
     icon: '💃',
-    color: '#FFC800',
+    color: 'var(--brand-yellow)',
     unlockLevel: 8,
     games: ['vibe-check', 'social-awareness'],
     coordinates: { top: '55%', left: '25%' }
@@ -55,7 +55,7 @@ const REGIONS = [
     name: 'Africa',
     description: 'Roots & Rhythm',
     icon: '🌍',
-    color: '#CE82FF',
+    color: 'var(--brand-purple)',
     unlockLevel: 10,
     games: ['family-bridge', 'boomer-humor'],
     coordinates: { top: '50%', left: '50%' }
@@ -65,7 +65,7 @@ const REGIONS = [
     name: 'Oceania',
     description: 'Adventure Down Under',
     icon: '🦘',
-    color: '#FF9600',
+    color: 'var(--brand-orange)',
     unlockLevel: 12,
     games: ['gen-x-wisdom', 'mental-age'],
     coordinates: { top: '70%', left: '80%' }
@@ -111,11 +111,11 @@ export default function WorldMap() {
             </button>
           </Link>
           <div className="bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full flex items-center gap-2">
-            <Globe className="w-4 h-4 text-[#1CB0F6]" />
+            <Globe className="w-4 h-4 text-[var(--brand-blue)]" />
             <span className="font-bold text-sm">World Map</span>
           </div>
           <div className="bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full flex items-center gap-2">
-            <Crown className="w-4 h-4 text-[#FFC800]" />
+            <Crown className="w-4 h-4 text-[var(--brand-yellow)]" />
             <span className="font-bold text-sm">Lvl {userLevel}</span>
           </div>
         </div>
@@ -203,8 +203,8 @@ export default function WorldMap() {
                   {selectedRegion.icon}
                 </div>
                 <div>
-                  <h2 className="text-2xl font-black text-[#3C3C3C]">{selectedRegion.name}</h2>
-                  <p className="text-[#777777] font-semibold">{selectedRegion.description}</p>
+                  <h2 className="text-2xl font-black text-[var(--text-primary)]">{selectedRegion.name}</h2>
+                  <p className="text-[var(--text-secondary)] font-semibold">{selectedRegion.description}</p>
                 </div>
               </div>
               <div className="text-right">
@@ -212,7 +212,7 @@ export default function WorldMap() {
                   onClick={() => setSelectedRegion(null)}
                   className="p-2 hover:bg-gray-100 rounded-full mb-2"
                 >
-                  <ChevronRight className="w-6 h-6 rotate-90 text-[#AFAFAF]" />
+                  <ChevronRight className="w-6 h-6 rotate-90 text-[var(--text-muted)]" />
                 </button>
               </div>
             </div>
@@ -224,7 +224,7 @@ export default function WorldMap() {
                 <p className="text-sm text-gray-500 mb-4">Reach Level {selectedRegion.unlockLevel} to explore this region.</p>
                 <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden max-w-xs mx-auto">
                   <div 
-                    className="h-full bg-[#1CB0F6]" 
+                    className="h-full bg-[var(--brand-blue)]" 
                     style={{ width: `${(userLevel / selectedRegion.unlockLevel) * 100}%` }} 
                   />
                 </div>
@@ -232,7 +232,7 @@ export default function WorldMap() {
               </div>
             ) : (
               <div className="grid gap-4">
-                <h3 className="font-bold text-[#3C3C3C] uppercase text-xs tracking-wider">Available Games</h3>
+                <h3 className="font-bold text-[var(--text-primary)] uppercase text-xs tracking-wider">Available Games</h3>
                 {selectedRegion.games.map(gameId => {
                   const game = GAMES_LIST.find(g => g.id === gameId);
                   if (!game) return null;
@@ -241,8 +241,8 @@ export default function WorldMap() {
                       <div className="card-3d p-4 flex items-center gap-4 hover:bg-gray-50 transition-colors">
                         <div className="text-2xl">{game.icon}</div>
                         <div className="flex-1">
-                          <h4 className="font-bold text-[#3C3C3C]">{game.title}</h4>
-                          <p className="text-xs text-[#777777]">{game.subtitle}</p>
+                          <h4 className="font-bold text-[var(--text-primary)]">{game.title}</h4>
+                          <p className="text-xs text-[var(--text-secondary)]">{game.subtitle}</p>
                         </div>
                         <button className="btn-3d btn-3d-green px-4 py-2 text-sm">
                           Play

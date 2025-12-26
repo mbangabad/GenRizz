@@ -83,12 +83,12 @@ export default function UserAccessPanel() {
   };
 
   return (
-    <div className="card-3d p-5 bg-white border border-[#E5E0DA] shadow-sm space-y-4">
+    <div className="card-3d p-5 bg-white border shadow-sm space-y-4" style={{ borderColor: 'var(--border-subtle)' }}>
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="font-black text-[#3C3C3C]">User Access</h3>
-          <p className="text-xs text-[#777777]">Manage allowlist and beta access.</p>
-          <p className="text-[11px] text-[#777777]">Status: {loading ? 'Working…' : status}</p>
+          <h3 className="font-black" style={{ color: 'var(--text-primary)' }}>User Access</h3>
+          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Manage allowlist and beta access.</p>
+          <p className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>Status: {loading ? 'Working…' : status}</p>
         </div>
         <div className="flex gap-2">
           <button onClick={seedAccess} disabled={loading} className="btn-3d btn-3d-ghost px-3 py-2 text-xs flex items-center gap-2">
@@ -101,11 +101,12 @@ export default function UserAccessPanel() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="p-3 bg-[#F7F4F0] rounded-xl border border-[#E5E0DA] space-y-2">
-          <h4 className="font-bold text-sm text-[#3C3C3C]">Allowlist</h4>
+        <div className="p-3 rounded-xl border space-y-2" style={{ backgroundColor: 'var(--surface-2)', borderColor: 'var(--border-subtle)' }}>
+          <h4 className="font-bold text-sm" style={{ color: 'var(--text-primary)' }}>Allowlist</h4>
           <div className="flex gap-2">
             <input
-              className="flex-1 text-sm px-3 py-2 rounded border border-[#E5E0DA]"
+              className="flex-1 text-sm px-3 py-2 rounded border"
+              style={{ borderColor: 'var(--border-subtle)' }}
               placeholder="email@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -116,19 +117,20 @@ export default function UserAccessPanel() {
           </div>
           <div className="space-y-1 max-h-48 overflow-y-auto">
             {allowed.map((row) => (
-              <div key={row.id || row.email} className="flex items-center gap-2 text-xs font-bold text-[#3C3C3C]">
-                <ShieldCheck className="w-4 h-4 text-[#58CC02]" /> {row.email}
+              <div key={row.id || row.email} className="flex items-center gap-2 text-xs font-bold" style={{ color: 'var(--text-primary)' }}>
+                <ShieldCheck className="w-4 h-4" style={{ color: 'var(--brand-green)' }} /> {row.email}
               </div>
             ))}
-            {allowed.length === 0 && <p className="text-xs text-[#AFAFAF]">No allowlist entries yet.</p>}
+            {allowed.length === 0 && <p className="text-xs" style={{ color: 'var(--text-muted)' }}>No allowlist entries yet.</p>}
           </div>
         </div>
 
-        <div className="p-3 bg-[#F7F4F0] rounded-xl border border-[#E5E0DA] space-y-2">
-          <h4 className="font-bold text-sm text-[#3C3C3C]">Beta Access</h4>
+        <div className="p-3 rounded-xl border space-y-2" style={{ backgroundColor: 'var(--surface-2)', borderColor: 'var(--border-subtle)' }}>
+          <h4 className="font-bold text-sm" style={{ color: 'var(--text-primary)' }}>Beta Access</h4>
           <div className="flex gap-2">
             <input
-              className="flex-1 text-sm px-3 py-2 rounded border border-[#E5E0DA]"
+              className="flex-1 text-sm px-3 py-2 rounded border"
+              style={{ borderColor: 'var(--border-subtle)' }}
               placeholder="email@example.com"
               value={betaEmail}
               onChange={(e) => setBetaEmail(e.target.value)}
@@ -139,11 +141,11 @@ export default function UserAccessPanel() {
           </div>
           <div className="space-y-1 max-h-48 overflow-y-auto">
             {beta.map((row) => (
-              <div key={row.id || row.email} className="flex items-center gap-2 text-xs font-bold text-[#3C3C3C]">
-                <ShieldCheck className="w-4 h-4 text-[#1CB0F6]" /> {row.email || row.user_id}
+              <div key={row.id || row.email} className="flex items-center gap-2 text-xs font-bold" style={{ color: 'var(--text-primary)' }}>
+                <ShieldCheck className="w-4 h-4" style={{ color: 'var(--brand-blue)' }} /> {row.email || row.user_id}
               </div>
             ))}
-            {beta.length === 0 && <p className="text-xs text-[#AFAFAF]">No beta entries yet.</p>}
+            {beta.length === 0 && <p className="text-xs" style={{ color: 'var(--text-muted)' }}>No beta entries yet.</p>}
           </div>
         </div>
       </div>

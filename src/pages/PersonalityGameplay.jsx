@@ -509,7 +509,7 @@ export default function PersonalityGameplay() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5]">
-      <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
+      <header className="glass-header">
         <div className="max-w-lg mx-auto px-4 py-3 flex items-center gap-3">
           <Link to={createPageUrl('Home')}>
             <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">

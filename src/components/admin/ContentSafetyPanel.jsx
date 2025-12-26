@@ -66,35 +66,35 @@ export default function ContentSafetyPanel() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div className="card-3d p-5 bg-white border border-[#E5E0DA] shadow-sm">
+      <div className="card-3d p-5 bg-white border shadow-sm" style={{ borderColor: 'var(--border-subtle)' }}>
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-xl bg-[#FF4B4B]/10 flex items-center justify-center">
-            <ShieldAlert className="w-5 h-5 text-[#FF4B4B]" />
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'color-mix(in srgb, var(--brand-red) 10%, transparent)' }}>
+            <ShieldAlert className="w-5 h-5" style={{ color: 'var(--brand-red)' }} />
           </div>
           <div>
-            <h3 className="font-black text-[#3C3C3C]">Banned Terms</h3>
-            <p className="text-xs text-[#777777]">Hard block (fail validation) and soft (warn) lists.</p>
+            <h3 className="font-black" style={{ color: 'var(--text-primary)' }}>Banned Terms</h3>
+            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Hard block (fail validation) and soft (warn) lists.</p>
           </div>
         </div>
         <div className="space-y-4">
           <div>
-            <p className="text-[11px] font-bold text-[#AFAFAF] uppercase mb-2">Hard Banned</p>
+            <p className="text-[11px] font-bold uppercase mb-2" style={{ color: 'var(--text-muted)' }}>Hard Banned</p>
             <div className="flex flex-wrap gap-2">
               {lists.hard.map((term) => (
-                <span key={term} className="px-3 py-1 rounded-full bg-[#FF4B4B]/10 text-[#FF4B4B] text-xs font-bold">
+                <span key={term} className="px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: 'color-mix(in srgb, var(--brand-red) 10%, transparent)', color: 'var(--brand-red)' }}>
                   {term}
                 </span>
               ))}
             </div>
           </div>
           <div>
-            <p className="text-[11px] font-bold text-[#AFAFAF] uppercase mb-2">Warn-Only</p>
+            <p className="text-[11px] font-bold uppercase mb-2" style={{ color: 'var(--text-muted)' }}>Warn-Only</p>
             {lists.soft.length === 0 ? (
-              <p className="text-xs text-[#AFAFAF]">No warn-only terms configured.</p>
+              <p className="text-xs" style={{ color: 'var(--text-muted)' }}>No warn-only terms configured.</p>
             ) : (
               <div className="flex flex-wrap gap-2">
                 {lists.soft.map((term) => (
-                  <span key={term} className="px-3 py-1 rounded-full bg-[#FFC800]/15 text-[#C27B00] text-xs font-bold">
+                  <span key={term} className="px-3 py-1 rounded-full text-xs font-bold" style={{ backgroundColor: 'color-mix(in srgb, var(--brand-yellow) 15%, transparent)', color: '#C27B00' }}>
                     {term}
                   </span>
                 ))}
@@ -102,19 +102,19 @@ export default function ContentSafetyPanel() {
             )}
           </div>
         </div>
-        <p className="text-[11px] text-[#AFAFAF] mt-4">
+        <p className="text-[11px] mt-4" style={{ color: 'var(--text-muted)' }}>
           Validator reads these lists plus any whitelist (see right). To persist pipeline changes, update <code>src/config/contentSafety.js</code> or <code>src/config/bannedWhitelist.json</code>.
         </p>
       </div>
 
-      <div className="card-3d p-5 bg-white border border-[#E5E0DA] shadow-sm">
+      <div className="card-3d p-5 bg-white border shadow-sm" style={{ borderColor: 'var(--border-subtle)' }}>
         <div className="flex items-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-xl bg-[#58CC02]/10 flex items-center justify-center">
-            <ShieldCheck className="w-5 h-5 text-[#58CC02]" />
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'color-mix(in srgb, var(--brand-green) 10%, transparent)' }}>
+            <ShieldCheck className="w-5 h-5" style={{ color: 'var(--brand-green)' }} />
           </div>
           <div>
-            <h3 className="font-black text-[#3C3C3C]">Whitelist (admin)</h3>
-            <p className="text-xs text-[#777777]">Terms you approve even if they match banned lists.</p>
+            <h3 className="font-black" style={{ color: 'var(--text-primary)' }}>Whitelist (admin)</h3>
+            <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Terms you approve even if they match banned lists.</p>
           </div>
         </div>
 
@@ -123,7 +123,8 @@ export default function ContentSafetyPanel() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Add term to whitelist"
-            className="flex-1 px-3 py-2 rounded-lg border border-[#E5E0DA] text-sm"
+            className="flex-1 px-3 py-2 rounded-lg border text-sm"
+            style={{ borderColor: 'var(--border-subtle)' }}
           />
           <button onClick={handleAdd} className="btn-3d btn-3d-green px-3 py-2 text-sm flex items-center gap-2">
             <Plus className="w-4 h-4" /> Add
@@ -132,12 +133,12 @@ export default function ContentSafetyPanel() {
 
         <div className="flex flex-wrap gap-2 mb-4">
           {lists.whitelist.length === 0 && (
-            <p className="text-xs text-[#AFAFAF]">No whitelist terms yet.</p>
+            <p className="text-xs" style={{ color: 'var(--text-muted)' }}>No whitelist terms yet.</p>
           )}
           {lists.whitelist.map((term) => (
-            <span key={term} className="px-3 py-1 rounded-full bg-[#58CC02]/10 text-[#58CC02] text-xs font-bold flex items-center gap-2">
+            <span key={term} className="px-3 py-1 rounded-full text-xs font-bold flex items-center gap-2" style={{ backgroundColor: 'color-mix(in srgb, var(--brand-green) 10%, transparent)', color: 'var(--brand-green)' }}>
               {term}
-              <button onClick={() => handleRemove(term)} className="text-[#58CC02] hover:text-[#3A9901]">
+              <button onClick={() => handleRemove(term)} className="hover:opacity-75" style={{ color: 'var(--brand-green)' }}>
                 <Trash2 className="w-3 h-3" />
               </button>
             </span>
@@ -148,7 +149,7 @@ export default function ContentSafetyPanel() {
           <button onClick={handleCopy} className="btn-3d btn-3d-ghost px-3 py-2 text-sm flex items-center gap-2">
             <Copy className="w-4 h-4" /> {copied ? 'Copied!' : 'Copy whitelist JSON'}
           </button>
-          <p className="text-[11px] text-[#AFAFAF] flex items-center">
+          <p className="text-[11px] flex items-center" style={{ color: 'var(--text-muted)' }}>
             Paste into <code>src/config/bannedWhitelist.json</code> to sync with validator/CI.
           </p>
         </div>
@@ -175,13 +176,13 @@ export default function ContentSafetyPanel() {
           >
             <Sparkles className="w-4 h-4" /> Seed defaults
           </button>
-          <span className="text-[11px] text-[#777777]">
+          <span className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>
             Status: {loading ? 'Syncing...' : `${status.source} ${status.message ? `• ${status.message}` : ''}`}
           </span>
         </div>
 
         {toast && (
-          <div className="mt-3 text-[11px] font-bold text-[#3C3C3C] bg-[#F0EDE8] px-3 py-2 rounded-lg">
+          <div className="mt-3 text-[11px] font-bold px-3 py-2 rounded-lg" style={{ color: 'var(--text-primary)', backgroundColor: 'var(--surface-2)' }}>
             {toast}
           </div>
         )}

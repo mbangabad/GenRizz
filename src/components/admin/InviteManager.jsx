@@ -115,8 +115,8 @@ export default function InviteManager() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-xl font-black text-[#3C3C3C]">Invite Codes</h2>
-          <p className="text-sm text-[#777777]">Generate and manage access codes</p>
+          <h2 className="text-xl font-black" style={{ color: 'var(--text-primary)' }}>Invite Codes</h2>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>Generate and manage access codes</p>
         </div>
         <button onClick={fetchCodes} className="p-2 hover:bg-gray-100 rounded-lg">
           <RefreshCw className="w-5 h-5 text-gray-500" />
@@ -125,28 +125,30 @@ export default function InviteManager() {
 
       {/* Generator */}
       <div className="card-3d p-6 bg-white">
-        <h3 className="font-bold text-[#3C3C3C] mb-4 flex items-center gap-2">
-          <Ticket className="w-5 h-5 text-[#58CC02]" /> Generate New Code
+        <h3 className="font-bold mb-4 flex items-center gap-2" style={{ color: 'var(--text-primary)' }}>
+          <Ticket className="w-5 h-5" style={{ color: 'var(--brand-green)' }} /> Generate New Code
         </h3>
         <div className="flex gap-4 items-end">
           <div className="flex-1 space-y-1">
-            <label className="text-xs font-bold text-[#AFAFAF] uppercase">Max Uses</label>
+            <label className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Max Uses</label>
             <input 
               type="number"
               min="1"
               value={newCodeSettings.max_uses}
               onChange={e => setNewCodeSettings({...newCodeSettings, max_uses: e.target.value})}
-              className="w-full h-10 px-3 rounded-xl bg-[#F7F4F0] border-2 border-[#E5E0DA] font-bold text-[#3C3C3C]"
+              className="w-full h-10 px-3 rounded-xl border-2 font-bold"
+              style={{ backgroundColor: 'var(--surface-2)', borderColor: 'var(--border-subtle)', color: 'var(--text-primary)' }}
             />
           </div>
           <div className="flex-[2] space-y-1">
-            <label className="text-xs font-bold text-[#AFAFAF] uppercase">Note (Optional)</label>
+            <label className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Note (Optional)</label>
             <input 
               type="text"
               placeholder="e.g. For Marketing Team"
               value={newCodeSettings.note}
               onChange={e => setNewCodeSettings({...newCodeSettings, note: e.target.value})}
-              className="w-full h-10 px-3 rounded-xl bg-[#F7F4F0] border-2 border-[#E5E0DA] font-bold text-[#3C3C3C]"
+              className="w-full h-10 px-3 rounded-xl border-2 font-bold"
+              style={{ backgroundColor: 'var(--surface-2)', borderColor: 'var(--border-subtle)', color: 'var(--text-primary)' }}
             />
           </div>
           <button 
@@ -169,18 +171,18 @@ export default function InviteManager() {
           return (
             <div key={code.id} className={`card-3d p-4 bg-white flex items-center justify-between ${isFull ? 'opacity-60' : ''}`}>
               <div className="flex items-center gap-4">
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl font-black ${isFull ? 'bg-gray-100 text-gray-400' : 'bg-[#58CC02]/10 text-[#58CC02]'}`}>
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl font-black`} style={{ backgroundColor: isFull ? '#f3f4f6' : 'color-mix(in srgb, var(--brand-green) 10%, transparent)', color: isFull ? '#9ca3af' : 'var(--brand-green)' }}>
                   🎫
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <code className="text-lg font-black text-[#3C3C3C] tracking-wider">{code.code}</code>
-                    <button onClick={() => copyToClipboard(code.code)} className="text-gray-400 hover:text-[#58CC02]">
+                    <code className="text-lg font-black tracking-wider" style={{ color: 'var(--text-primary)' }}>{code.code}</code>
+                    <button onClick={() => copyToClipboard(code.code)} className="text-gray-400 hover:text-green-600" style={{ '--hover-color': 'var(--brand-green)' }}>
                       <Copy className="w-4 h-4" />
                     </button>
                   </div>
                   <div className="flex items-center gap-2 text-xs font-bold mt-1">
-                    <span className="text-[#777777]">
+                    <span style={{ color: 'var(--text-secondary)' }}>
                       Used: {code.used_count}/{code.max_uses}
                     </span>
                     {code.note && (
@@ -193,15 +195,18 @@ export default function InviteManager() {
               </div>
 
               <div className="flex items-center gap-4">
-                <div className="w-24 h-2 bg-[#F0EDE8] rounded-full overflow-hidden">
+                <div className="w-24 h-2 rounded-full overflow-hidden" style={{ backgroundColor: 'var(--surface-2)' }}>
                   <div 
-                    className={`h-full rounded-full ${isFull ? 'bg-red-400' : 'bg-[#58CC02]'}`}
-                    style={{ width: `${Math.min(percentUsed, 100)}%` }}
+                    className="h-full rounded-full"
+                    style={{ width: `${Math.min(percentUsed, 100)}%`, backgroundColor: isFull ? 'var(--brand-red)' : 'var(--brand-green)' }}
                   />
                 </div>
                 <button 
                   onClick={() => handleDelete(code.id)}
-                  className="p-2 hover:bg-[#FFF5F5] rounded-lg text-[#FF4B4B] transition-colors"
+                  className="p-2 rounded-lg transition-colors"
+                  style={{ color: 'var(--brand-red)' }}
+                  onMouseEnter={e => e.target.style.backgroundColor = 'color-mix(in srgb, var(--brand-red) 5%, transparent)'}
+                  onMouseLeave={e => e.target.style.backgroundColor = 'transparent'}
                 >
                   <Trash2 className="w-5 h-5" />
                 </button>

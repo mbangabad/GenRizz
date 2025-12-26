@@ -72,7 +72,7 @@ export default function CompletionAnimation({
               stiffness: 200,
               damping: 20,
             }}
-            className="relative bg-white rounded-3xl p-8 max-w-md w-full mx-4 text-center shadow-2xl"
+            className="relative bg-[var(--surface-0)] rounded-3xl p-8 max-w-md w-full mx-4 text-center shadow-2xl"
           >
             {/* Trophy/Icon */}
             <motion.div
@@ -110,7 +110,7 @@ export default function CompletionAnimation({
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
-              className="text-3xl font-black text-[#3C3C3C] mb-2"
+              className="text-3xl font-black text-[var(--text-primary)] mb-2"
             >
               {isExcellent ? 'Excellent!' : isGreat ? 'Great Job!' : isGood ? 'Good Work!' : 'Keep Going!'}
             </motion.h2>
@@ -135,10 +135,10 @@ export default function CompletionAnimation({
               transition={{ delay: 0.5 }}
               className="mb-6"
             >
-              <div className="text-5xl font-black text-[#58CC02] mb-2">
+              <div className="text-5xl font-black text-[var(--brand-green)] mb-2">
                 {percentage}%
               </div>
-              <p className="text-[#777777] font-semibold">Score</p>
+              <p className="text-[var(--text-secondary)] font-semibold">Score</p>
             </motion.div>
 
             {/* XP Earned */}
@@ -174,13 +174,13 @@ export default function CompletionAnimation({
               initial={{ width: 0 }}
               animate={{ width: '100%' }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="mt-6 h-2 bg-[#E8E4DF] rounded-full overflow-hidden"
+              className="mt-6 h-2 bg-[var(--surface-3)] rounded-full overflow-hidden"
             >
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${percentage}%` }}
                 transition={{ delay: 0.9, duration: 1, ease: 'easeOut' }}
-                className="h-full bg-gradient-to-r from-[#58CC02] to-[#4ADE80] rounded-full"
+                className="h-full bg-gradient-to-r from-[var(--brand-green)] to-[var(--brand-green-hover)] rounded-full"
               />
             </motion.div>
           </motion.div>

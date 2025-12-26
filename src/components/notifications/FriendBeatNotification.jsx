@@ -44,22 +44,22 @@ export default function FriendBeatNotification({
           <div className={`card-3d p-4 ${didBeat ? 'card-3d-green' : 'card-3d-orange'}`}>
             <button 
               onClick={handleDismiss}
-              className="absolute top-2 right-2 w-6 h-6 rounded-full bg-white/50 flex items-center justify-center text-[#777777]"
+              className="absolute top-2 right-2 w-6 h-6 rounded-full bg-white/50 flex items-center justify-center text-[var(--text-secondary)]"
             >
               <X className="w-4 h-4" />
             </button>
 
             <div className="flex items-center gap-3 mb-3">
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl ${
-                didBeat ? 'bg-[#58CC02]/20' : 'bg-[#FF9600]/20'
+                didBeat ? 'bg-[var(--brand-green)]/20' : 'bg-[var(--brand-orange)]/20'
               }`}>
                 {didBeat ? '🎉' : '😤'}
               </div>
               <div className="flex-1">
-                <p className="font-bold text-[#3C3C3C]">
+                <p className="font-bold text-[var(--text-primary)]">
                   {didBeat ? 'You beat' : 'Challenge from'} {friendName}!
                 </p>
-                <p className="text-sm text-[#777777]">
+                <p className="text-sm text-[var(--text-secondary)]">
                   {game?.title} - {friendScore}%
                 </p>
               </div>
@@ -82,7 +82,7 @@ export default function FriendBeatNotification({
             )}
 
             {didBeat && (
-              <div className="flex items-center justify-center gap-2 text-[#58CC02] font-bold">
+              <div className="flex items-center justify-center gap-2 text-[var(--brand-green)] font-bold">
                 <TrendingUp className="w-4 h-4" />
                 <span>Your {userScore}% wins!</span>
               </div>

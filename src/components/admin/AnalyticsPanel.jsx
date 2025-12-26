@@ -63,12 +63,12 @@ export default function AnalyticsPanel() {
   ]
 
   return (
-    <div className="card-3d p-5 bg-white border border-[#E5E0DA] shadow-sm space-y-4">
+    <div className="card-3d p-5 bg-white border shadow-sm space-y-4" style={{ borderColor: 'var(--border-subtle)' }}>
       <div className="flex items-center justify-between">
         <div>
-          <h3 className="font-black text-[#3C3C3C]">Analytics Snapshot</h3>
-          <p className="text-xs text-[#777777]">Events, purchases, revenue, top actions.</p>
-          <p className="text-[11px] text-[#777777]">Status: {loading ? 'Working…' : status}</p>
+          <h3 className="font-black" style={{ color: 'var(--text-primary)' }}>Analytics Snapshot</h3>
+          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>Events, purchases, revenue, top actions.</p>
+          <p className="text-[11px]" style={{ color: 'var(--text-secondary)' }}>Status: {loading ? 'Working…' : status}</p>
         </div>
         <button onClick={load} disabled={loading} className="btn-3d btn-3d-ghost px-3 py-2 text-xs flex items-center gap-2">
           <RefreshCw className="w-4 h-4" /> Refresh
@@ -78,34 +78,34 @@ export default function AnalyticsPanel() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         {cards.map((c) => (
           <div key={c.label} className="card-3d p-3 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#F7F4F0] flex items-center justify-center">
-              <c.icon className="w-5 h-5 text-[#3C3C3C]" />
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'var(--surface-2)' }}>
+              <c.icon className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
             </div>
             <div>
-              <p className="text-xs text-[#777777] font-semibold">{c.label}</p>
-              <p className="text-lg font-black text-[#3C3C3C]">{c.value}</p>
+              <p className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>{c.label}</p>
+              <p className="text-lg font-black" style={{ color: 'var(--text-primary)' }}>{c.value}</p>
             </div>
           </div>
         ))}
       </div>
 
       <div className="space-y-2">
-        <p className="text-sm font-bold text-[#3C3C3C]">Top events (sampled)</p>
-        {topEvents.length === 0 && <p className="text-xs text-[#AFAFAF]">No events yet.</p>}
+        <p className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>Top events (sampled)</p>
+        {topEvents.length === 0 && <p className="text-xs" style={{ color: 'var(--text-muted)' }}>No events yet.</p>}
         {topEvents.map(([name, count]) => (
           <div key={name} className="flex items-center justify-between text-sm border rounded-lg px-3 py-2">
-            <span className="font-bold text-[#3C3C3C]">{name}</span>
-            <span className="text-xs text-[#777777]">{count}</span>
+            <span className="font-bold" style={{ color: 'var(--text-primary)' }}>{name}</span>
+            <span className="text-xs" style={{ color: 'var(--text-secondary)' }}>{count}</span>
           </div>
         ))}
       </div>
       <div className="space-y-2">
-        <p className="text-sm font-bold text-[#3C3C3C]">Top modes/games (sampled)</p>
-        {modeUsage.length === 0 && <p className="text-xs text-[#AFAFAF]">No mode usage yet.</p>}
+        <p className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>Top modes/games (sampled)</p>
+        {modeUsage.length === 0 && <p className="text-xs" style={{ color: 'var(--text-muted)' }}>No mode usage yet.</p>}
         {modeUsage.map(([name, count]) => (
           <div key={name} className="flex items-center justify-between text-sm border rounded-lg px-3 py-2">
-            <span className="font-bold text-[#3C3C3C]">{name}</span>
-            <span className="text-xs text-[#777777]">{count}</span>
+            <span className="font-bold" style={{ color: 'var(--text-primary)' }}>{name}</span>
+            <span className="text-xs" style={{ color: 'var(--text-secondary)' }}>{count}</span>
           </div>
         ))}
       </div>

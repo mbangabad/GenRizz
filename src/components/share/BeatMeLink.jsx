@@ -91,9 +91,9 @@ ${shareUrl}`;
             className="space-y-3"
           >
             {/* Preview Card */}
-            <div className="card-3d p-4 bg-[#F7F4F0]">
-              <p className="text-xs text-[#AFAFAF] font-semibold mb-2">SHARE PREVIEW</p>
-              <pre className="text-xs text-[#3C3C3C] font-mono whitespace-pre-wrap break-all">
+            <div className="card-3d p-4 bg-[var(--surface-1)]">
+              <p className="text-xs font-semibold mb-2" style={{ color: 'var(--text-muted)' }}>SHARE PREVIEW</p>
+              <pre className="text-xs font-mono whitespace-pre-wrap break-all" style={{ color: 'var(--text-primary)' }}>
                 {shareText.slice(0, 150)}...
               </pre>
             </div>
@@ -105,7 +105,7 @@ ${shareUrl}`;
                 whileTap={{ scale: 0.98 }}
                 onClick={shareToWhatsApp}
                 className="btn-3d py-3 flex items-center justify-center gap-2 text-sm"
-                style={{ background: '#25D366', color: 'white', boxShadow: '0 3px 0 #1DA851' }}
+                style={{ background: 'var(--brand-green)', color: 'var(--text-inverse)', boxShadow: '0 3px 0 var(--brand-green-dark)' }}
               >
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp
@@ -116,7 +116,7 @@ ${shareUrl}`;
                 whileTap={{ scale: 0.98 }}
                 onClick={shareToiMessage}
                 className="btn-3d py-3 flex items-center justify-center gap-2 text-sm"
-                style={{ background: '#34C759', color: 'white', boxShadow: '0 3px 0 #28A745' }}
+                style={{ background: '#34C759', color: 'var(--text-inverse)', boxShadow: '0 3px 0 #28A745' }}
               >
                 <Send className="w-4 h-4" />
                 iMessage
@@ -127,7 +127,7 @@ ${shareUrl}`;
                 whileTap={{ scale: 0.98 }}
                 onClick={shareToTelegram}
                 className="btn-3d py-3 flex items-center justify-center gap-2 text-sm"
-                style={{ background: '#0088CC', color: 'white', boxShadow: '0 3px 0 #006699' }}
+                style={{ background: '#0088CC', color: 'var(--text-inverse)', boxShadow: '0 3px 0 #006699' }}
               >
                 <Send className="w-4 h-4" />
                 Telegram
@@ -138,7 +138,7 @@ ${shareUrl}`;
                 whileTap={{ scale: 0.98 }}
                 onClick={shareToTwitter}
                 className="btn-3d py-3 flex items-center justify-center gap-2 text-sm"
-                style={{ background: '#1DA1F2', color: 'white', boxShadow: '0 3px 0 #0C85D0' }}
+                style={{ background: '#1DA1F2', color: 'var(--text-inverse)', boxShadow: '0 3px 0 #0C85D0' }}
               >
                 <Twitter className="w-4 h-4" />
                 Twitter/X
@@ -149,7 +149,7 @@ ${shareUrl}`;
                 whileTap={{ scale: 0.98 }}
                 onClick={shareToTikTok}
                 className="btn-3d py-3 flex items-center justify-center gap-2 text-sm col-span-2"
-                style={{ background: '#000000', color: 'white', boxShadow: '0 3px 0 #333333' }}
+                style={{ background: '#000000', color: 'var(--text-inverse)', boxShadow: '0 3px 0 #333333' }}
               >
                 <span className="text-lg">🎵</span>
                 TikTok (Copy & Post)
@@ -165,8 +165,8 @@ ${shareUrl}`;
             >
               {copied ? (
                 <>
-                  <Check className="w-4 h-4 text-[#58CC02]" />
-                  <span className="text-[#58CC02]">Copied!</span>
+                  <Check className="w-4 h-4" style={{ color: 'var(--brand-green)' }} />
+                  <span style={{ color: 'var(--brand-green)' }}>Copied!</span>
                 </>
               ) : (
                 <>

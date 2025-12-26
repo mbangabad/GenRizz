@@ -8,13 +8,13 @@ export default function FamilyChallengeCard() {
   return (
     <Link to={createPageUrl('FamilyChallenge')}>
       <motion.div
-        className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#64FFDA]/15 via-[#00CED1]/15 to-[#B388FF]/15 border border-[#64FFDA]/30 p-4"
+        className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[var(--brand-blue-hover)]/15 via-[var(--brand-blue)]/15 to-[var(--brand-purple)]/15 border border-[var(--brand-blue-hover)]/30 p-4"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
         {/* Animated background */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-[#64FFDA]/10 via-[#00CED1]/15 to-[#B388FF]/10"
+          className="absolute inset-0 bg-gradient-to-r from-[var(--brand-blue-hover)]/10 via-[var(--brand-blue)]/15 to-[var(--brand-purple)]/10"
           animate={{
             backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
           }}
@@ -25,7 +25,7 @@ export default function FamilyChallengeCard() {
           {/* Icon */}
           <div className="relative">
             <motion.div
-              className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#64FFDA] to-[#00CED1] flex items-center justify-center"
+              className="w-14 h-14 rounded-xl bg-gradient-to-br from-[var(--brand-blue-hover)] to-[var(--brand-blue)] flex items-center justify-center"
               animate={{ 
                 rotate: [0, 5, -5, 0],
               }}
@@ -34,7 +34,7 @@ export default function FamilyChallengeCard() {
               <span className="text-2xl">👨‍👩‍👧‍👦</span>
             </motion.div>
             <motion.div
-              className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#FFE066] flex items-center justify-center"
+              className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[var(--brand-yellow)] flex items-center justify-center"
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity }}
             >
@@ -45,7 +45,7 @@ export default function FamilyChallengeCard() {
           {/* Text */}
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-[#64FFDA] to-[#00CED1] text-black">
+              <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-[var(--brand-blue-hover)] to-[var(--brand-blue)] text-black">
                 NEW
               </span>
             </div>
@@ -58,7 +58,7 @@ export default function FamilyChallengeCard() {
             animate={{ x: [0, 5, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <ArrowRight className="w-5 h-5 text-[#64FFDA]" />
+            <ArrowRight className="w-5 h-5 text-[var(--brand-blue-hover)]" />
           </motion.div>
         </div>
 

@@ -20,7 +20,7 @@ const SHOP_ITEMS = [
     name: 'Heart Refill',
     description: 'Restore 5 hearts instantly',
     icon: Heart,
-    color: '#FF4B4B',
+    color: 'var(--brand-red)',
     price: 1.99,
     type: 'consumable',
     quantity: 5,
@@ -32,7 +32,7 @@ const SHOP_ITEMS = [
     name: 'Starter Pack',
     description: '3 of each power-up',
     icon: Zap,
-    color: '#FFC800',
+    color: 'var(--brand-yellow)',
     price: 2.99,
     type: 'consumable',
     quantity: 3,
@@ -44,7 +44,7 @@ const SHOP_ITEMS = [
     name: 'Pro Pack',
     description: '10 of each power-up',
     icon: Star,
-    color: '#CE82FF',
+    color: 'var(--brand-purple)',
     price: 7.99,
     type: 'consumable',
     quantity: 10,
@@ -56,7 +56,7 @@ const SHOP_ITEMS = [
     name: 'Streak Shield',
     description: 'Protect your streak for 1 day',
     icon: Shield,
-    color: '#1CB0F6',
+    color: 'var(--brand-blue)',
     price: 0.99,
     type: 'consumable',
     quantity: 1,
@@ -71,7 +71,7 @@ const AVATAR_ITEMS = [
     name: 'Blue Flame',
     description: 'Chill vibes only',
     icon: Palette,
-    color: '#1CB0F6',
+    color: 'var(--brand-blue)',
     price: 500,
     currency: 'coins',
     type: 'skin',
@@ -83,7 +83,7 @@ const AVATAR_ITEMS = [
     name: 'Fancy Top Hat',
     description: 'For the distinguished flame',
     icon: Shirt,
-    color: '#3C3C3C',
+    color: 'var(--text-primary)',
     price: 1000,
     currency: 'coins',
     type: 'hat',
@@ -95,7 +95,7 @@ const AVATAR_ITEMS = [
     name: 'Cool Shades',
     description: 'Deal with it',
     icon: Glasses,
-    color: '#FFC800',
+    color: 'var(--brand-yellow)',
     price: 750,
     currency: 'coins',
     type: 'glasses',
@@ -107,7 +107,7 @@ const AVATAR_ITEMS = [
     name: 'Mystic Flame',
     description: 'Magical energy',
     icon: Sparkles,
-    color: '#CE82FF',
+    color: 'var(--brand-purple)',
     price: 1500,
     currency: 'coins',
     type: 'skin',
@@ -223,17 +223,17 @@ export default function Shop() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
-      <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
+    <div className="min-h-screen bg-[var(--page-bg)] pb-24">
+      <header className="glass-header">
         <div className="max-w-5xl mx-auto px-4 py-3 flex items-center gap-3">
           <Link to={createPageUrl('Home')}>
-            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">
-              <ArrowLeft className="w-5 h-5 text-[#777777]" />
+            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[var(--border-subtle)] flex items-center justify-center hover:bg-[var(--surface-2)] transition-colors">
+              <ArrowLeft className="w-5 h-5 text-[var(--text-secondary)]" />
             </button>
           </Link>
           <div className="flex-1">
-            <h1 className="font-black text-[#3C3C3C] text-lg">Shop</h1>
-            <p className="text-xs text-[#AFAFAF] font-semibold">Store & Customization</p>
+            <h1 className="font-black text-[var(--text-primary)] text-lg">Shop</h1>
+            <p className="text-xs text-[var(--text-muted)] font-semibold">Store & Customization</p>
           </div>
           <div className="flex items-center gap-2">
             <div className="badge-3d badge-xp">
@@ -246,11 +246,11 @@ export default function Shop() {
 
       <main className="max-w-5xl mx-auto px-4 py-6 space-y-8">
         {/* Tabs */}
-        <div className="flex p-1 bg-[#E5E0DA] rounded-xl">
+        <div className="flex p-1 bg-[var(--border-subtle)] rounded-xl">
           <button 
             onClick={() => setActiveTab('powerups')}
             className={`flex-1 py-2 rounded-lg text-sm font-black transition-all ${
-              activeTab === 'powerups' ? 'bg-white shadow-sm text-[#3C3C3C]' : 'text-[#777777] hover:text-[#3C3C3C]'
+              activeTab === 'powerups' ? 'bg-white shadow-sm text-[var(--text-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
             }`}
           >
             ⚡ Power-ups
@@ -258,7 +258,7 @@ export default function Shop() {
           <button 
             onClick={() => setActiveTab('avatar')}
             className={`flex-1 py-2 rounded-lg text-sm font-black transition-all ${
-              activeTab === 'avatar' ? 'bg-white shadow-sm text-[#3C3C3C]' : 'text-[#777777] hover:text-[#3C3C3C]'
+              activeTab === 'avatar' ? 'bg-white shadow-sm text-[var(--text-primary)]' : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
             }`}
           >
             🎨 Avatar
@@ -276,21 +276,21 @@ export default function Shop() {
               <div className="absolute -right-10 -top-10 w-32 h-32 bg-white/20 rounded-full blur-2xl" />
               <div className="relative z-10 flex items-center justify-between">
                 <div>
-                  <h2 className="text-xl font-black text-[#3C3C3C]">Get GenRizz Premium</h2>
-                  <p className="text-[#777777] font-semibold mb-4">Unlimited hearts, no ads, 2x XP!</p>
+                  <h2 className="text-xl font-black text-[var(--text-primary)]">Get GenRizz Premium</h2>
+                  <p className="text-[var(--text-secondary)] font-semibold mb-4">Unlimited hearts, no ads, 2x XP!</p>
                   <Link to={createPageUrl('Premium')}>
                     <button className="btn-3d btn-3d-yellow px-6 py-2 text-sm">
                       Upgrade Now
                     </button>
                   </Link>
                 </div>
-                <Crown className="w-16 h-16 text-[#FFC800] rotate-12 opacity-80" />
+                <Crown className="w-16 h-16 text-[var(--brand-yellow)] rotate-12 opacity-80" />
               </div>
             </div>
 
             {/* Items Grid */}
             <div>
-              <h2 className="text-lg font-black text-[#3C3C3C] mb-4">Special Offers</h2>
+              <h2 className="text-lg font-black text-[var(--text-primary)] mb-4">Special Offers</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 {SHOP_ITEMS.map((item) => (
                   <div key={item.id} className="card-3d p-4 flex flex-col items-center text-center h-full">
@@ -298,8 +298,8 @@ export default function Shop() {
                          style={{ backgroundColor: `${item.color}20` }}>
                       <item.icon className="w-8 h-8" style={{ color: item.color }} />
                     </div>
-                    <h3 className="font-bold text-[#3C3C3C] mb-1">{item.name}</h3>
-                    <p className="text-xs text-[#777777] mb-4 flex-1">{item.description}</p>
+                    <h3 className="font-bold text-[var(--text-primary)] mb-1">{item.name}</h3>
+                    <p className="text-xs text-[var(--text-secondary)] mb-4 flex-1">{item.description}</p>
                     
                     <button
                       onClick={() => handlePurchase(item)}
@@ -320,12 +320,12 @@ export default function Shop() {
             {/* Watch Ad */}
             <div className="card-3d p-6 flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#1CB0F6]/20 flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-[#1CB0F6]" />
+                <div className="w-12 h-12 rounded-xl bg-[var(--brand-blue)]/20 flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-[var(--brand-blue)]" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-[#3C3C3C]">Watch Ad</h3>
-                  <p className="text-sm text-[#777777]">Get 1 Free Heart</p>
+                  <h3 className="font-bold text-[var(--text-primary)]">Watch Ad</h3>
+                  <p className="text-sm text-[var(--text-secondary)]">Get 1 Free Heart</p>
                 </div>
               </div>
               <button 
@@ -343,11 +343,11 @@ export default function Shop() {
             className="space-y-8"
           >
             <div className="text-center mb-8">
-              <div className="w-32 h-32 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-4 border-4 border-[#E5E0DA]">
+              <div className="w-32 h-32 mx-auto bg-gray-100 rounded-full flex items-center justify-center mb-4 border-4 border-[var(--border-subtle)]">
                 <span className="text-6xl">🔥</span>
               </div>
-              <h2 className="font-black text-[#3C3C3C] text-xl">Customize Rizzy</h2>
-              <p className="text-[#777777] font-semibold">Stand out on the leaderboards!</p>
+              <h2 className="font-black text-[var(--text-primary)] text-xl">Customize Rizzy</h2>
+              <p className="text-[var(--text-secondary)] font-semibold">Stand out on the leaderboards!</p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -361,8 +361,8 @@ export default function Shop() {
                     {item.type === 'glasses' && <span className="absolute top-6 text-2xl z-20">🕶️</span>}
                     {item.type === 'skin' && <div className="absolute inset-0 opacity-20" style={{backgroundColor: item.color}} />}
                   </div>
-                  <h3 className="font-bold text-[#3C3C3C] mb-1">{item.name}</h3>
-                  <p className="text-xs text-[#777777] mb-4 flex-1">{item.description}</p>
+                  <h3 className="font-bold text-[var(--text-primary)] mb-1">{item.name}</h3>
+                  <p className="text-xs text-[var(--text-secondary)] mb-4 flex-1">{item.description}</p>
                   
                   <button
                     onClick={() => handlePurchase(item)}

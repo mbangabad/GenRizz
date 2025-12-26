@@ -92,7 +92,7 @@ export default function QuestionCardEnhanced({
   }, [selected, question, onAnswer, timeLeft]);
 
   const isCorrect = selected === question.correct_index;
-  const timerColor = timeLeft <= 5 ? '#FF5252' : timeLeft <= 10 ? '#FF6B35' : '#4ADE80';
+  const timerColor = timeLeft <= 5 ? 'var(--brand-red)' : timeLeft <= 10 ? 'var(--brand-orange)' : 'var(--brand-green)';
   const timerPercentage = (timeLeft / TIME_PER_QUESTION) * 100;
 
   return (
@@ -114,7 +114,7 @@ export default function QuestionCardEnhanced({
               
               {timedMode && (
                 <motion.div 
-                  className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1A] border border-white/10"
+                  className="flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface-2)] border border-white/10"
                   animate={timeLeft <= 5 ? { scale: [1, 1.1, 1] } : {}}
                   transition={{ duration: 0.5, repeat: timeLeft <= 5 ? Infinity : 0 }}
                 >
@@ -129,9 +129,9 @@ export default function QuestionCardEnhanced({
             </div>
 
             {/* Progress bar with timer overlay */}
-            <div className="relative h-3 bg-[#1A1A1A] rounded-full overflow-hidden">
+            <div className="relative h-3 bg-[var(--surface-2)] rounded-full overflow-hidden">
               <motion.div 
-                className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#FF6B35] to-[#FF8F6B] rounded-full"
+                className="absolute inset-y-0 left-0 bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-orange-hover)] rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: `${(questionNumber / totalQuestions) * 100}%` }}
                 transition={{ duration: 0.3 }}
@@ -152,7 +152,7 @@ export default function QuestionCardEnhanced({
 
           {/* Question Type Badge */}
           <div className="flex justify-center mb-4">
-            <span className="px-3 py-1 rounded-full text-xs font-bold uppercase bg-[#1E1E1E] text-white/50 border border-white/10">
+            <span className="px-3 py-1 rounded-full text-xs font-bold uppercase bg-[var(--surface-2)] text-white/50 border border-white/10">
               {question.type}
             </span>
           </div>
@@ -183,11 +183,11 @@ export default function QuestionCardEnhanced({
                 if (showResult) {
                   if (isCorrectOption) {
                     bgColor = 'rgba(74, 222, 128, 0.15)';
-                    borderColor = '#4ade80';
+                    borderColor = 'var(--brand-green)';
                     shadow = '0 0 20px rgba(74, 222, 128, 0.3)';
                   } else if (isSelected) {
                     bgColor = 'rgba(248, 113, 113, 0.15)';
-                    borderColor = '#f87171';
+                    borderColor = 'var(--brand-red)';
                     shadow = '0 0 20px rgba(248, 113, 113, 0.3)';
                   }
                 }
@@ -216,8 +216,8 @@ export default function QuestionCardEnhanced({
                     <span 
                       className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm transition-all"
                       style={{ 
-                        background: showResult && isCorrectOption ? '#4ade80' : 
-                                   showResult && isSelected && !isCorrectOption ? '#f87171' : 
+                        background: showResult && isCorrectOption ? 'var(--brand-green)' : 
+                                   showResult && isSelected && !isCorrectOption ? 'var(--brand-red)' : 
                                    'var(--bg-elevated)',
                         color: showResult && (isCorrectOption || isSelected) ? 'white' : 'var(--text-secondary)'
                       }}
@@ -262,7 +262,7 @@ export default function QuestionCardEnhanced({
                   className="p-4 rounded-2xl border-2"
                   style={{ 
                     background: isCorrect ? 'rgba(74, 222, 128, 0.1)' : 'rgba(0, 206, 209, 0.1)',
-                    borderColor: isCorrect ? '#4ADE80' : '#00CED1'
+                    borderColor: isCorrect ? 'var(--brand-green)' : 'var(--brand-blue)'
                   }}
                 >
                   <div className="flex gap-3">
@@ -270,15 +270,15 @@ export default function QuestionCardEnhanced({
                       className="w-12 h-12 rounded-xl flex items-center justify-center"
                       style={{ background: isCorrect ? 'rgba(74, 222, 128, 0.2)' : 'rgba(0, 206, 209, 0.2)' }}
                     >
-                      <Lightbulb className="w-6 h-6" style={{ color: isCorrect ? '#4ade80' : '#00CED1' }} />
+                      <Lightbulb className="w-6 h-6" style={{ color: isCorrect ? 'var(--brand-green)' : 'var(--brand-blue)' }} />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <p className="font-bold" style={{ color: isCorrect ? '#4ade80' : '#f87171' }}>
+                        <p className="font-bold" style={{ color: isCorrect ? 'var(--brand-green)' : 'var(--brand-red)' }}>
                           {isCorrect ? '🎉 Correct!' : '😅 Not quite!'}
                         </p>
                         {isCorrect && timeLeft > 10 && (
-                          <span className="text-xs bg-[#00CED1]/20 text-[#00CED1] px-2 py-0.5 rounded-full flex items-center gap-1">
+                          <span className="text-xs bg-[var(--brand-blue)]/20 text-[var(--brand-blue)] px-2 py-0.5 rounded-full flex items-center gap-1">
                             <Zap className="w-3 h-3" /> Speed Bonus!
                           </span>
                         )}
@@ -306,7 +306,7 @@ export default function QuestionCardEnhanced({
                       initial={{ width: '100%' }}
                       animate={{ width: '0%' }}
                       transition={{ duration: AUTO_ADVANCE_DELAY / 1000, ease: 'linear' }}
-                      className="h-1 bg-[#FF6B35] rounded-full mx-auto mb-2"
+                      className="h-1 bg-[var(--brand-orange)] rounded-full mx-auto mb-2"
                     />
                     Auto-advancing...
                   </div>

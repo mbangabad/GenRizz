@@ -63,11 +63,11 @@ export default function StreakWidget({ userId }) {
             animate={{ scale: currentStreak > 0 ? [1, 1.2, 1] : 1 }}
             transition={{ duration: 0.5, repeat: currentStreak > 0 ? Infinity : 0, repeatDelay: 2 }}
           >
-            <Flame className="w-8 h-8 text-[#FF9600]" />
+            <Flame className="w-8 h-8 text-[var(--brand-orange)]" />
           </motion.div>
-          <span className="text-4xl font-black text-[#FF9600]">{currentStreak}</span>
+          <span className="text-4xl font-black text-[var(--brand-orange)]">{currentStreak}</span>
         </div>
-        <p className="text-sm font-bold text-[#3C3C3C]">Day Streak</p>
+        <p className="text-sm font-bold text-[var(--text-primary)]">Day Streak</p>
         
         {/* Mini calendar */}
         <div className="flex justify-center gap-1 mt-3">
@@ -76,10 +76,10 @@ export default function StreakWidget({ userId }) {
               key={i}
               className={`w-6 h-6 rounded-md flex items-center justify-center text-xs font-bold ${
                 day.completed 
-                  ? 'bg-[#FF9600] text-white' 
+                  ? 'bg-[var(--brand-orange)] text-[var(--text-inverse)]' 
                   : day.isToday 
-                    ? 'bg-[#E5E0DA] text-[#777777]' 
-                    : 'bg-[#F7F4F0] text-[#AFAFAF]'
+                    ? 'bg-[var(--border-subtle)] text-[var(--text-secondary)]' 
+                    : 'bg-[var(--surface-1)] text-[var(--text-muted)]'
               }`}
             >
               {day.completed ? <Check className="w-3 h-3" /> : day.day}
@@ -88,7 +88,7 @@ export default function StreakWidget({ userId }) {
         </div>
         
         {hasStreakFreeze && (
-          <div className="flex items-center justify-center gap-1 mt-2 text-xs text-[#1CB0F6] font-bold">
+          <div className="flex items-center justify-center gap-1 mt-2 text-xs text-[var(--brand-blue)] font-bold">
             <Shield className="w-3 h-3" />
             Freeze Ready
           </div>
@@ -113,51 +113,51 @@ export default function StreakWidget({ userId }) {
               className="card-3d p-6 max-w-sm w-full"
             >
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-black text-[#3C3C3C]">🔥 Streak Stats</h3>
+                <h3 className="text-xl font-black text-[var(--text-primary)]">🔥 Streak Stats</h3>
                 <button 
                   onClick={() => setShowCalendar(false)}
-                  className="w-8 h-8 rounded-lg bg-[#F7F4F0] flex items-center justify-center"
+                  className="w-8 h-8 rounded-lg bg-[var(--surface-1)] flex items-center justify-center"
                 >
-                  <X className="w-4 h-4 text-[#777777]" />
+                  <X className="w-4 h-4 text-[var(--text-secondary)]" />
                 </button>
               </div>
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 mb-6">
-                <div className="text-center p-4 bg-gradient-to-br from-[#FF9600]/10 to-[#FF9600]/5 rounded-xl">
-                  <Flame className="w-6 h-6 text-[#FF9600] mx-auto mb-1" />
-                  <p className="text-3xl font-black text-[#FF9600]">{currentStreak}</p>
-                  <p className="text-xs text-[#777777] font-bold">Current</p>
+                <div className="text-center p-4 bg-gradient-to-br from-[color-mix(in_srgb,var(--brand-orange),transparent_90%)] to-[color-mix(in_srgb,var(--brand-orange),transparent_95%)] rounded-xl">
+                  <Flame className="w-6 h-6 text-[var(--brand-orange)] mx-auto mb-1" />
+                  <p className="text-3xl font-black text-[var(--brand-orange)]">{currentStreak}</p>
+                  <p className="text-xs text-[var(--text-secondary)] font-bold">Current</p>
                 </div>
-                <div className="text-center p-4 bg-gradient-to-br from-[#CE82FF]/10 to-[#CE82FF]/5 rounded-xl">
-                  <Gift className="w-6 h-6 text-[#CE82FF] mx-auto mb-1" />
-                  <p className="text-3xl font-black text-[#CE82FF]">{longestStreak}</p>
-                  <p className="text-xs text-[#777777] font-bold">Best</p>
+                <div className="text-center p-4 bg-gradient-to-br from-[color-mix(in_srgb,var(--brand-purple),transparent_90%)] to-[color-mix(in_srgb,var(--brand-purple),transparent_95%)] rounded-xl">
+                  <Gift className="w-6 h-6 text-[var(--brand-purple)] mx-auto mb-1" />
+                  <p className="text-3xl font-black text-[var(--brand-purple)]">{longestStreak}</p>
+                  <p className="text-xs text-[var(--text-secondary)] font-bold">Best</p>
                 </div>
               </div>
 
               {/* Calendar */}
               <div className="mb-6">
-                <p className="text-sm font-bold text-[#777777] mb-3">Last 7 Days</p>
+                <p className="text-sm font-bold text-[var(--text-secondary)] mb-3">Last 7 Days</p>
                 <div className="flex justify-between">
                   {last7Days.map((day, i) => (
                     <div key={i} className="text-center">
                       <div 
                         className={`w-10 h-10 rounded-xl flex items-center justify-center mb-1 ${
                           day.completed 
-                            ? 'bg-[#FF9600] text-white' 
+                            ? 'bg-[var(--brand-orange)] text-[var(--text-inverse)]' 
                             : day.isToday 
-                              ? 'bg-[#FFC800]/20 border-2 border-[#FFC800]' 
-                              : 'bg-[#F7F4F0]'
+                              ? 'bg-[color-mix(in_srgb,var(--brand-yellow),transparent_80%)] border-2 border-[var(--brand-yellow)]' 
+                              : 'bg-[var(--surface-1)]'
                         }`}
                       >
                         {day.completed ? (
                           <Flame className="w-5 h-5" />
                         ) : (
-                          <span className="text-[#AFAFAF]">-</span>
+                          <span className="text-[var(--text-muted)]">-</span>
                         )}
                       </div>
-                      <span className={`text-xs font-bold ${day.isToday ? 'text-[#FFC800]' : 'text-[#AFAFAF]'}`}>
+                      <span className={`text-xs font-bold ${day.isToday ? 'text-[var(--brand-yellow)]' : 'text-[var(--text-muted)]'}`}>
                         {day.day}
                       </span>
                     </div>
@@ -167,12 +167,12 @@ export default function StreakWidget({ userId }) {
 
               {/* Next Milestone */}
               {nextMilestone && (
-                <div className="bg-[#F7F4F0] rounded-xl p-4">
-                  <p className="text-xs font-bold text-[#AFAFAF] uppercase mb-2">Next Milestone</p>
+                <div className="bg-[var(--surface-1)] rounded-xl p-4">
+                  <p className="text-xs font-bold text-[var(--text-muted)] uppercase mb-2">Next Milestone</p>
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="font-black text-[#3C3C3C]">{nextMilestone.reward}</p>
-                      <p className="text-sm text-[#777777]">{nextMilestone.days - currentStreak} days to go</p>
+                      <p className="font-black text-[var(--text-primary)]">{nextMilestone.reward}</p>
+                      <p className="text-sm text-[var(--text-secondary)]">{nextMilestone.days - currentStreak} days to go</p>
                     </div>
                     <div className="badge-3d badge-xp">
                       +{nextMilestone.xp} XP
@@ -180,7 +180,7 @@ export default function StreakWidget({ userId }) {
                   </div>
                   <div className="mt-3 progress-bar-3d h-2">
                     <div 
-                      className="h-full rounded-full bg-gradient-to-r from-[#FF9600] to-[#FFC800]"
+                      className="h-full rounded-full bg-gradient-to-r from-[var(--brand-orange)] to-[var(--brand-yellow)]"
                       style={{ width: `${(currentStreak / nextMilestone.days) * 100}%` }}
                     />
                   </div>
@@ -188,15 +188,15 @@ export default function StreakWidget({ userId }) {
               )}
 
               {/* Streak Freeze */}
-              <div className="mt-4 flex items-center justify-between p-3 bg-[#1CB0F6]/10 rounded-xl">
+              <div className="mt-4 flex items-center justify-between p-3 bg-[color-mix(in_srgb,var(--brand-blue),transparent_90%)] rounded-xl">
                 <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-[#1CB0F6]" />
-                  <span className="font-bold text-[#3C3C3C]">Streak Freeze</span>
+                  <Shield className="w-5 h-5 text-[var(--brand-blue)]" />
+                  <span className="font-bold text-[var(--text-primary)]">Streak Freeze</span>
                 </div>
                 {hasStreakFreeze ? (
-                  <span className="text-sm font-bold text-[#1CB0F6]">1 Available</span>
+                  <span className="text-sm font-bold text-[var(--brand-blue)]">1 Available</span>
                 ) : (
-                  <span className="text-sm font-bold text-[#AFAFAF]">0 Available</span>
+                  <span className="text-sm font-bold text-[var(--text-muted)]">0 Available</span>
                 )}
               </div>
             </motion.div>

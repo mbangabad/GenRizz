@@ -120,8 +120,8 @@ export default function SoundToggleButton({ className = '' }) {
       onClick={handleToggle}
       className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
         enabled 
-          ? 'bg-[#58CC02]/20 text-[#58CC02]' 
-          : 'bg-[#E8E4DF] text-[#AFAFAF]'
+          ? 'bg-[color-mix(in_srgb,var(--brand-green),transparent_80%)] text-[var(--brand-green)]' 
+          : 'bg-[var(--surface-3)] text-[var(--text-muted)]'
       } ${className}`}
       title={enabled ? 'Sound On' : 'Sound Off'}
     >

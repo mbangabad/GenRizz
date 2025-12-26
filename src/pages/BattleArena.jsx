@@ -215,7 +215,7 @@ const endGame = () => {
           animate={{ scale: 1, opacity: 1 }}
           className="text-center z-10 max-w-md w-full"
         >
-          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-[#FF4B4B] to-[#A30202] rounded-3xl flex items-center justify-center shadow-[0_0_50px_rgba(255,75,75,0.4)] mb-8 transform rotate-3">
+          <div className="w-32 h-32 mx-auto bg-gradient-to-br from-[var(--brand-red)] to-[var(--brand-red-dark)] rounded-3xl flex items-center justify-center shadow-[0_0_50px_rgba(255,75,75,0.4)] mb-8 transform rotate-3">
             <Swords className="w-16 h-16 text-white" />
           </div>
           
@@ -224,12 +224,12 @@ const endGame = () => {
 
           <div className="grid grid-cols-2 gap-4 mb-8">
             <div className="bg-white/10 p-4 rounded-2xl border border-white/10">
-              <Trophy className="w-8 h-8 text-[#FFC800] mx-auto mb-2" />
+              <Trophy className="w-8 h-8 text-[var(--brand-yellow)] mx-auto mb-2" />
               <div className="font-black text-2xl">Ranked</div>
               <div className="text-xs text-gray-400">Climb the ladder</div>
             </div>
             <div className="bg-white/10 p-4 rounded-2xl border border-white/10 opacity-50">
-              <Users className="w-8 h-8 text-[#1CB0F6] mx-auto mb-2" />
+              <Users className="w-8 h-8 text-[var(--brand-blue)] mx-auto mb-2" />
               <div className="font-black text-2xl">Friendly</div>
               <div className="text-xs text-gray-400">Coming soon</div>
             </div>
@@ -237,7 +237,7 @@ const endGame = () => {
 
           <button 
             onClick={startMatchmaking}
-            className="w-full py-5 bg-[#FF4B4B] hover:bg-[#ff6363] text-white rounded-2xl font-black text-xl shadow-[0_6px_0_#A30202] active:shadow-none active:translate-y-[6px] transition-all flex items-center justify-center gap-3"
+            className="w-full py-5 bg-[var(--brand-red)] hover:bg-[var(--brand-red-hover)] text-white rounded-2xl font-black text-xl shadow-[0_6px_0_var(--brand-red-dark)] active:shadow-none active:translate-y-[6px] transition-all flex items-center justify-center gap-3"
           >
             <Swords className="w-6 h-6" /> FIND MATCH
           </button>
@@ -252,7 +252,7 @@ const endGame = () => {
         <motion.div 
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          className="w-24 h-24 border-8 border-[#FF4B4B] border-t-transparent rounded-full mb-8"
+          className="w-24 h-24 border-8 border-[var(--brand-red)] border-t-transparent rounded-full mb-8"
         />
         <h2 className="text-2xl font-black animate-pulse">SEARCHING FOR OPPONENT...</h2>
         <p className="text-gray-400 mt-2">Estimated time: 5s</p>
@@ -282,7 +282,7 @@ const endGame = () => {
         <motion.div 
           initial={{ scale: 0, rotate: -45 }}
           animate={{ scale: 1.5, rotate: 0 }}
-          className="absolute z-10 text-[#FFC800] font-black text-9xl italic drop-shadow-[0_10px_0_rgba(0,0,0,0.5)]"
+          className="absolute z-10 text-[var(--brand-yellow)] font-black text-9xl italic drop-shadow-[0_10px_0_rgba(0,0,0,0.5)]"
         >
           VS
         </motion.div>
@@ -294,7 +294,7 @@ const endGame = () => {
             animate={{ x: 0, opacity: 1 }}
             className="text-center"
           >
-            <div className="w-32 h-32 bg-[#1CB0F6] rounded-3xl mb-4 border-4 border-white flex items-center justify-center shadow-[0_0_30px_#1CB0F6]">
+            <div className="w-32 h-32 bg-[var(--brand-blue)] rounded-3xl mb-4 border-4 border-white flex items-center justify-center shadow-[0_0_30px_var(--brand-blue)]">
               <span className="text-6xl">{user?.avatar || '😎'}</span>
             </div>
             <h2 className="text-3xl font-black">{user?.full_name || 'You'}</h2>
@@ -307,7 +307,7 @@ const endGame = () => {
             animate={{ x: 0, opacity: 1 }}
             className="text-center"
           >
-            <div className="w-32 h-32 bg-[#FF4B4B] rounded-3xl mb-4 border-4 border-white flex items-center justify-center shadow-[0_0_30px_#FF4B4B]">
+            <div className="w-32 h-32 bg-[var(--brand-red)] rounded-3xl mb-4 border-4 border-white flex items-center justify-center shadow-[0_0_30px_var(--brand-red)]">
               <span className="text-6xl">{opponent.avatar}</span>
             </div>
             <h2 className="text-3xl font-black">{opponent.name}</h2>
@@ -332,21 +332,21 @@ const endGame = () => {
         <div className="p-4 flex items-end justify-between bg-[#1a052b] border-b border-white/10">
           <div className="w-1/3">
             <div className="flex items-center gap-2 mb-1">
-              <div className="w-8 h-8 bg-[#1CB0F6] rounded-lg flex items-center justify-center text-sm">{user?.avatar || '😎'}</div>
+              <div className="w-8 h-8 bg-[var(--brand-blue)] rounded-lg flex items-center justify-center text-sm">{user?.avatar || '😎'}</div>
               <div className="font-bold text-white text-sm sm:text-base">You</div>
             </div>
             <div className="h-4 bg-gray-800 rounded-full overflow-hidden border border-gray-600 relative">
               <motion.div 
-                className="h-full bg-[#1CB0F6]" 
+                className="h-full bg-[var(--brand-blue)]" 
                 initial={{ width: 0 }}
                 animate={{ width: `${myProgress}%` }}
               />
             </div>
-            <div className="text-[#1CB0F6] font-black text-xl mt-1">{myScore}</div>
+            <div className="text-[var(--brand-blue)] font-black text-xl mt-1">{myScore}</div>
           </div>
 
           <div className="w-20 flex flex-col items-center -mb-2">
-            <div className={`text-4xl font-black ${timer <= 3 ? 'text-[#FF4B4B] animate-pulse' : 'text-white'}`}>
+            <div className={`text-4xl font-black ${timer <= 3 ? 'text-[var(--brand-red)] animate-pulse' : 'text-white'}`}>
               {timer}
             </div>
             <div className="text-xs text-gray-400 font-bold uppercase tracking-widest">Seconds</div>
@@ -355,16 +355,16 @@ const endGame = () => {
           <div className="w-1/3 text-right">
             <div className="flex items-center gap-2 justify-end mb-1">
               <div className="font-bold text-white text-sm sm:text-base">{opponent.name}</div>
-              <div className="w-8 h-8 bg-[#FF4B4B] rounded-lg flex items-center justify-center text-sm">{opponent.avatar}</div>
+              <div className="w-8 h-8 bg-[var(--brand-red)] rounded-lg flex items-center justify-center text-sm">{opponent.avatar}</div>
             </div>
             <div className="h-4 bg-gray-800 rounded-full overflow-hidden border border-gray-600 relative">
               <motion.div 
-                className="h-full bg-[#FF4B4B]" 
+                className="h-full bg-[var(--brand-red)]" 
                 initial={{ width: 0 }}
                 animate={{ width: `${oppProgress}%` }}
               />
             </div>
-            <div className="text-[#FF4B4B] font-black text-xl mt-1">{oppScore}</div>
+            <div className="text-[var(--brand-red)] font-black text-xl mt-1">{oppScore}</div>
           </div>
         </div>
 
@@ -385,13 +385,13 @@ const endGame = () => {
               const isCorrect = idx === question.correct;
               const showResult = isAnswered;
 
-              let bgClass = "bg-white text-[#3C3C3C]";
+              let bgClass = "bg-white text-[var(--text-primary)]";
               if (showResult) {
-                if (isCorrect) bgClass = "bg-[#58CC02] text-white border-[#46A302]";
-                else if (isSelected && !isCorrect) bgClass = "bg-[#FF4B4B] text-white border-[#A30202]";
+                if (isCorrect) bgClass = "bg-[var(--brand-green)] text-white border-[var(--brand-green-hover)]";
+                else if (isSelected && !isCorrect) bgClass = "bg-[var(--brand-red)] text-white border-[var(--brand-red-dark)]";
                 else bgClass = "bg-gray-200 text-gray-400 opacity-50";
               } else {
-                if (isSelected) bgClass = "bg-[#1CB0F6] text-white";
+                if (isSelected) bgClass = "bg-[var(--brand-blue)] text-white";
               }
 
               return (
@@ -433,7 +433,7 @@ const endGame = () => {
         >
           <div className="absolute -top-16 left-1/2 -translate-x-1/2">
             {won ? (
-              <div className="w-32 h-32 bg-[#FFC800] rounded-full flex items-center justify-center border-8 border-[#2A0944] shadow-xl">
+              <div className="w-32 h-32 bg-[var(--brand-yellow)] rounded-full flex items-center justify-center border-8 border-[#2A0944] shadow-xl">
                 <Trophy className="w-16 h-16 text-white animate-bounce" />
               </div>
             ) : draw ? (
@@ -441,7 +441,7 @@ const endGame = () => {
                 <div className="text-5xl">🤝</div>
               </div>
             ) : (
-              <div className="w-32 h-32 bg-[#FF4B4B] rounded-full flex items-center justify-center border-8 border-[#2A0944] shadow-xl">
+              <div className="w-32 h-32 bg-[var(--brand-red)] rounded-full flex items-center justify-center border-8 border-[#2A0944] shadow-xl">
                 <div className="text-5xl">💀</div>
               </div>
             )}
@@ -457,17 +457,17 @@ const endGame = () => {
           <div className="grid grid-cols-2 gap-4 mb-8">
             <div className="bg-gray-50 p-4 rounded-2xl">
               <div className="text-xs font-bold text-gray-400 uppercase">You</div>
-              <div className="text-3xl font-black text-[#1CB0F6]">{myScore}</div>
+              <div className="text-3xl font-black text-[var(--brand-blue)]">{myScore}</div>
             </div>
             <div className="bg-gray-50 p-4 rounded-2xl">
               <div className="text-xs font-bold text-gray-400 uppercase">Enemy</div>
-              <div className="text-3xl font-black text-[#FF4B4B]">{oppScore}</div>
+              <div className="text-3xl font-black text-[var(--brand-red)]">{oppScore}</div>
             </div>
           </div>
 
           <button 
             onClick={() => setGameState('lobby')}
-            className="w-full py-4 bg-[#58CC02] hover:bg-[#4AC002] text-white rounded-2xl font-black text-lg shadow-[0_4px_0_#3D8C02] active:shadow-none active:translate-y-[4px] transition-all mb-3"
+            className="w-full py-4 bg-[var(--brand-green)] hover:bg-[var(--brand-green-hover)] text-white rounded-2xl font-black text-lg shadow-[0_4px_0_var(--brand-green-dark)] active:shadow-none active:translate-y-[4px] transition-all mb-3"
           >
             PLAY AGAIN
           </button>

@@ -15,7 +15,7 @@ export default function FloatingXP({ show, amount, x = '50%', y = '50%' }) {
             left: x, 
             top: y,
             transform: 'translateX(-50%)',
-            background: 'linear-gradient(135deg, #c084fc, #f472b6)',
+            background: 'linear-gradient(135deg, var(--brand-purple), var(--brand-pink))',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             textShadow: '0 0 20px rgba(192, 132, 252, 0.5)'

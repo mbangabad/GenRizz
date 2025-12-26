@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { Lock } from 'lucide-react';
 
 const RARITY_COLORS = {
-  common: { bg: 'from-[#58CC02] to-[#46A302]', border: 'border-[#58CC02]', glow: 'shadow-[#58CC02]/30', text: '#58CC02' },
-  rare: { bg: 'from-[#1CB0F6] to-[#1899D6]', border: 'border-[#1CB0F6]', glow: 'shadow-[#1CB0F6]/30', text: '#1CB0F6' },
-  epic: { bg: 'from-[#CE82FF] to-[#A855F7]', border: 'border-[#CE82FF]', glow: 'shadow-[#CE82FF]/30', text: '#CE82FF' },
-  legendary: { bg: 'from-[#FFC800] to-[#FF9600]', border: 'border-[#FFC800]', glow: 'shadow-[#FFC800]/30', text: '#FFC800' },
+  common: { bg: 'from-[var(--brand-green)] to-[var(--brand-green-dark)]', border: 'border-[var(--brand-green)]', glow: 'shadow-[var(--brand-green)]/30', text: 'var(--brand-green)' },
+  rare: { bg: 'from-[var(--brand-blue)] to-[#1899D6]', border: 'border-[var(--brand-blue)]', glow: 'shadow-[var(--brand-blue)]/30', text: 'var(--brand-blue)' },
+  epic: { bg: 'from-[var(--brand-purple)] to-[var(--brand-purple-dark)]', border: 'border-[var(--brand-purple)]', glow: 'shadow-[var(--brand-purple)]/30', text: 'var(--brand-purple)' },
+  legendary: { bg: 'from-[var(--brand-yellow)] to-[var(--brand-orange)]', border: 'border-[var(--brand-yellow)]', glow: 'shadow-[var(--brand-yellow)]/30', text: 'var(--brand-yellow)' },
 };
 
 export default function AchievementBadge({ 
@@ -31,14 +31,14 @@ export default function AchievementBadge({
         unlocked ? `shadow-lg ${rarity.glow}` : 'opacity-60 grayscale'
       }`}
     >
-      <div className={`${s.wrapper} rounded-full bg-white flex items-center justify-center relative overflow-hidden border-2 border-[#E5E0DA]`}>
+      <div className={`${s.wrapper} rounded-full bg-white flex items-center justify-center relative overflow-hidden border-2 border-[var(--border-subtle)]`}>
         {unlocked ? (
           <span className={s.icon}>{achievement?.icon}</span>
         ) : (
           <>
             <span className={`${s.icon} opacity-30`}>{achievement?.icon}</span>
             <div className="absolute inset-0 flex items-center justify-center bg-white/60">
-              <Lock className="w-4 h-4 text-[#AFAFAF]" />
+              <Lock className="w-4 h-4 text-[var(--text-muted)]" />
             </div>
           </>
         )}
@@ -51,7 +51,7 @@ export default function AchievementBadge({
               cy="50%"
               r="45%"
               fill="none"
-              stroke="#E8E4DF"
+              stroke="var(--surface-3)"
               strokeWidth="4"
             />
             <circle
@@ -92,28 +92,28 @@ export function AchievementCard({ achievement, unlocked = false, unlockedAt = nu
       className={`flex items-center gap-4 p-4 rounded-2xl border-2 ${
         unlocked 
           ? `bg-white ${rarity.border}` 
-          : 'bg-[#F7F4F0] border-[#E5E0DA] opacity-70'
+          : 'bg-[var(--surface-1)] border-[var(--border-subtle)] opacity-70'
       }`}
     >
       <AchievementBadge achievement={achievement} unlocked={unlocked} size="md" />
       
       <div className="flex-1">
         <div className="flex items-center gap-2">
-          <h4 className="font-bold text-[#3C3C3C]">{achievement?.name}</h4>
+          <h4 className="font-bold text-[var(--text-primary)]">{achievement?.name}</h4>
           <span className={`text-xs px-2 py-0.5 rounded-full bg-gradient-to-r ${rarity.bg} text-white font-bold`}>
             {achievement?.rarity}
           </span>
         </div>
-        <p className="text-sm text-[#777777] font-semibold">{achievement?.description}</p>
+        <p className="text-sm text-[var(--text-secondary)] font-semibold">{achievement?.description}</p>
         {unlockedAt && (
-          <p className="text-xs text-[#AFAFAF] font-semibold mt-1">
+          <p className="text-xs text-[var(--text-muted)] font-semibold mt-1">
             Unlocked {new Date(unlockedAt).toLocaleDateString()}
           </p>
         )}
       </div>
       
       <div className="text-right">
-        <p className="text-sm font-bold text-[#CE82FF]">+{achievement?.xp_reward || 0} XP</p>
+        <p className="text-sm font-bold text-[var(--brand-purple)]">+{achievement?.xp_reward || 0} XP</p>
       </div>
     </motion.div>
   );
@@ -151,9 +151,9 @@ export function AchievementUnlockPopup({ achievement, onClose }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <p className="text-[#FFC800] font-bold text-sm mt-6 mb-2">🎉 ACHIEVEMENT UNLOCKED!</p>
-          <h3 className="text-2xl font-black text-[#3C3C3C] mb-2">{achievement?.name}</h3>
-          <p className="text-[#777777] font-semibold mb-4">{achievement?.description}</p>
+          <p className="text-[var(--brand-yellow)] font-bold text-sm mt-6 mb-2">🎉 ACHIEVEMENT UNLOCKED!</p>
+          <h3 className="text-2xl font-black text-[var(--text-primary)] mb-2">{achievement?.name}</h3>
+          <p className="text-[var(--text-secondary)] font-semibold mb-4">{achievement?.description}</p>
           
           <div className="badge-3d badge-xp justify-center py-2">
             <span className="font-bold">+{achievement?.xp_reward || 0} XP</span>

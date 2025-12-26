@@ -57,12 +57,12 @@ export default function Landing() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#3C3C3C] overflow-x-hidden">
+    <div className="min-h-screen bg-[var(--page-bg)] text-[var(--text-primary)] overflow-x-hidden">
       {/* Promo Banner */}
       <motion.div 
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-gradient-to-r from-[#B388FF] via-[#FF6B9D] to-[#FFD93D] text-white text-center py-3 px-4"
+        className="bg-gradient-to-r from-[var(--brand-purple)] via-[var(--brand-pink)] to-[var(--brand-yellow)] text-white text-center py-3 px-4"
       >
         <div className="flex items-center justify-center gap-3 flex-wrap font-bold">
           <span className="text-xl">🎁</span>
@@ -73,22 +73,22 @@ export default function Landing() {
       </motion.div>
 
       {/* Nav */}
-      <nav className="sticky top-0 z-50 glass-light border-b border-[#E5E0DA]">
+      <nav className="glass-header z-50">
         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
           <motion.div 
             className="flex items-center gap-3"
             whileHover={{ scale: 1.02 }}
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#58CC02] to-[#46A302] flex items-center justify-center shadow-lg" style={{ boxShadow: '0 4px 0 #3D8C02' }}>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--brand-green)] to-[var(--brand-green-dark)] flex items-center justify-center shadow-lg" style={{ boxShadow: '0 4px 0 var(--brand-green-dark)' }}>
               <span className="text-xl">🔥</span>
             </div>
-            <span className="font-black text-xl tracking-tight text-[#3C3C3C]">GenRizz</span>
+            <span className="font-black text-xl tracking-tight text-[var(--text-primary)]">GenRizz</span>
           </motion.div>
           
-          <div className="hidden md:flex items-center gap-6 text-sm font-bold text-[#777777]">
-            <a href="#games" className="hover:text-[#58CC02] transition-colors">Games</a>
-            <a href="#pricing" className="hover:text-[#58CC02] transition-colors">Premium</a>
-            <Link to={createPageUrl('Help')} className="hover:text-[#58CC02] transition-colors">Help</Link>
+          <div className="hidden md:flex items-center gap-6 text-sm font-bold text-[var(--text-secondary)]">
+            <a href="#games" className="hover:text-[var(--brand-green)] transition-colors">Games</a>
+            <a href="#pricing" className="hover:text-[var(--brand-green)] transition-colors">Premium</a>
+            <Link to={createPageUrl('Help')} className="hover:text-[var(--brand-green)] transition-colors">Help</Link>
           </div>
 
           <div className="flex items-center gap-3">
@@ -130,9 +130,9 @@ export default function Landing() {
         {/* Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Gradient Orbs */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#58CC02]/15 rounded-full blur-[100px]" />
-          <div className="absolute top-40 right-10 w-96 h-96 bg-[#FF86D0]/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[#1CB0F6]/10 rounded-full blur-[100px]" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[var(--brand-green)]/15 rounded-full blur-[100px]" />
+          <div className="absolute top-40 right-10 w-96 h-96 bg-[var(--brand-pink)]/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-[var(--brand-blue)]/10 rounded-full blur-[100px]" />
           
           {/* Floating Emojis */}
           {[

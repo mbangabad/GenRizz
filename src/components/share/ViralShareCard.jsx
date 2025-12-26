@@ -84,7 +84,7 @@ genrizz.app`;
         </div>
 
         {/* Score Display */}
-        <div className="p-6 text-center bg-white">
+        <div className="p-6 text-center" style={{ backgroundColor: 'var(--surface-0)' }}>
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
@@ -94,30 +94,30 @@ genrizz.app`;
             {tier.emoji}
           </motion.div>
           
-          <h3 className="text-2xl font-black text-[#3C3C3C] mb-1">{tier.name}</h3>
+          <h3 className="text-2xl font-black mb-1" style={{ color: 'var(--text-primary)' }}>{tier.name}</h3>
           
           <div className="text-5xl font-black mb-2" style={{ color: game?.color }}>
             {percentage}%
           </div>
           
           {/* Emoji Grid */}
-          <div className="bg-[#F7F4F0] rounded-xl p-3 mb-4 font-mono text-lg">
+          <div className="rounded-xl p-3 mb-4 font-mono text-lg" style={{ backgroundColor: 'var(--surface-1)' }}>
             {gridRows.map((row, i) => (
               <div key={i}>{row}</div>
             ))}
-            <p className="text-sm text-[#777777] mt-2">{score}/{totalQuestions} correct</p>
+            <p className="text-sm mt-2" style={{ color: 'var(--text-secondary)' }}>{score}/{totalQuestions} correct</p>
           </div>
           
           {/* Roast */}
-          <p className="text-sm text-[#777777] font-semibold italic">
+          <p className="text-sm font-semibold italic" style={{ color: 'var(--text-secondary)' }}>
             "{tier.roast}"
           </p>
         </div>
 
         {/* CTA */}
-        <div className="p-4 bg-[#F7F4F0] text-center">
-          <p className="text-xs text-[#AFAFAF] font-bold uppercase">Can you beat this?</p>
-          <p className="text-sm font-bold text-[#3C3C3C]">genrizz.app</p>
+        <div className="p-4 text-center" style={{ backgroundColor: 'var(--surface-1)' }}>
+          <p className="text-xs font-bold uppercase" style={{ color: 'var(--text-muted)' }}>Can you beat this?</p>
+          <p className="text-sm font-bold" style={{ color: 'var(--text-primary)' }}>genrizz.app</p>
         </div>
       </motion.div>
 
@@ -139,7 +139,7 @@ genrizz.app`;
           onClick={handleCopy}
           className="btn-3d btn-3d-ghost py-3 flex items-center justify-center gap-2"
         >
-          {copied ? <Check className="w-5 h-5 text-[#58CC02]" /> : <Copy className="w-5 h-5" />}
+          {copied ? <Check className="w-5 h-5" style={{ color: 'var(--brand-green)' }} /> : <Copy className="w-5 h-5" />}
           {copied ? 'Copied!' : 'Copy'}
         </motion.button>
       </div>
@@ -150,8 +150,8 @@ genrizz.app`;
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleTwitterShare}
-          className="flex-1 py-3 rounded-xl bg-[#1DA1F2] text-white font-bold flex items-center justify-center gap-2"
-          style={{ boxShadow: '0 4px 0 #1a8cd8' }}
+          className="flex-1 py-3 rounded-xl text-white font-bold flex items-center justify-center gap-2"
+          style={{ backgroundColor: '#1DA1F2', boxShadow: '0 4px 0 #1a8cd8' }}
         >
           <Twitter className="w-5 h-5" />
           Tweet
@@ -161,8 +161,8 @@ genrizz.app`;
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={handleWhatsAppShare}
-          className="flex-1 py-3 rounded-xl bg-[#25D366] text-white font-bold flex items-center justify-center gap-2"
-          style={{ boxShadow: '0 4px 0 #1da851' }}
+          className="flex-1 py-3 rounded-xl font-bold flex items-center justify-center gap-2"
+          style={{ backgroundColor: 'var(--brand-green)', color: 'var(--text-inverse)', boxShadow: '0 4px 0 var(--brand-green-dark)' }}
         >
           <Smartphone className="w-5 h-5" />
           WhatsApp

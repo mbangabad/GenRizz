@@ -122,21 +122,30 @@ export default function Settings() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-32">
+    <div className="min-h-screen pb-32" style={{ backgroundColor: 'var(--page-bg)' }}>
       {/* Header */}
-      <header className="glass-light border-b border-[#E5E0DA] sticky top-0 z-40">
+      <header className="glass-header">
         <div className="max-w-2xl mx-auto px-4 py-3 flex items-center gap-3">
           <Link to={createPageUrl('Home')}>
-            <button className="w-10 h-10 rounded-xl bg-white border-2 border-[#E5E0DA] flex items-center justify-center hover:bg-[#F0EDE8] transition-colors">
-              <ArrowLeft className="w-5 h-5 text-[#777777]" />
+            <button className="w-10 h-10 rounded-xl border-2 flex items-center justify-center transition-colors"
+              style={{
+                backgroundColor: 'var(--surface-0)',
+                borderColor: 'var(--border-subtle)'
+              }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-2)'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = 'var(--surface-0)'}
+              <ArrowLeft className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
             </button>
           </Link>
           <div className="flex-1">
-            <h1 className="font-black text-[#3C3C3C]">{t('settings.title')}</h1>
-            <p className="text-xs text-[#AFAFAF] font-semibold">Customize your experience</p>
+            <h1 className="font-black" style={{ color: 'var(--text-primary)' }}>{t('settings.title')}</h1>
+            <p className="text-xs font-semibold" style={{ color: 'var(--text-muted)' }}>Customize your experience</p>
           </div>
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#777777] to-[#555555] flex items-center justify-center" style={{ boxShadow: '0 3px 0 #444444' }}>
-            <SettingsIcon className="w-5 h-5 text-white" />
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ 
+            background: 'linear-gradient(to bottom right, var(--text-secondary), #555555)',
+            boxShadow: '0 3px 0 #444444'
+          }}>
+            <SettingsIcon className="w-5 h-5" style={{ color: 'var(--text-inverse)' }} />
           </div>
         </div>
       </header>
@@ -149,19 +158,19 @@ export default function Settings() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: gIdx * 0.1 }}
           >
-            <h2 className="text-sm font-bold text-[#AFAFAF] uppercase tracking-wide mb-3 px-1">
+            <h2 className="text-sm font-bold uppercase tracking-wide mb-3 px-1" style={{ color: 'var(--text-muted)' }}>
               {group.title}
             </h2>
-            <div className="card-3d divide-y divide-[#E5E0DA]">
+            <div className="card-3d divide-y" style={{ '--tw-divide-opacity': 1, borderColor: 'var(--border-subtle)' }}>
               {group.items.map((item, iIdx) => (
                 item.type === 'toggle' ? (
                   <div key={iIdx} className="p-4 flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#F7F4F0] flex items-center justify-center">
-                      <item.icon className="w-5 h-5 text-[#777777]" />
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'var(--surface-1)' }}>
+                      <item.icon className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
                     </div>
                     <div className="flex-1">
-                      <p className="font-bold text-[#3C3C3C]">{item.label}</p>
-                      <p className="text-xs text-[#AFAFAF]">{item.description}</p>
+                      <p className="font-bold" style={{ color: 'var(--text-primary)' }}>{item.label}</p>
+                      <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{item.description}</p>
                     </div>
                     <Switch
                       checked={settings[item.key]}
@@ -170,17 +179,22 @@ export default function Settings() {
                   </div>
                 ) : item.type === 'select' ? (
                   <div key={iIdx} className="p-4 flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-[#F7F4F0] flex items-center justify-center">
-                      <item.icon className="w-5 h-5 text-[#777777]" />
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'var(--surface-1)' }}>
+                      <item.icon className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
                     </div>
                     <div className="flex-1">
-                      <p className="font-bold text-[#3C3C3C]">{item.label}</p>
-                      <p className="text-xs text-[#AFAFAF]">{item.description}</p>
+                      <p className="font-bold" style={{ color: 'var(--text-primary)' }}>{item.label}</p>
+                      <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{item.description}</p>
                     </div>
                     <select
                       value={item.value}
                       onChange={(e) => changeLanguage(e.target.value)}
-                      className="bg-[#F7F4F0] border-none rounded-lg font-bold text-sm text-[#3C3C3C] p-2 focus:ring-2 focus:ring-[#58CC02] outline-none"
+                      className="border-none rounded-lg font-bold text-sm p-2 focus:ring-2 outline-none"
+                      style={{
+                        backgroundColor: 'var(--surface-1)',
+                        color: 'var(--text-primary)',
+                        '--tw-ring-color': 'var(--brand-green)'
+                      }}
                     >
                       {item.options.map(opt => (
                         <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -189,18 +203,20 @@ export default function Settings() {
                   </div>
                 ) : (
                   <Link key={iIdx} to={createPageUrl(item.to)}>
-                    <div className="p-4 flex items-center gap-4 hover:bg-[#F7F4F0] transition-colors cursor-pointer">
-                      <div className="w-10 h-10 rounded-xl bg-[#F7F4F0] flex items-center justify-center">
-                        <item.icon className="w-5 h-5 text-[#777777]" />
+                    <div className="p-4 flex items-center gap-4 transition-colors cursor-pointer"
+                      onMouseEnter={(e) => e.target.style.backgroundColor = 'var(--surface-1)'}
+                      onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'var(--surface-1)' }}>
+                        <item.icon className="w-5 h-5" style={{ color: 'var(--text-secondary)' }} />
                       </div>
                       <div className="flex-1">
-                        <p className="font-bold text-[#3C3C3C]">{item.label}</p>
-                        <p className="text-xs text-[#AFAFAF]">{item.description}</p>
+                        <p className="font-bold" style={{ color: 'var(--text-primary)' }}>{item.label}</p>
+                        <p className="text-xs" style={{ color: 'var(--text-muted)' }}>{item.description}</p>
                       </div>
                       {item.badge && (
                         <span className="badge-3d badge-xp text-xs">{item.badge}</span>
                       )}
-                      <ChevronRight className="w-5 h-5 text-[#AFAFAF]" />
+                      <ChevronRight className="w-5 h-5" style={{ color: 'var(--text-muted)' }} />
                     </div>
                   </Link>
                 )
@@ -216,17 +232,19 @@ export default function Settings() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             onClick={() => auth.signOut()}
-            className="w-full card-3d p-4 flex items-center gap-4 hover:bg-[#FFF5F5] transition-colors"
+            className="w-full card-3d p-4 flex items-center gap-4 transition-colors"
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#FFF5F5'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
           >
-            <div className="w-10 h-10 rounded-xl bg-[#FF4B4B]/10 flex items-center justify-center">
-              <LogOut className="w-5 h-5 text-[#FF4B4B]" />
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ backgroundColor: 'rgba(255, 75, 75, 0.1)' }}>
+              <LogOut className="w-5 h-5" style={{ color: 'var(--brand-red)' }} />
             </div>
-            <span className="font-bold text-[#FF4B4B]">Sign Out</span>
+            <span className="font-bold" style={{ color: 'var(--brand-red)' }}>Sign Out</span>
           </motion.button>
         )}
 
         {/* App Info */}
-        <div className="text-center text-sm text-[#AFAFAF] font-semibold pt-4">
+        <div className="text-center text-sm font-semibold pt-4" style={{ color: 'var(--text-muted)' }}>
           <p>GenRizz v1.0.0</p>
           <p className="mt-1">Made with 🔥 for every generation</p>
         </div>

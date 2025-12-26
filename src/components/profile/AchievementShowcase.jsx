@@ -37,12 +37,12 @@ export default function AchievementShowcase({ stats, compact = false }) {
         >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#FFC800]/20 flex items-center justify-center">
-                <Award className="w-6 h-6 text-[#FFC800]" />
+              <div className="w-12 h-12 rounded-2xl bg-[var(--brand-yellow)]/20 flex items-center justify-center">
+                <Award className="w-6 h-6 text-[var(--brand-yellow)]" />
               </div>
               <div>
-                <p className="font-bold text-[#3C3C3C]">Achievements</p>
-                <p className="text-sm text-[#777777]">{unlockedCount}/{SHOWCASE_BADGES.length} unlocked</p>
+                <p className="font-bold text-[var(--text-primary)]">Achievements</p>
+                <p className="text-sm text-[var(--text-secondary)]">{unlockedCount}/{SHOWCASE_BADGES.length} unlocked</p>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -51,14 +51,14 @@ export default function AchievementShowcase({ stats, compact = false }) {
                   <div 
                     key={badge.id}
                     className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm border-2 border-white ${
-                      getProgress(badge) >= 1 ? 'bg-[#FFC800]/20' : 'bg-[#E8E4DF] grayscale'
+                      getProgress(badge) >= 1 ? 'bg-[var(--brand-yellow)]/20' : 'bg-[var(--surface-3)] grayscale'
                     }`}
                   >
                     {badge.emoji}
                   </div>
                 ))}
               </div>
-              <ChevronRight className="w-5 h-5 text-[#AFAFAF]" />
+              <ChevronRight className="w-5 h-5 text-[var(--text-muted)]" />
             </div>
           </div>
         </motion.div>
@@ -69,8 +69,8 @@ export default function AchievementShowcase({ stats, compact = false }) {
   return (
     <div className="card-3d p-5">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-black text-[#3C3C3C]">Badges</h3>
-        <Link to={createPageUrl('Achievements')} className="text-sm text-[#1CB0F6] font-bold">
+        <h3 className="font-black text-[var(--text-primary)]">Badges</h3>
+        <Link to={createPageUrl('Achievements')} className="text-sm text-[var(--brand-blue)] font-bold">
           View All
         </Link>
       </div>
@@ -84,22 +84,22 @@ export default function AchievementShowcase({ stats, compact = false }) {
               whileHover={{ scale: 1.1 }}
               className={`relative aspect-square rounded-xl flex flex-col items-center justify-center p-2 ${
                 unlocked 
-                  ? 'bg-gradient-to-br from-[#FFC800]/20 to-[#FFB347]/20 border-2 border-[#FFC800]/30' 
-                  : 'bg-[#E8E4DF]'
+                  ? 'bg-gradient-to-br from-[var(--brand-yellow)]/20 to-[#FFB347]/20 border-2 border-[var(--brand-yellow)]/30' 
+                  : 'bg-[var(--surface-3)]'
               }`}
             >
               <span className={`text-2xl ${unlocked ? '' : 'grayscale opacity-50'}`}>
                 {badge.emoji}
               </span>
               {!unlocked && (
-                <div className="absolute inset-0 flex items-center justify-center bg-[#E8E4DF]/80 rounded-xl">
-                  <Lock className="w-4 h-4 text-[#AFAFAF]" />
+                <div className="absolute inset-0 flex items-center justify-center bg-[var(--surface-3)]/80 rounded-xl">
+                  <Lock className="w-4 h-4 text-[var(--text-muted)]" />
                 </div>
               )}
               {!unlocked && progress > 0 && (
-                <div className="absolute bottom-1 left-1 right-1 h-1 bg-[#D4CFC7] rounded-full overflow-hidden">
+                <div className="absolute bottom-1 left-1 right-1 h-1 bg-[var(--border-strong)] rounded-full overflow-hidden">
                   <div 
-                    className="h-full bg-[#58CC02]" 
+                    className="h-full bg-[var(--brand-green)]" 
                     style={{ width: `${progress * 100}%` }}
                   />
                 </div>

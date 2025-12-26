@@ -5,39 +5,39 @@ import { GAMES } from '../constants/games';
 // Emoji-based icons with vibrant 3D styling
 const ICON_CONFIG = {
   // Consolidated games (12 total)
-  'gen-z-fluency': { emoji: '💀', gradient: 'from-[#58D0FF] to-[#3DBEE8]' },
-  'boomer-era': { emoji: '📻', gradient: 'from-[#FFD93D] to-[#F5C800]' },
-  'millennial-nostalgia': { emoji: '📼', gradient: 'from-[#FF6B9D] to-[#E85A8A]' },
-  'gen-x-wisdom': { emoji: '🎸', gradient: 'from-[#4DB6AC] to-[#26A69A]' },
-  'gen-alpha': { emoji: '🧒', gradient: 'from-[#B388FF] to-[#9B6FE8]' },
-  'mental-age': { emoji: '🧠', gradient: 'from-[#A6E22E] to-[#8BC926]' },
-  'generation-quiz': { emoji: '🧬', gradient: 'from-[#A6E22E] to-[#64FFDA]' },
-  'social-iq': { emoji: '💬', gradient: 'from-[#FF6B9D] to-[#B388FF]' },
-  'family-bridge': { emoji: '👨‍👩‍👧‍👦', gradient: 'from-[#58D0FF] to-[#64FFDA]' },
-  'vibe-check': { emoji: '✨', gradient: 'from-[#58CC02] to-[#A6E22E]' },
-  'social-awareness': { emoji: '🧠', gradient: 'from-[#FF6B9D] to-[#00CED1]' },
-  'boomer-humor': { emoji: '👔', gradient: 'from-[#FFD93D] to-[#FFB347]' },
+  'gen-z-fluency': { emoji: '💀', gradient: 'from-[var(--brand-blue)] to-[var(--brand-blue-dark)]' },
+  'boomer-era': { emoji: '📻', gradient: 'from-[var(--brand-yellow)] to-[var(--brand-yellow-dark)]' },
+  'millennial-nostalgia': { emoji: '📼', gradient: 'from-[var(--brand-pink)] to-[var(--brand-pink-dark)]' },
+  'gen-x-wisdom': { emoji: '🎸', gradient: 'from-[var(--brand-blue)] to-[var(--brand-blue-dark)]' },
+  'gen-alpha': { emoji: '🧒', gradient: 'from-[var(--brand-purple)] to-[var(--brand-purple-dark)]' },
+  'mental-age': { emoji: '🧠', gradient: 'from-[var(--brand-green)] to-[var(--brand-green-dark)]' },
+  'generation-quiz': { emoji: '🧬', gradient: 'from-[var(--brand-green)] to-[var(--brand-blue)]' },
+  'social-iq': { emoji: '💬', gradient: 'from-[var(--brand-pink)] to-[var(--brand-purple)]' },
+  'family-bridge': { emoji: '👨‍👩‍👧‍👦', gradient: 'from-[var(--brand-blue)] to-[var(--brand-blue-hover)]' },
+  'vibe-check': { emoji: '✨', gradient: 'from-[var(--brand-green)] to-[var(--brand-green-hover)]' },
+  'social-awareness': { emoji: '🧠', gradient: 'from-[var(--brand-pink)] to-[var(--brand-blue)]' },
+  'boomer-humor': { emoji: '👔', gradient: 'from-[var(--brand-yellow)] to-[var(--brand-orange)]' },
   
   // Legacy mappings for backward compatibility
-  'emoji-detective': { emoji: '🔍', gradient: 'from-[#58D0FF] to-[#00CED1]' },
-  'revenge-of-boomers': { emoji: '📻', gradient: 'from-[#FFD93D] to-[#F5C800]' },
-  'analog-life': { emoji: '☎️', gradient: 'from-[#FFB347] to-[#FF8F35]' },
-  'y2k-culture': { emoji: '💿', gradient: 'from-[#FF6B9D] to-[#FF8FB3]' },
-  'nineties-music': { emoji: '🎵', gradient: 'from-[#4DB6AC] to-[#00CED1]' },
-  'dating-decoder': { emoji: '💬', gradient: 'from-[#FF6B9D] to-[#B388FF]' },
-  'text-interpretation': { emoji: '📱', gradient: 'from-[#B388FF] to-[#FF6B9D]' },
-  'generation-gap': { emoji: '👨‍👩‍👧‍👦', gradient: 'from-[#58D0FF] to-[#64FFDA]' },
-  'communication-styles': { emoji: '💬', gradient: 'from-[#64FFDA] to-[#58D0FF]' },
-  'red-flag-detector': { emoji: '✨', gradient: 'from-[#58CC02] to-[#A6E22E]' },
-  'social-intelligence': { emoji: '🧠', gradient: 'from-[#FF6B9D] to-[#FF6B35]' },
-  'dad-jokes': { emoji: '👔', gradient: 'from-[#FFD93D] to-[#FFB347]' },
-  'vintage-comedy': { emoji: '🎭', gradient: 'from-[#FFE066] to-[#FFD93D]' },
-  'ipad-kid-culture': { emoji: '📱', gradient: 'from-[#B388FF] to-[#9B6FE8]' },
-  'tiktok-natives': { emoji: '🎵', gradient: 'from-[#B388FF] to-[#FF6B9D]' },
+  'emoji-detective': { emoji: '🔍', gradient: 'from-[var(--brand-blue)] to-[var(--brand-blue-hover)]' },
+  'revenge-of-boomers': { emoji: '📻', gradient: 'from-[var(--brand-yellow)] to-[var(--brand-yellow-dark)]' },
+  'analog-life': { emoji: '☎️', gradient: 'from-[var(--brand-orange)] to-[var(--brand-orange-dark)]' },
+  'y2k-culture': { emoji: '💿', gradient: 'from-[var(--brand-pink)] to-[var(--brand-pink-hover)]' },
+  'nineties-music': { emoji: '🎵', gradient: 'from-[var(--brand-blue)] to-[var(--brand-blue-hover)]' },
+  'dating-decoder': { emoji: '💬', gradient: 'from-[var(--brand-pink)] to-[var(--brand-purple)]' },
+  'text-interpretation': { emoji: '📱', gradient: 'from-[var(--brand-purple)] to-[var(--brand-pink)]' },
+  'generation-gap': { emoji: '👨‍👩‍👧‍👦', gradient: 'from-[var(--brand-blue)] to-[var(--brand-blue-hover)]' },
+  'communication-styles': { emoji: '💬', gradient: 'from-[var(--brand-blue-hover)] to-[var(--brand-blue)]' },
+  'red-flag-detector': { emoji: '✨', gradient: 'from-[var(--brand-green)] to-[var(--brand-green-hover)]' },
+  'social-intelligence': { emoji: '🧠', gradient: 'from-[var(--brand-pink)] to-[var(--brand-orange)]' },
+  'dad-jokes': { emoji: '👔', gradient: 'from-[var(--brand-yellow)] to-[var(--brand-orange)]' },
+  'vintage-comedy': { emoji: '🎭', gradient: 'from-[var(--brand-yellow)] to-[var(--brand-yellow-hover)]' },
+  'ipad-kid-culture': { emoji: '📱', gradient: 'from-[var(--brand-purple)] to-[var(--brand-purple-dark)]' },
+  'tiktok-natives': { emoji: '🎵', gradient: 'from-[var(--brand-purple)] to-[var(--brand-pink)]' },
 };
 
 export default function GameIcon({ gameId, size = 'md', className = '' }) {
-  const config = ICON_CONFIG[gameId] || { emoji: '🎮', gradient: 'from-[#58D0FF] to-[#3DBEE8]' };
+  const config = ICON_CONFIG[gameId] || { emoji: '🎮', gradient: 'from-[var(--brand-blue)] to-[var(--brand-blue-dark)]' };
   const game = GAMES[gameId];
   
   const sizeClasses = {
